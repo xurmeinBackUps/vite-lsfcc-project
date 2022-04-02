@@ -1,0 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Forum&family=Roboto&display=swap");
+@import 'material-components-web/dist/material-components-web.min.css';
+
+$white: #fff;
+$black: #000;
+$primary:#1402ee; //INDIGO
+$secondary:#8c02ee; //PURPLE
+$accent: #daee02; //GOLD
+$error: #ee1602; //RED
+$warn:#ee02da; //PINK
+$alert: #0264ee; //BLUE
+
+
+body {
+	margin: 0;
+	font-family: 'Roboto', sans-serif;
+}

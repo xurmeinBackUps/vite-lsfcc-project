@@ -1,0 +1,214 @@
+{
+  "buildingHistory" : {
+    "SuPNtZ20JHaVEsYF2cZ5mA" : {
+      "years" : {
+        "2NHF3ilZDhuLuLIUZKTZWA" : "2NHF3ilZDhuLuLIUZKTZWA",
+        "fvgTq68a_Z1VzVYS8TQGLg" : "fvgTq68a_Z1VzVYS8TQGLg",
+        "oJXKDgwfjBaIvii1Ogb9jQ" : "oJXKDgwfjBaIvii1Ogb9jQ"
+      },
+      "buildingName" : "Lincoln School Building 1"
+    },
+    "jX46PxFW82WXIs6lTe1G1g" : {
+      "years" : {
+        "AxaeL3aIsSKQH88kDFtENw" : "AxaeL3aIsSKQH88kDFtENw",
+        "mi1iekfb-JbEE4hGKv4mZg" : "mi1iekfb-JbEE4hGKv4mZg",
+        "rAKTqr5NEieCdSyvLNtvhg" : "rAKTqr5NEieCdSyvLNtvhg"
+      },
+      "buildingName" : "Lincoln School Building 2"
+    }
+  },
+  "years" : {
+    "L17RNUfKFUJdJhHJGqXrXQ" : {
+      "buildingId" : "SuPNtZ20JHaVEsYF2cZ5mA",
+      "year" : "1881",
+      "title" : "BeLesson",
+      "topicId" : "CHLxim3O3AQoQMEFwVXllQ"
+    },
+    "Yicf_SO6QqqS-X1TEadXeQ" : {
+      "buildingId" : "SuPNtZ20JHaVEsYF2cZ5mA",
+      "year" : "1890",
+      "entry" : "In 1881 the Crawfordsville School Trustees ordered an all-Black school be built at the southwest corner of Spring and North Walnut Streets to serve Black students in grades 1-8. Once graduating from Lincoln, the students attended the integrated Crawfordsville High School. This site accommodated the cast majority of Black families living in Crawfordsville’s Northend. The Trustees purchased the lot in September 1881 for the sum of $2000. On 3 December 1881, Hinckley and Norris won the contract to build the building for $6400. The architects designed a plain two-story red brick structure, with playgrounds for all the Black children that resided in that area. Lincoln School officially opened in September 1882 with 42 students. The following Crawfordsville newspaper articles trace the discussions, debates, dilemmas, and the disputes the local citizenry faced as Lincoln School staff members educated Black and Mulatto children in separate and unequal facilities, and the challenges Black students faced when attended an integrated high school after graduating from Lincoln School for Colored Children."
+    },
+    "zhePszetbZ7Wcw6cMj2sLw" : {
+      "buildingId" : "SuPNtZ20JHaVEsYF2cZ5mA",
+      "year" : "infralesson",
+      "title" : "InfraLesson",
+      "topicId" : "bE9iHnfo31oWOKpaADvvYg"
+    }
+  },
+  "messages" : {
+    "2NHF3ilZDhuLuLIUZKTZWA" : {
+      "discussionId" : "SuPNtZ20JHaVEsYF2cZ5mA",
+      "publishedAt" : 1504041706,
+      "text" : "",
+      "userId" : "FzkKpgaJ0-4mmuWLGPMnKQ"
+    },
+    "AxaeL3aIsSKQH88kDFtENw" : {
+      "discussionId" : "jX46PxFW82WXIs6lTe1G1g",
+      "publishedAt" : 1504035908,
+      "text" : "",
+      "userId" : "GK69vUCbLGhLTh_c6J37Bw"
+    },
+    "DjJmXLowYSnthK4cJ7IKSQ" : {
+      "discussionId" : "rk7Isu9yJmtyIxYiRJ5Jsw",
+      "publishedAt" : 1504042102,
+      "text" : "",
+      "userId" : "FzkKpgaJ0-4mmuWLGPMnKQ"
+    },
+    "F6jg0VFjNgbXTN3jNtNP1A" : {
+      "discussionId" : "rk7Isu9yJmtyIxYiRJ5Jsw",
+      "publishedAt" : 1504042143,
+      "text" : "",
+      "userId" : "THojQ_htX6UPx5qvmvwCSw"
+    },
+    "OGYDT-b8QGYfY3lNhd3v1Q" : {
+      "discussionId" : "rk7Isu9yJmtyIxYiRJ5Jsw",
+      "publishedAt" : 1504042215,
+      "text" : "",
+      "userId" : ""
+    },
+    "fvgTq68a_Z1VzVYS8TQGLg" : {
+      "discussionId" : "SuPNtZ20JHaVEsYF2cZ5mA",
+      "publishedAt" : 1504040497,
+      "text" : "",
+      "userId" : "Vzl-IRcEyp4WFTk8k-QFqg"
+    },
+    "mi1iekfb-JbEE4hGKv4mZg" : {
+      "discussionId" : "jX46PxFW82WXIs6lTe1G1g",
+      "publishedAt" : 1504038271,
+      "text" : "",
+      "userId" : "THojQ_htX6UPx5qvmvwCSw"
+    },
+    "oJXKDgwfjBaIvii1Ogb9jQ" : {
+      "discussionId" : "SuPNtZ20JHaVEsYF2cZ5mA",
+      "publishedAt" : 1504041235,
+      "text" : "",
+      "userId" : "THojQ_htX6UPx5qvmvwCSw"
+    },
+    "rAKTqr5NEieCdSyvLNtvhg" : {
+      "discussionId" : "jX46PxFW82WXIs6lTe1G1g",
+      "publishedAt" : 1504038599,
+      "text" : "",
+      "userId" : "ZoKSqvq1obwRcywyAOZLCg"
+    }
+  },
+  "subjects" : {
+    "6TENMn8m-VXYYbpwJaiFKw" : {
+      "name" : "Backend",
+      "slug" : "backend",
+      "topicIds" : {
+        "CHLxim3O3AQoQMEFwVXllQ" : "CHLxim3O3AQoQMEFwVXllQ"
+      }
+    },
+    "6oS4vAJ1les_EZg2-GtGtw" : {
+      "name" : "Frontend",
+      "slug" : "frontend",
+      "topicIds" : {
+        "bXeot2-bsDfbX3yq99ktww" : "bXeot2-bsDfbX3yq99ktww"
+      }
+    },
+    "PUSkA89LPpPmal7luDtSkQ" : {
+      "name" : "Infrastructure",
+      "slug" : "infrastructure",
+      "topicIds" : {
+        "bE9iHnfo31oWOKpaADvvYg" : "bE9iHnfo31oWOKpaADvvYg"
+      }
+    }
+  },
+  "topics" : {
+    "CHLxim3O3AQoQMEFwVXllQ" : {
+      "discussionId" : "rk7Isu9yJmtyIxYiRJ5Jsw",
+      "lessonId" : "L17RNUfKFUJdJhHJGqXrXQ",
+      "name" : "BeTopic",
+      "publishedAt" : 1507144199,
+      "slug" : "betopic",
+      "subjectId" : "6TENMn8m-VXYYbpwJaiFKw"
+    },
+    "bE9iHnfo31oWOKpaADvvYg" : {
+      "discussionId" : "jX46PxFW82WXIs6lTe1G1g",
+      "lessonId" : "zhePszetbZ7Wcw6cMj2sLw",
+      "name" : "InfraTopic",
+      "publishedAt" : 1504035908,
+      "slug" : "infratopic",
+      "subjectId" : "PUSkA89LPpPmal7luDtSkQ"
+    },
+    "bXeot2-bsDfbX3yq99ktww" : {
+      "discussionId" : "SuPNtZ20JHaVEsYF2cZ5mA",
+      "lessonId" : "Yicf_SO6QqqS-X1TEadXeQ",
+      "name" : "FeTopic",
+      "publishedAt" : 1504041235,
+      "slug" : "fetopic",
+      "subjectId" : "6oS4vAJ1les_EZg2-GtGtw"
+    }
+  },
+  "users" : {
+    "FzkKpgaJ0-4mmuWLGPMnKQ" : {
+      "avatar" : "https://img.buzzfeed.com/buzzfeed-static/static/2020-11/30/20/asset/2a375c70a0b7/anigif_sub-buzz-8784-1606769327-14_preview.gif?output-quality=auto&output-format=auto&downsize=360:*",
+      "bio" : "Love to fish. Work to fish",
+      "email" : "tunajoe@gmail.com",
+      "lastVisitAt" : 1507227517,
+      "messages" : {
+        "2NHF3ilZDhuLuLIUZKTZWA" : "2NHF3ilZDhuLuLIUZKTZWA",
+        "DjJmXLowYSnthK4cJ7IKSQ" : "DjJmXLowYSnthK4cJ7IKSQ"
+      },
+      "name" : "Joey Williams",
+      "registeredAt" : 1507148598,
+      "username" : "tunajoe"
+    },
+    "GK69vUCbLGhLTh_c6J37Bw" : {
+      "avatar" : "https://www.mercurynews.com/wp-content/uploads/2018/03/sjm-l-pizarro-col-0302.jpg?w=456",
+      "bio" : "Now this is a story all about how my life got flipped-turned upside down and I'd like to take a minute just sit right there i'll tell you how I became the prince of a town called Bel-Air.",
+      "email" : "rolf@rah.no",
+      "lastVisitAt" : 1509628794,
+      "lessons" : {
+        "L17RNUfKFUJdJhHJGqXrXQ" : "L17RNUfKFUJdJhHJGqXrXQ",
+        "zhePszetbZ7Wcw6cMj2sLw" : "zhePszetbZ7Wcw6cMj2sLw"
+      },
+      "messages" : {
+        "AxaeL3aIsSKQH88kDFtENw" : "AxaeL3aIsSKQH88kDFtENw"
+      },
+      "name" : "Rolf",
+      "registeredAt" : 1504025541,
+      "username" : "rah"
+    },
+    "THojQ_htX6UPx5qvmvwCSw" : {
+      "avatar" : "https://www.indiewire.com/wp-content/uploads/2011/06/theroom.jpg?w=400",
+      "email" : "tommy@the-room.biz.ru",
+      "lastVisitAt" : 1507312801,
+      "messages" : {
+        "F6jg0VFjNgbXTN3jNtNP1A" : "F6jg0VFjNgbXTN3jNtNP1A",
+        "OGYDT-b8QGYfY3lNhd3v1Q" : "OGYDT-b8QGYfY3lNhd3v1Q",
+        "mi1iekfb-JbEE4hGKv4mZg" : "mi1iekfb-JbEE4hGKv4mZg"
+      },
+      "name" : "Марк Смирнов Облонский",
+      "registeredAt" : 1507196808,
+      "username" : "high.marks"
+    },
+    "Vzl-IRcEyp4WFTk8k-QFqg" : {
+      "avatar" : "https://cdn.images.express.co.uk/img/dynamic/36/590x/It-Chapter-Two-Can-Pennywise-be-killed-Is-he-gone-forever-1175120.webp?r=1567871248412",
+      "email" : "support_it@floatdownhere.edu",
+      "lastVisitAt" : 1507226599,
+      "lessons" : {
+        "Yicf_SO6QqqS-X1TEadXeQ" : "Yicf_SO6QqqS-X1TEadXeQ"
+      },
+      "messages" : {
+        "fvgTq68a_Z1VzVYS8TQGLg" : "fvgTq68a_Z1VzVYS8TQGLg"
+      },
+      "name" : "Mr. Kersh",
+      "registeredAt" : 1504041159,
+      "username" : "your_worst_nightmare"
+    },
+    "ZoKSqvq1obwRcywyAOZLCg" : {
+      "avatar" : "http://cleaneatsfastfeets.com/wp-content/uploads/2013/05/Mr-Burns.gif",
+      "bio" : "Release the hounds!",
+      "email" : "mrburns@gmail.com",
+      "lastVisitAt" : 1507198421,
+      "messages" : {
+        "rAKTqr5NEieCdSyvLNtvhg" : "rAKTqr5NEieCdSyvLNtvhg"
+      },
+      "name" : "Charles Montgomery Burns",
+      "registeredAt" : 1504038437,
+      "username" : "MrBurns"
+    }
+  }
+}
