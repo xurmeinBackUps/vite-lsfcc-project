@@ -1,5 +1,14 @@
 <template>
 	<div>
+		{
+		"timelines": {
+		"1": {
+		""
+		},
+		}
+		"title": "",
+		"entries": []
+		}
 		Lincoln School Building 1
 		1881
 		In 1881 the Crawfordsville School Trustees ordered an all-Black school be built at the southwest corner of Spring and North Walnut Streets to serve Black students in grades 1-8. Once graduating from Lincoln, the students attended the integrated Crawfordsville High School. This site accommodated the cast majority of Black families living in Crawfordsville’s Northend. The Trustees purchased the lot in September 1881 for the sum of $2000. On 3 December 1881, Hinckley and Norris won the contract to build the building for $6400. The architects designed a plain two-story red brick structure, with playgrounds for all the Black children that resided in that area. Lincoln School officially opened in September 1882 with 42 students.
@@ -62,11 +71,5 @@
 		Eventually the Black population shifted from the Northend to the East End, and Lincoln School Building 1 became obsolete and abandoned. The red brick structure was eventually renovated and renamed Horace Mann School which reopened for both Blacks and Whites. Horace Mann operated smoothly for many years, but after newer schools were built, the building was abandoned at the end of the 1957 58 school year and completely demolished in 1964.
 	</div>
 </template>
-
-<script setup>
-import { $b1 } from '@/stores/buildingOneStore'
-import { ref } from 'vue'
-
-const b1Data = ref($b1)
-</script>
+<script></script>
 <style></style>
