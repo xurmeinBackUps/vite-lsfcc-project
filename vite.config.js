@@ -9,12 +9,13 @@ export default defineConfig({
     vue(),
     nodeResolve(),
   ],
-  css: {
-    devSourcemap: true
-  },
+  // css: {
+  //   devSourcemap: true
+  // },
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
-  }
+  },
+  envPrefix: 'FB_'
 })
