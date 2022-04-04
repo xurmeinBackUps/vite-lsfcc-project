@@ -1,0 +1,7 @@
+{
+  "projects": {
+    "default": "lsfcc-project-moco",
+    "dev-lsfcc": "lsfcc-project-moco"
+  },
+  "targets": {}
+}

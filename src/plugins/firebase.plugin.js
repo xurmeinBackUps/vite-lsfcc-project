@@ -10,18 +10,20 @@ const firebaseConfig = {
 	storageBucket: import.meta.env.FB_STORAGE_BUCKET,
 	messagingSenderId: import.meta.env.FB_MSG_SENDER_ID,
 	appId: import.meta.env.FB_APP_ID,
-	// measurementId: import.meta.env.FB_MEASUREMENT_ID
+	measurementId: import.meta.env.FB_MEASUREMENT_ID
 };
 
 const firebase = initializeApp(firebaseConfig);
 
-export default function $fb() {
-	return {
-		name: '$fb',
+const $fb = {
+	
+
 		install: (app) => {
 			app.use(firebase)
 			app.use(getAuth(firebase)),
-				app.use(getDatabase(firebase))
+			app.use(getDatabase(firebase))
 		}
-	}
+	
 }
+
+export {$fb}

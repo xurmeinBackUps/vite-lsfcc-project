@@ -1,10 +1,13 @@
 import vueMaterialAdapter from 'vue-material-adapter'
+import 'material-components-web/dist/material-components-web.min.css';
+// import 'material-components-web/dist/material-components-web.js.css';
 
-export default function $vma() {
-	return {
-		name: '$vma',
+const vma = {
+
 		install: (app) => {
 			return app.use(vueMaterialAdapter)
 		}
-	}
+	
 }
+
+export {$vma}

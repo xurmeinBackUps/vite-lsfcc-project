@@ -22,8 +22,14 @@ import { RouterLink } from 'vue-router'
 </script>
 
 <style lang="scss" scoped>
+@import '@/assets/scss/variables.scss';
+
 .mdc-tab-bar {
 	display: inline-flex;
 	width: fit-content;
+}
+
+.mdc-tab__content {
+  color: $white;
 }
 </style>

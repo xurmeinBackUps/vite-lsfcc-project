@@ -71,5 +71,15 @@
 		Eventually the Black population shifted from the Northend to the East End, and Lincoln School Building 1 became obsolete and abandoned. The red brick structure was eventually renovated and renamed Horace Mann School which reopened for both Blacks and Whites. Horace Mann operated smoothly for many years, but after newer schools were built, the building was abandoned at the end of the 1957 58 school year and completely demolished in 1964.
 	</div>
 </template>
-<script></script>
+
+<script>
+import { useBuildingOneStore } from '@/store/buildingOne'
+
+export default {
+	setup() {
+		const b1Data = useBuildingOneStore()
+		return { b1Data }
+	}
+}
+</script>
 <style></style>
