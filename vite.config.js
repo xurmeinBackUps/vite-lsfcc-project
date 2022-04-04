@@ -12,6 +12,8 @@ export default defineConfig({
   css: {
     devSourcemap: true
   },
+  envDir: './.env',
+  envPrefix: 'FB_',
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))

@@ -1,14 +1,5 @@
 <template>
 	<div>
-		{
-		"timelines": {
-		"1": {
-		""
-		},
-		}
-		"title": "",
-		"entries": []
-		}
 		Lincoln School Building 1
 		1881
 		In 1881 the Crawfordsville School Trustees ordered an all-Black school be built at the southwest corner of Spring and North Walnut Streets to serve Black students in grades 1-8. Once graduating from Lincoln, the students attended the integrated Crawfordsville High School. This site accommodated the cast majority of Black families living in Crawfordsville’s Northend. The Trustees purchased the lot in September 1881 for the sum of $2000. On 3 December 1881, Hinckley and Norris won the contract to build the building for $6400. The architects designed a plain two-story red brick structure, with playgrounds for all the Black children that resided in that area. Lincoln School officially opened in September 1882 with 42 students.
@@ -73,11 +64,11 @@
 </template>
 
 <script>
-import { useBuildingOneStore } from '@/store/buildingOne'
+import { useBuildingOne } from '@/stores/buildingOne.js'
 
 export default {
 	setup() {
-		const b1Data = useBuildingOneStore()
+		const b1Data = useBuildingOne()
 		return { b1Data }
 	}
 }
