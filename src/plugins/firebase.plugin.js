@@ -14,3 +14,14 @@ const firebaseConfig = {
 };
 
 const firebase = initializeApp(firebaseConfig);
+
+export default function $fb() {
+	return {
+		name: '$fb',
+		install: (app) => {
+			app.use(firebase)
+			app.use(getAuth(firebase)),
+				app.use(getDatabase(firebase))
+		}
+	}
+}
