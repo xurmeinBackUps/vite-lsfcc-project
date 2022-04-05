@@ -69,8 +69,10 @@ import { useBuildingOne } from '@/stores/buildingOne.js'
 export default {
 	setup() {
 		const b1Data = useBuildingOne()
+		b1Data.fetchB1Data()
 		return { b1Data }
-	}
+	},
+
 }
 </script>
 <style></style>
