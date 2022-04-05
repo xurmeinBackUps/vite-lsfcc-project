@@ -12,10 +12,9 @@ export const useBuildingOne = defineStore('building1', {
 
 	actions: {
 		async fetchB1Data() {
-			const b1Blob = ref(db, '/schools/')
+			const b1Blob = ref(db, '/schools/building1/')
 			onValue(b1Blob, (snapshot) => {
-				const data = snapshot.val()
-				console.log(data)
+				snapshot.toJSON()
 			})
 		}
 	}

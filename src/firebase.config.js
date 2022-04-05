@@ -15,12 +15,13 @@ const firebaseConfig = {
 	measurementId: import.meta.env.FB_MEASUREMENT_ID
 };
 
-const $fb = initializeApp(firebaseConfig);
-const db = getDatabase($fb)
-const auth = getAuth($fb)
+const firebaseRTDB = initializeApp(firebaseConfig);
+const db = getDatabase(firebaseRTDB)
+
+const firebaseAuth = initializeApp(firebaseConfig);
+const auth = getAuth(firebaseAuth)
 
 export {
-  $fb,
   db,
   auth
 }

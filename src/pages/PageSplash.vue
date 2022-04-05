@@ -1,6 +1,6 @@
 <template>
   <div class="mdc-layout-grid splash-grid">
-    <router-link to="/lincoln-school/building-1">
+    <router-link to="/schools/building1">
       <div class="mdc-card">
         <div class="mdc-card__media b1"></div>
         <span class="mdc-card__ripple"></span>
@@ -9,7 +9,7 @@
       </div>
     </router-link>
 
-    <router-link to="/lincoln-school/building-2">
+    <router-link to="/schools/building2">
       <div class="mdc-card">
         <div class="mdc-card__media b2"></div>
         <span class="mdc-card__ripple"></span>
