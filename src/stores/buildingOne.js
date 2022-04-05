@@ -1,14 +1,12 @@
 import { defineStore } from "pinia";
-import { getDatabase, ref } from '@firebase/database'
-
-const db = getDatabase()
-
+import { db } from '../firebase.config.js'
+import { ref } from 'firebase/database'
 
 export const useBuildingOne = defineStore('building1', {
 	state: () => {
 		return {
-			name: db.ref(`/schools/${id}/name`),
-			entries: db.ref(`/schools/${id}/entries`)
+			name: ref(db, '/schools/building1/name'),
+			entries: ref(db, '/schools/building1/entries')
 		}
 	}
 })
