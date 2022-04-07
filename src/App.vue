@@ -4,6 +4,7 @@
       <TheNavbar />
     </header>
     <main class="mdc-top-app-bar--fixed-adjust main">
+      {{ data }}
       <router-view />
     </main>
   </div>
@@ -16,14 +17,6 @@ import { rtdb } from './firebase.config';
 import { RouterView } from 'vue-router'
 import TheNavbar from './components/TheNavbar.vue';
 
-
-const db = await getDatabase(rtdb)
-const data = await ref(db, '/')
-
-
-onBeforeMount(async () => {
-  await console.log(data)
-})
 
 </script>
 

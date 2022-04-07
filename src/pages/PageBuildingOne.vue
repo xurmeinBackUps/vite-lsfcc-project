@@ -9,7 +9,7 @@
 <script setup>
 import { useBuildingOne } from '@/stores/buildingOne.js'
 
-const store = useBuildingOne
+const store = await useBuildingOne()
 // export default {
 // 	beforeMount
 // }
