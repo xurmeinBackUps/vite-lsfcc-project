@@ -3,7 +3,6 @@ import { initializeApp } from 'firebase/app';
 import { getAuth } from 'firebase/auth'
 import { getDatabase } from 'firebase/database'
 
-
 const firebaseConfig = {
 	apiKey: import.meta.env.FB_API_KEY,
 	authDomain: import.meta.env.FB_AUTH_DOMAIN,
@@ -16,12 +15,13 @@ const firebaseConfig = {
 };
 
 const firebaseRTDB = initializeApp(firebaseConfig);
-const db = getDatabase(firebaseRTDB)
+const rtdb = getDatabase(firebaseRTDB)
 
 const firebaseAuth = initializeApp(firebaseConfig);
 const auth = getAuth(firebaseAuth)
 
 export {
-  db,
-  auth
+	rtdb,
+	auth
+
 }
