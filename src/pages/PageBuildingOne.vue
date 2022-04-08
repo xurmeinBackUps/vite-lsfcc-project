@@ -1,17 +1,14 @@
 <template>
-	<div class="mdc-card">
-		b1Store:
-		<br />
-		{{ store }}
+	<div>
+		<BuildingHistory />
 	</div>
 </template>
 
+
 <script setup>
-import { useBuildingOne } from '@/stores/buildingOne.js'
+import BuildingHistory from '@/components/BuildingHistory.vue'
 
-const store = await useBuildingOne()
-// export default {
-// 	beforeMount
-// }
-
+defineProps({
+	bId: String
+})
 </script>

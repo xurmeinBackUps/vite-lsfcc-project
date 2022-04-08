@@ -11,10 +11,16 @@ export const useBuildingOne = defineStore('building1', {
 	},
 
 	actions: {
-		fetchB1Data() {
+		fetchName() {
 			const $name = ref(rtdb, '/schools/building1/name')
 			onValue($name, async (snapshot) => {
-				state.name = await snapshot.val()
+				this.$state.name = await snapshot.val()
+			})
+		},
+		fetchEntries() {
+			const $entry = ref(rtdb, 'schools/building1/entries')
+			onValue($entry, async (snapshot) => {
+				this.$state.entries = await snapshot.val()
 			})
 		}
 	}
