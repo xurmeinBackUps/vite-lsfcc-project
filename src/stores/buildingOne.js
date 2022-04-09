@@ -6,29 +6,23 @@ export const useBuildingOne = defineStore('building1', {
 	state () {
 		return {
 			name: '',
-			years: [],
+	
 			entries: []
 		}
 	},
 
 	actions: {
-	  async fetchName() {
-			const b1Name = ref(rtdb, '/schools/building1/name')
-			onValue(b1Name,  (snapshot) => {
-				this.$state.name = snapshot.val()
+		fetchName() {
+			const $name = ref(rtdb, '/schools/building1/name')
+			onValue($name, async (snapshot) => {
+				this.$state.name = await snapshot.val()
 			})
 		},
-    async fetchYears(){
-      const yearIndex = ref(rtdb, '/schools/building1/entries')
-      onValue(yearIndex, (snapshot) => {
-        snapshot.forEach((idx) => {
-          const year = idx.key
-          const entry = idx.val()
-          this.$state.years.push(year)
-          this.$state.entries.push(entry)
-        })
-      })
-    },
-
+		fetchEntries() {
+			const $entry = ref(rtdb, 'schools/building1/entries')
+			onValue($entry, async (snapshot) => {
+				this.$state.entries = await snapshot.val()
+			})
+		},
 	}
 })
