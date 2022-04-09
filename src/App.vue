@@ -11,13 +11,9 @@
 </template>
 
 <script setup>
-import { onBeforeMount } from 'vue'
-import { getDatabase, ref } from '@firebase/database';
-import { rtdb } from './firebase.config';
-import { RouterView } from 'vue-router'
-import TheNavbar from './components/TheNavbar.vue';
+import { RouterView } from "vue-router";
 
-
+import TheNavbar from "./components/TheNavbar.vue";
 </script>
 
 <style lang="scss">

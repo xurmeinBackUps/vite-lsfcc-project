@@ -3,9 +3,10 @@ import { rtdb } from '../firebase.config.js'
 import { ref, onValue } from 'firebase/database'
 
 export const useBuildingOne = defineStore('building1', {
-	state: () => {
+	state () {
 		return {
 			name: '',
+	
 			entries: []
 		}
 	},
@@ -22,6 +23,6 @@ export const useBuildingOne = defineStore('building1', {
 			onValue($entry, async (snapshot) => {
 				this.$state.entries = await snapshot.val()
 			})
-		}
+		},
 	}
 })
