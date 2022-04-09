@@ -4,20 +4,14 @@
       <TheNavbar />
     </header>
     <main class="mdc-top-app-bar--fixed-adjust main">
-      {{ data }}
       <router-view />
     </main>
   </div>
 </template>
 
 <script setup>
-import { onBeforeMount } from 'vue'
-import { getDatabase, ref } from '@firebase/database';
-import { rtdb } from './firebase.config';
-import { RouterView } from 'vue-router'
-import TheNavbar from './components/TheNavbar.vue';
-
-
+import { RouterView } from "vue-router";
+import TheNavbar from "./components/TheNavbar.vue";
 </script>
 
 <style lang="scss">
