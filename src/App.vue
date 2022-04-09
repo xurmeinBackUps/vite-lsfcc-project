@@ -4,7 +4,6 @@
       <TheNavbar />
     </header>
     <main class="mdc-top-app-bar--fixed-adjust main">
-      {{ data }}
       <router-view />
     </main>
   </div>
@@ -12,7 +11,10 @@
 
 <script setup>
 import { RouterView } from "vue-router";
+<<<<<<< HEAD
 
+=======
+>>>>>>> bd51c99d345f3678c147258c5e6a1a1f4a04d9d3
 import TheNavbar from "./components/TheNavbar.vue";
 </script>
 
