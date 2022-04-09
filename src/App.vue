@@ -1,9 +1,9 @@
 <template>
   <div class="app-container">
-    <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+    <header class="mdc-top-app-bar mdc-top-app-bar--fixed mdc-top-app-bar--prominent">
       <TheNavbar />
     </header>
-    <main class="mdc-top-app-bar--fixed-adjust main">
+    <main class="mdc-top-app-bar--prominent-fixed-adjust main">
       <router-view />
     </main>
   </div>
@@ -11,10 +11,6 @@
 
 <script setup>
 import { RouterView } from "vue-router";
-<<<<<<< HEAD
-
-=======
->>>>>>> bd51c99d345f3678c147258c5e6a1a1f4a04d9d3
 import TheNavbar from "./components/TheNavbar.vue";
 </script>
 

@@ -18,7 +18,7 @@
       </div>
     </router-link>
 
-    <router-link to="/content-idx-test">
+    <router-link to="/profiles">
       <div class="mdc-card">
         <div class="mdc-card__media icon yrbk"></div>
         <span class="mdc-card__ripple"></span>
@@ -57,9 +57,7 @@
 </template>
 
 <script setup>
-import { RouterLink } from 'vue-router'
-
-
+import { RouterLink } from "vue-router";
 </script>
 
 <style lang="scss" scoped>

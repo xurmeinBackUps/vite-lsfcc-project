@@ -5,13 +5,19 @@ import { ref, onValue } from 'firebase/database'
 export const useBuildingOne = defineStore('building1', {
 	state () {
 		return {
+      // data: [],
 			name: '',
-	
 			entries: []
 		}
 	},
 
 	actions: {
+    fetchSchools(){
+      const $schools = ref(rtdb, '/schools')
+      onValue($schools, async (snapshot) => {
+        await snapshot.val()
+      })
+    },
 		fetchName() {
 			const $name = ref(rtdb, '/schools/building1/name')
 			onValue($name, async (snapshot) => {

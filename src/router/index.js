@@ -6,6 +6,7 @@ const PagePartners = () => import('@/pages/PagePartners.vue')
 const PageBuildingOne = () => import('@/pages/PageBuildingOne.vue')
 const PageBuildingTwo = () =>  import('@/pages/PageBuildingTwo.vue')
 const PageContentIndex = () => import('@/pages/PageContentIndex.vue')
+const PageProfiles = () => import('@/pages/PageProfiles.vue')
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -37,6 +38,11 @@ const router = createRouter({
       path: '/schools/building2',
       name: 'building2',
       component: PageBuildingTwo
+    }, 
+    {
+      path: '/profiles',
+      name: 'profiles-index',
+      component: PageProfiles
     },
     {
       path: '/content-idx-test',

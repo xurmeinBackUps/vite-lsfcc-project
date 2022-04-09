@@ -19,7 +19,6 @@
         <span class="mdc-list-item__text">Single-line item</span>
       </li>
     </router-link>
-    <mcw-card>HELLO!</mcw-card>
   </ul>
 </template>
 
