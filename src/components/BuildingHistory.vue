@@ -10,7 +10,8 @@
     <div v-if="this.$route.params.bId === 'building2'">
       <h3 class="mdc-card__title">{{ b2store.name }}</h3>
       <br />
-      <ul v-for="e in b2store.entries">
+      <ul v-for="e in b2store.entries" :key="e.key">
+        <span>{{ e.id }}</span>
         <li>{{ e }}</li>
       </ul>
     </div>
@@ -21,17 +22,26 @@
 // TODO: Dear god, code this better!
 import { useBuildingOne } from "@/stores/buildingOne.js";
 import { useBuildingTwo } from "@/stores/buildingTwo.js";
+import { toRef } from "vue";
+
 export default {
-  setup() {
+  props: {
+    bId: String,
+  },
+  setup(props) {
+    // const store = toRef(props, "bId");
     const b2store = useBuildingTwo();
     const b1store = useBuildingOne();
     b1store.fetchName();
     b1store.fetchEntries();
     b2store.fetchName();
     b2store.fetchEntries();
+
     return {
       b1store,
       b2store,
+      // store,
+      props,
     };
   },
   // computed: {

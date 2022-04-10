@@ -1,9 +1,13 @@
 <template>
   <div class="mdc-card">
-    <BuildingHistory />
+    <BuildingHistory :b-id="bId" />
   </div>
 </template>
 
 <script setup>
 import BuildingHistory from "@/components/BuildingHistory.vue";
+
+defineProps({
+  bId: String,
+});
 </script>

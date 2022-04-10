@@ -3,8 +3,6 @@
     <router-link :to="{ name: 'building-show', params: { bId: 'building1' } }">
       <div class="mdc-card">
         <div class="mdc-card__media b1"></div>
-        <span class="mdc-card__ripple"></span>
-
         <span class="mdc-card__content link">Building One</span>
       </div>
     </router-link>
@@ -12,8 +10,6 @@
     <router-link :to="{ name: 'building-show', params: { bId: 'building2' } }">
       <div class="mdc-card">
         <div class="mdc-card__media b2"></div>
-        <span class="mdc-card__ripple"></span>
-
         <span class="mdc-card__content link">Building Two</span>
       </div>
     </router-link>
@@ -21,8 +17,6 @@
     <router-link to="/profiles">
       <div class="mdc-card">
         <div class="mdc-card__media icon yrbk"></div>
-        <span class="mdc-card__ripple"></span>
-
         <span class="mdc-card__content link">Faculty & Staff</span>
       </div>
     </router-link>
@@ -30,8 +24,6 @@
     <router-link to="/content-idx-test">
       <div class="mdc-card">
         <div class="mdc-card__media icon varsity"></div>
-        <span class="mdc-card__ripple"></span>
-
         <span class="mdc-card__content link">Memorabilia</span>
       </div>
     </router-link>
@@ -39,8 +31,6 @@
     <router-link to="/content-idx-test">
       <div class="mdc-card">
         <div class="mdc-card__media icon trans"></div>
-        <span class="mdc-card__ripple"></span>
-
         <span class="mdc-card__content link">Transcripts</span>
       </div>
     </router-link>
@@ -48,8 +38,6 @@
     <router-link to="/content-idx-test">
       <div class="mdc-card">
         <div class="mdc-card__media icon blog"></div>
-        <span class="mdc-card__ripple"></span>
-
         <span class="mdc-card__content link">Blog</span>
       </div>
     </router-link>
@@ -74,16 +62,20 @@ import { RouterLink } from "vue-router";
 .mdc-card {
   border-radius: 3em;
   overflow: hidden;
+  margin: auto;
+  max-width: 500px;
 
   &__media {
     height: 250px;
 
     &.b1 {
       background-image: url("@/assets/lincoln-building-1a.jpg");
+      object-fit: scale-down;
     }
 
     &.b2 {
       background-image: url("@/assets/lincoln-building-2.jpg");
+      object-fit: scale-down;
     }
 
     &.icon {

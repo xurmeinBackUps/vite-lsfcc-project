@@ -29,17 +29,12 @@ const router = createRouter({
       path: '/schools/:bId',
       name: 'building-show',
       component: PageBuildingShow,
-
+      props: true
     }, 
     {
       path: '/profiles',
       name: 'profiles-index',
       component: PageProfiles
-    },
-    {
-      path: '/content-idx-test',
-      name: 'content-index',
-      component: PageContentIndex
     }
   ]
 })
