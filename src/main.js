@@ -17,10 +17,9 @@ import {
 
 const app = createApp(App)
 const pinia = createPinia()
+
 app.use(router)
-
 app.use(pinia)
-
 app.use(rtdb)
 app.use(auth)
 app.use(bucket)
