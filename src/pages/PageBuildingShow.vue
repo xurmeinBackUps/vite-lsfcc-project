@@ -1,5 +1,7 @@
 <template>
-  <div><HistorySelector :b-id="bId" /></div>
+  <div>
+    <HistorySelector :b-id="bId" />
+  </div>
 </template>
 
 <script setup>

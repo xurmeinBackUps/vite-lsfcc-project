@@ -15,6 +15,7 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
+      default: true,
       component: PageSplash
     },
     {

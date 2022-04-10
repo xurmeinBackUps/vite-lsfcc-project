@@ -21,14 +21,14 @@
       </div>
     </router-link>
 
-    <router-link to="/content-idx-test">
+    <router-link to="/memorabilia">
       <div class="mdc-card">
         <div class="mdc-card__media icon varsity"></div>
         <span class="mdc-card__content link">Memorabilia</span>
       </div>
     </router-link>
 
-    <router-link to="/content-idx-test">
+    <router-link to="/transcripts">
       <div class="mdc-card">
         <div class="mdc-card__media icon trans"></div>
         <span class="mdc-card__content link">Transcripts</span>

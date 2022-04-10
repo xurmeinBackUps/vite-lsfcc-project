@@ -11,7 +11,11 @@
 
 <script setup>
 // TODO:still needs  improvement
-const BuildingOneHistory = () => import("./BuildingOneHistory.vue");
-const BuildingTwoHistory = () => import("./BuildingTwoHistory.vue");
+import BuildingOneHistory from "./BuildingOneHistory.vue";
+import BuildingTwoHistory from "./BuildingTwoHistory.vue";
+
+defineProps({
+  bId: String,
+});
 </script>
 <style></style>

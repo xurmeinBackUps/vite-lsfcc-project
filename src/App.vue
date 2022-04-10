@@ -4,7 +4,9 @@
       <TheNavbar />
     </header>
     <div class="mdc-top-app-bar--fixed-adjust">
-      <main class="main"><RouterView /></main>
+      <main class="main">
+        <RouterView />
+      </main>
     </div>
   </div>
 </template>

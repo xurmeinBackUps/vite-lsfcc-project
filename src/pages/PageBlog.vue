@@ -1,20 +1,11 @@
 <template>
-  <div>Page Blog</div>
+  <div class="mdc-card">
+    <TextAreaBlog />
+  </div>
 </template>
 
-<script>
-export default {
-  name: "PageBlog",
-  data() {
-    return {
-      newPost: "",
-    };
-  },
-  props: {},
-  methods: {
-    writePost() {},
-  },
-};
+<script setup>
+import TextAreaBlog from "@/components/TextAreaBlog.vue";
 </script>
 
 <style lang="scss" scoped></style>
