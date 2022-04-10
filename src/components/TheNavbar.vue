@@ -6,6 +6,6 @@
 </template>
 
 <script setup>
-import TheNavIconAndTitle from './TheNavIconAndTitle.vue'
-import TheNavTabs from './TheNavTabs.vue'
+import TheNavIconAndTitle from "./TheNavIconAndTitle.vue";
+import TheNavTabs from "./TheNavTabs.vue";
 </script>

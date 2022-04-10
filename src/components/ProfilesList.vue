@@ -4,7 +4,7 @@
   </div>
 </template>
 <script>
-import { useProfiles } from "@/stores/profilesStore.js";
+import { useProfiles } from "@/stores/profiles.js";
 
 export default {
   setup() {

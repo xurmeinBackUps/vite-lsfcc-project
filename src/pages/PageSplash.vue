@@ -1,6 +1,6 @@
 <template>
   <div class="mdc-layout-grid splash-grid">
-    <router-link to="/schools/building1">
+    <router-link :to="{ name: 'building-show', params: { bId: 'building1' } }">
       <div class="mdc-card">
         <div class="mdc-card__media b1"></div>
         <span class="mdc-card__ripple"></span>
@@ -9,7 +9,7 @@
       </div>
     </router-link>
 
-    <router-link to="/schools/building2">
+    <router-link :to="{ name: 'building-show', params: { bId: 'building2' } }">
       <div class="mdc-card">
         <div class="mdc-card__media b2"></div>
         <span class="mdc-card__ripple"></span>

@@ -3,8 +3,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 const PageSplash = () => import('@/pages/PageSplash.vue')
 const PageAbout = () => import('@/pages/PageAbout.vue')
 const PagePartners = () => import('@/pages/PagePartners.vue')
-const PageBuildingOne = () => import('@/pages/PageBuildingOne.vue')
-const PageBuildingTwo = () =>  import('@/pages/PageBuildingTwo.vue')
+const PageBuildingShow = () => import('@/pages/PageBuildingShow.vue')
 const PageContentIndex = () => import('@/pages/PageContentIndex.vue')
 const PageProfiles = () => import('@/pages/PageProfiles.vue')
 
@@ -19,9 +18,6 @@ const router = createRouter({
     {
       path: '/about',
       name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
       component: PageAbout
     },
     {
@@ -30,14 +26,10 @@ const router = createRouter({
       component: PagePartners
     },
     {
-      path: '/schools/building1',
-      name: 'building1',
-      component: PageBuildingOne 
-    },
-    {
-      path: '/schools/building2',
-      name: 'building2',
-      component: PageBuildingTwo
+      path: '/schools/:bId',
+      name: 'building-show',
+      component: PageBuildingShow,
+
     }, 
     {
       path: '/profiles',
