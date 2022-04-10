@@ -16,10 +16,13 @@ import {
 
 const app = createApp(App)
 const pinia = createPinia()
-app.use(router)
 
+app.use(router)
 app.use(pinia)
+<<<<<<< HEAD
 app.use(base)
+=======
+>>>>>>> 694ea87133e6108b6f66729bafb581ffe3a78dbc
 app.use(rtdb)
 app.use(auth)
 app.use(bucket)
