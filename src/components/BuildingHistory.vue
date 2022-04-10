@@ -22,12 +22,8 @@
 // TODO: Dear god, code this better!
 import { useBuildingOne } from "@/stores/buildingOne.js";
 import { useBuildingTwo } from "@/stores/buildingTwo.js";
-import { toRef } from "vue";
 
 export default {
-  props: {
-    bId: String,
-  },
   setup(props) {
     // const store = toRef(props, "bId");
     const b2store = useBuildingTwo();

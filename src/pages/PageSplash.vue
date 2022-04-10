@@ -35,7 +35,7 @@
       </div>
     </router-link>
 
-    <router-link to="/content-idx-test">
+    <router-link to="/blog">
       <div class="mdc-card">
         <div class="mdc-card__media icon blog"></div>
         <span class="mdc-card__content link">Blog</span>

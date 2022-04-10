@@ -4,8 +4,10 @@ const PageSplash = () => import('@/pages/PageSplash.vue')
 const PageAbout = () => import('@/pages/PageAbout.vue')
 const PagePartners = () => import('@/pages/PagePartners.vue')
 const PageBuildingShow = () => import('@/pages/PageBuildingShow.vue')
-const PageContentIndex = () => import('@/pages/PageContentIndex.vue')
+const PageBlog = () => import('@/pages/PageBlog.vue')
 const PageProfiles = () => import('@/pages/PageProfiles.vue')
+const PageTranscripts = () => import('@/pages/PageTranscripts.vue')
+const PageMemorabilia = () => import('@/pages/PageMemorabilia.vue')
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -33,9 +35,25 @@ const router = createRouter({
     }, 
     {
       path: '/profiles',
-      name: 'profiles-index',
+      name: 'profiles',
       component: PageProfiles
-    }
+    },
+    {
+      path: '/blog',
+      name: 'blog',
+      component: PageBlog
+    },
+    {
+      path: '/transcripts',
+      name: 'transcripts',
+      component: PageTranscripts
+    },
+    {
+      path: '/memorabilia',
+      name: 'memorabilia',
+      component: PageMemorabilia
+    },
+    // TODO: add 404 wildcard route
   ]
 })
 

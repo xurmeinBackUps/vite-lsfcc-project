@@ -1,19 +1,17 @@
 <template>
-  <div>Page Blog</div>
+  <p>Page Transcripts</p>
 </template>
 
 <script>
 export default {
-  name: "PageBlog",
+  name: "PageTranscipts",
   data() {
     return {
-      newPost: "",
+      transcripts: [],
     };
   },
   props: {},
-  methods: {
-    writePost() {},
-  },
+  methods: {},
 };
 </script>
 
