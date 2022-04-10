@@ -14,44 +14,43 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      name: 'home',
+      
       default: true,
       component: PageSplash
     },
     {
       path: '/about',
-      name: 'about',
+      
       component: PageAbout
     },
     {
       path: '/partners',
-      name: 'partners',
+
       component: PagePartners
     },
     {
       path: '/schools/:bId',
-      name: 'building-show',
       component: PageBuildingShow,
       props: true
     }, 
     {
       path: '/profiles',
-      name: 'profiles',
+
       component: PageProfiles
     },
     {
       path: '/blog',
-      name: 'blog',
+      
       component: PageBlog
     },
     {
       path: '/transcripts',
-      name: 'transcripts',
+
       component: PageTranscripts
     },
     {
       path: '/memorabilia',
-      name: 'memorabilia',
+
       component: PageMemorabilia
     },
     // TODO: add 404 wildcard route

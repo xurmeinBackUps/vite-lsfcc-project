@@ -1,11 +1,11 @@
 <template>
   <div>
-    <HistorySelector :b-id="bId" />
+    <HistorySwitch :b-id="bId" />
   </div>
 </template>
 
 <script setup>
-import HistorySelector from "@/components/HistorySelector.vue";
+import HistorySwitch from "@/components/HistorySwitch.vue";
 
 defineProps({
   bId: String,

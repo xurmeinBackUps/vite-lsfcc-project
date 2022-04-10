@@ -6,7 +6,7 @@
           <img
             alt="Lincoln School for Colored Children project logo"
             class="logo mdc-top-app-bar__navigation-icon"
-            src="@/assets/icons/logo.png"
+            src="@/assets/logo.png"
           />
 
           <h1 class="mdc-top-app-bar__title title">
