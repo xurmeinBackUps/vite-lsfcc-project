@@ -8,7 +8,9 @@ import 'material-components-web';
 import 'material-components-web/dist/material-components-web.min.css';
 import {
 	rtdb,
-	auth
+	auth,
+	bucket,
+	firestore
 } from './firebase.config.js'
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -21,5 +23,7 @@ app.use(pinia)
 
 app.use(rtdb)
 app.use(auth)
+app.use(bucket)
+app.use(firestore)
 // app.use(vueMaterialAdapter)
 app.mount('#app')

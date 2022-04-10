@@ -1,6 +1,8 @@
 import { initializeApp } from 'firebase/app';
 import { getAuth } from 'firebase/auth'
 import { getDatabase } from 'firebase/database'
+import { getFirestore } from "firebase/firestore";
+import { getStorage } from "firebase/storage";
 
 const firebaseConfig = {
 	apiKey: import.meta.env.FB_API_KEY,
@@ -13,13 +15,21 @@ const firebaseConfig = {
 	measurementId: import.meta.env.FB_MEASUREMENT_ID
 };
 
+const firebaseBucket = initializeApp(firebaseConfig);
+const bucket = getStorage(firebaseBucket)
+
 const firebaseRTDB = initializeApp(firebaseConfig);
 const rtdb = getDatabase(firebaseRTDB)
 
 const firebaseAuth = initializeApp(firebaseConfig);
 const auth = getAuth(firebaseAuth)
 
+const firebaseFirestore = initializeApp(firebaseConfig);
+const firestore = getFirestore(firebaseFirestore)
+
 export {
   rtdb,
-  auth
+  auth,
+  bucket,
+  firestore
 }
