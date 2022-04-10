@@ -33,6 +33,7 @@
     "css-loader": "^6.7.1",
     "eslint": "^8.5.0",
     "eslint-plugin-vue": "^8.2.0",
+    "firebase-tools": "^10.6.0",
     "rollup": "^2.70.1",
     "vite": "^2.8.0",
     "vite-plugin-require": "^0.0.8",
