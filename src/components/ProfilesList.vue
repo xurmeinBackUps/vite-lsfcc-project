@@ -1,8 +1,11 @@
 <template>
   <div class="mdc-card">
-    <span>{{ store.profiles }}</span>
+    <ul v-for="profile in store.profiles">
+      <li>{{ profile }}</li>
+    </ul>
   </div>
 </template>
+
 <script>
 import { useProfiles } from "@/stores/profiles.js";
 

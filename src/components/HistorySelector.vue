@@ -11,7 +11,7 @@
 
 <script setup>
 // TODO:still needs  improvement
-import BuildingOneHistory from "./BuildingOneHistory.vue";
-import BuildingTwoHistory from "./BuildingTwoHistory.vue";
+const BuildingOneHistory = () => import("./BuildingOneHistory.vue");
+const BuildingTwoHistory = () => import("./BuildingTwoHistory.vue");
 </script>
 <style></style>
