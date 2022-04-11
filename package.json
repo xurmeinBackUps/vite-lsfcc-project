@@ -9,21 +9,15 @@
     "lint": "prettier . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
   },
   "dependencies": {
-    "@googleapis/docs": "^0.2.0",
-    "@googleapis/drive": "^2.3.0",
-    "@googleapis/gmail": "^0.3.2",
-    "@googleapis/oauth2": "^0.2.0",
-    "dotenv": "^16.0.0",
-    "express": "^4.17.3",
+   
     "firebase": "^9.6.10",
     "googleapis": "^97.0.0",
-    "material-components-web": "^13.0.0",
     "pinia": "^2.0.12",
-    "sass": "1.32.0",
     "vue": "^3.2.31",
     "vue-router": "^4.0.14"
   },
   "devDependencies": {
+    "sass": "1.32.0",
     "@babel/generator": "^7.15.4",
     "@babel/parser": "^7.17.8",
     "@babel/traverse": "^7.17.3",
@@ -37,6 +31,16 @@
     "vite": "^2.8.0",
     "vite-plugin-require": "^0.0.8",
     "vue-material-adapter": "^3.2.3",
+    "material-components-web": "^13.0.0",
     "webpack": "^5.71.0"
-  }
+  },
+  "peerDependencies": {
+  
+  },
+  "bundledDependencies": [
+    "material-components-web",  
+    "@googleapis/docs",
+    "@googleapis/drive",
+    "@googleapis/gmail"
+  ]
 }
