@@ -31,7 +31,6 @@
     "vite": "^2.8.0",
     "vite-plugin-require": "^0.0.8",
     "vue-material-adapter": "^3.2.3",
-    "material-components-web": "^13.0.0",
     "webpack": "^5.71.0"
   },
   "peerDependencies": {
