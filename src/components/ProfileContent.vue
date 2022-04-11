@@ -1,5 +1,5 @@
 <template>
-  <div>{{ props.profile }}</div>
+  <div>{{ $props.profile }}</div>
 </template>
 
 <script setup>
