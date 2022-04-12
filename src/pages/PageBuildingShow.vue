@@ -7,7 +7,7 @@
 <script setup>
 import HistorySwitch from "@/components/HistorySwitch.vue";
 
-defineProps({
-  bId: String,
-});
+// defineProps({
+//   bId: String,
+// });
 </script>
