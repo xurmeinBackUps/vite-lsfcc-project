@@ -1,7 +1,12 @@
 {
   "projects": {
-    "default": "lsfcc-project-moco",
-    "dev-lsfcc": "lsfcc-project-moco"
+    "prod": "lsfcc-project-moco",
+    "staging": "lsfcc-project-moco",
+    "dev": "lsfcc-project-moco"
   },
-  "targets": {}
+  "targets": {
+    "prod": "lsfcc-project-moco.we.app",
+    "staging": "lsfcc-project-moco.firebaseapp.com",
+    "dev": "lsfcc-project-moco.firebaseapp.com"
+  }
 }
