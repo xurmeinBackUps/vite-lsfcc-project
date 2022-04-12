@@ -9,7 +9,6 @@
     "lint": "prettier . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
   },
   "dependencies": {
-   
     "firebase": "^9.6.10",
     "googleapis": "^97.0.0",
     "pinia": "^2.0.12",
@@ -18,28 +17,20 @@
   },
   "devDependencies": {
     "sass": "1.32.0",
+   
+    "@rollup/plugin-node-resolve": "^13.1.3",
+    "@vitejs/plugin-vue": "^2.2.0",
+    "eslint": "^8.5.0",
+    "eslint-plugin-vue": "^8.2.0",
+    "vite": "^2.8.0",
+    "vue-material-adapter": "^3.2.3"
+  },
+  "peerDependencies": {
+    "rollup": "^2.42.0",
+    "webpack": "^5.0.0",
     "@babel/generator": "^7.15.4",
     "@babel/parser": "^7.17.8",
     "@babel/traverse": "^7.17.3",
-    "@babel/types": "^7.17.0",
-    "@rollup/plugin-node-resolve": "^13.1.3",
-    "@vitejs/plugin-vue": "^2.2.0",
-    "css-loader": "^6.7.1",
-    "eslint": "^8.5.0",
-    "eslint-plugin-vue": "^8.2.0",
-    "rollup": "^2.70.1",
-    "vite": "^2.8.0",
-    "vite-plugin-require": "^0.0.8",
-    "vue-material-adapter": "^3.2.3",
-    "webpack": "^5.71.0"
-  },
-  "peerDependencies": {
-  
-  },
-  "bundledDependencies": [
-    "material-components-web",  
-    "@googleapis/docs",
-    "@googleapis/drive",
-    "@googleapis/gmail"
-  ]
+    "@babel/types": "^7.17.0"
+  }
 }
