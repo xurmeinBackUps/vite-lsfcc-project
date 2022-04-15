@@ -1,19 +1,19 @@
 <template>
   <div>
-    {{ props.profile.fullname }}
-    <span v-if="props.profile.birthYear && props.profile.deathYear">
-      ({{ props.profile.birthYear }} - {{ props.profile.deathYear }})
+    {{ profile.fullname }}
+    <span v-if="profile.birthYear && profile.deathYear">
+      ({{ profile.birthYear }} - {{ profile.deathYear }})
     </span>
-    {{ props.profile.role }}
-    <span v-if="props.profile.startYear && props.profile.endYear">
-      from {{ props.profile.startYear }} to {{ props.profile.endYear }}
+    {{ profile.role }}
+    <span v-if="profile.startYear && profile.endYear">
+      from {{ profile.startYear }} to {{ profile.endYear }}
     </span>
-    {{ props.profile.personalHistory }}
+    {{ profile.personalHistory }}
   </div>
 </template>
 
 <script setup>
-const props = defineProps({
+defineProps({
   profile: Object,
 });
 </script>
