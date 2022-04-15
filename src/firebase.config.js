@@ -27,13 +27,9 @@ const auth = getAuth(firebaseAuth)
 const firebaseFirestore = initializeApp(firebaseConfig);
 const firestore = getFirestore(firebaseFirestore)
 
-export const firebasePlugin = {
-	install: () => {
-		return {
+export  {
 			rtdb,
 			auth,
 			bucket,
 			firestore
 		}
-	}
-}

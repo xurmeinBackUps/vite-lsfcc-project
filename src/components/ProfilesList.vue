@@ -1,17 +1,26 @@
 <template>
   <div class="mdc-card">
     <ul v-for="profile in store.profiles">
-      <ProfileContent :profile="profile" />
+      <ProfilesListItem :profile="profile" />
     </ul>
   </div>
 </template>
 
-<script setup>
+<script>
 import { useProfiles } from "@/stores/profiles.js";
-import ProfileContent from "./ProfileContent.vue";
+import ProfilesListItem from "./ProfilesListItem.vue";
 
-const store = useProfiles();
-store.fetchProfiles();
+export default {
+  setup() {
+    const store = useProfiles();
+    store.fetchProfiles();
+    // store.pObjects();
+    return {
+      store,
+    };
+  },
+  components: { ProfilesListItem },
+};
 
 // export default {
 // 	beforeMount
