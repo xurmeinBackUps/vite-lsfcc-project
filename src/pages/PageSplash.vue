@@ -49,12 +49,13 @@ import { RouterLink } from "vue-router";
 </script>
 
 <style lang="scss" scoped>
-@import "@/assets/scss/variables.scss";
+@import "~/assets/scss/variables.scss";
 
 .splash-grid {
   padding-top: 2em;
   display: grid;
   gap: 50px;
+
   @media (max-width: $splash-grid-breakpoint) {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
@@ -75,13 +76,14 @@ import { RouterLink } from "vue-router";
   &__media {
     // min-height: 250px;
     height: 350px;
+
     &.b1 {
-      background-image: url("https://firebasestorage.googleapis.com/v0/b/lsfcc-project-moco.appspot.com/o/pictures%2Fbuildings%2Flincoln-building-1b.jpg?alt=media&token=77c3906c-4e6c-4dee-8506-66d3eacfd7af");
+      background-image: url("~/assets/lincoln-building-1b.jpg");
       object-fit: scale-down;
     }
 
     &.b2 {
-      background-image: url("https://firebasestorage.googleapis.com/v0/b/lsfcc-project-moco.appspot.com/o/pictures%2Fbuildings%2Flincoln-building-2.jpg?alt=media&token=4554318f-f953-4465-a177-a5f8d24971d2");
+      background-image: url("~/assets/lincoln-building-2.jpg");
       object-fit: scale-down;
     }
 

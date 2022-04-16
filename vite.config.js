@@ -16,7 +16,9 @@ export default defineConfig({
   envPrefix: 'FB_',
   resolve: {
     alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url))
+      '@': fileURLToPath(new URL('./src', import.meta.url)),
+      '~': fileURLToPath(new URL('./public', import.meta.url))
+
     }
   },
   build: {

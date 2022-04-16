@@ -3,11 +3,8 @@
     <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
       <router-link to="/">
         <div class="nav-banner">
-          <img
-            alt="Lincoln School for Colored Children project logo"
-            class="logo mdc-top-app-bar__navigation-icon"
-            src="@/assets/logo.png"
-          />
+          <img alt="Lincoln School for Colored Children project logo" class="logo mdc-top-app-bar__navigation-icon"
+            src="/assets/logo.png" />
 
           <h1 class="mdc-top-app-bar__title title">
             Lincoln School for Colored Children Project
@@ -40,7 +37,7 @@ import { RouterLink } from "vue-router";
 </script>
 
 <style lang="scss" scoped>
-@import "@/assets/scss/variables.scss";
+@import "~/assets/scss/variables.scss";
 
 .mdc-tab-bar {
   display: inline-flex;
