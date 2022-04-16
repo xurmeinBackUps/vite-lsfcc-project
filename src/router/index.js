@@ -8,7 +8,8 @@ const PageBlog = () => import('@/pages/PageBlog.vue')
 const PageProfiles = () => import('@/pages/PageProfiles.vue')
 const PageTranscripts = () => import('@/pages/PageTranscripts.vue')
 const PageMemorabilia = () => import('@/pages/PageMemorabilia.vue')
-
+const TheLoginModal = () => import('@/layout/TheLoginModal.vue')
+const TheContactFormModal = () => import('@/layout/TheContactFormModal.vue')
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -29,6 +30,18 @@ const router = createRouter({
       name: 'partners',
 
       component: PagePartners,
+    },
+    {
+      path: '/contact',
+      name: 'contact-form',
+      component: TheContactFormModal,
+      props: true
+    },
+    {
+      path: '/login',
+      name: 'login-form',
+      component: TheLoginModal,
+      props: true
     },
     {
       path: '/schools/:bId',
