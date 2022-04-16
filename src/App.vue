@@ -13,7 +13,7 @@
 
 <script setup>
 import { RouterView } from "vue-router";
-import TheNavbar from "./components/TheNavbar.vue";
+import TheNavbar from "./layout/TheNavbar.vue";
 </script>
 
 <style lang="scss">

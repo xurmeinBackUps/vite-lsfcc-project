@@ -61,5 +61,5 @@
 </template>
 
 <script setup>
-import PartnerEntry from "@/layouts/PartnerEntry.vue";
+import PartnerEntry from "@/layout/PartnerEntry.vue";
 </script>

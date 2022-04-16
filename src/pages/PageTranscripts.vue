@@ -1,18 +1,11 @@
 <template>
-  <p>Page Transcripts</p>
+  <content-wrapper>
+    <template #base-component> Page Transcipts </template>
+  </content-wrapper>
 </template>
 
-<script>
-export default {
-  name: "PageTranscipts",
-  data() {
-    return {
-      transcripts: [],
-    };
-  },
-  props: {},
-  methods: {},
-};
+<script setup>
+import ContentWrapper from "@/layout/ContentWrapper.vue";
 </script>
 
 <style lang="scss" scoped></style>

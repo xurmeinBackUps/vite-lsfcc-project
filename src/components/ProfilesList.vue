@@ -1,9 +1,7 @@
 <template>
-  <div class="mdc-card">
-    <ul v-for="profile in store.profiles">
-      <ProfilesListItem :profile="profile" />
-    </ul>
-  </div>
+  <ul v-for="profile in store.profiles">
+    <ProfilesListItem :profile="profile" />
+  </ul>
 </template>
 
 <script>

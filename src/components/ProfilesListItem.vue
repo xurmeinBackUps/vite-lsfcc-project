@@ -1,13 +1,9 @@
 <template>
   <div>
     {{ profile.fullname }}
-    <span v-if="profile.birthYear && profile.deathYear">
-      ({{ profile.birthYear }} - {{ profile.deathYear }})
-    </span>
-    {{ profile.role }}
-    <span v-if="profile.startYear && profile.endYear">
-      from {{ profile.startYear }} to {{ profile.endYear }}
-    </span>
+    <span v-if="profile.lifetimer"> ({{ profile.lifetime }}) </span>
+    {{ profile.pro }}
+    <span v-if="profile.employmentDates"> from {{ profile.employmentDates }} </span>
     {{ profile.personalHistory }}
   </div>
 </template>
