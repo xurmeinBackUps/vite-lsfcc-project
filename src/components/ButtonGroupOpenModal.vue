@@ -6,5 +6,8 @@
 </template>
 <script setup>
 import ButtonOpenModal from "../components/ButtonOpenModal.vue";
+defineProps({
+  targetModal: String,
+});
 </script>
 <style></style>

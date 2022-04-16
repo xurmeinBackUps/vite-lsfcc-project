@@ -35,13 +35,11 @@ const router = createRouter({
       path: '/contact',
       name: 'contact-form',
       component: TheContactFormModal,
-      props: true
     },
     {
       path: '/login',
       name: 'login-form',
       component: TheLoginModal,
-      props: true
     },
     {
       path: '/schools/:bId',
