@@ -10,6 +10,7 @@ const PageTranscripts = () => import('@/pages/PageTranscripts.vue')
 const PageMemorabilia = () => import('@/pages/PageMemorabilia.vue')
 const TheLoginModal = () => import('@/layout/TheLoginModal.vue')
 const TheContactFormModal = () => import('@/layout/TheContactFormModal.vue')
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
