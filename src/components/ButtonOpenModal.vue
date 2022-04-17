@@ -15,13 +15,7 @@ defineProps({
 
 function openModal(e, modal) {
   nextTick(() => {
-    if (modal === "TheLoginModal") {
-      router.push({
-        path: `/login`,
-        name: "login-form",
-        component: () => import(/* @vite-ignore */ `@/layout/${modal}.vue`),
-      });
-    } else if (modal === "TheContactFormModal") {
+    if (modal === "TheContactFormModal") {
       router.push({
         path: `/contact`,
         name: "contact-form",

@@ -1,17 +1,7 @@
 <template>
-  <div
-    class="mdc-dialog__surface"
-    role="alertdialog"
-    aria-modal="true"
-    aria-labelledby="my-dialog-title"
-    aria-describedby="my-dialog-content"
-  >
+  <div>
     <!-- Title cannot contain leading whitespace due to mdc-typography-baseline-top() -->
-    <h2 class="mdc-dialog__title" id="my-dialog-title">
-      <!--
-     -->Choose a Ringtone<!--
-   -->
-    </h2>
+    <h2 class="mdc-dialog__title" id="my-dialog-title">CONTACT FORM MODAL</h2>
     <div class="mdc-dialog__content" id="my-dialog-content">
       <ul class="mdc-list">
         <li class="mdc-list-item" tabindex="0">
@@ -41,26 +31,12 @@
       </ul>
     </div>
     <div class="mdc-dialog__actions">
-      <button
-        type="button"
-        class="mdc-button mdc-dialog__button"
-        data-mdc-dialog-action="close"
-      >
-        <div class="mdc-button__ripple"></div>
-        <span class="mdc-button__label">Cancel</span>
-      </button>
-      <button
-        type="button"
-        class="mdc-button mdc-dialog__button"
-        data-mdc-dialog-action="accept"
-      >
-        <div class="mdc-button__ripple"></div>
-        <span class="mdc-button__label">OK</span>
-      </button>
+      <mcw-dialog-button @click="this.$router.back()">Dismiss</mcw-dialog-button>
+      <mcw-dialog-button @click="this.$router.back()" isDefault>Accept</mcw-dialog-button>
     </div>
   </div>
 </template>
 
 <script setup></script>
 
-<style></style>
+<style scoped lang="scss"></style>

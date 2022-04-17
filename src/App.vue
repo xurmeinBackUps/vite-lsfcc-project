@@ -1,12 +1,18 @@
 <template>
   <div class="app-container">
-    <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
-      <TheNavbar />
-    </header>
-    <div class="mdc-top-app-bar--fixed-adjust">
-      <main class="main">
-        <RouterView />
-      </main>
+    <mcw-icon-button
+      >menu
+      <TheLoginTool open />
+    </mcw-icon-button>
+    <div class="mdc-drawer-app-content drawer-main-content">
+      <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+        <TheNavbar />
+      </header>
+      <div class="mdc-top-app-bar--fixed-adjust">
+        <main class="main">
+          <RouterView />
+        </main>
+      </div>
     </div>
   </div>
 </template>
@@ -14,6 +20,7 @@
 <script setup>
 import { RouterView } from "vue-router";
 import TheNavbar from "./layout/TheNavbar.vue";
+import TheLoginTool from "./layout/TheLoginTool.vue";
 </script>
 
 <style lang="scss">
