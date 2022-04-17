@@ -9,7 +9,7 @@
     <!-- Title cannot contain leading whitespace due to mdc-typography-baseline-top() -->
     <h2 class="mdc-dialog__title" id="my-dialog-title">
       <!--
-     -->THE LOGIN MODAL<!--
+     -->Choose a Ringtone<!--
    -->
     </h2>
     <div class="mdc-dialog__content" id="my-dialog-content">
@@ -61,6 +61,6 @@
   </div>
 </template>
 
-<script></script>
+<script setup></script>
 
-<style lang="scss" scoped></style>
+<style></style>
