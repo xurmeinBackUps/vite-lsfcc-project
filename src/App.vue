@@ -1,24 +1,56 @@
 <template>
   <div class="app-container">
-    <TheLoginTool :open="true" />
+    <TheLoginTool />
     <div class="mdc-drawer-app-content drawer-main-content">
-      <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
-        <TheNavbar />
-      </header>
-      <div class="mdc-top-app-bar--fixed-adjust">
-        <main class="main">
-          <RouterView />
-        </main>
+      <div>
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+          <TheNavbar />
+        </header>
+        <div class="mdc-top-app-bar--fixed-adjust">
+          <main class="main">
+            <RouterView />
+          </main>
+        </div>
       </div>
-      <mcw-fab class="toggle" mini icon="login"></mcw-fab>
     </div>
+    <mcw-fab class="toggle" mini icon="login" @click="toggleDrawer"></mcw-fab>
   </div>
 </template>
 
-<script setup>
+<script>
 import { RouterView } from "vue-router";
 import TheNavbar from "./layout/TheNavbar.vue";
 import TheLoginTool from "./layout/TheLoginTool.vue";
+import { useUiState } from "./stores/uiState.js";
+
+export default {
+  setup() {
+    const uiStore = useUiState();
+
+    return { uiStore };
+  },
+
+  components: {
+    RouterView,
+    TheLoginTool,
+    TheNavbar,
+  },
+
+  methods: {
+    toggleDrawer() {
+      let dState = this.uiStore.drawerState;
+      if (dState === false) {
+        this.uiStore.$patch({
+          drawerState: true,
+        });
+      } else {
+        this.uiStore.$patch({
+          drawerState: false,
+        });
+      }
+    },
+  },
+};
 </script>
 
 <style lang="scss">
