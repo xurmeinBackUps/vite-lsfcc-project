@@ -1,7 +1,7 @@
 <template>
   <mcw-drawer
     ref="drawer"
-    v-model="state.open"
+    v-model="open"
     modal
     toolbar-spacer
     class="primary-drawer login-tools"

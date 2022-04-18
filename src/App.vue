@@ -1,9 +1,6 @@
 <template>
   <div class="app-container">
-    <mcw-icon-button
-      >menu
-      <TheLoginTool open />
-    </mcw-icon-button>
+    <TheLoginTool :open="true" />
     <div class="mdc-drawer-app-content drawer-main-content">
       <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
         <TheNavbar />
@@ -13,6 +10,7 @@
           <RouterView />
         </main>
       </div>
+      <mcw-fab class="toggle" mini icon="login"></mcw-fab>
     </div>
   </div>
 </template>
@@ -36,5 +34,12 @@ import TheLoginTool from "./layout/TheLoginTool.vue";
 
 .mdc-top-app-bar {
   background: $secondary;
+}
+
+.toggle {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background-color: transparent;
 }
 </style>
