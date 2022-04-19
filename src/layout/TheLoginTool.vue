@@ -5,6 +5,7 @@
     dismissible
     toolbar-spacer
     class="primary-drawer login-tools"
+    @click="open = false"
   >
     <hr class="mdc-list-divider" />
     <ul>
