@@ -28,8 +28,8 @@ const firebaseFirestore = initializeApp(firebaseConfig);
 const firestore = getFirestore(firebaseFirestore)
 
 export  {
-			rtdb,
-			auth,
-			bucket,
-			firestore
-		}
+  rtdb,
+  auth,
+  bucket,
+  firestore
+}
