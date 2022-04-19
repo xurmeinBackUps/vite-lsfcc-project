@@ -1,18 +1,11 @@
 <template>
-  <p>Memorabilia Page</p>
-  <!-- TODO: add "under construction" .lottie file -->
+  <content-wrapper>
+    <template #base-component> Page Memorabilia </template>
+  </content-wrapper>
 </template>
 
-<script>
-export default {
-  name: "PageMemorabilia",
-  created() {},
-  data() {
-    return {};
-  },
-  props: {},
-  methods: {},
-};
+<script setup>
+import ContentWrapper from "@/layout/ContentWrapper.vue";
 </script>
 
 <style lang="scss" scoped></style>

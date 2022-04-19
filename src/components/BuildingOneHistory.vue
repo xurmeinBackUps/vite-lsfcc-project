@@ -3,14 +3,14 @@
     <h3 class="mdc-card__title">{{ store.name }}</h3>
     <br />
     <ul v-for="e in store.entries" :key="e.key">
-      <span>{{ e.id }}</span>
-      <li>{{ e }}</li>
+      <BuildingHistoryItem :entry="e" />
     </ul>
   </div>
 </template>
 
 <script>
 import { useBuildingOne } from "@/stores/buildingOne.js";
+import BuildingHistoryItem from "./BuildingHistoryItem.vue";
 
 export default {
   setup() {
@@ -21,6 +21,7 @@ export default {
       store,
     };
   },
+  components: { BuildingHistoryItem },
 };
 </script>
 

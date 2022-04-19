@@ -1,5 +1,5 @@
 <template>
-  <div class="mdc-card">
+  <div>
     <div v-if="this.$route.params.bId === 'building1'">
       <BuildingOneHistory />
     </div>

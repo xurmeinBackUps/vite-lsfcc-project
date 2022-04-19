@@ -1,15 +1,13 @@
 <template>
-  <div class="about">
-    <h1>About the LSFCC Project</h1>
-  </div>
+  <content-wrapper>
+    <template #base-component>
+      Page About
+      <ButtonGroupOpenModal />
+    </template>
+  </content-wrapper>
 </template>
 
-<style scoped lang="scss">
-/* @media (min-width: 1024px) { */
-  // .about {
-  //   min-height: 100vh;
-  //   display: flex;
-  //   align-items: center;
-  // }
-/* } */
-</style>
+<script setup>
+import ContentWrapper from "@/layout/ContentWrapper.vue";
+import ButtonGroupOpenModal from "../components/ButtonGroupOpenModal.vue";
+</script>

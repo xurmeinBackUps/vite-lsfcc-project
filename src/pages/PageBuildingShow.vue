@@ -1,13 +1,12 @@
 <template>
-  <div>
-    <HistorySelector :b-id="bId" />
-  </div>
+  <content-wrapper>
+    <template #base-component>
+      <HistorySwitch :b-id="bId" />
+    </template>
+  </content-wrapper>
 </template>
 
 <script setup>
-import HistorySelector from "@/components/HistorySelector.vue";
-
-defineProps({
-  bId: String,
-});
+import ContentWrapper from "@/layout/ContentWrapper.vue";
+import HistorySwitch from "@/components/HistorySwitch.vue";
 </script>

@@ -27,9 +27,9 @@ const auth = getAuth(firebaseAuth)
 const firebaseFirestore = initializeApp(firebaseConfig);
 const firestore = getFirestore(firebaseFirestore)
 
-export {
-  rtdb,
-  auth,
-  bucket,
-  firestore
-}
+export  {
+			rtdb,
+			auth,
+			bucket,
+			firestore
+		}
