@@ -1,5 +1,10 @@
 <template>
-  <mcw-drawer v-model="open" modal class="primary-drawer login-tools" @click="drawer()">
+  <mcw-drawer
+    v-model="open"
+    modal
+    class="primary-drawer login-tools"
+    @click="drawer()"
+  >
     <LoginForm />
   </mcw-drawer>
 </template>

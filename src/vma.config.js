@@ -4,7 +4,7 @@ import 'material-components-web/dist/material-components-web.min.js';
 
 const vma = {
   install: (app) => {
-      app.use(VueMaterialAdapter)
+    app.use(VueMaterialAdapter)
   }
 }
 

@@ -1,26 +1,28 @@
 <template>
   <div class="app-container">
-    <TheLoginTool :open="uiStore.drawerState" />
+    <TheLoginPanel :open="uiStore.drawerState" />
     <div class="mdc-drawer-app-content drawer-main-content">
-      <div>
-        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
-          <TheNavbar />
-        </header>
-        <div class="mdc-top-app-bar--fixed-adjust">
-          <main class="main">
-            <RouterView />
-          </main>
-        </div>
+      <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+        <TheNavbar />
+      </header>
+      <div class="mdc-top-app-bar--fixed-adjust">
+        <main class="main">
+          <RouterView />
+        </main>
       </div>
     </div>
-    <mcw-material-icon class="toggle" icon="login" @click="drawer()" />
+    <mcw-material-icon
+      class="toggle"
+      icon="login"
+      @click="drawer()"
+    />
   </div>
 </template>
 
 <script setup>
 import { RouterView } from "vue-router";
 import TheNavbar from "./layout/TheNavbar.vue";
-import TheLoginTool from "./layout/TheLoginTool.vue";
+import TheLoginPanel from "./layout/TheLoginPanel.vue";
 import { useUiState } from "./stores/uiState.js";
 
 const uiStore = useUiState();
@@ -45,15 +47,11 @@ const drawer = () => {
   margin-bottom: 1.5em;
 }
 
-.mdc-top-app-bar {
-  background: $secondary;
-}
-
 .toggle {
   bottom: 10px;
   left: 10px;
-  color: $accent;
+  color: $secondary;
   cursor: default;
-  font-size: x-small;
+  font-size: small;
 }
 </style>
