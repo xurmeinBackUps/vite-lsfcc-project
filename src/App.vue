@@ -1,6 +1,6 @@
 <template>
   <div class="app-container">
-    <TheLoginTool />
+    <TheLoginTool :open="uiStore.drawerState" />
     <div class="mdc-drawer-app-content drawer-main-content">
       <div>
         <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
@@ -13,7 +13,7 @@
         </div>
       </div>
     </div>
-    <mcw-fab class="toggle" mini icon="login" @click="toggleDrawer"></mcw-fab>
+    <mcw-fab class="toggle" mini icon="login" @click="drawer()"></mcw-fab>
   </div>
 </template>
 
@@ -37,17 +37,8 @@ export default {
   },
 
   methods: {
-    toggleDrawer() {
-      let dState = this.uiStore.drawerState;
-      if (dState === false) {
-        this.uiStore.$patch({
-          drawerState: true,
-        });
-      } else {
-        this.uiStore.$patch({
-          drawerState: false,
-        });
-      }
+    drawer() {
+      this.uiStore.toggleDrawer();
     },
   },
 };
