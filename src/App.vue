@@ -13,40 +13,30 @@
         </div>
       </div>
     </div>
-    <mcw-fab class="toggle" mini icon="login" @click="drawer()"></mcw-fab>
+    <mcw-material-icon class="toggle" icon="login" @click="drawer()" />
   </div>
 </template>
 
-<script>
+<script setup>
 import { RouterView } from "vue-router";
 import TheNavbar from "./layout/TheNavbar.vue";
 import TheLoginTool from "./layout/TheLoginTool.vue";
 import { useUiState } from "./stores/uiState.js";
 
-export default {
-  setup() {
-    const uiStore = useUiState();
+const uiStore = useUiState();
 
-    return { uiStore };
-  },
-
-  components: {
-    RouterView,
-    TheLoginTool,
-    TheNavbar,
-  },
-
-  methods: {
-    drawer() {
-      this.uiStore.toggleDrawer();
-    },
-  },
+const drawer = () => {
+  uiStore.openDrawer();
 };
 </script>
 
 <style lang="scss">
 @import "@/assets/scss/variables.scss";
 @import url("https://fonts.googleapis.com/css2?family=Forum&family=Roboto:ital,wght@0,400;0,700;1,300&display=swap");
+
+.app-container {
+  position: relative;
+}
 
 .main {
   width: 90%;
@@ -60,9 +50,10 @@ export default {
 }
 
 .toggle {
-  position: absolute;
   bottom: 10px;
   left: 10px;
-  background-color: transparent;
+  color: $accent;
+  cursor: default;
+  font-size: x-small;
 }
 </style>

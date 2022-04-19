@@ -9,17 +9,12 @@ export const useUiState = defineStore('uiState', {
     }
   },
 
-  getters: {
-
-  },
-
   actions: {
-    toggleDrawer() {
-      if (this.$state.drawerState === false) {
-        this.$state.drawerState = true
-      } else {
-        this.$state.drawerState = false
-      }
+    openDrawer() {
+      this.$state.drawerState = true
     },
+    closeDrawer() {
+      this.$state.drawerState = false
+    }
   }
 })
