@@ -3,7 +3,7 @@ import { rtdb, auth } from "../firebase.config.js";
 import { ref, onValue } from 'firebase/database'
 import { signInWithEmailAndPassword, signOut } from "@firebase/auth";
 
-export const useUsers = defineStore('user', {
+export const useAuth = defineStore('auth', {
   state () {
     return {
       users: [],
@@ -34,7 +34,8 @@ export const useUsers = defineStore('user', {
       ).then((userCredential) => {
         this.$state.currentUser = userCredential.user
       }).catch((error) => {
-        window.alert(`${error}`)
+        console.log(`${error}`)
+        window.alert(`debug info: ###EMAIL = ${email} ###PASS = ${password}`)
       })
     },
 

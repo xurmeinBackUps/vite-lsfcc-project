@@ -21,7 +21,10 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { onUpdated, ref } from 'vue';
+import { useAuth } from '@/stores/userAuth.js'
+
+const users = useAuth()
 
 const props = defineProps({
     inputType: String
@@ -29,6 +32,19 @@ const props = defineProps({
 
 const userVal = ref("")
 
+function setCredential(val, type) {
+  if(type === 'email') {
+    users.credentials.email = val
+  }
+
+  if(type === 'password'){
+        users.credentials.password = val
+  }
+}
+
+onUpdated(() => {
+  setCredential(userVal, props.inputType)
+})
 </script>
 
 <style scoped lang="scss">

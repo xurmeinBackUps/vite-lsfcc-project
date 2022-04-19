@@ -34,7 +34,21 @@ const drawer = () => {
 <style lang="scss" scoped>
 @import "@/assets/scss/variables.scss";
 
+.primary-drawer {
+
+  height: 100%;
+
+  &*{
+    height: inherit;
+  }
+}
 .login-tools {
   text-align: center;
 }
+
+.mdc-drawer__header {
+  background: $alert;
+}
+
+
 </style>
