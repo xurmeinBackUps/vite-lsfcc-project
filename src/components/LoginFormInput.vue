@@ -14,7 +14,6 @@
         v-model="userVal"
         class="mdc-text-field__input"
         type="text"
-        aria-labelledby="input-type"
       />
     </label>
   </div>

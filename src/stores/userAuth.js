@@ -24,18 +24,17 @@ export const useAuth = defineStore('auth', {
     },
 
     login() {
-      let email = this.$state.credentials.email
-      let password = this.$state.credentials.password
-
+      console.log(auth)
+      console.log(`$state.credentials.email == ${this.$state.credentials.email}`)
+      console.log(`$state.credentials.password == ${this.$state.credentials.password}`)
       signInWithEmailAndPassword(
         auth,
-        email,
-        password
+        this.$state.credentials.email,
+        this.$state.credentials.password
       ).then((userCredential) => {
-        this.$state.currentUser = userCredential.user
-      }).catch((error) => {
+        userCredential.user = this.$state.currentUser
+      }).catch(error => {
         console.log(`${error}`)
-        window.alert(`debug info: ###EMAIL = ${email} ###PASS = ${password}`)
       })
     },
 
