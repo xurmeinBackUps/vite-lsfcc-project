@@ -2,16 +2,23 @@
   <mcw-drawer
     v-model="open"
     modal
-    class="primary-drawer login-tools"
-    @click="drawer()"
+    class="primary-drawer"
   >
-    <LoginForm />
+    <div class="login-tools">
+      <div class="mdc-drawer__header">
+        <p>Admin Login</p>
+        <ButtonClose @click="drawer()" />
+      <hr />
+      </div>
+      <LoginForm />
+    </div>
   </mcw-drawer>
 </template>
 
 <script setup>
 import { useUiState } from "@/stores/uiState.js";
 import LoginForm from "../components/LoginForm.vue";
+import ButtonClose from "../components/ButtonClose.vue";
 
 const uiStore = useUiState();
 
@@ -26,4 +33,8 @@ const drawer = () => {
 
 <style lang="scss" scoped>
 @import "@/assets/scss/variables.scss";
+
+.login-tools {
+  text-align: center;
+}
 </style>

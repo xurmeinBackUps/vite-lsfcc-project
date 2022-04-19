@@ -1,17 +1,14 @@
 <template>
-  <ul>
-    <li>
-      <input v-model="email" />
-    </li>
-    <li>
-      <input v-model="password" />
-    </li>
-  </ul>
+  <form>
+    <LoginFormInput :input-type="email" />
+    <LoginFormInput :input-type="password" />
+  </form>
 </template>
 
 <script setup>
 import { ref } from "vue";
+import LoginFormInput from "./LoginFormInput.vue";
 
-const email = ref("");
-const password = ref("");
+// const email = ref("email");
+// const password = ref("password");
 </script>
