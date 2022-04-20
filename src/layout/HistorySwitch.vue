@@ -14,4 +14,3 @@
 import BuildingOneHistory from "@/components/BuildingOneHistory.vue";
 import BuildingTwoHistory from "@/components/BuildingTwoHistory.vue";
 </script>
-<style></style>

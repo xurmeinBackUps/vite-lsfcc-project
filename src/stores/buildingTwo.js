@@ -7,6 +7,7 @@ export const useBuildingTwo = defineStore('building2', {
 		name: '',
 		entries: []
 	}),
+
 	actions: {
 		fetchName() {
 			const $name = ref(rtdb, '/schools/building2/name')
