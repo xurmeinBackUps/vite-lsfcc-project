@@ -8,5 +8,9 @@
 
 <script setup>
 import ContentWrapper from "@/layout/ContentWrapper.vue";
-import HistorySwitch from "@/components/HistorySwitch.vue";
+import HistorySwitch from "@/layout/HistorySwitch.vue";
+
+defineProps({
+  bId: String,
+});
 </script>

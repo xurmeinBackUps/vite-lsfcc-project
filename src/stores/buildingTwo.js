@@ -1,5 +1,5 @@
 import { defineStore } from "pinia";
-import { rtdb } from '../firebase.config.js'
+import rtdb from '@/plugins/rtdb.js'
 import { ref, onValue } from 'firebase/database'
 
 export const useBuildingTwo = defineStore('building2', {
@@ -10,14 +10,14 @@ export const useBuildingTwo = defineStore('building2', {
 	actions: {
 		fetchName() {
 			const $name = ref(rtdb, '/schools/building2/name')
-			onValue($name, (snapshot) => {
-				this.$state.name = snapshot.val()
+			onValue($name, async (snapshot) => {
+				this.$state.name = await snapshot.val()
 			})
 		},
 		fetchEntries() {
 			const $entries = ref(rtdb, 'schools/building2/entries')
-			onValue($entries, (snapshot) => {
-				this.$state.entries = snapshot.val()
+			onValue($entries, async (snapshot) => {
+				this.$state.entries = await snapshot.val()
 			})
 		},
 	}

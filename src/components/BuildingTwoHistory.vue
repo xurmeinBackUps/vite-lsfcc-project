@@ -1,7 +1,7 @@
 <template>
   <div>
     <h3 class="mdc-card__title">{{ store.name }}</h3>
-    <br />
+    <hr />
     <ul v-for="e in store.entries" :key="e.key">
       <BuildingHistoryItem :entry="e" />
     </ul>

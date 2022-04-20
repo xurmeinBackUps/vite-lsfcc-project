@@ -1,9 +1,11 @@
 <template>
+<Suspense>
   <form>
     <LoginFormInput :input-type="'email'"/>
     <LoginFormInput :input-type="'password'"/>
     <LoginFormSubmit @click.prevent="submitAuth" />
   </form>
+</Suspense>
 </template>
 
 <script setup>

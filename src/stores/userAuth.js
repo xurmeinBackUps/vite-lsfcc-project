@@ -1,7 +1,8 @@
 import { defineStore } from "pinia";
-import { rtdb, auth } from "../firebase.config.js";
+import rtdb from "@/plugins/rtdb.js";
+import auth from '@/plugins/auth.js'
 import { ref, onValue } from 'firebase/database'
-import { signInWithEmailAndPassword, signOut } from "@firebase/auth";
+import { signInWithEmailAndPassword, signOut } from "firebase/auth";
 
 export const useAuth = defineStore('auth', {
   state () {
