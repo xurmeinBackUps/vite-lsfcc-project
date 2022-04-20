@@ -10,6 +10,6 @@
 @import "@/assets/scss/variables.scss";
 
 .mdc-button {
-    background: $alert;
+  background: $alert;
 }
 </style>

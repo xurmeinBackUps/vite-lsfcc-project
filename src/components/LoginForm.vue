@@ -19,7 +19,7 @@ onMounted(() => {
   __auth.fetchAccounts()
 })
 
-const submitAuth = (async () => {
-  await __auth.login()
+const submitAuth = (() => {
+  __auth.login()
 })
 </script>

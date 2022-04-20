@@ -24,7 +24,6 @@ export const useAuth = defineStore('auth', {
     },
 
     login() {
-      console.log(auth)
       console.log(`$state.credentials.email == ${this.$state.credentials.email}`)
       console.log(`$state.credentials.password == ${this.$state.credentials.password}`)
       signInWithEmailAndPassword(
