@@ -34,7 +34,6 @@ const drawer = () => {
 
 <style lang="scss">
 @import "@/assets/scss/variables.scss";
-@import url("https://fonts.googleapis.com/css2?family=Forum&family=Roboto:ital,wght@0,400;0,700;1,300&display=swap");
 
 .app-container {
   position: relative;
