@@ -1,51 +1,52 @@
 <template>
-  <div class="mdc-layout-grid splash-grid">
+  <div class="splash-grid">
     <router-link :to="{ name: 'building-show', params: { bId: 'building1' } }">
-      <div class="mdc-card">
-        <div class="mdc-card__media b1"></div>
-        <span class="mdc-card__content link">Building One</span>
-      </div>
+      <v-card class="splash-card">
+        <v-img height="200px" class="b1" />
+        <v-card-title class="link">Building One</v-card-title>
+      </v-card>
     </router-link>
 
     <router-link :to="{ name: 'building-show', params: { bId: 'building2' } }">
-      <div class="mdc-card">
-        <div class="mdc-card__media b2"></div>
-        <span class="mdc-card__content link">Building Two</span>
-      </div>
+      <v-card class="splash-card">
+        <v-img height="200px" class="b2" />
+        <v-card-title class="link">Building Two</v-card-title>
+      </v-card>
     </router-link>
 
     <router-link to="/profiles">
-      <div class="mdc-card">
-        <div class="mdc-card__media icon yrbk"></div>
-        <span class="mdc-card__content link">Faculty & Staff</span>
-      </div>
+      <v-card class="splash-card">
+        <v-img height="200px" class="icon yrbk" />
+        <v-card-title class="link">Faculty & Staff</v-card-title>
+      </v-card>
     </router-link>
 
     <router-link to="/memorabilia">
-      <div class="mdc-card">
-        <div class="mdc-card__media icon varsity"></div>
-        <span class="mdc-card__content link">Memorabilia</span>
-      </div>
+      <v-card class="splash-card">
+        <v-img height="200px" class="icon varsity" />
+        <v-card-title class="link">Memorabilia</v-card-title>
+      </v-card>
     </router-link>
 
     <router-link to="/transcripts">
-      <div class="mdc-card">
-        <div class="mdc-card__media icon trans"></div>
-        <span class="mdc-card__content link">Transcripts</span>
-      </div>
+      <v-card class="splash-card">
+        <v-img height="200px" class="icon trans" />
+        <v-card-title class="link">Transcripts</v-card-title>
+      </v-card>
     </router-link>
 
     <router-link to="/blog">
-      <div class="mdc-card">
-        <div class="mdc-card__media icon blog"></div>
-        <span class="mdc-card__content link">Blog</span>
-      </div>
+      <v-card class="splash-card">
+        <v-img height="200px" class="icon blog" />
+        <v-card-title class="link">Blog</v-card-title>
+      </v-card>
     </router-link>
   </div>
 </template>
 
 <script setup>
 import { RouterLink } from "vue-router";
+import { VCard, VImg, VCardTitle } from 'vuetify/lib/components'
 </script>
 
 <style lang="scss" scoped>
@@ -66,27 +67,26 @@ import { RouterLink } from "vue-router";
   }
 }
 
-.mdc-card {
+.splash-card {
   border-radius: 3em;
   overflow: hidden;
   margin: auto;
   max-width: 500px;
+  height: 350px;
 
-  &__media {
-    // min-height: 250px;
-    height: 350px;
-    &.b1 {
+}
+b1 {
       background-image: url("https://firebasestorage.googleapis.com/v0/b/lsfcc-project-moco.appspot.com/o/pictures%2Fbuildings%2Flincoln-building-1b.jpg?alt=media&token=77c3906c-4e6c-4dee-8506-66d3eacfd7af");
-      object-fit: scale-down;
+      // object-fit: scale-down;
     }
 
-    &.b2 {
+b2 {
       background-image: url("https://firebasestorage.googleapis.com/v0/b/lsfcc-project-moco.appspot.com/o/pictures%2Fbuildings%2Flincoln-building-2.jpg?alt=media&token=4554318f-f953-4465-a177-a5f8d24971d2");
-      object-fit: scale-down;
+      // object-fit: scale-down;
     }
 
-    &.icon {
-      background-size: contain;
+.icon {
+  background-size: contain;
 
       &.yrbk {
         background-image: url("@/assets/icons/yearbook.png");
@@ -103,12 +103,10 @@ import { RouterLink } from "vue-router";
       &.blog {
         background-image: url("@/assets/icons/blog.png");
       }
-    }
-  }
 }
 
 .link {
-  color: $accent;
+  color: $alert;
   text-align: center;
   width: 100%;
   border-top-left-radius: 0;

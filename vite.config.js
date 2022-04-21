@@ -13,11 +13,11 @@ export default defineConfig({
     vue(),
     nodeResolve(),
     ViteWebfontDownload([
-      'https://fonts.googleapis.com/icon?family=Material+Icons',
+      'https://cdn.jsdelivr.net/npm/@mdi/font@6.x/css/materialdesignicons.min.css',
       'https://fonts.googleapis.com/css2?family=Forum&family=Roboto:ital,wght@0,400;0,700;1,300&display=swap',
     ]),
     ViteRestart({
-      restart: ['[*].config.js'],
+      restart: ['[*].config.js', 'App.vue'],
     }),
     FullReload(['src/**/*']),
     ViteTips(),

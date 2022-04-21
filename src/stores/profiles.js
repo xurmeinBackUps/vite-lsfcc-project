@@ -1,20 +1,21 @@
-import { defineStore } from "pinia";
-import { rtdb } from "../firebase.config.js";
+import { defineStore } from 'pinia'
+import { rtdb } from '../firebase.config.js'
 import { ref, onValue } from 'firebase/database'
 
 export const useProfiles = defineStore('profiles', {
-  state () {
+  state() {
     return {
-      profiles: []
+      profileObjects: [],
+      profile: {},
     }
   },
 
   actions: {
-    fetchProfiles(){
+    fetchProfiles() {
       const $p = ref(rtdb, '/profiles')
       onValue($p, (snapshot) => {
-        this.$state.profiles = snapshot.val()
+        this.$state.profileObjects = snapshot.val()
       })
-    }
-  }
+    },
+  },
 })

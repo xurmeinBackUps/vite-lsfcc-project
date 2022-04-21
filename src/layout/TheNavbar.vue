@@ -1,59 +1,41 @@
 <template>
-  <nav class="mdc-top-app-bar__row">
+<v-row>
+  <v-app-bar color="secondary" app >
       <router-link to="/">
 
-        <v-app-bar-nav-icon>
+        <v-app-bar-nav-icon icon>
+          <v-icon color="blue">mdi-home</v-icon>
         </v-app-bar-nav-icon>
-          <img
-            alt="Lincoln School for Colored Children project logo"
-            class="logo mdc-top-app-bar__navigation-icon"
-            src="@/assets/logo.png"
-          />
-          <v-toolbar-title>
+          <v-app-bar-title>
             Lincoln School for Colored Children Project
-          </v-toolbar-title>
+          </v-app-bar-title>
       </router-link>
         <v-spacer></v-spacer>
         <router-link to="/about">
-            <v-btn>About</v-btn>
-
+            <v-btn variant="outlined">
+            About
+            </v-btn>
         </router-link>
+<v-spacer></v-spacer>
         <router-link to="/partners">
-            <v-btn>Partners</v-btn>
+            <v-btn variant="outlined">
+            Partners
 
+            </v-btn>
         </router-link>
-  </nav>
+  </v-app-bar>
+        </v-row>
 </template>
 
 <script setup>
 import { RouterLink } from "vue-router";
-import { VAppBarNavIcon, VToolbarTitle, VSpacer, VBtn } from "vuetify/lib/components";
+import { VAppBarNavIcon, VAppBarTitle, VSpacer, VBtn, VRow } from "vuetify/lib/components";
 </script>
 
 <style lang="scss" scoped>
 @import "@/assets/scss/variables.scss";
 
-.mdc-tab-bar {
-  display: inline-flex;
-  width: fit-content;
-}
-
-.mdc-tab__content {
-  color: $white;
-}
-
-.nav-banner {
-  display: inline-flex;
-  padding: 0.25em 1em;
-}
-
-.title {
-  color: $black;
-  font-size: 1.5em;
-}
-
 .logo {
-  width: 3.5em;
-  object-fit: contain;
+  background-image: url('@/assets/logo.url');
 }
 </style>
