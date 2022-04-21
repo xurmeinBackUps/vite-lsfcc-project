@@ -1,22 +1,27 @@
 <template>
-  <div class="app-container">
-    <TheLoginPanel :open="uiStore.drawerState" />
-    <div class="mdc-drawer-app-content drawer-main-content">
-      <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+  <v-app>
+    <v-navigation-drawer app>
+      <TheLoginPanel :open="uiStore.drawerState" />
+    </v-navigation-drawer>
+    <v-app-bar app>
         <TheNavbar />
-      </header>
-      <div class="mdc-top-app-bar--fixed-adjust">
-        <main class="main">
-          <RouterView />
-        </main>
-      </div>
-    </div>
-    <mcw-material-icon
-      class="toggle"
-      icon="login"
-      @click="drawer()"
-    />
-  </div>
+    </v-app-bar>
+      <v-main>
+        <v-container fluid>
+          <router-view></router-view>
+        </v-container>
+      </v-main>
+      <v-footer app>
+       <button
+        class="toggle"
+        icon="login"
+        @click="drawer()"
+      >
+        <span class="mdc-icon">login</span>
+      </button>
+      </v-footer>
+
+  </v-app>
 </template>
 
 <script setup>

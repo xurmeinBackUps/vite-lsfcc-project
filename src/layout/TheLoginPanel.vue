@@ -1,6 +1,6 @@
 <template>
-  <mcw-drawer
-    v-model="open"
+  <div
+    :open="open"
     modal
     class="primary-drawer"
   >
@@ -12,7 +12,7 @@
       </div>
       <LoginForm />
     </div>
-  </mcw-drawer>
+  </div>
 </template>
 
 <script setup>

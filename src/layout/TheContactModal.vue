@@ -31,8 +31,8 @@
       </ul>
     </div>
     <div class="mdc-dialog__actions">
-      <mcw-dialog-button @click="this.$router.back()">Dismiss</mcw-dialog-button>
-      <mcw-dialog-button @click="this.$router.back()" isDefault>Accept</mcw-dialog-button>
+      <button @click="this.$router.back()">Dismiss</button>
+      <button @click="this.$router.back()" isDefault>Accept</button>
     </div>
   </div>
 </template>

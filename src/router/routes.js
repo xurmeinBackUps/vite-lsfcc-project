@@ -16,12 +16,12 @@ export const routes = [
     default: true,
     component: PageSplash,
   },
-  // {
-  //   path: '/about',
-  //   name: 'about',
+  {
+    path: '/about',
+    name: 'about',
 
-  //   component: PageAbout,
-  // },
+    component: PageAbout,
+  },
   {
     path: '/partners',
     name: 'partners',
@@ -33,11 +33,7 @@ export const routes = [
     name: 'contact-form',
     component: TheContactModal,
   },
-  // {
-  //   path: '/login',
-  //   name: 'login-form',
-  //   component: TheLoginModal,
-  // },
+
   {
     path: '/schools/:bId',
     name: 'building-show',

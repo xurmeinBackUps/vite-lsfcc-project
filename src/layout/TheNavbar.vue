@@ -1,42 +1,33 @@
 <template>
   <nav class="mdc-top-app-bar__row">
-    <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
       <router-link to="/">
-        <div class="nav-banner">
+
+        <v-app-bar-nav-icon>
+        </v-app-bar-nav-icon>
           <img
             alt="Lincoln School for Colored Children project logo"
             class="logo mdc-top-app-bar__navigation-icon"
             src="@/assets/logo.png"
           />
-
-          <h1 class="mdc-top-app-bar__title title">
+          <v-toolbar-title>
             Lincoln School for Colored Children Project
-          </h1>
-        </div>
+          </v-toolbar-title>
       </router-link>
-    </section>
-
-    <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
-      <div class="mdc-tab-bar">
+        <v-spacer></v-spacer>
         <router-link to="/about">
-          <button class="mdc-tab mdc-button">
-            <span class="mdc-tab__content">About</span>
-            <span class="mdc-button__ripple"></span>
-          </button>
+            <v-btn>About</v-btn>
+
         </router-link>
         <router-link to="/partners">
-          <button class="mdc-tab mdc-button">
-            <span class="mdc-tab__content">Partners</span>
-            <span class="mdc-button__ripple"></span>
-          </button>
+            <v-btn>Partners</v-btn>
+
         </router-link>
-      </div>
-    </section>
   </nav>
 </template>
 
 <script setup>
 import { RouterLink } from "vue-router";
+import { VAppBarNavIcon, VToolbarTitle, VSpacer, VBtn } from "vuetify/lib/components";
 </script>
 
 <style lang="scss" scoped>

@@ -2,8 +2,9 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import { router } from './router/index.js'
 import { createPinia } from 'pinia'
+// Styles
 import 'vuetify/styles'
-import { createVuetify } from 'vuetify'
+import { vuetify } from './vuetify.js'
 
 import { rtdb, bucket, auth, firestore } from './firebase.config.js'
 // TODO: Add SDKs for Firebase products that you want to use
@@ -11,10 +12,9 @@ import { rtdb, bucket, auth, firestore } from './firebase.config.js'
 
 const app = createApp(App)
 const pinia = createPinia()
-const vuetify = createVuetify()
+
 app.use(vuetify)
 app.use(pinia)
-app.use(vma)
 app.use(rtdb)
 app.use(bucket)
 app.use(auth)
