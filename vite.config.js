@@ -7,6 +7,7 @@ import ViteRestart from 'vite-plugin-restart'
 import FullReload from 'vite-plugin-full-reload'
 import { ViteTips } from 'vite-plugin-tips'
 import { viteCommonjs } from '@originjs/vite-plugin-commonjs'
+
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
