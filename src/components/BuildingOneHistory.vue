@@ -2,8 +2,7 @@
   <div>
     <h3 class="mdc-card__title">{{ store.name }}</h3>
     <br />
-      <BuildingHistoryInterface />
-
+    <BuildingHistoryInterface :entries="store.entries" />
   </div>
 </template>
 
@@ -15,11 +14,19 @@ export default {
   setup() {
     const store = useBuildingOne();
     store.fetchName();
+
+    store.fetchEntries()
+
     return {
       store,
+
     };
   },
-  components: { BuildingHistoryInterface },
+  components: {
+    BuildingHistoryInterface
+  },
+
+
 };
 </script>
 
