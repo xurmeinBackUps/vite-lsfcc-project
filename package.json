@@ -10,7 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@mdi/font": "5.9.55",
+    "@mdi/font": "^6.6.96",
     "firebase": "^9.6.10",
     "pinia": "^2.0.12",
     "roboto-fontface": "*",
@@ -35,7 +35,6 @@
     "vite-plugin-full-reload": "^1.0.0",
     "vite-plugin-restart": "^0.1.1",
     "vite-plugin-tips": "^2.1.0",
-    "vite-plugin-webfont-dl": "^2.0.0",
     "vue-cli-plugin-vuetify": "~2.4.8",
     "vuetify-loader": "^2.0.0-alpha.0"
   },

@@ -4,8 +4,4 @@
   </div>
 </template>
 
-<style lang="scss" scoped>
-.content-wrap {
-  padding: 0.5em 0.5em;
-}
-</style>
+<style lang="scss" scoped></style>

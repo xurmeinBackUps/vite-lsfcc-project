@@ -47,7 +47,7 @@ onUpdated(() => {
 </script>
 
 <style scoped lang="scss">
-.wrap {
-  padding: 10px;
-}
+// .wrap {
+//   padding: 10px;
+// }
 </style>

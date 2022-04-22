@@ -2,7 +2,6 @@ import { fileURLToPath, URL } from 'url'
 import { defineConfig } from 'vite'
 import { nodeResolve } from '@rollup/plugin-node-resolve'
 import vue from '@vitejs/plugin-vue'
-import { ViteWebfontDownload } from 'vite-plugin-webfont-dl'
 import ViteRestart from 'vite-plugin-restart'
 import FullReload from 'vite-plugin-full-reload'
 import { ViteTips } from 'vite-plugin-tips'
@@ -13,10 +12,6 @@ export default defineConfig({
   plugins: [
     vue(),
     nodeResolve(),
-    ViteWebfontDownload([
-      'https://cdn.jsdelivr.net/npm/@mdi/font@6.x/css/materialdesignicons.min.css',
-      'https://fonts.googleapis.com/css2?family=Forum&family=Roboto:ital,wght@0,400;0,700;1,300&display=swap',
-    ]),
     ViteRestart({
       restart: ['[*].config.js', 'App.vue'],
     }),

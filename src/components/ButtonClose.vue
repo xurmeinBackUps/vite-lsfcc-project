@@ -13,9 +13,9 @@ defineProps({
 </script>
 
 <style scoped lang="scss">
-.corner {
-  position: absolute;
-  top: 5px;
-  right: 5px;
-}
+// .corner {
+//   position: absolute;
+//   top: 5px;
+//   right: 5px;
+// }
 </style>

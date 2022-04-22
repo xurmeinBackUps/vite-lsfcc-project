@@ -5,14 +5,15 @@
     <span class="mdc-list-item__text">
       <span class="mdc-list-item__primary-text">
         <span class="fullname">{{ profile.fullname }}</span>
-        <span v-if="profile.lifetime" class="lifetime"> &mdash; ({{ profile.lifetime }})</span>
+        <span v-if="profile.lifetime" class="lifetime">
+          &mdash; ({{ profile.lifetime }})</span
+        >
       </span>
       <span class="mdc-list-item__secondary-text sub">
-        <span v-if="profile.pro">{{ profile.pro }}</span><span v-if="profile.employmentDates"> from {{ profile.employmentDates }}</span>
+        <span v-if="profile.pro">{{ profile.pro }}</span
+        ><span v-if="profile.employmentDates"> from {{ profile.employmentDates }}</span>
       </span>
     </span>
-
-
 
     <!-- {{ profile.personalHistory }} -->
   </li>
@@ -24,20 +25,4 @@ defineProps({
 });
 </script>
 
-<style lang="scss" scoped>
-.disabled {
-  cursor: default;
-}
-
-.fullname {
-  font: 600 1.33rem 'Forum';
-}
-
-.lifetime {
-  font: 400 1.25em 'Forum';
-}
-
-.sub {
-  font: 1em black 'Roboto';
-}
-</style>
+<style lang="scss" scoped></style>

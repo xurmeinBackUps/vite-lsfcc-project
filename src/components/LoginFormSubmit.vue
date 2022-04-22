@@ -9,7 +9,7 @@
 <style scoped lang="scss">
 @import "@/assets/scss/variables.scss";
 
-.mdc-button {
-  background: $alert;
-}
+// .mdc-button {
+//   background: $alert;
+// }
 </style>
