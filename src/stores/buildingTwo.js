@@ -4,20 +4,32 @@ import { ref, onValue } from 'firebase/database'
 
 export const useBuildingTwo = defineStore('building2', {
 	state: () => ({
+
 		name: '',
 		entries: []
 	}),
+
+	getters: {
+		years: (state) => {
+			const entriesData = state.entries
+			return entriesData.forEach(entry => {
+				entry['dates']
+			})
+		}
+
+	},
+
 	actions: {
 		fetchName() {
-			const $name = ref(rtdb, '/schools/building2/name')
-			onValue($name, async (snapshot) => {
-				this.$state.name = await snapshot.val()
+			const dbRef = ref(rtdb, '/schools/building2/name')
+			onValue(dbRef, (snapshot) => {
+				this.$state.name = snapshot.val()
 			})
 		},
 		fetchEntries() {
-			const $entries = ref(rtdb, 'schools/building2/entries')
-			onValue($entries, async (snapshot) => {
-				this.$state.entries = await snapshot.val()
+			const dbRef = ref(rtdb, 'schools/building2/entries')
+			onValue(dbRef, (snapshot) => {
+				this.$state.entries = snapshot.val()
 			})
 		},
 	}

@@ -12,8 +12,8 @@ export const useProfiles = defineStore('profiles', {
   actions: {
     fetchProfiles(){
       const $p = ref(rtdb, '/profiles')
-      onValue($p, async (snapshot) => {
-        this.$state.profiles = await snapshot.val()
+      onValue($p, (snapshot) => {
+        this.$state.profiles = snapshot.val()
       })
     }
   }

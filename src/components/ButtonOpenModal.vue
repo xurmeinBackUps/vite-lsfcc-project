@@ -7,21 +7,20 @@
 </template>
 
 <script setup>
-import router from "@/router";
 import { nextTick } from "vue";
-
+import { router } from "@/router/index.js";
 defineProps({
   targetModal: String,
 });
 
 function openModal(e, modal) {
-  nextTick(async () => {
-    if ((await modal) === "TheLoginModal") {
-      console.log("clicked login!", `router: ${JSON.stringify(router)}`);
-      router.push({ path: `/login/${modal}`, name: "login-form" });
-    } else if ((await modal) === "TheContactFormModal") {
-      console.log("clicked contact!", `router: ${JSON.stringify(router)}`);
-      router.push({ path: `/contact/${modal}`, name: "contact-form" });
+  nextTick(() => {
+    if (modal === "TheContactFormModal") {
+      router.push({
+        path: `/contact`,
+        name: "contact-form",
+        component: () => import(/* @vite-ignore */ `@/layout/${modal}.vue`),
+      });
     }
   });
 }

@@ -2,26 +2,31 @@
   <div>
     <h3 class="mdc-card__title">{{ store.name }}</h3>
     <br />
-    <ul v-for="e in store.entries" :key="e.key">
-      <BuildingHistoryItem :entry="e" />
-    </ul>
+    <BuildingHistoryInterface :entries="store.entries" />
   </div>
 </template>
 
 <script>
 import { useBuildingOne } from "@/stores/buildingOne.js";
-import BuildingHistoryItem from "./BuildingHistoryItem.vue";
+import BuildingHistoryInterface from "./BuildingHistoryInterface.vue";
 
 export default {
   setup() {
     const store = useBuildingOne();
     store.fetchName();
-    store.fetchEntries();
+
+    store.fetchEntries()
+
     return {
       store,
+
     };
   },
-  components: { BuildingHistoryItem },
+  components: {
+    BuildingHistoryInterface
+  },
+
+
 };
 </script>
 

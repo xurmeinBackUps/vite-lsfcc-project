@@ -1,5 +1,9 @@
 <template>
-  <ul v-for="profile in store.profiles">
+  <ul
+    v-for="profile in store.profiles"
+    :key="profile.fullname"
+    class="mdc-list mdc-list--two-line"
+  >
     <ProfilesListItem :profile="profile" />
   </ul>
 </template>
@@ -12,16 +16,11 @@ export default {
   setup() {
     const store = useProfiles();
     store.fetchProfiles();
-    // store.pObjects();
+
     return {
       store,
     };
   },
   components: { ProfilesListItem },
 };
-
-// export default {
-// 	beforeMount
-// }
 </script>
-<style></style>

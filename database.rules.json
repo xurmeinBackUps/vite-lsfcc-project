@@ -1,6 +1,26 @@
 {
   "rules": {
-    ".read": true,
-    ".write": "auth.uid !== null"
+    "profiles": {
+      ".read": true,
+      ".write": true
+
+    },
+
+    "resources": {
+      ".read": true,
+      ".write": true
+
+    },
+
+    "schools": {
+      ".read": true,
+      ".write": true
+
+    },
+
+    "users": {
+      ".read": true,
+      ".write": true
+    }
   }
 }
