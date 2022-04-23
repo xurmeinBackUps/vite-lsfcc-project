@@ -28,7 +28,6 @@
 
 <script setup>
 import { RouterLink } from "vue-router";
-import { VCard, VImg, VCardTitle } from "vuetify/lib/components";
 import SplashCard from "../components/SplashCard.vue";
 </script>
 

@@ -9,12 +9,16 @@ $alert: #0264ee; //BLUE
 
 $splash-grid-breakpoint: 1450px;
 
-body {
+.v-application {
 	background-color: rgb(221, 217, 204);
 	margin: 0;
 	font-family: 'Roboto', sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6 {
+.v-card-title, .v-toolbar-title {
 	font-family: 'Forum', serif;
+}
+
+.v-footer {
+	background: transparent;
 }

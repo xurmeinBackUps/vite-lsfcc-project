@@ -1,22 +1,19 @@
 <template>
-  <li class="mdc-list-item">
-    <span v-if="!profile.personalHistory" class="mdc-list-item--disabled"></span>
-    <span v-else class="mdc-list-item__ripple"></span>
-    <span class="mdc-list-item__text">
-      <span class="mdc-list-item__primary-text">
-        <span class="fullname">{{ profile.fullname }}</span>
-        <span v-if="profile.lifetime" class="lifetime">
-          &mdash; ({{ profile.lifetime }})</span
-        >
+  <div>
+    <v-expansion-panel-title>
+      {{ profile.fullname }}
+      <span v-if="profile.lifetime" class="lifetime">
+        &mdash; ({{ profile.lifetime }})
       </span>
-      <span class="mdc-list-item__secondary-text sub">
-        <span v-if="profile.pro">{{ profile.pro }}</span
-        ><span v-if="profile.employmentDates"> from {{ profile.employmentDates }}</span>
-      </span>
-    </span>
+    </v-expansion-panel-title>
+    <v-expansion-panel-text>
+      <p v-if="profile.pro">{{ profile.pro }}</p>
+      <p v-if="profile.employmentDates">from {{ profile.employmentDates }}</p>
+      <p v-if="profile.personalHistory">{{ profile.personalHistory }}</p>
+    </v-expansion-panel-text>
 
-    <!-- {{ profile.personalHistory }} -->
-  </li>
+    <!--  -->
+  </div>
 </template>
 
 <script setup>

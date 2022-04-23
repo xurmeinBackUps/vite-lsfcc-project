@@ -1,14 +1,13 @@
 <template>
-  <ul
-    v-for="profile in store.profiles"
-    :key="profile.fullname"
-    class="mdc-list mdc-list--two-line"
-  >
-    <ProfilesListItem :profile="profile" />
-  </ul>
+  <v-expansion-panels>
+    <v-expansion-panel v-for="profile in store.profiles" :key="profile.fullname">
+      <ProfilesListItem :profile="profile" />
+    </v-expansion-panel>
+  </v-expansion-panels>
 </template>
 
 <script setup>
+import { VExpansionPanel, VExpansionPanels } from "vuetify/lib/components";
 import { useProfiles } from "@/stores/profiles.js";
 import ProfilesListItem from "./ProfilesListItem.vue";
 
