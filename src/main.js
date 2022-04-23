@@ -11,10 +11,11 @@ import { rtdb, bucket, auth, firestore } from './firebase.config.js'
 // https://firebase.google.com/docs/web/setup#available-libraries
 import { loadFonts } from './plugins/webfontloader'
 
-loadFonts()
 const app = createApp(App)
 const pinia = createPinia()
+const webfont = loadFonts()
 
+app.use(webfont)
 app.use(vuetify)
 app.use(pinia)
 app.use(rtdb)
