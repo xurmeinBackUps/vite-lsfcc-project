@@ -1,13 +1,12 @@
 <template>
   <v-navigation-drawer
     app
-    v-model="drawer"
     temporary
+    v-model="store.drawerState"
   >
     <div class="login-tools">
       <div class="mdc-drawer__header">
         <p>Admin Login</p>
-        <ButtonClose target="drawer" />
       <hr />
       </div>
       <LoginForm />
@@ -18,17 +17,12 @@
 <script setup>
 import { useUiState } from "@/stores/uiState.js";
 import LoginForm from "../components/LoginForm.vue";
-import ButtonClose from "../components/ButtonClose.vue";
 
-const uiStore = useUiState();
-
-defineProps({
-  drawer: Boolean,
-});
+const store = useUiState()
 </script>
 
 <style lang="scss" scoped>
-@import "@/assets/scss/variables.scss";
+@import "@/assets/scss/variables_and_overrides.scss";
 
 // .mdc-drawer__header {
 //   background: $alert;

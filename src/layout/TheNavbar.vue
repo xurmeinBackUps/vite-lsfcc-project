@@ -1,15 +1,15 @@
 <template>
   <v-row>
     <v-col>
-      <v-app-bar color="secondary" app>
-        <router-link to="/">
+      <v-app-bar color="purple" app>
+        <router-link to="/" class="text-black">
           <v-app-bar-title> Lincoln School for Colored Children Project </v-app-bar-title>
         </router-link>
         <v-spacer></v-spacer>
-        <router-link to="/about">
+        <router-link to="/about" class="text-black">
           <v-btn variant="outlined"> About </v-btn>
         </router-link>
-        <router-link to="/partners">
+        <router-link to="/partners" class="text-black">
           <v-btn variant="outlined"> Partners </v-btn>
         </router-link>
       </v-app-bar>
@@ -29,9 +29,6 @@ import {
 </script>
 
 <style lang="scss" scoped>
-@import "@/assets/scss/variables.scss";
+@import "@/assets/scss/variables_and_overrides.scss";
 
-.logo {
-  background-image: url("@/assets/logo.url");
-}
 </style>

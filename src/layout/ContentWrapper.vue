@@ -1,11 +1,17 @@
 <template>
-  <v-card class="pa-5">
-    <slot name="base-component"></slot>
-  </v-card>
+  <v-row class="mb-10">
+    <v-col class="mb-10">
+      <v-card class="pa-5">
+        <slot name="base-component"></slot>
+      </v-card>
+    </v-col>
+  </v-row>
 </template>
 
 <script setup>
-import { VCard } from "vuetify/lib/components";
+import {
+  VRow,
+  VCol,
+  VCard
+} from "vuetify/lib/components";
 </script>
-
-<style lang="scss" scoped></style>

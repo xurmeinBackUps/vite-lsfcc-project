@@ -1,20 +1,21 @@
-import { defineStore } from "pinia";
+import { defineStore } from 'pinia'
 
 export const useUiState = defineStore('uiState', {
-  state () {
+  state() {
     return {
       currentUser: {},
       darkMode: false,
-      drawerState: false   
+      drawerState: false,
     }
   },
 
   actions: {
     openDrawer() {
-      this.$state.drawerState = true
+      this.drawerState = true
     },
+
     closeDrawer() {
-      this.$state.drawerState = false
-    }
-  }
+      this.drawerState = false
+    },
+  },
 })

@@ -1,6 +1,6 @@
 <template>
-  <v-card height="20em">
-    <v-card-title class="link">{{ cardTitle }}</v-card-title>
+  <v-card height="300" width="400">
+    <v-card-title class="link text-yellow">{{ cardTitle }}</v-card-title>
   </v-card>
 </template>
 
@@ -12,11 +12,11 @@ defineProps({
 </script>
 
 <style lang="scss" scoped>
-@import "@/assets/scss/variables.scss";
+@import "@/assets/scss/variables_and_overrides.scss";
 
 .link {
-  color: $alert;
-  text-align: center;
+  font-family: 'Forum';
+  justify-content: center;
   width: 100%;
   background: #00011148;
   position: absolute;
