@@ -1,17 +1,8 @@
 <template>
   <div>
-    <div class="mdc-touch-target-wrapper">
-      <div class="mdc-radio mdc-radio--touch">
-        <input class="mdc-radio__native-control" type="radio" :id="entry.key" name="radios" >
-        <div class="mdc-radio__background">
-          <div class="mdc-radio__outer-circle"></div>
-          <div class="mdc-radio__inner-circle"></div>
-        </div>
-        <div class="mdc-radio__ripple"></div>
-      </div>
-      <label>{{ entry.dates }}</label>
-    </div>
-     <p v-html="entry.text"></p>
+    <p>{{ entry.dates }}</p>
+    <p v-html="entry.text"></p>
+    <br />
   </div>
 </template>
 

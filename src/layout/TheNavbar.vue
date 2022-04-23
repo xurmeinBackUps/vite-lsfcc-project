@@ -1,21 +1,19 @@
 <template>
   <v-row>
-    <v-app-bar color="secondary" app>
-      <router-link to="/">
-        <v-app-bar-nav-icon icon>
-          <v-icon color="blue">home</v-icon>
-        </v-app-bar-nav-icon>
-        <v-app-bar-title> Lincoln School for Colored Children Project </v-app-bar-title>
-      </router-link>
-      <v-spacer></v-spacer>
-      <router-link to="/about">
-        <v-btn variant="outlined"> About </v-btn>
-      </router-link>
-      <v-spacer></v-spacer>
-      <router-link to="/partners">
-        <v-btn variant="outlined"> Partners </v-btn>
-      </router-link>
-    </v-app-bar>
+    <v-col>
+      <v-app-bar color="secondary" app>
+        <router-link to="/">
+          <v-app-bar-title> Lincoln School for Colored Children Project </v-app-bar-title>
+        </router-link>
+        <v-spacer></v-spacer>
+        <router-link to="/about">
+          <v-btn variant="outlined"> About </v-btn>
+        </router-link>
+        <router-link to="/partners">
+          <v-btn variant="outlined"> Partners </v-btn>
+        </router-link>
+      </v-app-bar>
+    </v-col>
   </v-row>
 </template>
 

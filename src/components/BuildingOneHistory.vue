@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h3 class="mdc-card__title">{{ store.name }}</h3>
+    <v-card-title>{{ store.name }}</v-card-title>
     <br />
     <BuildingHistoryInterface :entries="store.entries" />
   </div>
@@ -9,24 +9,23 @@
 <script>
 import { useBuildingOne } from "@/stores/buildingOne.js";
 import BuildingHistoryInterface from "./BuildingHistoryInterface.vue";
+import { VCardTitle } from "vuetify/lib/components";
 
 export default {
   setup() {
     const store = useBuildingOne();
     store.fetchName();
 
-    store.fetchEntries()
+    store.fetchEntries();
 
     return {
       store,
-
     };
   },
   components: {
-    BuildingHistoryInterface
+    BuildingHistoryInterface,
+    VCardTitle,
   },
-
-
 };
 </script>
 

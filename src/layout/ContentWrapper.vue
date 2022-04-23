@@ -1,7 +1,11 @@
 <template>
-  <div class="mdc-card content-wrap">
+  <v-card class="pa-5">
     <slot name="base-component"></slot>
-  </div>
+  </v-card>
 </template>
+
+<script setup>
+import { VCard } from "vuetify/lib/components";
+</script>
 
 <style lang="scss" scoped></style>

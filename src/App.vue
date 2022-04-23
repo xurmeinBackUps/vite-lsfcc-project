@@ -1,23 +1,21 @@
 <template>
   <v-app>
+    <TheLoginPanel app :drawer="drawer" />
+    <TheNavbar app />
 
-      <TheLoginPanel app :drawer="drawer" />
-        <TheNavbar app />
-
-      <v-main>
-        <v-container fluid>
-          <router-view></router-view>
-        </v-container>
-      </v-main>
-      <v-footer app>
-       <v-btn
+    <v-main>
+      <v-container fluid>
+        <router-view></router-view>
+      </v-container>
+    </v-main>
+    <v-footer app>
+      <v-btn
         variant="outlined"
         icon="mdi-login"
         @click="drawer = !drawer"
         color="blue"
       ></v-btn>
-      </v-footer>
-
+    </v-footer>
   </v-app>
 </template>
 
@@ -27,26 +25,22 @@ import TheNavbar from "./layout/TheNavbar.vue";
 import TheLoginPanel from "./layout/TheLoginPanel.vue";
 import { useUiState } from "./stores/uiState.js";
 import { useDisplay } from "vuetify/lib/framework";
-import {
-  VApp, VMain, VContainer, VFooter, VBtn
-} from 'vuetify/components'
+import { VApp, VMain, VContainer, VFooter, VBtn } from "vuetify/components";
 import { onMounted } from "vue";
-
 
 defineProps({
   drawer: Boolean,
 });
 
-const display = useDisplay()
+const display = useDisplay();
 
 onMounted(() => {
-  return display
-})
+  return display;
+});
 </script>
 
 <style lang="scss">
 @import "@/assets/scss/variables.scss";
-
 
 // .main {
 //   width: 90%;

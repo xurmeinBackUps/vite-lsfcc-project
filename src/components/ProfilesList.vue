@@ -8,19 +8,11 @@
   </ul>
 </template>
 
-<script>
+<script setup>
 import { useProfiles } from "@/stores/profiles.js";
 import ProfilesListItem from "./ProfilesListItem.vue";
 
-export default {
-  setup() {
-    const store = useProfiles();
-    store.fetchProfiles();
+const store = useProfiles();
 
-    return {
-      store,
-    };
-  },
-  components: { ProfilesListItem },
-};
+store.fetchProfiles();
 </script>

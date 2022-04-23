@@ -5,7 +5,7 @@ import { ref, onValue } from 'firebase/database'
 export const useProfiles = defineStore('profiles', {
   state() {
     return {
-      profileObjects: [],
+      profiles: [],
       profile: {},
     }
   },
@@ -14,7 +14,7 @@ export const useProfiles = defineStore('profiles', {
     fetchProfiles() {
       const $p = ref(rtdb, '/profiles')
       onValue($p, (snapshot) => {
-        this.$state.profileObjects = snapshot.val()
+        this.$state.profiles = snapshot.val()
       })
     },
   },

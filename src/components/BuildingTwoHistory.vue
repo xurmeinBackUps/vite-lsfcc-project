@@ -1,15 +1,15 @@
 <template>
   <div>
-    <h3 class="mdc-card__title">{{ store.name }}</h3>
+    <v-card-title>{{ store.name }}</v-card-title>
     <br />
-      <BuildingHistoryInterface :entries="store.entries"/>
+    <BuildingHistoryInterface :entries="store.entries" />
   </div>
 </template>
 
 <script>
 import { useBuildingTwo } from "@/stores/buildingTwo.js";
 import BuildingHistoryInterface from "./BuildingHistoryInterface.vue";
-
+import { VCardTitle } from "vuetify/lib/components";
 export default {
   setup() {
     const store = useBuildingTwo();
@@ -17,7 +17,7 @@ export default {
     store.fetchEntries();
     return { store };
   },
-  components: { BuildingHistoryInterface },
+  components: { BuildingHistoryInterface, VCardTitle },
 };
 </script>
 
