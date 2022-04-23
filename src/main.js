@@ -4,12 +4,12 @@ import { router } from './router/index.js'
 import { createPinia } from 'pinia'
 // Styles
 import 'vuetify/styles'
-import { vuetify } from './vuetify.js'
+import { vuetify } from './vuetify.config.js'
 
-import { rtdb, bucket, auth, firestore } from './firebase.config.js'
+import { rtdb, bucket, auth, firestore } from './firebaseApp.config.js'
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
-import { loadFonts } from './plugins/webfontloader'
+import { loadFonts } from './plugins/webfontloader.js'
 
 const app = createApp(App)
 const pinia = createPinia()

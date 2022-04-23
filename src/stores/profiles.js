@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import { rtdb } from '../firebase.config.js'
+import { rtdb } from '../firebaseApp.config.js'
 import { ref, onValue } from 'firebase/database'
 
 export const useProfiles = defineStore('profiles', {
