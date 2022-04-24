@@ -9,7 +9,11 @@
       </v-container>
     </v-main>
 
+<<<<<<< Updated upstream
     <TheFooter app/>
+=======
+    <TheFooter app :drawer="drawer"/>
+>>>>>>> Stashed changes
   </v-app>
 </template>
 
@@ -18,7 +22,33 @@ import { VApp } from "vuetify/components";
 import { RouterView } from "vue-router";
 import TheNavbar from "./layout/TheNavbar.vue";
 import TheLoginPanel from "./layout/TheLoginPanel.vue";
+<<<<<<< Updated upstream
 import TheFooter from "./layout/TheFooter.vue";
+=======
+import { useUiState } from "./stores/uiState.js";
+import { useDisplay } from "vuetify/lib/framework";
+import { VApp, VMain, VContainer } from "vuetify/components";
+import { onMounted, onUpdated, reactive } from "vue";
+import TheFooter from "./layout/TheFooter.vue";
+
+const data = reactive({
+  drawer: false,
+});
+
+const store = useUiState()
+
+const display = useDisplay();
+
+onMounted(() => {
+  display;
+  return data.drawer = store.$state.drawerState
+});
+
+onUpdated(() => {
+  display;
+  return data.drawer = store.$state.drawerState
+});
+>>>>>>> Stashed changes
 </script>
 
 <style lang="scss">

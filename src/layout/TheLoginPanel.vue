@@ -2,7 +2,11 @@
   <v-navigation-drawer
     app
     temporary
+<<<<<<< Updated upstream
     v-model="store.drawerState"
+=======
+    :drawer="drawer"
+>>>>>>> Stashed changes
   >
     <div class="login-tools">
       <div class="mdc-drawer__header">
