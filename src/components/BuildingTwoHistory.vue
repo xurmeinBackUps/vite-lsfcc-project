@@ -9,7 +9,6 @@
 <script>
 import { useBuildingTwo } from "@/stores/buildingTwo.js";
 import BuildingHistoryInterface from "./BuildingHistoryInterface.vue";
-import { VCardTitle } from "vuetify/lib/components";
 export default {
   setup() {
     const store = useBuildingTwo();

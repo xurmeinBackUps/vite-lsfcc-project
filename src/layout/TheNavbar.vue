@@ -19,16 +19,8 @@
 
 <script setup>
 import { RouterLink } from "vue-router";
-import {
-  VAppBarNavIcon,
-  VAppBarTitle,
-  VSpacer,
-  VBtn,
-  VRow,
-} from "vuetify/lib/components";
 </script>
 
 <style lang="scss" scoped>
 @import "@/assets/scss/variables_and_overrides.scss";
-
 </style>

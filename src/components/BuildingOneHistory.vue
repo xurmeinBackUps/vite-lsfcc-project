@@ -9,7 +9,6 @@
 <script>
 import { useBuildingOne } from "@/stores/buildingOne.js";
 import BuildingHistoryInterface from "./BuildingHistoryInterface.vue";
-import { VCardTitle } from "vuetify/lib/components";
 
 export default {
   setup() {

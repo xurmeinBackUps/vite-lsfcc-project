@@ -58,7 +58,6 @@
 
 <script setup>
 import { RouterLink } from "vue-router";
-import { VImg } from "vuetify/lib/components";
 import SplashCard from "./SplashCard.vue";
 </script>
 

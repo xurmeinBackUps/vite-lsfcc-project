@@ -5,7 +5,6 @@
 </template>
 
 <script setup>
-import { VBtn, VIcon } from 'vuetify/lib/components'
 
 defineProps({
   target: String
