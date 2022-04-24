@@ -6,6 +6,7 @@
       icon="mdi-login"
       @click="store.openDrawer"
       color="blue"
+      size="x-small"
     ></v-btn>
   </v-footer>
 </template>

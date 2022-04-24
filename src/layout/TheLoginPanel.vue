@@ -1,6 +1,6 @@
 <template>
   <v-navigation-drawer app temporary v-model="store.drawerState">
-    <p>Admin Login</p>
+    <p class="text-center">Admin Login</p>
     <hr />
     <v-form>
       <v-text-field></v-text-field>

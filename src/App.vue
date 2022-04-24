@@ -9,12 +9,11 @@
       </v-container>
     </v-main>
 
-    <TheFooter app/>
+    <TheFooter app />
   </v-app>
 </template>
 
 <script setup>
-import { VApp } from "vuetify/components";
 import { RouterView } from "vue-router";
 import TheNavbar from "./layout/TheNavbar.vue";
 import TheLoginPanel from "./layout/TheLoginPanel.vue";
@@ -30,12 +29,4 @@ import TheFooter from "./layout/TheFooter.vue";
   margin-top: 1.5em;
   margin-bottom: 5em;
 }
-
-// .toggle {
-//   bottom: 10px;
-//   left: 10px;
-//   color: $secondary;
-//   cursor: default;
-//   font-size: small;
-// }
 </style>
