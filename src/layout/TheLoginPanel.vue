@@ -1,14 +1,23 @@
 <template>
-  <v-navigation-drawer app temporary v-model="ui.drawerState">
+  <v-navigation-drawer app temporary v-model="ui.drawerState" class="bg-white">
     <p class="text-center">Admin Login</p>
     <hr />
     <v-form>
       <v-container>
         <v-row>
           <v-col>
-            <v-text-field label="EMAIL" required></v-text-field>
-            <v-text-field label="PASSWORD" required></v-text-field>
-            <v-btn class="float-right" color="blue" @click="clickSignIn"> Sign In </v-btn>
+            <v-text-field
+              label="EMAIL"
+              v-model="userAuth.credentials.email"
+              required
+            ></v-text-field>
+            <v-text-field
+              label="PASSWORD"
+              v-model="userAuth.credentials.password"
+              required
+            ></v-text-field>
+            <v-btn color="blue" @click="clickSignIn"> Sign In </v-btn>
+            <v-btn color="red" @click="clickSignOut"> Sign Out </v-btn>
           </v-col>
         </v-row>
       </v-container>
@@ -19,17 +28,18 @@
 <script setup>
 import { useUiState } from "@/stores/uiState.js";
 import { useAuth } from "@/stores/userAuth.js";
-import { onMounted } from "vue";
 
 const ui = useUiState();
 const userAuth = useAuth();
 
-onMounted(() => {
-  userAuth.fetchAccounts();
-});
-
 function clickSignIn() {
   userAuth.login();
+  ui.drawerState = false;
+}
+
+function clickSignOut() {
+  userAuth.logout();
+  ui.drawerState = false;
 }
 </script>
 

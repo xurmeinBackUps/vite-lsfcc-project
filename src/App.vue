@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app class="lsfcc-app">
     <TheLoginPanel app />
     <TheNavbar app />
 
