@@ -1,11 +1,10 @@
 <template>
-  <v-card height="300">
-    <v-card-title class="link text-yellow">{{ cardTitle }}</v-card-title>
+  <v-card height="300" class="rounded-xl">
+    <v-card-title class="link text-yellow rounded-b-xl">{{ cardTitle }}</v-card-title>
   </v-card>
 </template>
 
 <script setup>
-
 defineProps({
   cardTitle: String,
 });
@@ -15,7 +14,7 @@ defineProps({
 @import "@/assets/scss/variables_and_overrides.scss";
 
 .link {
-  font-family: 'Forum';
+  font-family: "Forum";
   justify-content: center;
   width: 100%;
   background: #00011148;

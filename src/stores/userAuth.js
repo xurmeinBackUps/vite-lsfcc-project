@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia'
 import { rtdb, auth } from '../firebaseApp.config.js'
 import { ref, onValue } from 'firebase/database'
-import { signInWithEmailAndPassword, signOut } from '@firebase/auth'
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from 'firebase/auth'
 
 export const useAuth = defineStore('auth', {
   state() {
@@ -17,12 +17,24 @@ export const useAuth = defineStore('auth', {
 
   actions: {
     fetchAccounts() {
+      console.log(auth)
+
       const $p = ref(rtdb, '/users')
       onValue($p, (snapshot) => {
-        this.$state.users = snapshot.val()
+        this.users = snapshot.val()
       })
     },
-
+    signup() {
+      createUserWithEmailAndPassword(auth, this.credentials.email, this.credentials.password)
+        .then((userCredential) => {
+          return (this.currentUser = userCredential.user)
+        })
+        .catch((err) => {
+          const errCode = err.errCode
+          const errMsg = err.message
+          console.log(errCode, errMsg)
+        })
+    },
     login() {
       console.log(`$state.credentials.email == ${this.$state.credentials.email}`)
       console.log(`$state.credentials.password == ${this.$state.credentials.password}`)
@@ -33,18 +45,6 @@ export const useAuth = defineStore('auth', {
         .catch((error) => {
           console.log(`${error}`)
         })
-    },
-
-    logout() {
-      signOut(auth).then(() =>
-        this.$patch({
-          credentials: {
-            email: '',
-            password: '',
-          },
-          currentUser: {},
-        })
-      )
     },
   },
 })
