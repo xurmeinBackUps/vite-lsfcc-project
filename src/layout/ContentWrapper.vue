@@ -7,11 +7,3 @@
     </v-col>
   </v-row>
 </template>
-
-<script setup>
-import {
-  VRow,
-  VCol,
-  VCard
-} from "vuetify/lib/components";
-</script>

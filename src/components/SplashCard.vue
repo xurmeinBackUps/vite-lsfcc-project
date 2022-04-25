@@ -5,8 +5,6 @@
 </template>
 
 <script setup>
-import { VCard, VCardTitle } from "vuetify/lib/components";
-
 defineProps({
   cardTitle: String,
 });

@@ -7,7 +7,6 @@
 </template>
 
 <script setup>
-import { VExpansionPanel, VExpansionPanels } from "vuetify/lib/components";
 import { useProfiles } from "@/stores/profiles.js";
 import ProfilesListItem from "./ProfilesListItem.vue";
 

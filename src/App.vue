@@ -9,12 +9,11 @@
       </v-container>
     </v-main>
 
-    <TheFooter app/>
+    <TheFooter app />
   </v-app>
 </template>
 
 <script setup>
-import { VApp } from "vuetify/components";
 import { RouterView } from "vue-router";
 import TheNavbar from "./layout/TheNavbar.vue";
 import TheLoginPanel from "./layout/TheLoginPanel.vue";
