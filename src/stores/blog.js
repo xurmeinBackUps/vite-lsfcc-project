@@ -9,12 +9,11 @@ export const useAnonBlog = defineStore('blog', {
 
   actions: {
     async fetchBlogs() {
-      const blogsRef = query(collection(firestore, 'blog'))
-      const blogsQuery = query(blogsRef, orderBy('title', 'asc'))
-      const blogsDocs = await getDocs(blogsQuery)
-      blogsDocs.forEach((doc) => {
-        let docData = doc.data()
-        this.blogs.push(docData)
+      const blogRef = collection(firestore, 'blog')
+      const blogQuery = query(blogRef, orderBy('title'))
+      const blogDocs = await getDocs(blogQuery)
+      blogDocs.forEach((doc) => {
+        this.blogs.push(doc.data())
       })
     },
   },
