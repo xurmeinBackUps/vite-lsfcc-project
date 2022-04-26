@@ -1,13 +1,16 @@
 <template>
-  <li>
+  <div>
     <p>{{ doc.title }}</p>
     <p>{{ doc.content }}</p>
-  </li>
+  </div>
 </template>
 
 <script setup>
-defineProps({
-  doc: Object,
+import { reactive } from "vue";
+
+const doc = reactive({
+  content: "",
+  title: "",
 });
 </script>
 

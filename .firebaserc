@@ -1,7 +1,8 @@
 {
   "projects": {
     "prod": "lsfcc-project-moco",
-    "dev": "lsfcc-project-moco"
+    "dev": "lsfcc-project-moco",
+    "default": "lsfcc-project-moco"
   },
   "targets": {
     "prod": "lsfcc-project-moco.we.app",

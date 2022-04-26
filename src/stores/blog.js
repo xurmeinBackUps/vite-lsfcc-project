@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 import { firestore } from '../firebaseApp.config'
-import { collection, getDocs } from 'firebase/firestore'
+import { collection, getDocs, orderBy, query } from 'firebase/firestore'
 
 export const useAnonBlog = defineStore('blog', {
   state: () => ({
@@ -9,8 +9,9 @@ export const useAnonBlog = defineStore('blog', {
 
   actions: {
     async fetchBlogs() {
-      const blogsRef = collection(firestore, 'blog')
-      const blogsDocs = await getDocs(blogsRef)
+      const blogsRef = query(collection(firestore, 'blog'))
+      const blogsQuery = query(blogsRef, orderBy('title', 'asc'))
+      const blogsDocs = await getDocs(blogsQuery)
       blogsDocs.forEach((doc) => {
         let docData = doc.data()
         this.blogs.push(docData)
