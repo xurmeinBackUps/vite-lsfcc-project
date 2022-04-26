@@ -1,14 +1,18 @@
 <template>
-  <ul v-for="doc in blogs">
-    <li>
-      <p>{{ doc.title }}</p>
-      <p>{{ doc.content }}</p>
-    </li>
-  </ul>
+  <div>
+    <ul v-for="doc in store.blogs">
+      <Suspense>
+        <BlogsIndexItem :doc="doc" />
+      </Suspense>
+    </ul>
+  </div>
 </template>
 
 <script setup>
-defineProps({
-  blogs: Array,
-});
+import { useAnonBlog } from "@/stores/blog.js";
+import { Suspense } from "vue";
+const BlogsIndexItem = () => import("./BlogsIndexItem.vue");
+
+const store = useAnonBlog();
+store.fetchBlogs();
 </script>

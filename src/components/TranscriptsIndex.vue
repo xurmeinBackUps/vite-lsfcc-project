@@ -1,16 +1,18 @@
 <template>
-  <ul v-for="trans in store.transcripts">
-    <li>{{ trans }}</li>
-  </ul>
+  <div>
+    <ul v-for="trans in store.transcripts">
+      <Suspense>
+        <TranscriptsIndexItem :trans="trans" />
+      </Suspense>
+    </ul>
+  </div>
 </template>
 
 <script setup>
 import { useTranscripts } from "@/stores/transcripts.js";
-import { onMounted } from "vue";
+import { Suspense } from "vue";
+const TranscriptsIndexItem = () => import("./TranscriptsIndexItem.vue");
 
 const store = useTranscripts();
-
-onMounted(() => {
-  store.fetchTranscripts();
-});
+store.fetchTranscripts();
 </script>

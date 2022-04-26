@@ -2,7 +2,7 @@
   <content-wrapper>
     <template #base-component>
       Anon Blog
-      <BlogsIndex :blogs="store.blogs" />
+      <BlogsIndex />
       <TextAreaBlog />
     </template>
   </content-wrapper>
@@ -11,10 +11,5 @@
 <script setup>
 import ContentWrapper from "@/layout/ContentWrapper.vue";
 import TextAreaBlog from "@/components/TextAreaBlog.vue";
-import { useAnonBlog } from "@/stores/blog.js";
-
-const BlogsIndex = () => import("@/components/BlogsIndex.vue");
-
-const store = useAnonBlog();
-store.fetchBlogs();
+import BlogsIndex from "@/components/BlogsIndex.vue";
 </script>

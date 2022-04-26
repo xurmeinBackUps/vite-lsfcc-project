@@ -1,6 +1,6 @@
-import { collection, getDocs } from '@firebase/firestore'
-import { firestore } from 'googleapis/build/src/apis/firestore'
 import { defineStore } from 'pinia'
+import { firestore } from 'googleapis/build/src/apis/firestore'
+import { collection, getDocs } from '@firebase/firestore'
 
 export const useTranscripts = defineStore('transcripts', {
   state: () => ({
@@ -9,9 +9,11 @@ export const useTranscripts = defineStore('transcripts', {
 
   actions: {
     async fetchTranscripts() {
-      const transcriptsQuery = await getDocs(collection(firestore, 'transcripts'))
-      transcriptsQuery.forEach((trans) => {
-        this.transcripts.push(trans)
+      const transcriptsRef = collection(firestore, 'transcripts')
+      const docs = await getDocs(transcriptsRef)
+      docs.forEach((trans) => {
+        let data = trans.data()
+        this.transcripts.push(data)
       })
     },
   },

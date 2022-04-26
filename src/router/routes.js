@@ -6,7 +6,6 @@ const PageBlog = () => import('@/pages/PageBlog.vue')
 const PageProfiles = () => import('@/pages/PageProfiles.vue')
 const PageTranscripts = () => import('@/pages/PageTranscripts.vue')
 const PageMemorabilia = () => import('@/pages/PageMemorabilia.vue')
-// const TheLoginModal = () => import('@/layout/TheLoginModal.vue')
 const TheContactModal = () => import('@/layout/TheContactModal.vue')
 
 export const routes = [
@@ -49,11 +48,13 @@ export const routes = [
     path: '/blog',
     name: 'blog',
     component: PageBlog,
+    props: true,
   },
   {
     path: '/transcripts',
     name: 'transcripts',
     component: PageTranscripts,
+    props: true,
   },
   {
     path: '/memorabilia',
