@@ -11,13 +11,13 @@ export const useBuildingOne = defineStore('building1', {
     fetchName() {
       const $name = ref(rtdb, '/schools/building1/name')
       onValue($name, (snapshot) => {
-        this.$state.name = snapshot.val()
+        this.name = snapshot.val()
       })
     },
     fetchEntries() {
       const $entries = ref(rtdb, 'schools/building1/entries')
       onValue($entries, (snapshot) => {
-        this.$state.entries = snapshot.val()
+        this.entries = snapshot.val()
       })
     },
   },

@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app class="lsfcc-app">
     <TheLoginPanel app />
     <TheNavbar app />
 
@@ -29,12 +29,4 @@ import TheFooter from "./layout/TheFooter.vue";
   margin-top: 1.5em;
   margin-bottom: 5em;
 }
-
-// .toggle {
-//   bottom: 10px;
-//   left: 10px;
-//   color: $secondary;
-//   cursor: default;
-//   font-size: small;
-// }
 </style>

@@ -9,9 +9,11 @@ export const useAnonBlog = defineStore('blog', {
 
   actions: {
     async fetchBlogs() {
-      const blogsQuery = getDocs(collection(firestore, 'blog'))
-      await blogsQuery.forEach((blog) => {
-        this.blogs.push(blog)
+      const blogsRef = collection(firestore, 'blog')
+      const blogsDocs = await getDocs(blogsRef)
+      blogsDocs.forEach((doc) => {
+        let docData = doc.data()
+        this.blogs.push(docData)
       })
     },
   },

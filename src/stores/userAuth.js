@@ -1,12 +1,10 @@
 import { defineStore } from 'pinia'
-import { rtdb, auth } from '../firebaseApp.config.js'
-import { ref, onValue } from 'firebase/database'
-import { signInWithEmailAndPassword, signOut } from '@firebase/auth'
+import { auth } from '../firebaseApp.config.js'
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged } from 'firebase/auth'
 
 export const useAuth = defineStore('auth', {
   state() {
     return {
-      users: [],
       credentials: {
         email: '',
         password: '',
@@ -16,35 +14,37 @@ export const useAuth = defineStore('auth', {
   },
 
   actions: {
-    fetchAccounts() {
-      const $p = ref(rtdb, '/users')
-      onValue($p, (snapshot) => {
-        this.$state.users = snapshot.val()
-      })
+    signup() {
+      createUserWithEmailAndPassword(auth, this.credentials.email, this.credentials.password)
+        .then((userCredential) => {
+          window.alert('SUCCESS!')
+          this.currentUser = userCredential.user
+        })
+        .catch((err) => {
+          window.alert(`this thing went wrong: ${error}`)
+        })
     },
 
     login() {
-      console.log(`$state.credentials.email == ${this.$state.credentials.email}`)
-      console.log(`$state.credentials.password == ${this.$state.credentials.password}`)
-      signInWithEmailAndPassword(auth, this.$state.credentials.email, this.$state.credentials.password)
+      signInWithEmailAndPassword(auth, this.credentials.email, this.credentials.password)
         .then((userCredential) => {
-          userCredential.user = this.$state.currentUser
+          window.alert('Success!')
+          const user = userCredential.user
+          return (this.currentUser = user)
         })
         .catch((error) => {
-          console.log(`${error}`)
+          window.alert(`this thing went wrong: ${error}`)
         })
     },
 
     logout() {
-      signOut(auth).then(() =>
-        this.$patch({
-          credentials: {
-            email: '',
-            password: '',
-          },
-          currentUser: {},
+      signOut(auth)
+        .then(() => {
+          window.alert('You have signed out')
         })
-      )
+        .catch((error) => {
+          window.alert(`this thing went wrong: ${error}`)
+        })
     },
   },
 })

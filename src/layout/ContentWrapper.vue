@@ -1,7 +1,7 @@
 <template>
   <v-row class="mb-10">
     <v-col class="mb-10">
-      <v-card class="pa-5">
+      <v-card class="pa-5 bg-white">
         <slot name="base-component"></slot>
       </v-card>
     </v-col>

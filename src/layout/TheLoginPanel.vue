@@ -1,32 +1,48 @@
 <template>
-  <v-navigation-drawer
-    app
-    temporary
-    v-model="store.drawerState"
-  >
-    <div class="login-tools">
-      <div class="mdc-drawer__header">
-        <p>Admin Login</p>
-      <hr />
-      </div>
-      <LoginForm />
-    </div>
+  <v-navigation-drawer app temporary v-model="ui.drawerState" class="bg-white">
+    <p class="text-center">Admin Login</p>
+    <hr />
+    <v-form>
+      <v-container>
+        <v-row>
+          <v-col>
+            <v-text-field
+              label="EMAIL"
+              v-model="userAuth.credentials.email"
+              required
+            ></v-text-field>
+            <v-text-field
+              label="PASSWORD"
+              v-model="userAuth.credentials.password"
+              required
+            ></v-text-field>
+            <v-btn color="blue" @click="clickSignIn"> Sign In </v-btn>
+            <v-btn color="red" @click="clickSignOut"> Sign Out </v-btn>
+          </v-col>
+        </v-row>
+      </v-container>
+    </v-form>
   </v-navigation-drawer>
 </template>
 
 <script setup>
 import { useUiState } from "@/stores/uiState.js";
-import LoginForm from "../components/LoginForm.vue";
+import { useAuth } from "@/stores/userAuth.js";
 
-const store = useUiState()
+const ui = useUiState();
+const userAuth = useAuth();
+
+function clickSignIn() {
+  userAuth.login();
+  ui.drawerState = false;
+}
+
+function clickSignOut() {
+  userAuth.logout();
+  ui.drawerState = false;
+}
 </script>
 
 <style lang="scss" scoped>
 @import "@/assets/scss/variables_and_overrides.scss";
-
-// .mdc-drawer__header {
-//   background: $alert;
-// }
-
-
 </style>

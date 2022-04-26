@@ -23,7 +23,6 @@ export default {
   },
   components: {
     BuildingHistoryInterface,
-    VCardTitle,
   },
 };
 </script>
