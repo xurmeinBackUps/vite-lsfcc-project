@@ -2,7 +2,7 @@
   <div>
     <v-expansion-panel-title>
       {{ profile.fullname }}
-      <span v-if="profile.lifetime" class="lifetime">
+      <span v-if="profile.lifetime">
         &thinsp; &mdash; &thinsp; ({{ profile.lifetime }})
       </span>
     </v-expansion-panel-title>
@@ -21,8 +21,3 @@ defineProps({
   profile: Object,
 });
 </script>
-
-<style lang="scss" scoped>
-.lifetime {
-}
-</style>
