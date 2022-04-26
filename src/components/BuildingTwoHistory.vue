@@ -9,14 +9,16 @@
 <script>
 import { useBuildingTwo } from "@/stores/buildingTwo.js";
 import BuildingHistoryInterface from "./BuildingHistoryInterface.vue";
+
 export default {
   setup() {
     const store = useBuildingTwo();
     store.fetchName();
     store.fetchEntries();
+
     return { store };
   },
-  components: { BuildingHistoryInterface, VCardTitle },
+  components: { BuildingHistoryInterface },
 };
 </script>
 
