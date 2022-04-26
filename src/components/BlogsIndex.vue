@@ -1,18 +1,14 @@
 <template>
-  <ul v-for="blog in store.blogs">
-    <li>{{ blog }}</li>
+  <ul v-for="doc in blogs">
+    <li>
+      <p>{{ doc.title }}</p>
+      <p>{{ doc.content }}</p>
+    </li>
   </ul>
 </template>
 
 <script setup>
-import { useAnonBlog } from "@/stores/blog.js";
-import { onMounted } from "vue";
-
-const store = useAnonBlog();
-
-onMounted(() => {
-  store.fetchBlogs();
+defineProps({
+  blogs: Array,
 });
 </script>
-
-<style lang="scss" scoped></style>

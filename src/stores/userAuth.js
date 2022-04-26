@@ -21,18 +21,19 @@ export const useAuth = defineStore('auth', {
           this.currentUser = userCredential.user
         })
         .catch((err) => {
-          window.alert(`${err}`)
+          window.alert(`this thing went wrong: ${error}`)
         })
     },
 
     login() {
       signInWithEmailAndPassword(auth, this.credentials.email, this.credentials.password)
         .then((userCredential) => {
+          window.alert('Success!')
           const user = userCredential.user
           return (this.currentUser = user)
         })
         .catch((error) => {
-          console.log(`${error}`)
+          window.alert(`this thing went wrong: ${error}`)
         })
     },
 
