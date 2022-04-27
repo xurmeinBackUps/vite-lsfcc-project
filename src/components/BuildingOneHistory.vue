@@ -6,25 +6,14 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import { useBuildingOne } from "@/stores/buildingOne.js";
 import BuildingHistoryInterface from "./BuildingHistoryInterface.vue";
 
-export default {
-  setup() {
-    const store = useBuildingOne();
-    store.fetchName();
+const store = useBuildingOne();
 
-    store.fetchEntries();
-
-    return {
-      store,
-    };
-  },
-  components: {
-    BuildingHistoryInterface,
-  },
-};
+store.fetchName();
+store.fetchEntries();
 </script>
 
 <style lang="scss" scoped></style>

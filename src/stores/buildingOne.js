@@ -7,6 +7,7 @@ export const useBuildingOne = defineStore('building1', {
     name: '',
     entries: [],
   }),
+
   actions: {
     fetchName() {
       const $name = ref(rtdb, 'schools/building1/name')
@@ -14,6 +15,7 @@ export const useBuildingOne = defineStore('building1', {
         this.name = snapshot.val()
       })
     },
+
     fetchEntries() {
       const $entries = ref(rtdb, 'schools/building1/entries')
       onValue($entries, (snapshot) => {

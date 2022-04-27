@@ -8,15 +8,6 @@ export const useBuildingTwo = defineStore('building2', {
     entries: [],
   }),
 
-  getters: {
-    years: (state) => {
-      const entriesData = state.entries
-      return entriesData.forEach((entry) => {
-        entry['dates']
-      })
-    },
-  },
-
   actions: {
     fetchName() {
       const dbRef = ref(rtdb, 'schools/building2/name')
@@ -24,6 +15,7 @@ export const useBuildingTwo = defineStore('building2', {
         this.name = snapshot.val()
       })
     },
+
     fetchEntries() {
       const dbRef = ref(rtdb, 'schools/building2/entries')
       onValue(dbRef, (snapshot) => {
