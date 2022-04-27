@@ -6,7 +6,7 @@ import { createPinia } from 'pinia'
 import 'vuetify/styles'
 import { vuetify } from './vuetify.config.js'
 
-import { rtdb, bucket, auth, firestore } from './firebaseApp.config.js'
+import { rtdb, bucket, auth } from './firebaseApp.config.js'
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -19,6 +19,5 @@ app.use(pinia)
 app.use(rtdb)
 app.use(bucket)
 app.use(auth)
-app.use(firestore)
 
 app.mount('#app')

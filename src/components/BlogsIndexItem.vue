@@ -6,12 +6,9 @@
 </template>
 
 <script setup>
-import { reactive } from "vue";
-
-const doc = reactive({
-  content: "",
-  title: "",
-});
+defineProps({
+  doc: Object
+})
 </script>
 
 <style lang="scss" scoped></style>
