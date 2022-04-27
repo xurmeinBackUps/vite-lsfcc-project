@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
-import { firestore } from '../firebaseApp.config'
-import { collection, getDocs, orderBy, query } from 'firebase/firestore'
+import { rtdb } from '../firebaseApp.config.js'
+import { ref, onValue } from 'firebase/database'
 
 export const useAnonBlog = defineStore('blog', {
   state: () => ({
@@ -8,12 +8,10 @@ export const useAnonBlog = defineStore('blog', {
   }),
 
   actions: {
-    async fetchBlogs() {
-      const blogRef = collection(firestore, 'blog')
-      const blogQuery = query(blogRef, orderBy('title'))
-      const blogDocs = await getDocs(blogQuery)
-      blogDocs.forEach((doc) => {
-        this.blogs.push(doc.data())
+    fetchBlogs() {
+      const dbRef = ref(rtdb, 'blogPosts')
+      onValue(dbRef, (snapshot) => {
+        this.blogs = snapshot.val()
       })
     },
   },

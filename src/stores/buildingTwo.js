@@ -19,15 +19,15 @@ export const useBuildingTwo = defineStore('building2', {
 
   actions: {
     fetchName() {
-      const dbRef = ref(rtdb, '/schools/building2/name')
+      const dbRef = ref(rtdb, 'schools/building2/name')
       onValue(dbRef, (snapshot) => {
-        this.$state.name = snapshot.val()
+        this.name = snapshot.val()
       })
     },
     fetchEntries() {
       const dbRef = ref(rtdb, 'schools/building2/entries')
       onValue(dbRef, (snapshot) => {
-        this.$state.entries = snapshot.val()
+        this.entries = snapshot.val()
       })
     },
   },

@@ -12,7 +12,7 @@ export const useProfiles = defineStore('profiles', {
 
   actions: {
     fetchProfiles() {
-      const $p = ref(rtdb, '/profiles')
+      const $p = ref(rtdb, 'profiles')
       onValue($p, (snapshot) => {
         this.$state.profiles = snapshot.val()
       })

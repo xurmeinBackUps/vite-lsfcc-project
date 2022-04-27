@@ -48,13 +48,11 @@ export const routes = [
     path: '/blog',
     name: 'blog',
     component: PageBlog,
-    props: true,
   },
   {
     path: '/transcripts',
     name: 'transcripts',
     component: PageTranscripts,
-    props: true,
   },
   {
     path: '/memorabilia',

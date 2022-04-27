@@ -1,8 +1,8 @@
 <template>
-  <li>
+  <div>
     <p>{{ trans.speaker }}</p>
-    <p>{{ trans.content }}</p>
-  </li>
+    <p>{{ trans.text }}</p>
+  </div>
 </template>
 
 <script setup>

@@ -9,7 +9,7 @@ export const useBuildingOne = defineStore('building1', {
   }),
   actions: {
     fetchName() {
-      const $name = ref(rtdb, '/schools/building1/name')
+      const $name = ref(rtdb, 'schools/building1/name')
       onValue($name, (snapshot) => {
         this.name = snapshot.val()
       })

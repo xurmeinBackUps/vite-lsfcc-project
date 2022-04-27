@@ -1,14 +1,14 @@
 <template>
-  <div>
-    <ul v-for="trans in store.transcripts">
+  <v-list>
+    <v-list-item v-for="trans in store.transcripts">
       <TranscriptsIndexItem :trans="trans" />
-    </ul>
-  </div>
+    </v-list-item>
+  </v-list>
 </template>
 
 <script setup>
 import { useTranscripts } from "@/stores/transcripts.js";
-const TranscriptsIndexItem = () => import("./TranscriptsIndexItem.vue");
+import TranscriptsIndexItem from "./TranscriptsIndexItem.vue";
 
 const store = useTranscripts();
 store.fetchTranscripts();
