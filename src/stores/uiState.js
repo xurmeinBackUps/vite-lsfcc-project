@@ -1,12 +1,20 @@
 import { defineStore } from 'pinia'
+import { useAuth } from './userAuth.js'
 
 export const useUiState = defineStore('uiState', {
   state() {
     return {
-      currentUser: {},
       darkMode: false,
       drawerState: false,
     }
+  },
+
+  getters: {
+    getCurrentUser() {
+      const $auth = useAuth()
+
+      return $auth.currentUser
+    },
   },
 
   actions: {
