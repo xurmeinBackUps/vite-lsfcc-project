@@ -1,8 +1,9 @@
 <template>
   <div>
-    <p>{{ entry.dates }}</p>
-    <p v-html="entry.text"></p>
+    <p class="text-subtitle-1">{{ entry.dates }}</p>
+    <p class="text-body-2" v-html="entry.text"></p>
     <br />
+    <br/>
   </div>
 </template>
 

@@ -1,6 +1,7 @@
 <template>
   <v-card height="300" class="rounded-xl">
     <v-card-title class="link text-yellow rounded-b-xl">{{ cardTitle }}</v-card-title>
+    <v-img height="256"></v-img>
   </v-card>
 </template>
 

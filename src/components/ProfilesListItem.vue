@@ -3,7 +3,7 @@
     <v-expansion-panel-title>
       {{ profile.fullname }}
       <span v-if="profile.lifetime">
-        &thinsp; &mdash; &thinsp; ({{ profile.lifetime }})
+        &thinsp; &mdash; &thinsp;({{ profile.lifetime }})
       </span>
     </v-expansion-panel-title>
     <v-expansion-panel-text>
