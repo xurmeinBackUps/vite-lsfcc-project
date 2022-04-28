@@ -38,9 +38,10 @@ export const useAuth = defineStore('auth', {
     },
 
     logout() {
-      signOut(this.currentUser)
+      signOut(auth)
         .then(() => {
           window.alert('You have signed out')
+          this.$reset()
         })
         .catch((error) => {
           window.alert(`this thing went wrong: ${error}`)

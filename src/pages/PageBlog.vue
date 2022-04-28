@@ -3,8 +3,12 @@
     <template #base-component>
       Anonymous Blog
       <BlogsIndex />
-      <BlogTextArea v-if="store.getCurrentUser.accessToken"  />
-      <ButtonOpenModal v-else target-modal="TheContactFormModal" />
+      <span v-if="store.getCurrentUser.accessToken" >
+        <BlogTextArea  />
+      </span>
+      <span v-else>
+        <ButtonOpenModal target-modal="TheContactFormModal" />
+      </span>
     </template>
   </content-wrapper>
 </template>
