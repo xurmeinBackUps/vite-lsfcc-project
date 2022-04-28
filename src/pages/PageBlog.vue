@@ -3,8 +3,8 @@
     <template #base-component>
       Anonymous Blog
       <BlogsIndex />
-      <BlogTextArea v-if="store.getCurrentUser.uid"  />
-      <ButtonOpenModal target-modal="TheContactFormModal"/>
+      <BlogTextArea v-if="store.getCurrentUser.accessToken"  />
+      <ButtonOpenModal v-else target-modal="TheContactFormModal" />
     </template>
   </content-wrapper>
 </template>
