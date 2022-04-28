@@ -30,7 +30,7 @@ export const useAuth = defineStore('auth', {
         .then((userCredential) => {
           window.alert('Success!')
           const user = userCredential.user
-          return (this.currentUser = user)
+          this.currentUser = user
         })
         .catch((error) => {
           window.alert(`this thing went wrong: ${error}`)

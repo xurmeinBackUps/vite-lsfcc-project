@@ -1,4 +1,5 @@
 <template>
+<keep-alive>
   <v-navigation-drawer app temporary v-model="ui.drawerState" class="bg-white">
     <p class="text-center">Admin Login</p>
     <hr />
@@ -23,6 +24,7 @@
       </v-container>
     </v-form>
   </v-navigation-drawer>
+</keep-alive>
 </template>
 
 <script setup>
