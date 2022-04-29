@@ -3,7 +3,6 @@ import { defineConfig } from 'vite'
 import { nodeResolve } from '@rollup/plugin-node-resolve'
 import vue from '@vitejs/plugin-vue'
 import ViteRestart from 'vite-plugin-restart'
-import FullReload from 'vite-plugin-full-reload'
 import { ViteTips } from 'vite-plugin-tips'
 import { viteCommonjs } from '@originjs/vite-plugin-commonjs'
 
@@ -15,7 +14,6 @@ export default defineConfig({
     ViteRestart({
       restart: ['[*].config.js', 'App.vue'],
     }),
-    FullReload(['src/**/*']),
     ViteTips(),
     viteCommonjs(),
   ],

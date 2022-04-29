@@ -22,7 +22,7 @@ import { RouterLink } from "vue-router";
 </script>
 
 <style lang="scss" scoped>
-@import "@/assets/scss/variables_and_overrides.scss";
+@import "/assets/scss/variables_and_overrides.scss";
 
 .navlink-btn {
   margin-right: 10px;
