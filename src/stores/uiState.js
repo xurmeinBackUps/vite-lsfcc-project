@@ -1,20 +1,29 @@
-import { defineStore } from "pinia";
+import { defineStore } from 'pinia'
+import { useAuth } from './userAuth.js'
 
 export const useUiState = defineStore('uiState', {
-  state () {
+  state() {
     return {
-      currentUser: {},
       darkMode: false,
-      drawerState: false   
+      drawerState: false,
     }
+  },
+
+  getters: {
+    getCurrentUser() {
+      const $auth = useAuth()
+
+      return $auth.currentUser
+    },
   },
 
   actions: {
     openDrawer() {
-      this.$state.drawerState = true
+      this.drawerState = true
     },
+
     closeDrawer() {
-      this.$state.drawerState = false
-    }
-  }
+      this.drawerState = false
+    },
+  },
 })

@@ -1,14 +1,13 @@
 <template>
-  <button class="mdc-button mdc-button--raised">
-    <span @click.prevent="openModal(event, targetModal)" class="mdc-button__label">
-      <slot :targetModal="targetModal"></slot>
-    </span>
-  </button>
+  <v-btn @click.prevent="openModal(event, targetModal)">
+      <slot :targetModal="targetModal">Contact</slot>
+  </v-btn>
 </template>
 
 <script setup>
 import { nextTick } from "vue";
 import { router } from "@/router/index.js";
+
 defineProps({
   targetModal: String,
 });

@@ -1,11 +1,9 @@
 <template>
-  <div class="mdc-card content-wrap">
-    <slot name="base-component"></slot>
-  </div>
+  <v-row class="mb-10">
+    <v-col class="mb-10">
+      <v-card class="pa-5 bg-white">
+        <slot name="base-component"></slot>
+      </v-card>
+    </v-col>
+  </v-row>
 </template>
-
-<style lang="scss" scoped>
-.content-wrap {
-  padding: 0.5em 0.5em;
-}
-</style>

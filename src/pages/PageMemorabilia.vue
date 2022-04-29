@@ -1,6 +1,6 @@
 <template>
   <content-wrapper>
-    <template #base-component> Page Memorabilia </template>
+    <template #base-component> Memorabilia </template>
   </content-wrapper>
 </template>
 

@@ -27,4 +27,7 @@ coverage
 *.njsproj
 *.sln
 *.sw?
+
+# ENV + local configs
 .env
+*.config.js

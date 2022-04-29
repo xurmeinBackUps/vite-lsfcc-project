@@ -1,8 +1,8 @@
 <template>
   <div>
-    <h3 class="mdc-card__title">{{ store.name }}</h3>
+    <v-card-title>{{ store.name }}</v-card-title>
     <br />
-      <BuildingHistoryInterface :entries="store.entries"/>
+    <BuildingHistoryInterface :entries="store.entries" />
   </div>
 </template>
 
@@ -15,6 +15,7 @@ export default {
     const store = useBuildingTwo();
     store.fetchName();
     store.fetchEntries();
+
     return { store };
   },
   components: { BuildingHistoryInterface },

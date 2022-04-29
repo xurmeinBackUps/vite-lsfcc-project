@@ -1,21 +1,19 @@
 <template>
-  <li class="mdc-list-item">
-    <span v-if="!profile.personalHistory" class="mdc-list-item--disabled"></span>
-    <span v-else class="mdc-list-item__ripple"></span>
-    <span class="mdc-list-item__text">
-      <span class="mdc-list-item__primary-text">
-        <span class="fullname">{{ profile.fullname }}</span>
-        <span v-if="profile.lifetime" class="lifetime"> &mdash; ({{ profile.lifetime }})</span>
+  <div>
+    <v-expansion-panel-title>
+      {{ profile.fullname }}
+      <span v-if="profile.lifetime">
+        &thinsp; &mdash; &thinsp;({{ profile.lifetime }})
       </span>
-      <span class="mdc-list-item__secondary-text sub">
-        <span v-if="profile.pro">{{ profile.pro }}</span><span v-if="profile.employmentDates"> from {{ profile.employmentDates }}</span>
-      </span>
-    </span>
-
-
-
-    <!-- {{ profile.personalHistory }} -->
-  </li>
+    </v-expansion-panel-title>
+    <v-expansion-panel-text>
+      <p v-if="profile.pro">
+        {{ profile.pro }}
+        <span v-if="profile.employmentDates">from {{ profile.employmentDates }}</span>
+      </p>
+      <p v-if="profile.personalHistory">{{ profile.personalHistory }}</p>
+    </v-expansion-panel-text>
+  </div>
 </template>
 
 <script setup>
@@ -23,21 +21,3 @@ defineProps({
   profile: Object,
 });
 </script>
-
-<style lang="scss" scoped>
-.disabled {
-  cursor: default;
-}
-
-.fullname {
-  font: 600 1.33rem 'Forum';
-}
-
-.lifetime {
-  font: 400 1.25em 'Forum';
-}
-
-.sub {
-  font: 1em black 'Roboto';
-}
-</style>

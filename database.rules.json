@@ -21,6 +21,16 @@
     "users": {
       ".read": true,
       ".write": true
+    },
+
+    "blogs": {
+      ".read": true,
+      ".write": true
+    },
+
+    "transcripts": {
+      ".read": true,
+      ".write": true
     }
   }
 }

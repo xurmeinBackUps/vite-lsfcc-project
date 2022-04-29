@@ -1,13 +1,20 @@
 <template>
-  <mcw-icon-button class="corner">
-    <mcw-material-icon icon="close" />
-  </mcw-icon-button>
+  <v-btn color="primary" @click.stop="`${target} = !${target}`" icon class="corner">
+    <v-icon >{{ this.$vuetify.icons.aliases.close }}</v-icon>
+  </v-btn>
 </template>
 
+<script setup>
+
+defineProps({
+  target: String
+})
+</script>
+
 <style scoped lang="scss">
-.corner {
-  position: absolute;
-  top: 5px;
-  right: 5px;
-}
+// .corner {
+//   position: absolute;
+//   top: 5px;
+//   right: 5px;
+// }
 </style>

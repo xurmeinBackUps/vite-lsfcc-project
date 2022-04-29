@@ -6,7 +6,6 @@ const PageBlog = () => import('@/pages/PageBlog.vue')
 const PageProfiles = () => import('@/pages/PageProfiles.vue')
 const PageTranscripts = () => import('@/pages/PageTranscripts.vue')
 const PageMemorabilia = () => import('@/pages/PageMemorabilia.vue')
-// const TheLoginModal = () => import('@/layout/TheLoginModal.vue')
 const TheContactModal = () => import('@/layout/TheContactModal.vue')
 
 export const routes = [
@@ -33,11 +32,7 @@ export const routes = [
     name: 'contact-form',
     component: TheContactModal,
   },
-  // {
-  //   path: '/login',
-  //   name: 'login-form',
-  //   component: TheLoginModal,
-  // },
+
   {
     path: '/schools/:bId',
     name: 'building-show',

@@ -1,57 +1,32 @@
 <template>
-  <div class="app-container">
-    <TheLoginPanel :open="uiStore.drawerState" />
-    <div class="mdc-drawer-app-content drawer-main-content">
-      <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
-        <TheNavbar />
-      </header>
-      <div class="mdc-top-app-bar--fixed-adjust">
-        <main class="main">
-          <RouterView />
-        </main>
-      </div>
-    </div>
-    <mcw-material-icon
-      class="toggle"
-      icon="login"
-      @click="drawer()"
-    />
-  </div>
+  <v-app class="lsfcc-app">
+    <TheLoginPanel app />
+    <TheNavbar app />
+
+    <v-main class="lsfcc-main">
+      <v-container fluid>
+        <router-view></router-view>
+      </v-container>
+    </v-main>
+
+    <TheFooter app />
+  </v-app>
 </template>
 
 <script setup>
 import { RouterView } from "vue-router";
 import TheNavbar from "./layout/TheNavbar.vue";
 import TheLoginPanel from "./layout/TheLoginPanel.vue";
-import { useUiState } from "./stores/uiState.js";
-
-const uiStore = useUiState();
-
-const drawer = () => {
-  uiStore.openDrawer();
-};
+import TheFooter from "./layout/TheFooter.vue";
 </script>
 
 <style lang="scss">
-@import "~/assets/scss/variables.scss";
-@import url("https://fonts.googleapis.com/css2?family=Forum&family=Roboto:ital,wght@0,400;0,700;1,300&display=swap");
+@import "@/assets/scss/variables_and_overrides.scss";
 
-.app-container {
-  position: relative;
-}
-
-.main {
+.lsfcc-main {
   width: 90%;
   margin: auto;
   margin-top: 1.5em;
-  margin-bottom: 1.5em;
-}
-
-.toggle {
-  bottom: 10px;
-  left: 10px;
-  color: $secondary;
-  cursor: default;
-  font-size: small;
+  margin-bottom: 5em;
 }
 </style>

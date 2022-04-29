@@ -1,6 +1,5 @@
 <template>
   <div class="item">
-  
     <div class="details">
       <h3>
         <slot name="heading"></slot>
@@ -9,9 +8,3 @@
     </div>
   </div>
 </template>
-
-<style scoped>
-
-
-
-</style>
