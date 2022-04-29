@@ -4,7 +4,7 @@
       Anonymous Blog
       <BlogsIndex />
       <span v-if="store.getCurrentUser.accessToken" >
-        <BlogTextArea  />
+        <BlogTextArea />
       </span>
       <span v-else>
         <ButtonOpenModal target-modal="TheContactFormModal" />
@@ -21,5 +21,4 @@ import ButtonOpenModal from "../components/ButtonOpenModal.vue";
 import { useUiState } from "@/stores/uiState.js";
 
 const store = useUiState()
-
 </script>

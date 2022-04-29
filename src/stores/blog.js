@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 import { rtdb } from '../firebaseApp.config.js'
-import { ref, onValue } from 'firebase/database'
+import { ref, onValue, set } from 'firebase/database'
 
 export const useAnonBlog = defineStore('blog', {
   state: () => ({
@@ -13,6 +13,11 @@ export const useAnonBlog = defineStore('blog', {
       onValue(dbRef, (snapshot) => {
         this.blogs = snapshot.val()
       })
+    },
+
+    addBlog(blog) {
+      const dbRef = ref(rtdb, 'blogPosts')
+      set(dbRef, { blog })
     },
   },
 })
