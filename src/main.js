@@ -4,9 +4,10 @@ import { router } from './router/index.js'
 import { createPinia } from 'pinia'
 // Styles
 import 'vuetify/styles'
+import '@mdi/font/css/materialdesignicons.css'
 import { vuetify } from './vuetify.config.js'
 
-import { rtdb, bucket, auth } from './firebaseApp.config.js'
+import { rtdb, auth } from './firebaseApp.config.js'
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -17,7 +18,6 @@ app.use(router)
 app.use(vuetify)
 app.use(pinia)
 app.use(rtdb)
-app.use(bucket)
 app.use(auth)
 
 app.mount('#app')

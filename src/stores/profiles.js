@@ -6,7 +6,6 @@ export const useProfiles = defineStore('profiles', {
   state() {
     return {
       profiles: [],
-      profile: {},
     }
   },
 

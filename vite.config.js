@@ -12,21 +12,24 @@ export default defineConfig({
   plugins: [
     vue(),
     nodeResolve(),
-    ViteRestart({
-      restart: ['[*].config.js', 'App.vue'],
-    }),
-    FullReload(['src/**/*']),
+    // ViteRestart({
+    //   restart: ['[*].config.js', 'App.vue'],
+    // }),
+    // FullReload(['src/**']),
     ViteTips(),
     viteCommonjs(),
   ],
 
   envDir: './.env',
+
   envPrefix: 'FB_',
+
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
   },
+
   build: {
     cssCodeSplit: true,
   },

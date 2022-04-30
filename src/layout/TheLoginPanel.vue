@@ -17,8 +17,19 @@
               v-model="userAuth.credentials.password"
               required
             ></v-text-field>
-            <v-btn color="blue" @click="clickSignIn"> Sign In </v-btn>
-            <v-btn color="red" @click="clickSignOut"> Sign Out </v-btn>
+          </v-col>
+        </v-row>
+        <v-row>
+          <v-col>
+            <v-col>
+              <v-btn color="blue" @click="clickSignIn"> Sign In </v-btn>
+            </v-col>
+            <v-col>
+              <v-btn color="green" @click="clickSignUp"> Create Account </v-btn>
+            </v-col>
+            <v-col>
+              <v-btn color="red" @click="clickSignOut"> Sign Out </v-btn>
+            </v-col>
           </v-col>
         </v-row>
       </v-container>
@@ -42,6 +53,11 @@ function clickSignIn() {
 function clickSignOut() {
   userAuth.logout();
   ui.drawerState = false;
+}
+
+function clickSignUp() {
+  userAuth.signup();
+  ui.drawerState = false
 }
 </script>
 
