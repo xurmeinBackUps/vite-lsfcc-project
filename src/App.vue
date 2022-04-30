@@ -1,7 +1,7 @@
 <template>
   <v-app class="lsfcc-app">
     <TheLoginPanel app />
-    <TheNavbar app />
+    <TheNavbar :user="store.currentUser" app />
 
     <v-main class="lsfcc-main">
       <v-container fluid>
@@ -18,6 +18,12 @@ import { RouterView } from "vue-router";
 import TheNavbar from "./layout/TheNavbar.vue";
 import TheLoginPanel from "./layout/TheLoginPanel.vue";
 import TheFooter from "./layout/TheFooter.vue";
+
+import { useAuth } from '@/stores/userAuth.js'
+
+const store = useAuth()
+
+
 </script>
 
 <style lang="scss">

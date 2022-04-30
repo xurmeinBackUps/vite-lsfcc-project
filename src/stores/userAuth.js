@@ -1,6 +1,14 @@
 import { defineStore } from 'pinia'
-import { auth } from '../firebaseApp.config.js'
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged } from 'firebase/auth'
+import { auth, rtdb } from '../firebaseApp.config.js'
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  signOut,
+  onAuthStateChanged
+} from 'firebase/auth'
+import {
+  ref, set, onValue, push
+} from 'firebase/database'
 
 export const useAuth = defineStore('auth', {
   state() {
@@ -10,30 +18,57 @@ export const useAuth = defineStore('auth', {
         password: '',
       },
       currentUser: {},
+      userRole: ''
     }
   },
 
   actions: {
+    handleErr(err) {
+      window.alert(`this thing went wrong: ${err}`)
+    },
+
+    writeUserRole(activeUser){
+      console.log(activeUser)
+      const newRef = ref(rtdb, 'users/' + activeUser.uid)
+      const newRefPost = push(newRef)
+      set(newRefPost, {
+        email: activeUser.email,
+        role: 'blogger'
+      })
+    },
+
+    fetchUserRole(activeUser) {
+      const dbRef = ref(rtdb, `users/${activeUser.uid}/role`)
+      onValue(dbRef, (snapshot) => {
+
+        this.userRole = snapshot.val()
+      })
+    },
+
+
     signup() {
       createUserWithEmailAndPassword(auth, this.credentials.email, this.credentials.password)
         .then((userCredential) => {
+          const user = userCredential.user
+          this.currentUser = user
+          this.writeUserRole(this.currentUser)
           window.alert('SUCCESS!')
-          this.currentUser = userCredential.user
         })
         .catch((error) => {
-          window.alert(`this thing went wrong: ${error}`)
+          this.handleErr(error)
         })
     },
 
     login() {
       signInWithEmailAndPassword(auth, this.credentials.email, this.credentials.password)
         .then((userCredential) => {
-          window.alert('Success!')
           const user = userCredential.user
           this.currentUser = user
+          this.fetchUserRole(this.currentUser)
+          window.alert('Success!')
         })
         .catch((error) => {
-          window.alert(`this thing went wrong: ${error}`)
+          this.handleErr(error)
         })
     },
 
@@ -44,7 +79,7 @@ export const useAuth = defineStore('auth', {
           this.$reset()
         })
         .catch((error) => {
-          window.alert(`this thing went wrong: ${error}`)
+          this.handleErr(error)
         })
     },
   },

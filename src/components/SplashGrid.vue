@@ -1,27 +1,51 @@
 <template>
   <div class="splash-grid">
     <router-link :to="{ name: 'building-show', params: { bId: 'building1' } }">
-      <splash-card card-title="Building One" class="splash-card-img image b-one" hover></splash-card>
+      <splash-card
+        card-title="Building One"
+        class="splash-card-img image b-one"
+        hover
+        elevation="6"></splash-card>
     </router-link>
 
     <router-link :to="{ name: 'building-show', params: { bId: 'building2' } }">
-      <splash-card card-title="Building Two" class="splash-card-img image b-two" hover></splash-card>
+      <splash-card
+        card-title="Building Two"
+        class="splash-card-img image b-two"
+        hover
+        elevation="6"></splash-card>
     </router-link>
 
     <router-link to="/profiles">
-      <splash-card card-title="Faculty & Staff" class="splash-card-img icon yrbk" hover></splash-card>
+      <splash-card
+        card-title="Faculty & Staff"
+        class="splash-card-img icon yrbk"
+        hover
+        elevation="6"></splash-card>
     </router-link>
 
     <router-link to="/memorabilia">
-      <splash-card card-title="Memorabilia" class="splash-card-img icon varsity" hover></splash-card>
+      <splash-card
+        card-title="Memorabilia"
+        class="splash-card-img icon varsity"
+        hover
+        elevation="6"></splash-card>
     </router-link>
 
     <router-link to="/transcripts">
-      <splash-card card-title="Transcripts" class="splash-card-img icon transcripts" hover></splash-card>
+      <splash-card
+        card-title="Transcripts"
+        class="splash-card-img icon transcripts"
+        hover
+        elevation="6"></splash-card>
     </router-link>
 
     <router-link to="/blog">
-      <splash-card card-title="Blog" class="splash-card-img icon blog" hover></splash-card>
+      <splash-card
+        card-title="Blog"
+        class="splash-card-img icon blog"
+        hover
+        elevation="6"></splash-card>
     </router-link>
   </div>
 </template>
