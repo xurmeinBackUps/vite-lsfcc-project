@@ -2,7 +2,7 @@
   <content-wrapper>
     <template #base-component>
       Page Transcipts
-      <TranscriptsIndex />
+      <TranscriptsList />
     </template>
   </content-wrapper>
 </template>
@@ -10,7 +10,7 @@
 <script setup>
 import ContentWrapper from "@/layout/ContentWrapper.vue";
 
-import TranscriptsIndex from "@/components/TranscriptsIndex.vue";
+import TranscriptsList from "@/components/TranscriptsList.vue";
 </script>
 
 <style lang="scss" scoped></style>

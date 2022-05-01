@@ -1,10 +1,12 @@
+
 const PageSplash = () => import('@/pages/PageSplash.vue')
 const PageAbout = () => import('@/pages/PageAbout.vue')
 const PagePartners = () => import('@/pages/PagePartners.vue')
 const PageBuildingShow = () => import('@/pages/PageBuildingShow.vue')
 const PageBlog = () => import('@/pages/PageBlog.vue')
 const PageProfiles = () => import('@/pages/PageProfiles.vue')
-const PageTranscripts = () => import('@/pages/PageTranscripts.vue')
+const PageTranscriptsIndex = () => import('@/pages/PageTranscriptsIndex.vue')
+const PageTranscriptsShow = () => import('@/pages/PageTranscriptsShow.vue')
 const PageMemorabilia = () => import('@/pages/PageMemorabilia.vue')
 const TheContactModal = () => import('@/layout/TheContactModal.vue')
 
@@ -52,8 +54,17 @@ export const routes = [
   {
     path: '/transcripts',
     name: 'transcripts',
-    component: PageTranscripts,
+    component: PageTranscriptsIndex,
+    children: [
+      {
+        path: '/:objKey',
+        name: 'transcript-show',
+        component: PageTranscriptsShow,
+        props: true
+      }
+    ]
   },
+
   {
     path: '/memorabilia',
     name: 'memorabilia',
