@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <div class="w-100">
     <p><span class="float-left">{{ doc.title }}</span><span class="float-right">{{ doc.date }}</span></p>
     <br />
-    <p>{{ doc.content }}</p>
+    <p class="blog-content">{{ doc.content }}</p>
   </div>
 </template>
 
@@ -12,4 +12,8 @@ defineProps({
 })
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.blog-content {
+  overflow-wrap: break-word;
+}
+</style>

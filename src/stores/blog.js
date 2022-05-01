@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 import { rtdb } from '../firebaseApp.config.js'
-import { ref, onValue, set } from 'firebase/database'
+import { ref, push, onValue, set } from 'firebase/database'
 
 export const useAnonBlog = defineStore('blog', {
   state: () => ({
@@ -15,12 +15,12 @@ export const useAnonBlog = defineStore('blog', {
       })
     },
 
-    addBlog(content, title) {
+    addBlog(content, date, title) {
       const dbRef = ref(rtdb, 'blogPosts')
       const newBlogRef = push(dbRef)
       set(newBlogRef, {
         content: content,
-        date: () => Date.now(),
+        date: date,
         title: title
       })
     },

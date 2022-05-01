@@ -1,6 +1,6 @@
 <template>
   <v-btn @click.prevent="openModal(event, targetModal)">
-      <slot :targetModal="targetModal">Contact</slot>
+    <slot :targetModal="targetModal">Contact</slot>
   </v-btn>
 </template>
 
