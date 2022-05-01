@@ -25,7 +25,6 @@ const date = computed(() => Date.now().toLocaleString())
 
 
 function submitBlogPost(newBlogTitle, newDate, newBlogContent) {
-  console.log(`submitBlogPost(): ${newBlogTitle}, ${newDate}, ${newBlogContent}`)
   store.addBlog(newBlogTitle, newDate, newBlogContent)
   store.fetchBlogs()
 }

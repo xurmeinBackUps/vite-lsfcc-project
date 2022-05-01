@@ -4,9 +4,9 @@
       Anonymous Blog
       <BlogsIndex />
       <v-divider class="my-9"></v-divider>
-      <BlogFormNew /><!-- v-if="store.getCurrentUser.uid"  -->
+      <BlogFormNew  v-if="store.getCurrentUser.uid"/>
       <ButtonOpenModal
-
+        v-else
         target-modal="TheContactFormModal"
       />
     </template>
