@@ -1,11 +1,13 @@
 <template>
-  <router-link :to="{ name: 'transcript-show', params: { objKey: objKey } }">
+  <router-link :to="{ name: 'transcripts-show', params: { objKey: objKey } }">
     <p>{{ trans.speaker }}</p>
   </router-link>
 </template>
 
 <script setup>
 import { RouterLink } from 'vue-router'
+
+// const
 
 defineProps({
   trans: Object,

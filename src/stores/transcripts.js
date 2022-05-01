@@ -5,12 +5,18 @@ import { ref, onValue, push, set } from 'firebase/database'
 export const useTranscripts = defineStore('transcripts', {
   state: () => ({
     transcripts: [],
+    trans: {}
   }),
 
 
 
   actions: {
-
+    fetchTranscriptByKey(string) {
+      const dbRef = ref(rtdb, `transcripts/${string}`)
+      onValue(dbRef, (snapshot) => {
+        this.trans = snapshot.val()
+      })
+    },
 
     fetchTranscripts() {
       const dbRef = ref(rtdb, 'transcripts')

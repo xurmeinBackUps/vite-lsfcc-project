@@ -1,7 +1,7 @@
 <template>
   <content-wrapper>
     <template #base-component>
-      Page Transcipts
+      Page Transcipts Index
       <TranscriptsList />
     </template>
   </content-wrapper>

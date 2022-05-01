@@ -55,15 +55,13 @@ export const routes = [
     path: '/transcripts',
     name: 'transcripts',
     component: PageTranscriptsIndex,
-    children: [
+  },
       {
-        path: '/:objKey',
-        name: 'transcript-show',
+        path: '/transcripts/:objKey',
+        name: 'transcripts-show',
         component: PageTranscriptsShow,
         props: true
-      }
-    ]
-  },
+      },
 
   {
     path: '/memorabilia',

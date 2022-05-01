@@ -5,7 +5,8 @@
         card-title="Building One"
         class="splash-card-img image b-one"
         hover
-        elevation="6"></splash-card>
+        elevation="6"
+      ></splash-card>
     </router-link>
 
     <router-link :to="{ name: 'building-show', params: { bId: 'building2' } }">
@@ -13,7 +14,8 @@
         card-title="Building Two"
         class="splash-card-img image b-two"
         hover
-        elevation="6"></splash-card>
+        elevation="6"
+      ></splash-card>
     </router-link>
 
     <router-link to="/profiles">
@@ -21,7 +23,8 @@
         card-title="Faculty & Staff"
         class="splash-card-img icon yrbk"
         hover
-        elevation="6"></splash-card>
+        elevation="6"
+      ></splash-card>
     </router-link>
 
     <router-link to="/memorabilia">
@@ -29,7 +32,8 @@
         card-title="Memorabilia"
         class="splash-card-img icon varsity"
         hover
-        elevation="6"></splash-card>
+        elevation="6"
+      ></splash-card>
     </router-link>
 
     <router-link to="/transcripts">
@@ -37,7 +41,8 @@
         card-title="Transcripts"
         class="splash-card-img icon transcripts"
         hover
-        elevation="6"></splash-card>
+        elevation="6"
+      ></splash-card>
     </router-link>
 
     <router-link to="/blog">
@@ -45,7 +50,8 @@
         card-title="Blog"
         class="splash-card-img icon blog"
         hover
-        elevation="6"></splash-card>
+        elevation="6"
+      ></splash-card>
     </router-link>
   </div>
 </template>
