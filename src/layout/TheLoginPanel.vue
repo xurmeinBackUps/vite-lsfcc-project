@@ -10,11 +10,13 @@
             <v-text-field
               label="EMAIL"
               v-model="userAuth.credentials.email"
+              type="email"
               required
             ></v-text-field>
             <v-text-field
               label="PASSWORD"
               v-model="userAuth.credentials.password"
+              type="password"
               required
             ></v-text-field>
           </v-col>

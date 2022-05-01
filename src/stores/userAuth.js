@@ -45,7 +45,6 @@ export const useAuth = defineStore('auth', {
       })
     },
 
-
     signup() {
       createUserWithEmailAndPassword(auth, this.credentials.email, this.credentials.password)
         .then((userCredential) => {

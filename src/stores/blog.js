@@ -15,9 +15,14 @@ export const useAnonBlog = defineStore('blog', {
       })
     },
 
-    addBlog(blog) {
+    addBlog(content, title) {
       const dbRef = ref(rtdb, 'blogPosts')
-      set(dbRef, { blog })
+      const newBlogRef = push(dbRef)
+      set(newBlogRef, {
+        content: content,
+        date: () => Date.now(),
+        title: title
+      })
     },
   },
 })

@@ -1,6 +1,7 @@
 <template>
   <div>
-    <p>{{ doc.title }}</p>
+    <p><span class="float-left">{{ doc.title }}</span><span class="float-right">{{ doc.date }}</span></p>
+    <br />
     <p>{{ doc.content }}</p>
   </div>
 </template>
