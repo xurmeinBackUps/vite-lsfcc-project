@@ -1,7 +1,7 @@
 <template>
   <v-app class="lsfcc-app">
     <TheLoginPanel app />
-    <TheNavbar :user-role="userRole" app />
+    <TheNavbar :user-role="store.userRole" app />
 
     <v-main class="lsfcc-main">
       <v-container fluid>
@@ -26,16 +26,14 @@ import { onMounted, onUpdated, ref } from "vue";
 const auth = useAuth()
 const store = useUiState()
 
-const userRole = ref('')
 
 onMounted(() => {
   auth.checkStorage()
-  store.userRole = userRole
+
 })
 
 onUpdated(() => {
   auth.checkStorage()
-  store.userRole = userRole
 
 })
 </script>

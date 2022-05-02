@@ -14,7 +14,7 @@
       <p v-if="profile.personalHistory" class="text-body-2">
         {{ profile.personalHistory }}
       </p>
-              <IndexItemAdminControls />
+              <IndexItemAdminControls v-if="auth.userRole === 'admin' || auth.userRole === 'hudson'" />
 
     </v-expansion-panel-text>
   </div>
