@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-expansion-panel-title class="text-h5">
+    <v-expansion-panel-title class="title">
       {{ profile.fullname }}
       <span v-if="profile.lifetime" class="font-italic">
         &thinsp; &mdash; &thinsp;({{ profile.lifetime }})
@@ -14,12 +14,26 @@
       <p v-if="profile.personalHistory" class="text-body-2">
         {{ profile.personalHistory }}
       </p>
+              <IndexItemAdminControls v-if="auth.userRole === 'admin' || auth.userRole === 'hudson'"/>
+
     </v-expansion-panel-text>
   </div>
 </template>
 
 <script setup>
+import IndexItemAdminControls from './IndexItemAdminControls.vue';
+import { useAuth } from '@/stores/userAuth.js'
+
+const auth = useAuth();
+
 defineProps({
   profile: Object,
 });
 </script>
+
+<style lang="scss" scoped>
+.title {
+  font-family: 'Forum', serif;
+  font-size: 1.5em;
+}
+</style>

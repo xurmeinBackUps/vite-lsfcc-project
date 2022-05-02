@@ -25,7 +25,7 @@
 
 <script setup>
 import { useAuth } from '../stores/userAuth.js'
-import { ref, reactive, onMounted } from 'vue'
+import { ref, reactive, onMounted, onUpdated } from 'vue'
 
 const auth = useAuth()
 const activeRole = ref('')
@@ -33,6 +33,10 @@ const activeRole = ref('')
 // const
 
 onMounted(() => {
+  auth.userRole = activeRole
+})
+
+onUpdated(() => {
   auth.userRole = activeRole
 })
 </script>

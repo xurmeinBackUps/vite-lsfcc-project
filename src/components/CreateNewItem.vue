@@ -4,6 +4,10 @@
   </v-row>
 </template>
 
-<script setup></script>
+<script setup>
+defineProps({
+  pageCtx: String
+})
+</script>
 
 <style lang="scss" scoped></style>

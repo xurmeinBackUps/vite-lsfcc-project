@@ -8,7 +8,7 @@
 
 <script setup>
 import { useTranscripts } from '@/stores/transcripts.js'
-import { reactive, onMounted } from 'vue';
+import {  onMounted } from 'vue';
 
 const store = useTranscripts()
 
