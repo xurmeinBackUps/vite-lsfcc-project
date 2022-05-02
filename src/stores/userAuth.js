@@ -7,35 +7,40 @@ import {
   onAuthStateChanged
 } from 'firebase/auth'
 import {
-  ref, set, onValue, push
+  ref,
+  set,
+  onValue,
+  push
 } from 'firebase/database'
+
 
 export const useAuth = defineStore('auth', {
   state() {
     return {
       credentials: {
         email: '',
-        password: '',
+        password: ''
       },
       currentUser: {},
       userRole: ''
     }
   },
 
+
   actions: {
     handleErr(err) {
       window.alert(`this thing went wrong: ${err}`)
     },
 
-    writeUserRole(activeUser){
-      console.log(activeUser)
-      const newRef = ref(rtdb, 'users/' + activeUser.uid)
-      const newRefPost = push(newRef)
-      set(newRefPost, {
-        email: activeUser.email,
-        role: 'blogger'
-      })
-    },
+    // writeUserRole(activeUser){
+    //   console.log(activeUser)
+    //   const newRef = ref(rtdb, 'users/' + activeUser.uid)
+    //   const newRefPost = push(newRef)
+    //   set(newRefPost, {
+    //     email: activeUser.email,
+    //     role: 'blogger'
+    //   })
+    // },
 
     fetchUserRole(activeUser) {
       const dbRef = ref(rtdb, `users/${activeUser.uid}/role`)
@@ -75,11 +80,20 @@ export const useAuth = defineStore('auth', {
       signOut(auth)
         .then(() => {
           window.alert('You have signed out')
-          this.$reset()
         })
         .catch((error) => {
           this.handleErr(error)
         })
+      this.$reset()
     },
+
+    checkStorage() {
+      onAuthStateChanged(
+        auth,
+        u => (this.currentUser = u),
+        err => this.this.handleErr(err)
+      )
+
+    }
   },
 })

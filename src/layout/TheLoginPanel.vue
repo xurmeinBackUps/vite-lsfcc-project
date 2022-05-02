@@ -9,13 +9,13 @@
           <v-col>
             <v-text-field
               label="EMAIL"
-              v-model="userAuth.credentials.email"
+              v-model="auth.credentials.email"
               type="email"
               required
             ></v-text-field>
             <v-text-field
               label="PASSWORD"
-              v-model="userAuth.credentials.password"
+              v-model="auth.credentials.password"
               type="password"
               required
             ></v-text-field>
@@ -23,14 +23,12 @@
         </v-row>
         <v-row>
           <v-col>
-            <v-col>
-              <v-btn color="blue" @click="clickSignIn"> Sign In </v-btn>
+            <v-col v-if="auth.currentUser">
+              <v-btn  color="red" @click.prevent="clickSignOut"> Sign Out </v-btn>
             </v-col>
-            <v-col>
-              <v-btn color="green" @click="clickSignUp"> Create Account </v-btn>
-            </v-col>
-            <v-col>
-              <v-btn color="red" @click="clickSignOut"> Sign Out </v-btn>
+            <v-col v-else>
+              <v-btn color="blue" @click.prevent="clickSignIn"> Sign In </v-btn>
+              <v-btn color="green" @click.prevent="clickSignUp"> Create Account </v-btn>
             </v-col>
           </v-col>
         </v-row>
@@ -45,22 +43,39 @@ import { useUiState } from "@/stores/uiState.js";
 import { useAuth } from "@/stores/userAuth.js";
 
 const ui = useUiState();
-const userAuth = useAuth();
+const auth = useAuth();
 
 function clickSignIn() {
-  userAuth.login();
+  auth.login();
   ui.drawerState = false;
 }
 
 function clickSignOut() {
-  userAuth.logout();
+  auth.logout();
   ui.drawerState = false;
 }
 
 function clickSignUp() {
-  userAuth.signup();
+  auth.signup();
   ui.drawerState = false
 }
+
+
+
+  /*
+    TODO function that uses bcrypt to hash password
+    stored in pinia & saved to rtdb user record
+    (firebase/auth uses it's own password security)
+  */
+
+  // import * as bcrypt from 'bcryptjs'
+
+  // computed: {
+  //   hashPassword: (state) => {
+  //     let passphrase = state.credentials.password
+  //     return (key) => passphrase.map((input) => bcrypt.hashSync(input, 10) = key)
+  //   }
+  // },
 </script>
 
 <style lang="scss" scoped>

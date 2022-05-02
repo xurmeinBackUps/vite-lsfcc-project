@@ -32,6 +32,17 @@ export const useTranscripts = defineStore('transcripts', {
         speaker: speaker,
         text: text
       }
+    },
+
+    updateAllRecords(){
+      const endpoint = ref(rtdb, 'transcripts')
+      onValue(endpoint, (snapshot) => {
+        snapshot.forEach(child => {
+          update(child, {
+            'private': false
+          })
+        })
+      })
     }
   },
 })

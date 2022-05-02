@@ -6,14 +6,15 @@ export const useUiState = defineStore('uiState', {
     return {
       darkMode: false,
       drawerState: false,
+      userRole: ''
     }
   },
 
   getters: {
-    getCurrentUser() {
+    getCurrentUserRole(state) {
       const $auth = useAuth()
 
-      return $auth.currentUser
+      return state.userRole = $auth.userRole
     },
   },
 
@@ -25,5 +26,7 @@ export const useUiState = defineStore('uiState', {
     closeDrawer() {
       this.drawerState = false
     },
+
+    // TODO?: implement functions to configure userRule-based handling of uiState
   },
 })
