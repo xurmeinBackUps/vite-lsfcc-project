@@ -20,4 +20,6 @@ app.use(pinia)
 app.use(rtdb)
 app.use(auth)
 
+window.localStorage.setItem('lsfcc-user-role', '')
+
 app.mount('#app')

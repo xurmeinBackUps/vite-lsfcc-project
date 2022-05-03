@@ -26,27 +26,37 @@ export const useAuth = defineStore('auth', {
     }
   },
 
-
   actions: {
     handleErr(err) {
       window.alert(`this thing went wrong: ${err}`)
     },
 
-    // writeUserRole(activeUser){
-    //   console.log(activeUser)
-    //   const newRef = ref(rtdb, 'users/' + activeUser.uid)
-    //   const newRefPost = push(newRef)
-    //   set(newRefPost, {
-    //     email: activeUser.email,
-    //     role: 'blogger'
-    //   })
-    // },
+
+
+    checkStorage() {
+      onAuthStateChanged(
+        auth,
+        u => (this.currentUser = u),
+        err => this.this.handleErr(err)
+      )
+
+    },
 
     fetchUserRole(activeUser) {
       const dbRef = ref(rtdb, `users/${activeUser.uid}/role`)
       onValue(dbRef, (snapshot) => {
-
         this.userRole = snapshot.val()
+      })
+      window.localStorage.setItem('lsfcc-user-role', this.userRole)
+    },
+
+    writeUserRole(activeUser){
+      console.log(activeUser)
+      const newRef = ref(rtdb, 'users/' + activeUser.uid)
+      const newRefPost = push(newRef)
+      set(newRefPost, {
+        email: activeUser.email,
+        role: 'blogger'
       })
     },
 
@@ -63,12 +73,14 @@ export const useAuth = defineStore('auth', {
         })
     },
 
+
     login() {
       signInWithEmailAndPassword(auth, this.credentials.email, this.credentials.password)
         .then((userCredential) => {
           const user = userCredential.user
           this.currentUser = user
           this.fetchUserRole(this.currentUser)
+
           window.alert('Success!')
         })
         .catch((error) => {
@@ -85,15 +97,6 @@ export const useAuth = defineStore('auth', {
           this.handleErr(error)
         })
       this.$reset()
-    },
-
-    checkStorage() {
-      onAuthStateChanged(
-        auth,
-        u => (this.currentUser = u),
-        err => this.this.handleErr(err)
-      )
-
     }
   },
 })

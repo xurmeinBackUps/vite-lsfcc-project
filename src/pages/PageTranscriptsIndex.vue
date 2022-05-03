@@ -3,11 +3,13 @@
     <template #base-component>
       Page Transcipts Index
       <TranscriptsList />
-      <v-row v-if="auth.userRole === 'admin' || auth.userRole === 'hudson'">
-        <v-col>
-          <CreateNewItem item-type="transcript" />
-        </v-col>
-      </v-row>
+
+          <create-new-item item-type="transcript" v-if="auth.userRole === 'admin' || auth.userRole === 'hudson'">
+            <template #transcript-form>
+              <FormNewTranscript />
+            </template>
+          </create-new-item>
+
     </template>
   </content-wrapper>
 </template>
@@ -15,8 +17,9 @@
 <script setup>
 import ContentWrapper from "@/layout/ContentWrapper.vue";
 import TranscriptsList from "@/components/TranscriptsList.vue";
-import CreateNewItem from "@/components/CreateNewItem.vue";
+import CreateNewItem from "@/layout/CreateNewItem.vue";
 import { useAuth } from '@/stores/userAuth.js'
+import FormNewTranscript from "../components/FormNewTranscript.vue";
 
 const auth = useAuth()
 </script>

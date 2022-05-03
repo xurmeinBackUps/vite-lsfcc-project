@@ -9,7 +9,7 @@
 </template>
 
 <script setup>
-import IndexItemAdminControls from './IndexItemAdminControls.vue';
+import IndexItemAdminControls from '@/layout/IndexItemAdminControls.vue';
 
 import { useAuth } from '@/stores/userAuth.js'
 

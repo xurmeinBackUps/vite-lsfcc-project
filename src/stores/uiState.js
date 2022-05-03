@@ -6,16 +6,25 @@ export const useUiState = defineStore('uiState', {
     return {
       darkMode: false,
       drawerState: false,
-      userRole: ''
+      newTransForm: false,
+      newProfileForm: false,
+      newHistoryForm: false,
+      adminUser: false,
+      storedRole: '',
     }
   },
 
   getters: {
-    getCurrentUserRole(state) {
+    currentUserRole() {
       const $auth = useAuth()
 
-      return state.userRole = $auth.userRole
+      return $auth.userRole
     },
+
+    getStoredRole(state) {
+      const ls = window.localStorage
+      return state.storedRole = ls.getItem('lsfcc-user-role')
+    }
   },
 
   actions: {
@@ -27,6 +36,29 @@ export const useUiState = defineStore('uiState', {
       this.drawerState = false
     },
 
-    // TODO?: implement functions to configure userRule-based handling of uiState
+    newTransDiag() {
+      this.newTransDiag = true
+    }
+    /*
+      TODO?: implement functions to configure userRule-based handling of uiState
+
+      permissionsCheck(role) {
+        switch (role) {
+          case 'admin':
+            this.adminUser = true
+            break;
+          case 'hudson':
+            this.adminUser = true
+            break;
+          case 'blogger':
+            this.adminUser = false
+            break;
+          default:
+            this.adminUser = false
+            break;
+        }
+      }
+
+    */
   },
 })

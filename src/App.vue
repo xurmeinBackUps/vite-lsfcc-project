@@ -1,7 +1,7 @@
 <template>
   <v-app class="lsfcc-app">
     <TheLoginPanel app />
-    <TheNavbar :user-role="store.userRole" app />
+    <TheNavbar :user-role="ui.currentUserRole" app />
 
     <v-main class="lsfcc-main">
       <v-container fluid>
@@ -24,18 +24,19 @@ import { useUiState } from '@/stores/uiState.js'
 import { onMounted, onUpdated, ref } from "vue";
 
 const auth = useAuth()
-const store = useUiState()
+const ui = useUiState()
+
 
 
 onMounted(() => {
   auth.checkStorage()
-
 })
 
 onUpdated(() => {
   auth.checkStorage()
 
 })
+
 </script>
 
 <style lang="scss">

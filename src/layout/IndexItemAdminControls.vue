@@ -1,6 +1,6 @@
 <template>
-  <v-row>
-    <v-col>
+  <v-row v-if="auth.userRole === 'admin' || auth.userRole === 'hudson'">
+    <v-col >
       <v-btn color="yellow">
         Edit
       </v-btn>
@@ -26,9 +26,13 @@
 <script setup>
 import { useAuth } from '../stores/userAuth.js'
 
-import { ref, onMounted, onUpdated } from 'vue'
+import { ref, onMounted, onUpdated, reactive } from 'vue'
 
 const auth = useAuth()
+
+defineProps({
+  dbRef: String
+})
 
 </script>
 
