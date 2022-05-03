@@ -6,7 +6,7 @@ const PageBuildingShow = () => import('@/pages/PageBuildingShow.vue')
 const PageBlog = () => import('@/pages/PageBlog.vue')
 const PageProfiles = () => import('@/pages/PageProfiles.vue')
 const PageTranscriptsIndex = () => import('@/pages/PageTranscriptsIndex.vue')
-const PageTranscriptsShow = () => import('@/pages/PageTranscriptsShow.vue')
+const PageTranscriptShow = () => import('@/pages/PageTranscriptShow.vue')
 const PageMemorabilia = () => import('@/pages/PageMemorabilia.vue')
 const TheContactModal = () => import('@/layout/TheContactModal.vue')
 
@@ -59,7 +59,7 @@ export const routes = [
       {
         path: '/transcripts/:objKey',
         name: 'transcripts-show',
-        component: PageTranscriptsShow,
+        component: PageTranscriptShow,
         props: true
       },
 
