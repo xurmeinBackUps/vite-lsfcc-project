@@ -28,10 +28,10 @@ export const useTranscripts = defineStore('transcripts', {
     addTranscript(speaker, text) {
       const dbRef = ref(rtdb, 'transcripts')
       const newTransRef = push(dbRef)
-      set(newTransRef), {
+      set((newTransRef), {
         speaker: speaker,
         text: text
-      }
+      })
     },
 
     updateAllRecords(){

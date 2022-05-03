@@ -33,9 +33,11 @@ export const useUiState = defineStore('uiState', {
       this.drawerState = false
     },
 
-    newTransDiag() {
-      this.newTransDiag = true
+    closeTransDiag() {
+      this.newTransForm = false
     }
+
+
     /*
       TODO?: implement functions to configure userRule-based handling of uiState
 
