@@ -8,6 +8,16 @@ export const useBuildingTwo = defineStore('building2', {
     entries: [],
   }),
 
+  getters: {
+    entriesCount: (state) => {
+      return state.entries.length
+    },
+
+    newId() {
+      return this.entriesCount + 1
+    }
+  },
+
   actions: {
     fetchName() {
       const dbRef = ref(rtdb, 'schools/building2/name')
@@ -22,5 +32,17 @@ export const useBuildingTwo = defineStore('building2', {
         this.entries = snapshot.val()
       })
     },
+
+    addEntry(dates, text) {
+      set(
+        ref(rtdb, 'schools/building1/entries' + this.newId),
+        {
+          dates: dates,
+          text: text
+        }
+      )
+    },
+
+    updateEntry() {},
   },
 })

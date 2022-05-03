@@ -1,17 +1,12 @@
 <template>
-
-    <v-card color="blue">
-      <v-form>
-        <v-text-field v-model="speaker" variant="outlined" label="Transcript Speaker"></v-text-field>
-        <v-textarea v-model="text" variant="outlined" label="Transcript Text"></v-textarea>
-            <v-btn
-              @click="submitTransForm(speaker, text)">Submit</v-btn>
-
-            <v-btn @click="ui.newTransForm = false">Cancel</v-btn>
-
-      </v-form>
-    </v-card>
-
+  <v-card color="blue">
+    <v-form>
+      <v-text-field v-model="speaker" variant="outlined" label="Transcript Speaker"></v-text-field>
+      <v-textarea v-model="text" variant="outlined" label="Transcript Text"></v-textarea>
+        <v-btn @click="submitTransForm(speaker, text)">Submit</v-btn>
+        <v-btn @click="ui.newTransForm = false">Cancel</v-btn>
+    </v-form>
+  </v-card>
 </template>
 
 <script setup>

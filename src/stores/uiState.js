@@ -20,8 +20,6 @@ export const useUiState = defineStore('uiState', {
 
       return $auth.userRole
     },
-
-
   },
 
   actions: {
@@ -35,6 +33,14 @@ export const useUiState = defineStore('uiState', {
 
     closeTransDiag() {
       this.newTransForm = false
+    },
+
+    closeProfileDiag() {
+      this.newProfileForm = false
+    },
+
+    closeHistoryDiag() {
+      this.newHistoryForm = false
     }
 
 

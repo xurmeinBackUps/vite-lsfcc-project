@@ -8,6 +8,16 @@ export const useBuildingOne = defineStore('building1', {
     entries: [],
   }),
 
+  getters: {
+    entriesCount()  {
+      return this.entries.length
+    },
+
+    newId() {
+      return this.entriesCount + 1
+    }
+  },
+
   actions: {
     fetchName() {
       const $name = ref(rtdb, 'schools/building1/name')
@@ -22,5 +32,16 @@ export const useBuildingOne = defineStore('building1', {
         this.entries = snapshot.val()
       })
     },
+
+    addEntry(dates, text) {
+      set(
+        ref(rtdb, 'schools/building1/entries' + this.newId),
+        {
+          dates: dates,
+          text: text
+        }
+      )
+    }
+
   },
 })

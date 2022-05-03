@@ -1,6 +1,7 @@
 import { defineStore } from 'pinia'
 import { rtdb } from '../firebaseApp.config.js'
 import { ref, onValue } from 'firebase/database'
+import { set } from 'vue-demi'
 
 export const useProfiles = defineStore('profiles', {
   state() {
@@ -9,6 +10,8 @@ export const useProfiles = defineStore('profiles', {
     }
   },
 
+
+
   actions: {
     fetchProfiles() {
       const $p = ref(rtdb, 'profiles')
@@ -16,5 +19,17 @@ export const useProfiles = defineStore('profiles', {
         this.$state.profiles = snapshot.val()
       })
     },
+
+    addProfile(fullname, employmentDates = '', lifetime = '', personalHistory = '', pro = '') {
+      const dbRef = ref(rtdb, 'profiles')
+      const newProfileRef = push(dbRef)
+      set(newProfileRef, {
+        fullname: fullname,
+        employmentDates: employmentDates,
+        lifetime: lifetime,
+        personalHistory: personalHistory,
+        pro: pro
+      })
+    }
   },
 })

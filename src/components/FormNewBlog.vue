@@ -1,6 +1,5 @@
 <template>
   <v-form>
-    <!-- ref="form" -->
     <v-text-field v-model="title" label="Title" required></v-text-field>
     <v-textarea
       variant="outlined"
