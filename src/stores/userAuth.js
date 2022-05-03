@@ -43,11 +43,15 @@ export const useAuth = defineStore('auth', {
     },
 
     fetchUserRole(activeUser) {
+      const ls = window.localStorage
+      ls.setItem('lsfcc', '')
       const dbRef = ref(rtdb, `users/${activeUser.uid}/role`)
       onValue(dbRef, (snapshot) => {
         this.userRole = snapshot.val()
+        ls.setItem('lsfcc', this.userRole)
       })
-      window.localStorage.setItem('lsfcc-user-role', this.userRole)
+
+
     },
 
     writeUserRole(activeUser){
@@ -89,6 +93,8 @@ export const useAuth = defineStore('auth', {
     },
 
     logout() {
+      const ls = window.localStorage
+
       signOut(auth)
         .then(() => {
           window.alert('You have signed out')
@@ -96,6 +102,7 @@ export const useAuth = defineStore('auth', {
         .catch((error) => {
           this.handleErr(error)
         })
+      ls.removeItem('lsfcc')
       this.$reset()
     }
   },

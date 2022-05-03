@@ -21,10 +21,7 @@ export const useUiState = defineStore('uiState', {
       return $auth.userRole
     },
 
-    getStoredRole(state) {
-      const ls = window.localStorage
-      return state.storedRole = ls.getItem('lsfcc-user-role')
-    }
+
   },
 
   actions: {

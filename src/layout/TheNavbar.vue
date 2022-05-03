@@ -67,6 +67,6 @@ defineProps({
 
 .greeting {
   font-size: 10px;
-  margin-left: -15vw
+  margin-left: -10vw
 }
 </style>

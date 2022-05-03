@@ -2,9 +2,9 @@
   <content-wrapper>S
     <template #base-component>
       Anonymous Blog
-      <BlogsIndex />
+      <IndexBlog />
       <v-divider class="my-9"></v-divider>
-      <BlogFormNew v-if="uiState.currentUserRole === 'blogger'"/>
+      <FormNewBlog v-if="uiState.currentUserRole === 'blogger'"/>
       <ButtonOpenModal
         v-else
         target-modal="TheContactFormModal"
@@ -15,11 +15,10 @@
 
 <script setup>
 import ContentWrapper from "@/layout/ContentWrapper.vue";
-import BlogsIndex from "@/components/BlogsIndex.vue";
+import IndexBlog from "@/components/IndexBlog.vue";
 import ButtonOpenModal from "@/components/ButtonOpenModal.vue";
 import { useUiState } from "@/stores/uiState.js";
-import BlogFormNew from"@/components/BlogFormNew.vue"
-import IndexItemAdminControls from "../components/IndexItemAdminControls.vue";
+import FormNewBlog from"@/components/FormNewBlog.vue"
 import { onMounted, onUpdated, reactive } from "vue";
 
 const permissions = reactive({

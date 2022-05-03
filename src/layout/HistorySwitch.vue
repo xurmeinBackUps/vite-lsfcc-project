@@ -1,16 +1,16 @@
 <template>
   <div>
     <div v-if="this.$route.params.bId === 'building1'">
-      <BuildingOneHistory />
+      <HistoryBuildingOne />
     </div>
     <div v-if="this.$route.params.bId === 'building2'">
-      <BuildingTwoHistory />
+      <HistoryBuildingTwo />
     </div>
   </div>
 </template>
 
 <script setup>
 // TODO:still needs  improvement
-import BuildingOneHistory from "@/components/BuildingOneHistory.vue";
-import BuildingTwoHistory from "@/components/BuildingTwoHistory.vue";
+import HistoryBuildingOne from "@/components/HistoryBuildingOne.vue";
+import HistoryBuildingTwo from "@/components/HistoryBuildingTwo.vue";
 </script>

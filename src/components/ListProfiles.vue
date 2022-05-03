@@ -2,7 +2,7 @@
   <div>
     <v-expansion-panels>
       <v-expansion-panel v-for="profile in store.profiles" :key="profile.fullname">
-        <ProfilesListItem :profile="profile" />
+        <ListItemProfiles :profile="profile" />
       </v-expansion-panel>
     </v-expansion-panels>
   </div>
@@ -10,8 +10,8 @@
 
 <script setup>
 import { useProfiles } from "@/stores/profiles.js";
-import ProfilesListItem from "./ProfilesListItem.vue";
-import CreateNewItem from './CreateNewItem.vue';
+import ListItemProfiles from "./ListItemProfiles.vue";
+import CreateNewItem from '@/layout/CreateNewItem.vue';
 
 const store = useProfiles();
 

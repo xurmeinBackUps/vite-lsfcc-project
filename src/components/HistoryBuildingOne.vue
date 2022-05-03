@@ -2,13 +2,13 @@
   <div>
     <v-card-title>{{ store.name }}</v-card-title>
     <br />
-    <BuildingHistoryInterface :entries="store.entries" />
+    <HistoryBuildingItemsIndex :entries="store.entries" />
   </div>
 </template>
 
 <script setup>
 import { useBuildingOne } from "@/stores/buildingOne.js";
-import BuildingHistoryInterface from "./BuildingHistoryInterface.vue";
+import HistoryBuildingItemsIndex from "./HistoryBuildingItemsIndex.vue";
 
 const store = useBuildingOne();
 

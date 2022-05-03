@@ -1,7 +1,7 @@
 <template>
   <v-app class="lsfcc-app">
     <TheLoginPanel app />
-    <TheNavbar :user-role="ui.currentUserRole" app />
+    <TheNavbar :user-role="ui.storedRole" app />
 
     <v-main class="lsfcc-main">
       <v-container fluid>

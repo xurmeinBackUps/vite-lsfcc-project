@@ -1,14 +1,14 @@
 <template>
   <v-list>
     <v-list-item v-for="doc in store.blogs">
-      <BlogsIndexItem :doc="doc" />
+      <IndexItemBlog :doc="doc" />
     </v-list-item>
   </v-list>
 </template>
 
 <script setup>
 import { useAnonBlog } from "@/stores/blog.js";
-import BlogsIndexItem from "./BlogsIndexItem.vue"
+import IndexItemBlog from "./IndexItemBlog.vue"
 
 
 const store = useAnonBlog();
