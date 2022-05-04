@@ -1,6 +1,8 @@
 <template>
   <content-wrapper>
-    <template #base-component><ListProfiles /></template>
+    <template #base-component>
+      <ListProfiles />
+    </template>
   </content-wrapper>
 </template>
 

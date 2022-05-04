@@ -1,7 +1,6 @@
 import { defineStore } from 'pinia'
 import { rtdb } from '../firebaseApp.config.js'
-import { ref, onValue } from 'firebase/database'
-import { set } from 'vue-demi'
+import { ref, onValue, push, set } from 'firebase/database'
 
 export const useProfiles = defineStore('profiles', {
   state() {

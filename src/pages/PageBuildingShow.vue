@@ -1,7 +1,7 @@
 <template>
   <content-wrapper>
     <template #base-component>
-      <HistorySwitch :b-id="$route.params.bId"/>
+      <HistorySwitch :b-id="bId"/>
     </template>
   </content-wrapper>
 </template>

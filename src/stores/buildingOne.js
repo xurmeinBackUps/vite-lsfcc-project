@@ -34,13 +34,11 @@ export const useBuildingOne = defineStore('building1', {
     },
 
     addEntry(dates, text) {
-      set(
-        ref(rtdb, 'schools/building1/entries' + this.newId),
-        {
-          dates: dates,
-          text: text
-        }
-      )
+      const newRef = ref(rtdb, 'schools/building1/entries' + this.newId)
+      set(newRef, {
+        dates: dates,
+        text: text
+      })
     }
 
   },
