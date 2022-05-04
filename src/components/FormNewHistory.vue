@@ -10,11 +10,12 @@
 </template>
 
 <script setup>
+import { onBeforeMount, ref, inject } from 'vue'
 import { useUiState } from '@/stores/uiState.js';
-import { onBeforeMount, ref } from 'vue'
 const useBuildingOne = () => import('@/stores/building1.js');
 const useBuildingTwo = () => import('@/stores/building2.js');
 
+const buildingId = inject('buildingId')
 
 const dates = ref('')
 const text = ref('')
@@ -22,15 +23,12 @@ const text = ref('')
 const ui = useUiState()
 
 function store(){
-  const bId = $route.param.bId
-  if (bId === 'building1') {
-       useBuildingOne()
-
-  } else if (bId === 'building2') {
+  if (buildingId === 'building1') {
+    useBuildingOne()
+  } else if (buildingId === 'building2') {
     useBuildingTwo()
   }
 }
-
 
 function submitHistoryForm(entryDates, entryText) {
   store.addTranscript(entryDates, entryText)
