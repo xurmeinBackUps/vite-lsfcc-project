@@ -1,20 +1,18 @@
 <template>
   <content-wrapper>
     <template #base-component>
-      <HistorySwitch :b-id="bId"/>
+      <div v-if="this.$route.params.bId === 'building1'">
+        <HistoryBuildingOne />
+      </div>
+      <div v-if="this.$route.params.bId === 'building2'">
+        <HistoryBuildingTwo />
+      </div>
     </template>
   </content-wrapper>
 </template>
 
 <script setup>
-import { provide, ref } from 'vue'
 import ContentWrapper from "@/layout/ContentWrapper.vue";
-import HistorySwitch from "@/layout/HistorySwitch.vue";
-
-const buildingId = ref('');
-provide('buildingId', buildingId)
-
-defineProps({
-  bId: String
-})
+import HistoryBuildingOne from "@/components/HistoryBuildingOne.vue";
+import HistoryBuildingTwo from "@/components/HistoryBuildingTwo.vue";
 </script>

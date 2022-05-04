@@ -8,8 +8,6 @@ export const useTranscripts = defineStore('transcripts', {
     trans: {}
   }),
 
-
-
   actions: {
     fetchTranscriptByKey(string) {
       const dbRef = ref(rtdb, `transcripts/${string}`)

@@ -23,5 +23,3 @@ import FormNewTranscript from "../components/FormNewTranscript.vue";
 
 const auth = useAuth()
 </script>
-
-<style lang="scss" scoped></style>

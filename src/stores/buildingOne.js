@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 import { rtdb } from '../firebaseApp.config.js'
-import { ref, onValue } from 'firebase/database'
+import { ref, onValue, set, push } from 'firebase/database'
 
 export const useBuildingOne = defineStore('building1', {
   state: () => ({
@@ -14,7 +14,7 @@ export const useBuildingOne = defineStore('building1', {
     },
 
     newId() {
-      return this.entriesCount + 1
+      return this.entriesCount
     }
   },
 
@@ -33,11 +33,11 @@ export const useBuildingOne = defineStore('building1', {
       })
     },
 
-    addEntry(dates, text) {
-      const newRef = ref(rtdb, 'schools/building1/entries' + this.newId)
+    addEntry(entryDates, entryText) {
+      const newRef = push(ref(rtdb, 'schools/building1/entries/' + this.newId))
       set(newRef, {
-        dates: dates,
-        text: text
+        dates: entryDates,
+        text: entryText,
       })
     }
 

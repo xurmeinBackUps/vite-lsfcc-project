@@ -24,7 +24,7 @@
 </template>
 
 <script setup>
-import { useAuth } from '../stores/userAuth.js'
+import { useAuth } from '@/stores/userAuth.js'
 
 import { ref, onMounted, onUpdated, reactive } from 'vue'
 

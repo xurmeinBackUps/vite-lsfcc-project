@@ -8,9 +8,3 @@
 import ContentWrapper from "@/layout/ContentWrapper.vue";
 import SplashGrid from '@/components/SplashGrid.vue'
 </script>
-
-<style lang="scss" scoped>
-
-
-
-</style>
