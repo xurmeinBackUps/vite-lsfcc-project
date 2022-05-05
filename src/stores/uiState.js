@@ -9,6 +9,7 @@ export const useUiState = defineStore('uiState', {
       newTransForm: false,
       newProfileForm: false,
       newHistoryForm: false,
+      newBlogForm: false,
       contactForm: false,
     }
   },

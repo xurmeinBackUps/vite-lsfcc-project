@@ -1,22 +1,29 @@
 <template>
-  <div class="w-100">
-    <p><span class="float-left">{{ props.doc.title }}</span><span class="float-right">{{ props.doc.date }}</span></p>
+  <div class="w-100" >
+    <p><span class="float-left">{{ blog.title }}</span><span class="float-right">{{ blog.date }}</span></p>
     <br />
-    <p class="blog-content">{{ props.doc.content }}</p>
-    <IndexItemAdminControls :index-item="props.doc" />
+    <p class="blog-content">{{ blog.content }}</p>
+    <IndexItemAdminControls @destroy="destroyRecord(bKey)" :index-item="blog" :item-key="bKey"/>
   </div>
 </template>
 
 <script setup>
 import IndexItemAdminControls from '@/layout/IndexItemAdminControls.vue';
-import { useAuth } from '@/stores/userAuth.js'
-import { computed } from 'vue';
+import { useUiState } from '../stores/uiState.js';
+import { useAnonBlog } from '../stores/blog.js';
 
-const auth = useAuth()
+const store = useAnonBlog()
+const ui = useUiState()
 
-const props = defineProps({
-  doc: Object
+defineProps({
+  blog: Object,
+  bKey: String
 })
+
+function destroyRecord(key) {
+  console.log(key)
+  store.deleteBlog(key)
+}
 </script>
 
 <style lang="scss" scoped>
