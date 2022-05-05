@@ -27,6 +27,7 @@ export const useTranscripts = defineStore('transcripts', {
       const dbRef = ref(rtdb, 'transcripts')
       const newTransRef = push(dbRef)
       set((newTransRef), {
+        private: false,
         speaker: speaker,
         text: text
       })

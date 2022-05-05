@@ -1,19 +1,17 @@
 import { defineStore } from 'pinia'
 import { rtdb } from '../firebaseApp.config.js'
-import { ref, onValue, push, set } from 'firebase/database'
+import { ref, onValue, push, set, update } from 'firebase/database'
 
 export const useProfiles = defineStore('profiles', {
-  state() {
-    return {
+  state: () => ({
       profiles: [],
-    }
-  },
+  }),
 
   actions: {
     fetchProfiles() {
       const $p = ref(rtdb, 'profiles')
       onValue($p, (snapshot) => {
-        this.$state.profiles = snapshot.val()
+        this.profiles = snapshot.val()
       })
     },
 
@@ -24,11 +22,18 @@ export const useProfiles = defineStore('profiles', {
         fullname: fullname,
         employmentDates: employmentDates,
         lifetime: lifetime,
+        private: false,
         personalHistory: personalHistory,
         pro: pro
       })
     },
 
-    updateProfile() {}
+    updateProfile() {},
+
+    setToPrivate(targetProfile) {
+      const dbRef = ref(rtdb, `profiles/${targetProfile}/private`)
+      console.log(dbRef)
+      update(dbRef, false)
+    }
   },
 })

@@ -1,16 +1,18 @@
 <template>
   <div>
     <v-expansion-panels>
-      <v-expansion-panel v-for="profile in store.profiles" :key="profile.fullname">
-        <ListItemProfiles :profile="profile" />
+      <v-expansion-panel v-for="(profile, key) in store.profiles" :key="key">
+        <ListItemProfiles :profile="profile" :p-key="key" />
       </v-expansion-panel>
     </v-expansion-panels>
-              <create-new-item item-type="profile" v-if="auth.userRole === 'admin' || auth.userRole === 'hudson'">
-            <template #profile-form>
-              <FormNewProfile />
-            </template>
-          </create-new-item>
-
+    <create-new-item
+      item-type="profile"
+      v-if="auth.userRole === 'admin' || auth.userRole === 'hudson'"
+    >
+      <template #profile-form>
+        <FormNewProfile />
+      </template>
+    </create-new-item>
   </div>
 </template>
 
@@ -20,9 +22,13 @@ import { useAuth } from '@/stores/userAuth.js'
 import FormNewProfile from "./FormNewProfile.vue";
 import ListItemProfiles from "./ListItemProfiles.vue";
 import CreateNewItem from '@/layout/CreateNewItem.vue';
+import { onMounted } from "vue";
 
 const auth = useAuth()
 const store = useProfiles();
 
-store.fetchProfiles();
+onMounted(() => {
+  store.fetchProfiles();
+})
+
 </script>

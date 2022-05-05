@@ -21,6 +21,7 @@ export const useAnonBlog = defineStore('blog', {
       set(newBlogRef, {
         content: content,
         date: date,
+        private: true,
         title: title
       })
     },

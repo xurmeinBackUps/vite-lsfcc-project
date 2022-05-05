@@ -30,13 +30,17 @@ export const useBuildingTwo = defineStore('building2', {
     },
 
     addEntry(entryDates, entryText) {
-      const newHistoryRef = ref(rtdb, 'schools/building2/entries' + this.newId)
+      const newHistoryRef = ref(rtdb, 'schools/building2/entries')
       set(newHistoryRef,{
-          dates: entryDates,
-          text: entryText
+        dates: entryDates,
+        position: this.entriesCount,
+        private: false,
+        text: entryText
       })
     },
 
-    updateEntry() {},
+    updateEntry(entryText, privacySetting) {
+
+    },
   },
 })

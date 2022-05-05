@@ -37,6 +37,7 @@ export const useBuildingOne = defineStore('building1', {
       const newRef = push(ref(rtdb, 'schools/building1/entries/' + this.newId))
       set(newRef, {
         dates: entryDates,
+        private: false,
         text: entryText,
       })
     }
