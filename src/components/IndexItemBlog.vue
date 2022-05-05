@@ -3,7 +3,7 @@
     <p><span class="float-left">{{ props.doc.title }}</span><span class="float-right">{{ props.doc.date }}</span></p>
     <br />
     <p class="blog-content">{{ props.doc.content }}</p>
-    <IndexItemAdminControls v-if="auth.userRole === 'admin' || auth.userRole === 'hudson'" />
+    <IndexItemAdminControls :index-item="props.doc" />
   </div>
 </template>
 

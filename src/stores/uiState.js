@@ -9,20 +9,7 @@ export const useUiState = defineStore('uiState', {
       newTransForm: false,
       newProfileForm: false,
       newHistoryForm: false,
-      storedRole: '',
-    }
-  },
-
-  getters: {
-    currentUserRole() {
-      const $auth = useAuth()
-
-      return $auth.userRole
-    },
-
-    setStoredRole() {
-      const ls = window.localStorage
-      return this.storedRole = ls.getItem('lsfcc')
+      contactForm: false,
     }
   },
 

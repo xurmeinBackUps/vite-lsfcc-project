@@ -1,5 +1,10 @@
 <template>
-  <v-navigation-drawer app temporary v-model="ui.drawerState" class="bg-white">
+  <v-navigation-drawer
+    app
+    temporary
+    v-model="ui.drawerState"
+    class="bg-white"
+  >
     <p class="text-center">Admin Login</p>
     <hr />
     <FormAuth />
