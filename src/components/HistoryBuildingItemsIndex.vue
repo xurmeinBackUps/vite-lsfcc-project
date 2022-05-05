@@ -1,6 +1,6 @@
 <template>
   <div>
-    <ul v-for="e in entries" :key="e.key">
+    <ul v-for="e in entries" :key="e.position">
       <HistoryBuildingItem :entry="e" />
     </ul>
   </div>
@@ -10,8 +10,7 @@
 import HistoryBuildingItem from "./HistoryBuildingItem.vue";
 
 defineProps({
-  // TODO: use different word than 'entries'
-  entries: Array,
+  entries: Object,
 });
 </script>
 

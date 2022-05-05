@@ -1,8 +1,8 @@
 <template>
   <div class="w-100">
-    <p><span class="float-left">{{ doc.title }}</span><span class="float-right">{{ doc.date }}</span></p>
+    <p><span class="float-left">{{ props.doc.title }}</span><span class="float-right">{{ props.doc.date }}</span></p>
     <br />
-    <p class="blog-content">{{ doc.content }}</p>
+    <p class="blog-content">{{ props.doc.content }}</p>
     <IndexItemAdminControls v-if="auth.userRole === 'admin' || auth.userRole === 'hudson'" />
   </div>
 </template>
@@ -10,10 +10,11 @@
 <script setup>
 import IndexItemAdminControls from '@/layout/IndexItemAdminControls.vue';
 import { useAuth } from '@/stores/userAuth.js'
+import { computed } from 'vue';
 
 const auth = useAuth()
 
-defineProps({
+const props = defineProps({
   doc: Object
 })
 </script>

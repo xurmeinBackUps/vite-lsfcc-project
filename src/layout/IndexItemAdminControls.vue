@@ -1,18 +1,23 @@
 <template>
   <v-row v-if="auth.userRole === 'admin' || auth.userRole === 'hudson'">
-    <v-col >
-      <v-btn color="yellow">
+    <v-col>
+      <v-btn @click="editing = true" color="yellow">
+      <!-- Need to change above line to emit and event that changes ref in parent -->
         Edit
       </v-btn>
     </v-col>
     <v-col>
-      <v-btn color="green">
+      <v-btn @click="editing = false" color="green">
         Save
       </v-btn>
     </v-col>
     <v-col>
-      <v-btn color="blue">
+    <!-- buttons below need to update rtdb references -->
+      <v-btn v-if="!indexItem.private" color="blue" @click="indexItem.private = true">
         Hide
+      </v-btn>
+      <v-btn v-else color="indigo" @click="indexItem.private = false">
+        show
       </v-btn>
     </v-col>
     <v-col>
@@ -31,7 +36,7 @@ import { ref, onMounted, onUpdated, reactive } from 'vue'
 const auth = useAuth()
 
 defineProps({
-  dbRef: String
+  indexItem: Object
 })
 
 </script>

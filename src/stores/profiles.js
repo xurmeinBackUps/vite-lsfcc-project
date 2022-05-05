@@ -27,6 +27,8 @@ export const useProfiles = defineStore('profiles', {
         personalHistory: personalHistory,
         pro: pro
       })
-    }
+    },
+
+    updateProfile() {}
   },
 })

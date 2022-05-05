@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="!entry.private">
     <p class="text-subtitle-1">{{ entry.dates }}</p>
     <p class="text-body-2" v-html="entry.text"></p>
     <br />

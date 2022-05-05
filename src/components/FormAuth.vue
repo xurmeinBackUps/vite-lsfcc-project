@@ -20,11 +20,21 @@
         <v-row>
           <v-col>
             <v-col v-if="auth.currentUser">
-              <v-btn  color="red" @click.prevent="clickSignOut"> Sign Out </v-btn>
+              <v-btn
+                color="red"
+                @click.prevent="clickSignOut"
+              > Sign Out </v-btn>
             </v-col>
             <v-col v-else>
-              <v-btn color="blue" @click.prevent="clickSignIn"> Sign In </v-btn>
-              <v-btn color="green" @click.prevent="clickSignUp"> Create Account </v-btn>
+              <v-btn
+                color="blue"
+                @click.prevent="clickSignIn"
+              > Sign In </v-btn>
+              <v-btn
+                v-if="auth.userRole === 'admin'"
+                color="green"
+                @click.prevent="clickSignUp"
+              > Create Account </v-btn>
             </v-col>
           </v-col>
         </v-row>

@@ -10,7 +10,6 @@
 import { useAnonBlog } from "@/stores/blog.js";
 import IndexItemBlog from "./IndexItemBlog.vue"
 
-
 const store = useAnonBlog();
 store.fetchBlogs();
 </script>

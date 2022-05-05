@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 import { rtdb } from '../firebaseApp.config.js'
-import { ref, onValue, push, set } from 'firebase/database'
+import { ref, onValue, push, set, update } from 'firebase/database'
 
 export const useTranscripts = defineStore('transcripts', {
   state: () => ({
@@ -32,15 +32,6 @@ export const useTranscripts = defineStore('transcripts', {
       })
     },
 
-    updateAllRecords(){
-      const endpoint = ref(rtdb, 'transcripts')
-      onValue(endpoint, (snapshot) => {
-        snapshot.forEach(child => {
-          update(child, {
-            'private': false
-          })
-        })
-      })
-    }
+
   },
 })

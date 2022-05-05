@@ -20,7 +20,11 @@ const store = useAnonBlog()
 const title = ref('')
 const content = ref('')
 
-const date = computed(() => Date.now().toLocaleString())
+const date = computed(() => {
+  let now = Date.now()
+  let readable = new Date(now)
+  return readable.toDateString()
+})
 
 
 function submitBlogPost(newBlogTitle, newDate, newBlogContent) {
