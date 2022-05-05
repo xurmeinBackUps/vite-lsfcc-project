@@ -9,7 +9,6 @@ export const useUiState = defineStore('uiState', {
       newTransForm: false,
       newProfileForm: false,
       newHistoryForm: false,
-      adminUser: false,
       storedRole: '',
     }
   },
@@ -21,10 +20,9 @@ export const useUiState = defineStore('uiState', {
       return $auth.userRole
     },
 
-    setStoredRole(state) {
+    setStoredRole() {
       const ls = window.localStorage
-      return state.storedRole = ls.getItem('lsfcc')
-
+      return this.storedRole = ls.getItem('lsfcc')
     }
   },
 
@@ -47,7 +45,9 @@ export const useUiState = defineStore('uiState', {
 
     closeHistoryDiag() {
       this.newHistoryForm = false
-    }
+    },
+
+
 
 
     /*

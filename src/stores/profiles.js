@@ -9,8 +9,6 @@ export const useProfiles = defineStore('profiles', {
     }
   },
 
-
-
   actions: {
     fetchProfiles() {
       const $p = ref(rtdb, 'profiles')

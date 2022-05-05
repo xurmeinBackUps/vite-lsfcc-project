@@ -12,10 +12,6 @@ export const useBuildingTwo = defineStore('building2', {
     entriesCount: (state) => {
       return state.entries.length
     },
-
-    newId() {
-      return this.entriesCount
-    }
   },
 
   actions: {
@@ -34,7 +30,7 @@ export const useBuildingTwo = defineStore('building2', {
     },
 
     addEntry(entryDates, entryText) {
-      const newHistoryRef = push(ref(rtdb, 'schools/building2/entries/' + this.newId))
+      const newHistoryRef = ref(rtdb, 'schools/building2/entries' + this.newId)
       set(newHistoryRef,{
           dates: entryDates,
           text: entryText

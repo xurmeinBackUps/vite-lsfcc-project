@@ -36,8 +36,8 @@ export const useAuth = defineStore('auth', {
     checkStorage() {
       onAuthStateChanged(
         auth,
-        u => (this.currentUser = u),
-        err => this.this.handleErr(err)
+        u => this.currentUser = u,
+        err => this.handleErr(err)
       )
 
     },
