@@ -39,7 +39,7 @@ export const useAuth = defineStore('auth', {
         u => this.currentUser = u,
         err => this.handleErr(err)
       )
-
+      this.userRole = localStorage.getItem('lsfcc')
     },
 
     fetchUserRole(activeUser) {
