@@ -8,7 +8,6 @@ const PageProfiles = () => import('@/pages/PageProfiles.vue')
 const PageTranscriptsIndex = () => import('@/pages/PageTranscriptsIndex.vue')
 const PageTranscriptShow = () => import('@/pages/PageTranscriptShow.vue')
 const PageMemorabilia = () => import('@/pages/PageMemorabilia.vue')
-const TheContactModal = () => import('@/layout/TheContactModal.vue')
 
 export const routes = [
   {
@@ -20,21 +19,13 @@ export const routes = [
   {
     path: '/about',
     name: 'about',
-
     component: PageAbout,
   },
   {
     path: '/partners',
     name: 'partners',
-
     component: PagePartners,
   },
-  {
-    path: '/contact',
-    name: 'contact-form',
-    component: TheContactModal,
-  },
-
   {
     path: '/schools/:bId',
     name: 'building-show',
