@@ -1,20 +1,20 @@
 <template>
   <v-card>
-  <div v-if="store.trans">
-    <p>{{ store.trans.speaker }}</p>
-    <br/>
-    <p>{{ store.trans.text }}</p>
-    <hr />
-    <IndexItemAdminControls @destroy="deleteRecord(props.transKey)" :index-item="store.trans" :item-key="props.transKey" />
-  </div>
-  <div v-else>
-    <router-link :to="{ name: 'transcripts' }">
-      <v-btn size="x-large" color="amber">
-        <span class="mdi mdi-arrow-left-bold"></span>
-        Go back, this transcript has been deleted
-      </v-btn>
-    </router-link>
-  </div>
+    <div v-if="store.trans">
+      <p>{{ store.trans.speaker }}</p>
+      <br/>
+      <p>{{ store.trans.text }}</p>
+      <hr />
+      <IndexItemAdminControls @destroy="deleteRecord(props.transKey)" :index-item="store.trans" :item-key="props.transKey" />
+    </div>
+    <div v-else>
+      <router-link :to="{ name: 'transcripts' }">
+        <v-btn size="x-large" color="amber">
+          <span class="mdi mdi-arrow-left-bold"></span>
+          Go back, this transcript has been deleted
+        </v-btn>
+      </router-link>
+    </div>
   </v-card>
 </template>
 

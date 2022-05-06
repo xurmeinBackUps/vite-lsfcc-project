@@ -14,25 +14,23 @@
       <p v-if="profile.personalHistory" class="text-body-2">
         {{ profile.personalHistory }}
       </p>
-      <IndexItemAdminControls :index-item="profile" v-if="auth.userRole === 'admin' || auth.userRole === 'hudson'" />
+      <IndexItemAdminControls :index-item="profile" :item-key="pKey" />
     </v-expansion-panel-text>
   </div>
 </template>
 
 <script setup>
 import IndexItemAdminControls from '@/layout/IndexItemAdminControls.vue';
-import { useAuth } from '@/stores/userAuth.js'
-
-const auth = useAuth();
 
 defineProps({
   profile: Object,
+  pKey: String
 });
 </script>
 
 <style lang="scss" scoped>
 .title {
   font-family: 'Forum', serif;
-  font-size: 1.5em;
+  font-size: 1.115em;
 }
 </style>
