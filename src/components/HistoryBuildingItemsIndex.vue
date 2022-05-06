@@ -1,7 +1,7 @@
 <template>
   <div>
-    <ul v-for="e in entries" :key="e.position">
-      <HistoryBuildingItem :entry="e" />
+    <ul v-for="(e, key) in entries" :key="key">
+      <HistoryBuildingItem :entry="e" :e-key="key" />
     </ul>
   </div>
 </template>

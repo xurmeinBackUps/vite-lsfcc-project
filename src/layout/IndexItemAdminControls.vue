@@ -35,7 +35,7 @@ const auth = useAuth()
 
 defineProps({
   indexItem: Object,
-  itemKey: String
+  itemKey: [String, Number]
 })
 
 const emit = defineEmits([
