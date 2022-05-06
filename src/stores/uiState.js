@@ -1,15 +1,35 @@
 import { defineStore } from 'pinia'
+import { useAuth } from './userAuth.js'
 
 export const useUiState = defineStore('uiState', {
-  state() {
-    return {
-      darkMode: false,
-      drawerState: false,
-      newTransForm: false,
-      newProfileForm: false,
-      newHistoryForm: false,
-      newBlogForm: false,
-      contactForm: false,
+  state: () => ({
+    drawerState: false,
+    newTransForm: false,
+    newProfileForm: false,
+    newHistoryForm: false,
+    newBlogForm: false,
+    contactForm: false,
+    adminUser: false
+  }),
+
+  getters: {
+    roleIsAdmin(state){
+      const auth = useAuth()
+      let role = auth.userRole
+      switch (role) {
+        case 'admin':
+          return state.adminUser = true
+          break;
+        case 'hudson':
+          return state.adminUser = true
+          break;
+        case 'blogger':
+          return state.adminUser = false
+          break;
+        default: // i.e. user === ''
+          return state.adminUser = false
+          break;
+      }
     }
   },
 
@@ -40,6 +60,10 @@ export const useUiState = defineStore('uiState', {
 
     closeContactForm() {
       this.contactForm = false
+    },
+
+    privateItemUiHandler(item) {
+
     }
   },
 })

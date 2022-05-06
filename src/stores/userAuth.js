@@ -15,16 +15,14 @@ import {
 
 
 export const useAuth = defineStore('auth', {
-  state() {
-    return {
-      credentials: {
-        email: '',
-        password: ''
-      },
-      currentUser: {},
-      userRole: ''
-    }
-  },
+  state: () => ({
+    credentials: {
+      email: '',
+      password: ''
+    },
+    currentUser: {},
+    userRole: ''
+  }),
 
   actions: {
     handleErr(err) {
@@ -48,8 +46,6 @@ export const useAuth = defineStore('auth', {
         this.userRole = snapshot.val()
         ls.setItem('lsfcc', this.userRole)
       })
-
-
     },
 
     writeUserRole(activeUser){
@@ -75,14 +71,12 @@ export const useAuth = defineStore('auth', {
         })
     },
 
-
     login() {
       signInWithEmailAndPassword(auth, this.credentials.email, this.credentials.password)
         .then((userCredential) => {
           const user = userCredential.user
           this.currentUser = user
           this.fetchUserRole(this.currentUser)
-
           window.alert('Success!')
         })
         .catch((error) => {
@@ -92,7 +86,6 @@ export const useAuth = defineStore('auth', {
 
     logout() {
       const ls = window.localStorage
-
       signOut(auth)
         .then(() => {
           window.alert('You have signed out')

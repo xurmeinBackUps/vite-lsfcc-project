@@ -1,6 +1,13 @@
 import { defineStore } from 'pinia'
 import { rtdb } from '../firebaseApp.config.js'
-import { ref, onValue, push, set, update, remove } from 'firebase/database'
+import {
+  ref,
+  onValue,
+  push,
+  set,
+  update,
+  remove
+} from 'firebase/database'
 
 export const useTranscripts = defineStore('transcripts', {
   state: () => ({
