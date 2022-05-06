@@ -1,5 +1,4 @@
 import { defineStore } from 'pinia'
-import { useAuth } from './userAuth.js'
 
 export const useUiState = defineStore('uiState', {
   state() {
@@ -35,29 +34,12 @@ export const useUiState = defineStore('uiState', {
       this.newHistoryForm = false
     },
 
+    closeBlogDiag() {
+      this.newBlogForm = false
+    },
 
-
-
-    /*
-      TODO?: implement functions to configure userRule-based handling of uiState
-
-      permissionsCheck(role) {
-        switch (role) {
-          case 'admin':
-            this.adminUser = true
-            break;
-          case 'hudson':
-            this.adminUser = true
-            break;
-          case 'blogger':
-            this.adminUser = false
-            break;
-          default:
-            this.adminUser = false
-            break;
-        }
-      }
-
-    */
+    closeContactForm() {
+      this.contactForm = false
+    }
   },
 })

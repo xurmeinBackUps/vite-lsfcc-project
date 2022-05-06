@@ -20,8 +20,12 @@ defineProps({
   bKey: String
 })
 
+function confirmDelete(){
+  window.confirm(`Click OK to delete this blog entry record from the database`)
+}
+
 function destroyRecord(key) {
-  console.log(key)
+  confirmDelete()
   store.deleteBlog(key)
 }
 </script>

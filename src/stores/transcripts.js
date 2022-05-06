@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 import { rtdb } from '../firebaseApp.config.js'
-import { ref, onValue, push, set, update } from 'firebase/database'
+import { ref, onValue, push, set, update, remove } from 'firebase/database'
 
 export const useTranscripts = defineStore('transcripts', {
   state: () => ({
@@ -33,6 +33,9 @@ export const useTranscripts = defineStore('transcripts', {
       })
     },
 
-
+    deleteTranscript(key) {
+      const dbRef = ref(rtdb, `transcripts/${key}`)
+      remove(dbRef)
+    }
   },
 })
