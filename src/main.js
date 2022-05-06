@@ -14,10 +14,10 @@ import { rtdb, auth } from './firebaseApp.config.js'
 const app = createApp(App)
 const pinia = createPinia()
 
-app.use(router)
 app.use(vuetify)
 app.use(pinia)
 app.use(rtdb)
 app.use(auth)
+app.use(router)
 
 app.mount('#app')

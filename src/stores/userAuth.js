@@ -31,8 +31,6 @@ export const useAuth = defineStore('auth', {
       window.alert(`this thing went wrong: ${err}`)
     },
 
-
-
     checkStorage() {
       onAuthStateChanged(
         auth,
