@@ -2,7 +2,7 @@
   <div>
     <v-expansion-panels>
       <v-expansion-panel v-for="(profile, key) in store.profiles" :key="key">
-        <ListItemProfiles :profile="profile" :p-key="key" />
+        <ListItemProfile :profile="profile" :p-key="key" />
       </v-expansion-panel>
     </v-expansion-panels>
     <create-new-item
@@ -20,7 +20,7 @@
 import { useProfiles } from "@/stores/profiles.js";
 import { useAuth } from '@/stores/userAuth.js'
 import FormNewProfile from "./FormNewProfile.vue";
-import ListItemProfiles from "./ListItemProfiles.vue";
+import ListItemProfile from "./ListItemProfile.vue";
 import CreateNewItem from '@/layout/CreateNewItem.vue';
 import { onMounted } from "vue";
 

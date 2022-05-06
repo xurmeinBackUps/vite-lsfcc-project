@@ -2,7 +2,7 @@
   <content-wrapper>
     <template #base-component>
       Anonymous Blog
-      <IndexBlog />
+      <ListAllBlogs />
       <v-divider class="my-9"></v-divider>
       <FormNewBlog v-if="auth.userRole === 'blogger' || auth.userRole === 'admin'"/>
       <ButtonContact @click="ui.contactForm = true"/>
@@ -12,7 +12,7 @@
 
 <script setup>
 import ContentWrapper from "@/layout/ContentWrapper.vue";
-import IndexBlog from "@/components/IndexBlog.vue";
+import ListAllBlogs from "@/components/ListAllBlogs.vue";
 import { useUiState } from "@/stores/uiState.js";
 import { useAuth } from '@/stores/userAuth.js'
 import ButtonContact from "../components/ButtonContact.vue";
