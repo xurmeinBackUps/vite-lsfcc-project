@@ -1,5 +1,5 @@
 <template>
-  <div v-for="(article, key) in rawData.articles" :key="key">
+  <div v-for="(article, key) in store.articles" :key="key">
     <entry-about>
       <template #article-title>
         <span>
@@ -16,19 +16,22 @@
 <script setup>
 import { useAbout } from "@/stores/about.js";
 import EntryAbout from "@/layout/EntryAbout.vue";
-import { onMounted, reactive } from "vue";
+// import { onMounted, reactive } from "vue";
 
 const store = useAbout();
-const rawData = reactive({
-  articles: [],
-});
+
+// const data = reactive({
+//   raw: [],
+//   sorted: [],
+// });
 
 store.fetchArticles();
 
-onMounted(() => {
-  rawData.articles = store.articles;
-  store.sortArticles(rawData.articles);
-});
+// onMounted(() => {
+//   data.raw = store.articles;
+//   store.sortArticles(data.raw);
+//   console.log(store.sortArticles(data.raw));
+// });
 </script>
 
 <style lang="scss" scoped></style>
