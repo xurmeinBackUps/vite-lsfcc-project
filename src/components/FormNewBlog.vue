@@ -7,29 +7,28 @@
       label="Provide your personal account anonymously"
       v-model="content"
     ></v-textarea>
-    <v-btn @click="submitBlogPost(title, date, content)">Submit Blog</v-btn>
+    <v-btn @click="submitBlogPost(content, date, title)">Submit Blog</v-btn>
   </v-form>
 </template>
 
 <script setup>
-import { useAnonBlog } from '../stores/blog.js';
-import { ref, computed } from 'vue'
+import { useAnonBlog } from "../stores/blog.js";
+import { ref, computed } from "vue";
 
-const store = useAnonBlog()
+const store = useAnonBlog();
 
-const title = ref('')
-const content = ref('')
+const title = ref("");
+const content = ref("");
 
 const date = computed(() => {
-  let now = Date.now()
-  let readable = new Date(now)
-  return readable.toDateString()
-})
-
+  let now = Date.now();
+  let readable = new Date(now);
+  return readable.toDateString();
+});
 
 function submitBlogPost(newBlogTitle, newDate, newBlogContent) {
-  store.addBlog(newBlogTitle, newDate, newBlogContent)
-  store.fetchBlogs()
+  store.addBlog(newBlogTitle, newDate, newBlogContent);
+  store.fetchBlogs();
 }
 </script>
 

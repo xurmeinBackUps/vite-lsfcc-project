@@ -1,10 +1,10 @@
 <template>
-  <v-footer v-model="store.drawerState" app class="footer">
+  <v-footer v-model="ui.drawerState" app class="footer">
     <v-btn
-      v-if="!store.drawerState"
+      v-if="!ui.drawerState"
       variant="outlined"
       icon="mdi-login"
-      @click="store.openDrawer"
+      @click="ui.openDrawer"
       color="blue"
       size="x-small"
     ></v-btn>
@@ -14,7 +14,7 @@
 <script setup>
 import { useUiState } from "@/stores/uiState.js";
 
-const store = useUiState();
+const ui = useUiState();
 </script>
 
 <style lang="scss" scoped>

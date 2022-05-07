@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 import { rtdb } from '../firebaseApp.config.js'
-import { ref, push, onValue, set, remove } from 'firebase/database'
+import { ref, update, push, onValue, set, remove } from 'firebase/database'
 
 export const useAnonBlog = defineStore('blog', {
   state: () => ({
@@ -29,6 +29,16 @@ export const useAnonBlog = defineStore('blog', {
     deleteBlog(key) {
       const dbRef = ref(rtdb, `blogPosts/${key}`)
       remove(dbRef)
+    },
+
+    setPrivateFalse(key) {
+      const settingRef = ref(rtdb, `blogPosts/${key}`)
+      update(settingRef, { private: false })
+    },
+
+    setPrivateTrue(key) {
+      const settingRef = ref(rtdb, `blogPosts/${key}`)
+      update(settingRef, { private: true })
     }
   },
 })
