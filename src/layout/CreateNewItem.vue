@@ -1,10 +1,8 @@
 <template>
   <div v-if="ui.adminUser">
-    <v-dialog v-model="ui.newTransForm" >
+    <v-dialog v-model="ui.newTransForm">
       <template v-slot:activator="{ props }">
-        <v-btn v-bind="props" color="green">
-          Add New {{ itemType }} to Database
-        </v-btn>
+        <v-btn v-bind="props" color="green"> Add New {{ itemType }} to Database </v-btn>
       </template>
       <v-card color="white">
         <slot :name="itemType + '-form'"></slot>
@@ -14,15 +12,11 @@
 </template>
 
 <script setup>
-import { useUiState } from '../stores/uiState.js';
+import { useUiState } from "../stores/uiState.js";
+
+const ui = useUiState();
 
 defineProps({
-  itemType: String
-})
-
-
-
-const ui = useUiState()
+  itemType: String,
+});
 </script>
-
-<style lang="scss" scoped></style>

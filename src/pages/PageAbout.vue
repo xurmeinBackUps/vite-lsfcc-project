@@ -1,15 +1,23 @@
 <template>
-  <content-wrapper>
-    <template #base-component>
-      About the Lincoln School for Colored Children Project
-      <AboutPreface />
-      <AboutAuthorStatement />
-    </template>
-  </content-wrapper>
+  <div v-for="(article, key) in store.fetchArticles" :key="key">
+      <entry-about >
+        <template #article-title>
+          <span>
+            {{ article.title }}
+          </span>
+        </template>
+        <template #article-content>
+          <slot v-html="article.content"></slot>
+        </template>
+
+      </entry-about>
+  </div>
 </template>
 
 <script setup>
-import ContentWrapper from "@/layout/ContentWrapper.vue";
-import AboutPreface from "../components/AboutPreface.vue";
-import AboutAuthorStatement from "../components/AboutAuthorStatement.vue";
+import { useAbout } from "@/stores/about.js"
+import EntryAbout from "@/layout/EntryAbout.vue";
+
+const store = useAbout()
+store.fetchArticles()
 </script>

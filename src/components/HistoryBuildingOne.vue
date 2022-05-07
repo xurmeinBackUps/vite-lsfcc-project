@@ -3,7 +3,7 @@
     <v-card-title>{{ store.name }}</v-card-title>
     <br />
     <HistoryBuildingItemsIndex :entries="store.entries" />
-       <create-new-item item-type="history"  v-if="auth.userRole === 'admin' || auth.userRole === 'hudson'">
+       <create-new-item item-type="history">
         <template #history-form>
           <FormNewHistory />
         </template>

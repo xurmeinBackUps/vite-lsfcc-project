@@ -3,11 +3,9 @@ import { rtdb } from '../firebaseApp.config.js'
 import { ref, onValue, push, set } from 'firebase/database'
 
 export const usePartners = defineStore('partners', {
-  state() {
-    return {
+  state: () => ({
       partners: [],
-    }
-  },
+    }),
 
   actions: {
     fetchPartners() {

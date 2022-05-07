@@ -1,16 +1,16 @@
 <template>
   <div v-for="partner in store.partners" :key="partner.name">
-    <PartnerEntry>
+    <entry-partner>
       <template #heading>{{ partner.name }}</template>
       <a target="_blank" :href="partner.homepage">
         <img :src="partner.imgUrl" :alt="partner.name + ' homepage'" class="w-25"/>
       </a>
-    </PartnerEntry>
+    </entry-partner>
   </div>
 </template>
 
 <script setup>
-import PartnerEntry from "@/layout/PartnerEntry.vue";
+import EntryPartner from "@/layout/EntryPartner.vue";
 import { usePartners } from "../stores/partners";
 
 const store = usePartners()
