@@ -1,14 +1,16 @@
 <template>
-  <div class="item" >
-
+  <div class="item">
+    <v-card class="pa-5" color="white">
       <h3>
         <slot name="article-title"></slot>
       </h3>
       <slot name="article-content"></slot>
-
+    </v-card>
   </div>
 </template>
 
-<script setup>
-
-</script>
+<style lang="scss" scoped>
+.item {
+  margin-bottom: 25px;
+}
+</style>

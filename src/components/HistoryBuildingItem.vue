@@ -1,19 +1,17 @@
 <template>
-  <div v-if="!entry.private">
+  <v-card class="pa-5 ma-3" v-if="!entry.private">
     <p class="text-subtitle-1">{{ entry.dates }}</p>
     <p class="text-body-2" v-html="entry.text"></p>
-    <br />
     <IndexItemAdminControls :index-item="entry" :index-key="eKey" />
-    <br/>
-  </div>
+  </v-card>
 </template>
 
 <script setup>
-import IndexItemAdminControls from '@/layout/IndexItemAdminControls.vue';
+import IndexItemAdminControls from "@/layout/IndexItemAdminControls.vue";
 
 defineProps({
   entry: Object,
-  eKey: [String, Number]
+  eKey: [String, Number],
 });
 </script>
 
