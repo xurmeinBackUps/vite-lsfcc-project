@@ -40,7 +40,16 @@ export const useBuildingOne = defineStore('building1', {
         private: false,
         text: entryText,
       })
-    }
+    },
 
+    setPrivateFalse(key) {
+      const settingRef = ref(rtdb, `schools/building1/entries/${key}`)
+      update(settingRef, { private: false })
+    },
+
+    setPrivateTrue(key) {
+      const settingRef = ref(rtdb, `schools/building1/entries/${key}`)
+      update(settingRef, { private: true })
+    }
   },
 })

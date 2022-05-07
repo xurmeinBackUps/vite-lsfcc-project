@@ -8,11 +8,23 @@
 
 <script setup>
 import IndexItemAdminControls from "@/layout/IndexItemAdminControls.vue";
+import { useUiState } from "../stores/uiState";
+import { computed } from "vue";
+// import { }
+
+const ui = useUiState();
 
 defineProps({
   entry: Object,
   eKey: [String, Number],
+  showItem: Function,
+  hideItem: Function,
 });
+
+const privateStyles = computed(() => ({
+  "d-none": store.trans.private && !ui.adminUser,
+  "font-italic text-grey": store.trans.private && ui.adminUser,
+}));
 </script>
 
 <style></style>

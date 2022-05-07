@@ -1,11 +1,17 @@
 <template>
   <v-card>
-    <div v-if="store.trans">
+    <div v-if="store.trans" :class="privateStyles">
       <p>{{ store.trans.speaker }}</p>
-      <br/>
+      <br />
       <p>{{ store.trans.text }}</p>
       <hr />
-      <IndexItemAdminControls @destroy="deleteRecord(props.transKey)" :index-item="store.trans" :item-key="props.transKey" />
+      <IndexItemAdminControls
+        @show="showItem(props.transKey)"
+        @hide="hideItem(props.transKey)"
+        @destroy="deleteRecord(props.transKey)"
+        :index-item="store.trans"
+        :item-key="props.transKey"
+      />
     </div>
     <div v-else>
       <router-link :to="{ name: 'transcripts' }">
@@ -19,28 +25,43 @@
 </template>
 
 <script setup>
-import { useTranscripts } from '@/stores/transcripts.js'
-import { onMounted, onUnmounted } from 'vue';
-import { RouterLink } from 'vue-router';
-import IndexItemAdminControls from '../layout/IndexItemAdminControls.vue';
+import { useTranscripts } from "@/stores/transcripts.js";
+import { onMounted, onUnmounted, computed } from "vue";
+import { RouterLink } from "vue-router";
+import IndexItemAdminControls from "../layout/IndexItemAdminControls.vue";
+import { useUiState } from "../stores/uiState";
 
-const store = useTranscripts()
+const store = useTranscripts();
+const ui = useUiState();
 
 const props = defineProps({
-  transKey: String
-})
+  transKey: String,
+});
+
+const privateStyles = computed(() => ({
+  "d-none": store.trans.private && !ui.adminUser,
+  "font-italic text-grey": store.trans.private && ui.adminUser,
+}));
 
 function deleteRecord(key) {
-  store.deleteTranscript(key)
+  store.deleteTranscript(key);
+}
+
+function showItem(key) {
+  store.setPrivateFalse(key);
+}
+
+function hideItem(key) {
+  store.setPrivateTrue(key);
 }
 
 onMounted(() => {
-  store.fetchTranscriptByKey(props.transKey)
-})
+  store.fetchTranscriptByKey(props.transKey);
+});
 
 onUnmounted(() => {
-  store.trans = {}
-})
+  store.trans = {};
+});
 </script>
 
 <style scoped lang="scss"></style>

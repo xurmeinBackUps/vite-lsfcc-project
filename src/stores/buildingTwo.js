@@ -39,8 +39,14 @@ export const useBuildingTwo = defineStore('building2', {
       })
     },
 
-    updateEntry(entryText, privacySetting) {
-
+    setPrivateFalse(key) {
+      const settingRef = ref(rtdb, `schools/building2/entries/${key}`)
+      update(settingRef, { private: false })
     },
+
+    setPrivateTrue(key) {
+      const settingRef = ref(rtdb, `schools/building2s/entries/${key}`)
+      update(settingRef, { private: true })
+    }
   },
 })

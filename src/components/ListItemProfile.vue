@@ -1,36 +1,62 @@
 <template>
-  <div>
+  <div :class="privateStyles">
     <v-expansion-panel-title class="title">
-      {{ profile.fullname }}
-      <span v-if="profile.lifetime" class="font-italic">
-        &thinsp; &mdash; &thinsp;({{ profile.lifetime }})
+      {{ props.profile.fullname }}
+      <span v-if="props.profile.lifetime" class="font-italic">
+        &thinsp; &mdash; &thinsp;({{ props.profile.lifetime }})
       </span>
     </v-expansion-panel-title>
     <v-expansion-panel-text>
-      <p v-if="profile.pro" class="text-subtitle-1 font-italic">
-        {{ profile.pro }}
-        <span v-if="profile.employmentDates">from {{ profile.employmentDates }}</span>
+      <p v-if="props.profile.pro" class="text-subtitle-1 font-italic">
+        {{ props.profile.pro }}
+        <span v-if="props.profile.employmentDates"
+          >from {{ props.profile.employmentDates }}</span
+        >
       </p>
-      <p v-if="profile.personalHistory" class="text-body-2">
-        {{ profile.personalHistory }}
+      <p v-if="props.profile.personalHistory" class="text-body-2">
+        {{ props.profile.personalHistory }}
       </p>
-      <IndexItemAdminControls :index-item="profile" :item-key="pKey" />
+      <IndexItemAdminControls
+        @show="showItem(props.pKey)"
+        @hide="hideItem(props.pKey)"
+        :index-item="props.profile"
+        :item-key="props.pKey"
+      />
     </v-expansion-panel-text>
   </div>
 </template>
 
 <script setup>
-import IndexItemAdminControls from '@/layout/IndexItemAdminControls.vue';
+import IndexItemAdminControls from "@/layout/IndexItemAdminControls.vue";
+import { useProfiles } from "@/stores/profiles.js";
+import { useUiState } from "../stores/uiState";
+import { computed } from "vue";
 
-defineProps({
+const ui = useUiState();
+const store = useProfiles();
+
+const props = defineProps({
   profile: Object,
-  pKey: String
+  pKey: String,
 });
+
+const privateStyles = computed(() => ({
+  "d-none": props.profile.private && !ui.adminUser,
+  "font-italic text-grey": props.profile.private && ui.adminUser,
+}));
+
+function showItem(key) {
+  store.setPrivateFalse(key);
+}
+
+function hideItem(key) {
+  store.setPrivateTrue(key);
+}
 </script>
 
 <style lang="scss" scoped>
 .title {
-  font-family: 'Forum', serif;
+  font-family: "Forum", serif;
   font-size: 1.115em;
 }
 </style>
