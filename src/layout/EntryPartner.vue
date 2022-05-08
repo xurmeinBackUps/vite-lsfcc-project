@@ -4,7 +4,7 @@
       <h3>
         <slot name="heading"></slot>
       </h3>
-      <slot></slot>
+      <slot name="partner-logo"></slot>
     </div>
   </div>
 </template>

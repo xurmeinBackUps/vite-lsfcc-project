@@ -3,19 +3,16 @@
     "profiles": {
       ".read": true,
       ".write": "auth.uid != null"
-
     },
 
     "resources": {
       ".read": true,
       ".write": "auth.uid != null"
-
     },
 
     "schools": {
       ".read": true,
       ".write": "auth.uid != null"
-
     },
 
     "users": {
@@ -29,6 +26,16 @@
     },
 
     "transcripts": {
+      ".read": true,
+      ".write": "auth.uid != null"
+    },
+
+    "about": {
+      ".read": true,
+      ".write": "auth.uid != null"
+    },
+
+    "partners": {
       ".read": true,
       ".write": "auth.uid != null"
     }

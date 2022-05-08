@@ -7,23 +7,26 @@ export const useAbout = defineStore('about', {
     articles: []
   }),
 
+  getters: {
+
+  },
+
   actions: {
     sortArticles(arr) {
-      const statement = arr[0]
-      const crawfordsville = arr[1]
-      const education = arr[2]
-      const migration = arr[3]
-      const preface = arr[4]
+      let statement = arr[0]
+      let crawfordsville = arr[1]
+      let education = arr[2]
+      let migration = arr[3]
+      let preface = arr[4]
 
-      for (let i; i < arr.length; i++) {
-        arr.pop()
-      }
+      const newArr = []
+      newArr[0] = preface
+      newArr[1] = statement
+      newArr[2] = education
+      newArr[3] = migration
+      newArr[4] = crawfordsville
+      this.articles = newArr
 
-      arr[0] = preface
-      arr[1] = statement
-      arr[2] = education
-      arr[3] = migration
-      arr[4] = crawfordsville
     },
 
     fetchArticles() {
@@ -32,7 +35,7 @@ export const useAbout = defineStore('about', {
         snapshot.forEach(data => {
           this.articles.push(data.val())
         })
-      })
+      }, { onlyOnce: true })
     }
   }
 })
