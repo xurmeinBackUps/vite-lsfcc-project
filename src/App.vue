@@ -18,8 +18,6 @@ import TheNavbar from "./layout/TheNavbar.vue";
 import TheLoginPanel from "./layout/TheLoginPanel.vue";
 import TheFooter from "./layout/TheFooter.vue";
 import { RouterView } from "vue-router";
-
-
 </script>
 
 <style lang="scss">
