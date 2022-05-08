@@ -1,5 +1,5 @@
 <template>
-  <v-card class="pa-5 ma-3" v-if="!entry.private">
+  <v-card class="pa-5 ma-3">
     <p class="text-subtitle-1">{{ entry.dates }}</p>
     <p class="text-body-2" v-html="entry.text"></p>
     <IndexItemAdminControls :index-item="entry" :index-key="eKey" />

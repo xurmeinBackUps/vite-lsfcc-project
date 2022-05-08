@@ -2,10 +2,7 @@
   <div>
     <v-card-title>{{ store.name }}</v-card-title>
     <br />
-    <HistoryBuildingItemsIndex
-      :entries="store.entries"
-      :showItem="store.setPrivateFals"
-    />
+    <HistoryBuildingItemsIndex :entries="store.entries" />
     <create-new-item item-type="history">
       <template #history-form>
         <FormNewHistory />
