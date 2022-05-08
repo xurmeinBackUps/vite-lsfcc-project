@@ -16,7 +16,7 @@
     <div v-else>
       <router-link :to="{ name: 'transcripts' }">
         <v-btn size="x-large" color="amber">
-          <span class="mdi mdi-arrow-left-bold"></span>
+          <MdiArrowLeftBold />
           Go back, this transcript has been deleted
         </v-btn>
       </router-link>
@@ -30,6 +30,7 @@ import { onMounted, onUnmounted, computed } from "vue";
 import { RouterLink } from "vue-router";
 import IndexItemAdminControls from "../layout/IndexItemAdminControls.vue";
 import { useUiState } from "../stores/uiState";
+import MdiArrowLeftBold from "./icons/MdiArrowLeftBold.vue";
 
 const store = useTranscripts();
 const ui = useUiState();

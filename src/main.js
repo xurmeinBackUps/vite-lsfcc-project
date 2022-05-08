@@ -4,7 +4,6 @@ import { router } from './router/index.js'
 import { createPinia } from 'pinia'
 // Styles
 import 'vuetify/styles'
-import '@mdi/font/css/materialdesignicons.css'
 import { vuetify } from './vuetify.config.js'
 
 import { rtdb, auth } from './firebaseApp.config.js'

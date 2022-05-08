@@ -2,35 +2,35 @@
   "rules": {
     "profiles": {
       ".read": true,
-      ".write": true
+      ".write": "auth.uid != null"
 
     },
 
     "resources": {
       ".read": true,
-      ".write": true
+      ".write": "auth.uid != null"
 
     },
 
     "schools": {
       ".read": true,
-      ".write": true
+      ".write": "auth.uid != null"
 
     },
 
     "users": {
       ".read": true,
-      ".write": true
+      ".write": "auth.uid != null"
     },
 
     "blogs": {
       ".read": true,
-      ".write": true
+      ".write": "auth.uid != null"
     },
 
     "transcripts": {
       ".read": true,
-      ".write": true
+      ".write": "auth.uid != null"
     }
   }
 }

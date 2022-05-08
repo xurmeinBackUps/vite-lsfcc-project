@@ -1,5 +1,5 @@
 import { fileURLToPath, URL } from 'url'
-import { defineConfig, loadEnv } from 'vite'
+import { defineConfig, loadEnv, splitVendorChunkPlugin } from 'vite'
 import { nodeResolve } from '@rollup/plugin-node-resolve'
 import vue from '@vitejs/plugin-vue'
 import ViteRestart from 'vite-plugin-restart'
@@ -13,6 +13,7 @@ export default defineConfig(({ command, mode }) => {
 
   if (command === 'serve') {
     return {
+      mode: 'development',
       plugins: [
         vue(),
         nodeResolve(),
@@ -41,10 +42,12 @@ export default defineConfig(({ command, mode }) => {
     }
   } else {
     return {
+      mode: 'development' || 'production',
       plugins: [
         vue(),
         nodeResolve(),
         viteCommonjs(),
+        splitVendorChunkPlugin()
       ],
 
       envDir: './.env',
@@ -59,6 +62,26 @@ export default defineConfig(({ command, mode }) => {
 
       build: {
         cssCodeSplit: true,
+        minify: 'esbuild',
+        rollupOptions: {
+          output: {
+            manualChunks: {
+              firebase: [
+                'firebase/app',
+                'firebase/auth',
+                'firebase/database'
+              ],
+              vue: ['vue'],
+              'vue-router': ['vue-router'],
+              vuetify: [
+                'vuetify/lib/iconsets/mdi',
+                'vuetify/components',
+                'vuetify/directives'
+              ],
+
+            }
+          }
+        },
       },
 
       define: {

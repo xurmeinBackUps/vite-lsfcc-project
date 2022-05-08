@@ -3,16 +3,19 @@
     <v-btn
       v-if="!ui.drawerState"
       variant="outlined"
-      icon="mdi-login"
+      icon
       @click="ui.openDrawer"
       color="blue"
       size="x-small"
-    ></v-btn>
+    >
+      <MdiLogin />
+    </v-btn>
   </v-footer>
 </template>
 
 <script setup>
 import { useUiState } from "@/stores/uiState.js";
+import MdiLogin from "../components/icons/MdiLogin.vue";
 
 const ui = useUiState();
 </script>
