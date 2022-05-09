@@ -20,7 +20,7 @@
       ".write": "auth.uid != null"
     },
 
-    "blogs": {
+    "blogPosts": {
       ".read": true,
       ".write": "auth.uid != null"
     },
@@ -30,12 +30,12 @@
       ".write": "auth.uid != null"
     },
 
-    "about": {
+    "aboutPageArticles": {
       ".read": true,
       ".write": "auth.uid != null"
     },
 
-    "partners": {
+    "partnerEntries": {
       ".read": true,
       ".write": "auth.uid != null"
     }

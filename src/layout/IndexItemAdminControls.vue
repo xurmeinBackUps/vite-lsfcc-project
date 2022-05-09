@@ -1,18 +1,17 @@
 <template>
   <v-row v-if="ui.adminUser">
     <v-col>
-      <v-btn @click="emit('edit', itemKey)" color="yellow">
+      <v-btn @click="emit('edit', itemKey)" color="yellow" disabled>
       <!-- Need to change above line to emit and event that changes ref in parent -->
         Edit
       </v-btn>
     </v-col>
     <v-col>
-      <v-btn @click="emit('save', itemKey)" color="green">
+      <v-btn @click="emit('save', itemKey)" color="green" disabled>
         Save
       </v-btn>
     </v-col>
     <v-col>
-    <!-- buttons below need to update rtdb references -->
       <v-btn v-if="!indexItem.private" color="blue" @click="emit('hide', itemKey)">
         Hide
       </v-btn>

@@ -1,7 +1,7 @@
 <template>
   <div>
     <ul v-for="(e, key) in entries" :key="key">
-      <HistoryBuildingItem :entry="e" :e-key="key" />
+      <IndexItemBuildingHistory :entry="e" :e-key="key" />
       <!-- :showItem="showItem"
         :hideItem="hideItem" -->
     </ul>
@@ -9,7 +9,7 @@
 </template>
 
 <script setup>
-import HistoryBuildingItem from "./HistoryBuildingItem.vue";
+import IndexItemBuildingHistory from "./IndexItemBuildingHistory.vue";
 
 defineProps({
   entries: Object,

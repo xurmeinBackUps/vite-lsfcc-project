@@ -5,7 +5,7 @@
       <ListAllBlogs />
       <v-divider class="my-9"></v-divider>
       <FormNewBlog v-if="auth.userRole === 'blogger' || auth.userRole === 'admin'"/>
-      <ButtonContact @click="ui.contactForm = true"/>
+      <ButtonRequestEmailSignIn />
     </template>
   </content-wrapper>
 </template>
@@ -13,11 +13,9 @@
 <script setup>
 import ContentWrapper from "@/layout/ContentWrapper.vue";
 import ListAllBlogs from "@/components/ListAllBlogs.vue";
-import { useUiState } from "@/stores/uiState.js";
-import { useAuth } from '@/stores/userAuth.js'
-import ButtonContact from "../components/ButtonContact.vue";
+import ButtonRequestEmailSignIn from "../components/ButtonRequestEmailSignIn.vue";
 import FormNewBlog from "../components/FormNewBlog.vue";
+import { useAuth } from '@/stores/userAuth.js'
 
-const ui = useUiState()
 const auth = useAuth()
 </script>

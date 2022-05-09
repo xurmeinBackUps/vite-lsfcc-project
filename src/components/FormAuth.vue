@@ -24,17 +24,18 @@
                 color="red"
                 @click.prevent="clickSignOut"
               > Sign Out </v-btn>
+              <v-btn
+                v-if="auth.userRole === 'admin'"
+                color="green"
+                @click.prevent="clickSignUp"
+              > Create Account </v-btn>
             </v-col>
             <v-col v-else>
               <v-btn
                 color="blue"
                 @click.prevent="clickSignIn"
               > Sign In </v-btn>
-              <v-btn
-                v-if="auth.userRole === 'admin'"
-                color="green"
-                @click.prevent="clickSignUp"
-              > Create Account </v-btn>
+
             </v-col>
           </v-col>
         </v-row>
@@ -60,7 +61,7 @@ function clickSignOut() {
 }
 
 function clickSignUp() {
-  auth.signup();
+  auth.adminSignup();
   ui.drawerState = false
 }
 </script>

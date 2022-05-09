@@ -1,15 +1,15 @@
 <template>
   <content-wrapper>
     <template #base-component>
-    Memorabilia
-    <ButtonContact @click="ui.contactForm = true"/>
+      Page Blog New
+      <FormNewBlog :blog-key="route.params.blogKey" />
     </template>
   </content-wrapper>
 </template>
 
 <script setup>
+import { useRoute } from "vue-router";
 import ContentWrapper from "@/layout/ContentWrapper.vue";
-import ButtonContact from "../components/ButtonContact.vue";
-</script>
 
-<style lang="scss" scoped></style>
+const route = useRoute();
+</script>

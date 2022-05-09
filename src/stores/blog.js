@@ -1,10 +1,11 @@
 import { defineStore } from 'pinia'
 import { rtdb } from '../firebaseApp.config.js'
-import { ref, update, push, onValue, set, remove } from 'firebase/database'
+import { ref, child, update, push, onValue, set, remove } from 'firebase/database'
 
 export const useAnonBlog = defineStore('blog', {
   state: () => ({
     blogs: [],
+    newBlogKey: ''
   }),
 
   actions: {
@@ -13,6 +14,10 @@ export const useAnonBlog = defineStore('blog', {
       onValue(dbRef, (snapshot) => {
         this.blogs = snapshot.val()
       })
+    },
+
+    createNewKey(){
+      this.newBlogKey = push(child(ref(rtdb), 'blogPosts')).key
     },
 
     addBlog(content, date, title) {

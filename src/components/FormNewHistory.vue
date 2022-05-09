@@ -17,7 +17,6 @@ const ui = useUiState()
 const dates = ref('')
 const text = ref('')
 
-
 function submitHistoryForm(entryDates, entryText) {
 
   // props.store.addEntry(entryDates, entryText)

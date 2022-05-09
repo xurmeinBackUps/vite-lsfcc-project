@@ -1,20 +1,12 @@
 <template>
   <div>
-    <ListAboutArticles :articles="store.articles" />
+    <ListEntriesArticles />
   </div>
 </template>
 
 <script setup>
-import { onMounted } from "vue";
+import ListEntriesArticles from '../components/ListEntriesArticles.vue';
 
-import ListAboutArticles from '../components/ListAboutArticles.vue';
-import { useAbout } from "@/stores/about.js";
-
-const store = useAbout();
-
-onMounted(() => {
-  store.fetchArticles();
-})
 </script>
 
 <style lang="scss" scoped></style>

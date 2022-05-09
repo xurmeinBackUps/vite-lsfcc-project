@@ -1,5 +1,5 @@
 <template>
-  <div v-for="article in props.articles">
+  <div v-for="article in store.articles">
     <entry-about>
       <template #article-title>
         <span>
@@ -15,9 +15,13 @@
 
 <script setup>
 import EntryAbout from "@/layout/EntryAbout.vue";
+import { onMounted } from "vue";
+import { useAbout } from "@/stores/about.js";
 
-const props = defineProps({
-  articles: Array
+const store = useAbout();
+
+onMounted(() => {
+  store.fetchArticles();
 })
 </script>
 

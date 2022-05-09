@@ -8,8 +8,12 @@
 
 <script setup>
 import { useAnonBlog } from "@/stores/blog.js";
+import { onMounted } from "vue";
 import ListItemBlog from "./ListItemBlog.vue"
 
 const store = useAnonBlog();
-store.fetchBlogs();
+
+onMounted(() => {
+  store.fetchBlogs();
+})
 </script>

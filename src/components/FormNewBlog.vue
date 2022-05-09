@@ -13,8 +13,14 @@
 
 <script setup>
 import { useAnonBlog } from "../stores/blog.js";
-import { ref, computed } from "vue";
+import { useAuth } from '@/stores/userAuth.js'
+import { ref, computed, onMounted } from "vue";
 
+const props = defineProps({
+  blogKey: String
+})
+
+const auth = useAuth()
 const store = useAnonBlog();
 
 const title = ref("");
@@ -27,9 +33,13 @@ const date = computed(() => {
 });
 
 function submitBlogPost(newBlogTitle, newDate, newBlogContent) {
-  store.addBlog(newBlogTitle, newDate, newBlogContent);
+  store.addBlog(props.blogKey, newBlogTitle, newDate, newBlogContent);
   store.fetchBlogs();
 }
+
+onMounted(() => {
+  auth.bloggerLogin()
+})
 </script>
 
 <style scoped lang="scss"></style>

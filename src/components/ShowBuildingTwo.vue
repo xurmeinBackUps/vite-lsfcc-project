@@ -2,7 +2,7 @@
   <div>
     <v-card-title>{{ store.name }}</v-card-title>
     <br />
-    <HistoryBuildingItemsIndex :entries="store.entries" />
+    <IndexBuildingHistory :entries="store.entries" />
     <create-new-item item-type="history">
       <template #history-form>
         <FormNewHistory />
@@ -13,7 +13,7 @@
 
 <script setup>
 import { useBuildingTwo } from "@/stores/buildingTwo.js";
-import HistoryBuildingItemsIndex from "./HistoryBuildingItemsIndex.vue";
+import IndexBuildingHistory from "./IndexBuildingHistory.vue";
 import CreateNewItem from "@/layout/CreateNewItem.vue";
 import FormNewHistory from "./FormNewHistory.vue";
 

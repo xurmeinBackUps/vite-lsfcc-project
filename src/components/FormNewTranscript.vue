@@ -23,7 +23,6 @@ const store = useTranscripts()
 function submitTransForm(transSpeaker, transText) {
   store.addTranscript(transSpeaker, transText)
   ui.closeTransDiag()
-
 }
 </script>
 

@@ -1,9 +1,9 @@
 <template>
   <div>
-    <ListPartners />
+    <ListEntriesPartners />
   </div>
 </template>
 
 <script setup>
-import ListPartners from "@/components/ListPartners.vue"
+import ListEntriesPartners from "@/components/ListEntriesPartners.vue"
 </script>
