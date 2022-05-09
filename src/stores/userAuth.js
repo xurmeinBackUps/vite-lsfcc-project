@@ -6,11 +6,7 @@ import {
   signInWithEmailAndPassword,
   signOut,
   onAuthStateChanged,
-  sendSignInLinkToEmail,
-  isSignInWithEmailLink,
-  signInWithEmailLink
 } from 'firebase/auth'
-import { mdiWindowClose } from '@mdi/js'
 
 
 export const useAuth = defineStore('auth', {
@@ -56,14 +52,7 @@ export const useAuth = defineStore('auth', {
       })
     },
 
-    writeBloggerRole(newUser) {
-      const newRef = ref(rtdb, 'users/' + newUser.uid)
-      const newRefPost = push(newRef)
-      set(newRefPost, {
-        email: newUser.email,
-        role: 'blogger'
-      })
-    },
+
 
     adminSignup() {
       createUserWithEmailAndPassword(auth, this.credentials.email, this.credentials.password)
@@ -78,40 +67,6 @@ export const useAuth = defineStore('auth', {
         })
     },
 
-    bloggerSignup(targetEmail, blogKey) {
-
-
-
-
-      const actionCodeSettings = {
-        url: `${import.meta.env.FB_BASE_URL}/blogNew/${blogKey}`,
-        handleCodeInApp: true
-      }
-      sendSignInLinkToEmail(auth, targetEmail, actionCodeSettings)
-        .then(() => {
-          window.alert('A link has been sent to the email adress you provided! Check your inbox and follow the instructions to continue')
-          window.localStorage.setItem('bloggerEmail', targetEmail)
-        }).catch((err) => {
-          this.handleErr(err)
-        })
-    },
-
-    bloggerLogin(){
-      if (isSignInWithEmailLink(auth, window.location.href)){
-        this.writeBloggerRole(result.user)
-        let email = window.localStorage.getItem('bloggerEmail')
-        if (!email) {
-          email = window.prompt('Please provide your email for confirmation')
-        }
-        signInWithEmailLink(auth, email, window.location.href)
-          .then((result) => {
-            window.alert(`Success! ${email} may now author a new blog entry`)
-            window.localStorage.removeItem('bloggerEmail')
-          }).catch((err) => {
-            this.handleErr(err)
-          })
-      }
-    },
 
     login() {
       signInWithEmailAndPassword(auth, this.credentials.email, this.credentials.password)
