@@ -27,15 +27,6 @@
       ></splash-card>
     </router-link>
 
-    <router-link to="/memorabilia">
-      <splash-card
-        card-title="Memorabilia"
-        class="splash-card-img icon varsity"
-        hover
-        elevation="6"
-      ></splash-card>
-    </router-link>
-
     <router-link to="/transcripts">
       <splash-card
         card-title="Transcripts"
@@ -49,6 +40,15 @@
       <splash-card
         card-title="Blog"
         class="splash-card-img icon blog"
+        hover
+        elevation="6"
+      ></splash-card>
+    </router-link>
+
+    <router-link to="/memorabilia">
+      <splash-card
+        card-title="Memorabilia"
+        class="splash-card-img icon varsity"
         hover
         elevation="6"
       ></splash-card>

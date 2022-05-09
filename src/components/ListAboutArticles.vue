@@ -1,5 +1,5 @@
 <template>
-  <div v-for="(article, key) in props.articles" :key="key">
+  <div v-for="article in props.articles">
     <entry-about>
       <template #article-title>
         <span>
@@ -16,13 +16,9 @@
 <script setup>
 import EntryAbout from "@/layout/EntryAbout.vue";
 
-
 const props = defineProps({
   articles: Array
 })
-
-// onMounted(() => {
-// })
 </script>
 
 <style lang="scss" scoped></style>
