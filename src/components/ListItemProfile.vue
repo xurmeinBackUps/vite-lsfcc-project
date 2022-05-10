@@ -29,10 +29,10 @@
 <script setup>
 import IndexItemAdminControls from "@/layout/IndexItemAdminControls.vue";
 import { useProfiles } from "@/stores/profiles.js";
-import { useUiState } from "../stores/uiState";
+import { useAuth } from "../stores/userAuth.js";
 import { computed } from "vue";
 
-const ui = useUiState();
+const auth = useAuth()
 const store = useProfiles();
 
 const props = defineProps({
@@ -41,8 +41,8 @@ const props = defineProps({
 });
 
 const privateStyles = computed(() => ({
-  "d-none": props.profile.private && !ui.adminUser,
-  "font-italic text-grey": props.profile.private && ui.adminUser,
+  "d-none": props.profile.private && !auth.adminUser,
+  "font-italic text-grey": props.profile.private && auth.adminUser,
 }));
 
 function showItem(key) {

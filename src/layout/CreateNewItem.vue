@@ -1,5 +1,5 @@
 <template>
-  <div v-if="ui.adminUser">
+  <div v-if="auth.adminUser">
     <v-dialog v-model="ui.newTransForm">
       <template v-slot:activator="{ props }">
         <v-btn v-bind="props" color="green"> Add New {{ itemType }} to Database </v-btn>
@@ -12,9 +12,11 @@
 </template>
 
 <script setup>
+import { useAuth } from "../stores/userAuth.js";
 import { useUiState } from "../stores/uiState.js";
 
-const ui = useUiState();
+const auth = useAuth();
+const ui = useUiState()
 
 defineProps({
   itemType: String,

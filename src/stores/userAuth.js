@@ -16,8 +16,30 @@ export const useAuth = defineStore('auth', {
       password: ''
     },
     currentUser: {},
-    userRole: ''
+    userRole: '',
+    adminUser: false
   }),
+
+  getters: {
+    roleIsAdmin(state){
+      const auth = useAuth()
+      let role = auth.userRole
+      switch (role) {
+        case 'admin':
+          return state.adminUser = true
+          break;
+        case 'hudson':
+          return state.adminUser = true
+          break;
+        case 'blogger':
+          return state.adminUser = false
+          break;
+        default: // i.e. user === ''
+          return state.adminUser = false
+          break;
+      }
+    }
+  },
 
   actions: {
     handleErr(err) {

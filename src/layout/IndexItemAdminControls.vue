@@ -1,5 +1,5 @@
 <template>
-  <v-row v-if="ui.adminUser">
+  <v-row v-if="auth.adminUser">
     <v-col>
       <v-btn @click="emit('edit', itemKey)" color="yellow" disabled>
       <!-- Need to change above line to emit and event that changes ref in parent -->
@@ -28,9 +28,9 @@
 </template>
 
 <script setup>
-import { useUiState } from '@/stores/uiState.js'
+import { useAuth } from '@/stores/userAuth.js'
 
-const ui = useUiState()
+const auth = userAuth()
 
 defineProps({
   indexItem: Object,

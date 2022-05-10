@@ -13,7 +13,4 @@
 import ContentWrapper from "@/layout/ContentWrapper.vue";
 import ListAllBlogs from "@/components/ListAllBlogs.vue";
 import ButtonRequestEmailSignIn from "../components/ButtonRequestEmailSignIn.vue";
-import { useAuth } from '@/stores/userAuth.js'
-
-const auth = useAuth()
 </script>

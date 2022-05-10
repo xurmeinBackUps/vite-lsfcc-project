@@ -9,10 +9,7 @@
           </v-toolbar-title>
         </router-link>
 
-        <p v-if="userRole" class="text-black greeting noline">
-          <MdiAccount />
-          Hello, {{ userRole }}
-        </p>
+
 
         <v-spacer></v-spacer>
 
@@ -31,10 +28,6 @@
 <script setup>
 import { RouterLink } from "vue-router";
 import MdiAccount from "@/components/icons/MdiAccount.vue";
-
-defineProps({
-  userRole: String,
-});
 </script>
 
 <style lang="scss" scoped>

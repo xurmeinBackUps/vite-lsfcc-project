@@ -3,7 +3,7 @@
     <template #base-component>
     Faculty & Staff Profiles
       <ListAllProfiles />
-       <create-new-item item-type="transcript" v-if="ui.adminUser">
+       <create-new-item item-type="transcript" v-if="auth.adminUser">
         <template #transcript-form>
           <FormNewProfile />
         </template>
@@ -17,9 +17,9 @@ import ContentWrapper from "@/layout/ContentWrapper.vue";
 import ListAllProfiles from "@/components/ListAllProfiles.vue";
 import CreateNewItem from "@/layout/CreateNewItem.vue";
 import FormNewProfile from "../components/FormNewProfile.vue";
-import { useUiState } from "@/stores/uiState.js";
+import { useAuth } from "@/stores/userAuth.js";
 
-const ui = useUiState();
+const auth = useAuth();
 </script>
 
 <style lang="scss" scoped></style>
