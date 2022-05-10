@@ -8,10 +8,10 @@
 
 <script setup>
 import IndexItemAdminControls from "@/layout/IndexItemAdminControls.vue";
-import { useUiState } from "../stores/uiState";
+import { useAuth } from "../stores/userAuth.js";
 import { computed } from "vue";
 
-const ui = useUiState();
+const auth = useAuth();
 
 const props = defineProps({
   entry: Object,
@@ -19,8 +19,8 @@ const props = defineProps({
 });
 
 const privateStyles = computed(() => ({
-  "d-none": props.entry.private && !ui.adminUser,
-  "font-italic text-grey": props.entry.private && ui.adminUser,
+  "d-none": props.entry.private && !auth.adminUser,
+  "font-italic text-grey": props.entry.private && auth.adminUser,
 }));
 </script>
 

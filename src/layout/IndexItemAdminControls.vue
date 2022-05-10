@@ -30,7 +30,7 @@
 <script setup>
 import { useAuth } from '@/stores/userAuth.js'
 
-const auth = userAuth()
+const auth = useAuth()
 
 defineProps({
   indexItem: Object,

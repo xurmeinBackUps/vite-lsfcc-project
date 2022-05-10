@@ -29,19 +29,19 @@ import { useTranscripts } from "@/stores/transcripts.js";
 import { onMounted, onUnmounted, computed } from "vue";
 import { RouterLink } from "vue-router";
 import IndexItemAdminControls from "../layout/IndexItemAdminControls.vue";
-import { useUiState } from "../stores/uiState";
+import { useAuth } from "../stores/userAuth.js";
 import MdiArrowLeftBold from "./icons/MdiArrowLeftBold.vue";
 
 const store = useTranscripts();
-const ui = useUiState();
+const auth = useAuth();
 
 const props = defineProps({
   transKey: String,
 });
 
 const privateStyles = computed(() => ({
-  "d-none": store.trans.private && !ui.adminUser,
-  "font-italic text-grey": store.trans.private && ui.adminUser,
+  "d-none": store.trans.private && !auth.adminUser,
+  "font-italic text-grey": store.trans.private && auth.adminUser,
 }));
 
 function deleteRecord(key) {

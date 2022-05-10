@@ -27,7 +27,6 @@
 
 <script setup>
 import { RouterLink } from "vue-router";
-import MdiAccount from "@/components/icons/MdiAccount.vue";
 </script>
 
 <style lang="scss" scoped>

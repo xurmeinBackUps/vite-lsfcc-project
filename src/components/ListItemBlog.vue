@@ -20,12 +20,12 @@
 
 <script setup>
 import IndexItemAdminControls from "@/layout/IndexItemAdminControls.vue";
-import { useUiState } from "../stores/uiState.js";
+import { useAuth } from "../stores/userAuth.js";
 import { useAnonBlog } from "../stores/blog.js";
 import { computed } from "vue";
 
 const store = useAnonBlog();
-const ui = useUiState();
+const auth = useAuth();
 
 const props = defineProps({
   blog: Object,
@@ -42,8 +42,8 @@ function destroyRecord(key) {
 }
 
 const privateStyles = computed(() => ({
-  "d-none": props.blog.private && !ui.adminUser,
-  "font-italic text-grey": props.blog.private && ui.adminUser,
+  "d-none": props.blog.private && !auth.adminUser,
+  "font-italic text-grey": props.blog.private && auth.adminUser,
 }));
 
 function showItem(key) {

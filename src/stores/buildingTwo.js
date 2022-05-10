@@ -8,12 +8,6 @@ export const useBuildingTwo = defineStore('building2', {
     entries: [],
   }),
 
-  getters: {
-    entriesCount: (state) => {
-      return state.entries.length
-    },
-  },
-
   actions: {
     fetchName() {
       const dbRef = ref(rtdb, 'schools/building2/name')
