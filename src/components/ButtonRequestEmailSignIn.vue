@@ -20,7 +20,6 @@ import FormRequestEmailAuth from './FormRequestEmailAuth.vue';
 
 const auth = useAuth()
 const ui = useUiState()
-
 </script>
 
 <style lang="scss" scoped></style>

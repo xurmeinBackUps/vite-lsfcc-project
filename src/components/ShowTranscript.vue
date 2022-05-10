@@ -6,11 +6,13 @@
       <p>{{ store.trans.text }}</p>
       <hr />
       <IndexItemAdminControls
+        v-if="auth.adminUser"
         @show="showItem(props.transKey)"
         @hide="hideItem(props.transKey)"
         @destroy="deleteRecord(props.transKey)"
         :index-item="store.trans"
         :item-key="props.transKey"
+        item-type="transcript"
       />
     </div>
     <div v-else>

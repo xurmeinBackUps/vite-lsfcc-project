@@ -3,7 +3,7 @@
     <template #base-component>
     Faculty & Staff Profiles
       <ListAllProfiles />
-       <create-new-item item-type="transcript" v-if="auth.adminUser">
+       <create-new-item v-if="auth.adminUser" item-type="transcript" >
         <template #transcript-form>
           <FormNewProfile />
         </template>

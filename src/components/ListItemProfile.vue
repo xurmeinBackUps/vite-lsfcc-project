@@ -17,10 +17,12 @@
         {{ props.profile.personalHistory }}
       </p>
       <IndexItemAdminControls
+        v-if="auth.adminUser"
         @show="showItem(props.pKey)"
         @hide="hideItem(props.pKey)"
         :index-item="props.profile"
         :item-key="props.pKey"
+        item-type="profile"
       />
     </v-expansion-panel-text>
   </div>

@@ -2,7 +2,16 @@
   <v-card class="pa-5 ma-3" :class="privateStyles">
     <p class="text-subtitle-1">{{ entry.dates }}</p>
     <p class="text-body-2" v-html="entry.text"></p>
-    <IndexItemAdminControls :index-item="entry" :index-key="eKey" />
+    <IndexItemAdminControls
+      v-if="auth.adminUser"
+      item-type="history"
+      :index-item="entry"
+      :index-key="eKey"
+      @show=""
+      @hide=""
+      @edit=""
+      @save=""
+    />
   </v-card>
 </template>
 

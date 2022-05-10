@@ -4,7 +4,6 @@
 
 <script>
 import SvgIcon from "@jamescoyle/vue-icon";
-
 import { mdiArrowLeftBold } from "@mdi/js";
 
 export default {

@@ -1,5 +1,5 @@
 <template>
-  <v-row v-if="auth.adminUser">
+  <v-row>
     <v-col>
       <v-btn @click="emit('edit', itemKey)" color="yellow" disabled>
       <!-- Need to change above line to emit and event that changes ref in parent -->
@@ -19,7 +19,7 @@
         show
       </v-btn>
     </v-col>
-    <v-col v-if="itemType !== entry">
+    <v-col v-if="itemType !== 'history'">
       <v-btn color="red" @click="emit('destroy', itemKey)">
         REMOVE FROM SITE
       </v-btn>
@@ -28,12 +28,9 @@
 </template>
 
 <script setup>
-import { useAuth } from '@/stores/userAuth.js'
-
-const auth = useAuth()
-
 defineProps({
   indexItem: Object,
+  itemType: String,
   itemKey: [String, Number]
 })
 

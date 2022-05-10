@@ -1,5 +1,5 @@
 <template>
-  <div v-if="auth.adminUser">
+  <div >
     <v-dialog v-model="ui.newTransForm">
       <template v-slot:activator="{ props }">
         <v-btn v-bind="props" color="green"> Add New {{ itemType }} to Database </v-btn>

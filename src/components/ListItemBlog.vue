@@ -9,9 +9,11 @@
     <br />
     <p class="blog-content">{{ props.blog.content }}</p>
     <IndexItemAdminControls
+      v-if="auth.adminUser"
       @hide="hideItem(bKey)"
       @show="showItem(bKey)"
       @destroy="destroyRecord(bKey)"
+      item-type="blog"
       :index-item="blog"
       :item-key="bKey"
     />

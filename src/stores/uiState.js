@@ -41,9 +41,5 @@ export const useUiState = defineStore('uiState', {
     closeContactForm() {
       this.contactForm = false
     },
-
-    privateItemUiHandler(item) {
-
-    }
-  },
+  }
 })
