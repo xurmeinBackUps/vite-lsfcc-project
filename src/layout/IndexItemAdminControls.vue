@@ -19,7 +19,7 @@
         show
       </v-btn>
     </v-col>
-    <v-col>
+    <v-col v-if="itemType !== entry">
       <v-btn color="red" @click="emit('destroy', itemKey)">
         REMOVE FROM SITE
       </v-btn>
