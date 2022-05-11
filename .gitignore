@@ -31,3 +31,6 @@ coverage
 # ENV + local configs
 .env
 *.config.js
+
+./.github/*
+./.firebase/*
