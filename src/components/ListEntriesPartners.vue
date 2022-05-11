@@ -1,4 +1,5 @@
 <template>
+  <!-- do this as table -->
   <div v-for="partner in store.partners" :key="partner.name">
     <entry-partner>
       <template #heading>{{ partner.name }}</template>
@@ -9,6 +10,7 @@
       </template>
     </entry-partner>
   </div>
+  <!-- add MY INFO here. -->
 </template>
 
 <script setup>
