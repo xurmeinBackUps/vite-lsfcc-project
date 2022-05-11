@@ -13,7 +13,7 @@
 
 <script setup>
 import { useAnonBlog } from "../stores/blog.js";
-import { useAuth } from '@/stores/userAuth.js'
+import { useAuth } from '@/stores/passwordAuth.js'
 import { ref, computed, onMounted } from "vue";
 
 const props = defineProps({

@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import { useAuth } from './userAuth.js'
+import { useAuth } from './passwordAuth.js'
 
 export const useUiState = defineStore('uiState', {
   state: () => ({

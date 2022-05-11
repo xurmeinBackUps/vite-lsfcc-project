@@ -12,10 +12,8 @@
 </template>
 
 <script setup>
-import { useAuth } from "../stores/userAuth.js";
 import { useUiState } from "../stores/uiState.js";
 
-const auth = useAuth();
 const ui = useUiState()
 
 defineProps({

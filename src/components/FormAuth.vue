@@ -38,7 +38,7 @@
 </template>
 
 <script setup>
-import { useAuth } from "@/stores/userAuth.js";
+import { useAuth } from "@/stores/passwordAuth.js";
 import { useUiState } from "@/stores/uiState.js";
 
 const ui = useUiState();

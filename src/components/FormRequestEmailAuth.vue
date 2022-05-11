@@ -6,7 +6,7 @@
 </template>
 
 <script setup>
-import { useAuth } from '../stores/userAuth.js';
+import { useAuth } from '../stores/passwordAuth.js';
 import {useAnonBlog } from '@/stores/blog.js'
 
 const auth = useAuth()
