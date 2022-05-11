@@ -16,7 +16,7 @@
 </template>
 
 <script setup>
-import { useAuth } from '@/stores/passwordAuth.js'
+import { useAuth } from '@/stores/userAuth.js'
 import { useUiState } from '../stores/uiState.js';
 import FormRequestEmailAuth from './FormRequestEmailAuth.vue';
 
