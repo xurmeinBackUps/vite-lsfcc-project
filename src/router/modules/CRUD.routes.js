@@ -1,6 +1,8 @@
 const PageTranscriptsShow = () => import('@/pages/PageTranscriptShow.vue')
 const PageBlogNew = () => import('@/pages/PageBlogNew.vue')
 
+// const
+
 export const crudRoutes = [
   {
     path: '/blog',

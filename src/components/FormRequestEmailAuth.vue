@@ -1,6 +1,6 @@
 <template>
   <v-form class="modal-form">
-    <v-text-field v-model="auth.email" variant="outlined" label="Email" class="width"></v-text-field>
+    <v-text-field v-model="emailAuth.email" variant="outlined" label="Email" class="width"></v-text-field>
     <v-btn @click="submitBloggerRequest()">Submit</v-btn>
   </v-form>
 </template>
@@ -15,7 +15,7 @@ const store = useAnonBlog()
 
 function submitBloggerRequest() {
   store.createNewKey()
-  emailAuth.bloggerSignup(auth.email, store.newBlogKey)
+  emailAuth.bloggerSignup(emailAuth.email, store.newBlogKey)
 }
 </script>
 

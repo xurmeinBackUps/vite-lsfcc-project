@@ -13,14 +13,14 @@
 
 <script setup>
 import { useAnonBlog } from "../stores/blog.js";
-import { useAuth } from '@/stores/passwordAuth.js'
+import { useBloggerAuth } from '@/stores/emailAuth.js'
 import { ref, computed, onMounted } from "vue";
 
 const props = defineProps({
   blogKey: String
 })
 
-const auth = useAuth()
+const emailAuth = useBloggerAuth()
 const store = useAnonBlog();
 
 const title = ref("");
@@ -38,7 +38,7 @@ function submitBlogPost(newBlogTitle, newDate, newBlogContent) {
 }
 
 onMounted(() => {
-  auth.bloggerLogin()
+  emailAuth.bloggerLogin()
 })
 </script>
 

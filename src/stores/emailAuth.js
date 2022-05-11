@@ -9,17 +9,11 @@ import {
   onAuthStateChanged,
 } from 'firebase/auth'
 
-export const useBloggerAuth = defineStore('bloggerAuth', {
+export const useBloggerAuth = defineStore('emailAuth', {
     state: () => ({
       email: '',
       currentUser: {},
       userRole: '',
-      actionCodeSettings: {
-        mode: '',
-        actionCode: '',
-        continueUrl: '',
-        lang: '',
-      }
     }),
 
     actions: {
@@ -35,6 +29,7 @@ export const useBloggerAuth = defineStore('bloggerAuth', {
         )
         this.userRole = localStorage.getItem('lsfcc')
       },
+
 
       fetchUserRole(activeUser) {
         const ls = window.localStorage
@@ -58,7 +53,7 @@ export const useBloggerAuth = defineStore('bloggerAuth', {
       bloggerSignup(targetEmail, blogKey) {
         const actionCodeSettings = {
           url: `${import.meta.env.FB_BASE_URL}/blogNew/${blogKey}`,
-          handleCodeInApp: true
+          handleCodeInApp: true,
         }
         sendSignInLinkToEmail(auth, targetEmail, actionCodeSettings)
           .then(() => {
@@ -100,4 +95,4 @@ export const useBloggerAuth = defineStore('bloggerAuth', {
         this.$reset()
       }
     },
-  })
+})
