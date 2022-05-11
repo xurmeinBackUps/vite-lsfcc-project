@@ -2,14 +2,16 @@
   <content-wrapper>
     <template #base-component>
       Page Blog New
-      <FormNewBlog :blog-key="route.params.blogKey" />
+      <FormNewBlog :blog-key="blog.newBlogKey" />
     </template>
   </content-wrapper>
 </template>
 
 <script setup>
 import { useRoute } from "vue-router";
+import { useAnonBlog } from "../stores/blog.js";
 import ContentWrapper from "@/layout/ContentWrapper.vue";
 
+const blog = useAnonBlog()
 const route = useRoute();
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <v-form>
+  <v-form v-if="emailAuth.email">
     <v-text-field v-model="title" label="Title" required></v-text-field>
     <v-textarea
       variant="outlined"
@@ -37,9 +37,6 @@ function submitBlogPost(newBlogTitle, newDate, newBlogContent) {
   store.fetchBlogs();
 }
 
-onMounted(() => {
-  emailAuth.bloggerLogin()
-})
 </script>
 
 <style scoped lang="scss"></style>

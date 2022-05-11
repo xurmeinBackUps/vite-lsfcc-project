@@ -19,8 +19,8 @@ app.use(auth)
 app.use(router)
 app.use(vuetify)
 
-// if (import.meta.env === 'development') {
+if (import.meta.env === 'development') {
     app.config.devtools = true
-// }
+}
 
 app.mount('#app')

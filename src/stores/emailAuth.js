@@ -52,7 +52,7 @@ export const useBloggerAuth = defineStore('emailAuth', {
 
       bloggerSignup(targetEmail, blogKey) {
         const actionCodeSettings = {
-          url: `${import.meta.env.FB_BASE_URL}/blogNew/${blogKey}`,
+          url: `${import.meta.env.FB_BASE_URL}/blog/new/${blogKey}`,
           handleCodeInApp: true,
         }
         sendSignInLinkToEmail(auth, targetEmail, actionCodeSettings)
