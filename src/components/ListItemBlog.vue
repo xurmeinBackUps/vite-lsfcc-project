@@ -44,8 +44,8 @@ function destroyRecord(key) {
 }
 
 const privateStyles = computed(() => ({
-  "d-none": props.blog.private && !ui.adminUser,
-  "font-italic text-grey": props.blog.private && ui.adminUser,
+  "d-none": props.blog.private && !ui.roleIsAdmin,
+  "font-italic text-grey": props.blog.private && ui.roleIsAdmin,
 }));
 
 function showItem(key) {

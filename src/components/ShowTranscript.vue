@@ -42,8 +42,8 @@ const props = defineProps({
 });
 
 const privateStyles = computed(() => ({
-  "d-none": store.trans.private && !ui.adminUser,
-  "font-italic text-grey": store.trans.private && ui.adminUser,
+  "d-none": store.trans.private && !ui.roleIsAdmin,
+  "font-italic text-grey": store.trans.private && ui.roleIsAdmin,
 }));
 
 function deleteRecord(key) {

@@ -28,8 +28,8 @@ const props = defineProps({
 });
 
 const privateStyles = computed(() => ({
-  "d-none": props.entry.private && !ui.adminUser,
-  "font-italic text-grey": props.entry.private && ui.adminUser,
+  "d-none": props.entry.private && !ui.roleIsAdmin,
+  "font-italic text-grey": props.entry.private && ui.roleIsAdmin,
 }));
 </script>
 

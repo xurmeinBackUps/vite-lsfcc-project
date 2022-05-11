@@ -33,7 +33,7 @@ export const useTranscripts = defineStore('transcripts', {
     addTranscript(speaker, text) {
       const dbRef = ref(rtdb, 'transcripts')
       const newTransRef = push(dbRef)
-      set((newTransRef), {
+      set(newTransRef, {
         private: false,
         speaker: speaker,
         text: text
