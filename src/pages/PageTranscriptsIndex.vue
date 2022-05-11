@@ -4,7 +4,7 @@
       Page Transcipts Index
       <ListAllTranscripts />
 
-      <create-new-item v-if="auth.adminUser" item-type="transcript" >
+      <create-new-item v-if="ui.roleIsAdmin" item-type="transcript" >
         <template #transcript-form>
           <FormNewTranscript />
         </template>
@@ -18,7 +18,7 @@ import ContentWrapper from "@/layout/ContentWrapper.vue";
 import ListAllTranscripts from "@/components/ListAllTranscripts.vue";
 import CreateNewItem from "@/layout/CreateNewItem.vue";
 import FormNewTranscript from "../components/FormNewTranscript.vue";
-import { useAuth } from "@/stores/userAuth.js";
+import { useUiState } from "@/stores/uiState.js";
 
-const auth = useAuth()
+const ui = useUiState()
 </script>

@@ -9,7 +9,7 @@
     <br />
     <p class="blog-content">{{ props.blog.content }}</p>
     <IndexItemAdminControls
-      v-if="auth.adminUser"
+      v-if="ui.roleIsAdmin"
       @hide="hideItem(bKey)"
       @show="showItem(bKey)"
       @destroy="destroyRecord(bKey)"
@@ -22,12 +22,12 @@
 
 <script setup>
 import IndexItemAdminControls from "@/layout/IndexItemAdminControls.vue";
-import { useAuth } from "../stores/userAuth.js";
+import { useUiState } from "../stores/uiState.js";
 import { useAnonBlog } from "../stores/blog.js";
 import { computed } from "vue";
 
 const store = useAnonBlog();
-const auth = useAuth();
+const ui = useUiState();
 
 const props = defineProps({
   blog: Object,
@@ -44,8 +44,8 @@ function destroyRecord(key) {
 }
 
 const privateStyles = computed(() => ({
-  "d-none": props.blog.private && !auth.adminUser,
-  "font-italic text-grey": props.blog.private && auth.adminUser,
+  "d-none": props.blog.private && !ui.adminUser,
+  "font-italic text-grey": props.blog.private && ui.adminUser,
 }));
 
 function showItem(key) {

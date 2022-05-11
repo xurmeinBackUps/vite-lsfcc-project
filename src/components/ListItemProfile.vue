@@ -17,7 +17,7 @@
         {{ props.profile.personalHistory }}
       </p>
       <IndexItemAdminControls
-        v-if="auth.adminUser"
+        v-if="ui.roleIsAdmin"
         @show="showItem(props.pKey)"
         @hide="hideItem(props.pKey)"
         :index-item="props.profile"
@@ -31,10 +31,10 @@
 <script setup>
 import IndexItemAdminControls from "@/layout/IndexItemAdminControls.vue";
 import { useProfiles } from "@/stores/profiles.js";
-import { useAuth } from "../stores/userAuth.js";
+import { useUiState } from "../stores/uiState.js";
 import { computed } from "vue";
 
-const auth = useAuth()
+const ui = useUiState()
 const store = useProfiles();
 
 const props = defineProps({
@@ -43,8 +43,8 @@ const props = defineProps({
 });
 
 const privateStyles = computed(() => ({
-  "d-none": props.profile.private && !auth.adminUser,
-  "font-italic text-grey": props.profile.private && auth.adminUser,
+  "d-none": props.profile.private && !ui.roleIsAdmin,
+  "font-italic text-grey": props.profile.private && ui.roleIsAdmin,
 }));
 
 function showItem(key) {

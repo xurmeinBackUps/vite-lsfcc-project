@@ -19,7 +19,6 @@ export const useAuth = defineStore('auth', {
     },
     currentUser: {},
     userRole: '',
-    adminUser: false,
     actionCodeSettings: {
       mode: '',
       actionCode: '',
@@ -28,26 +27,7 @@ export const useAuth = defineStore('auth', {
     }
   }),
 
-  getters: {
-    roleIsAdmin(state){
-      const auth = useAuth()
-      let role = auth.userRole
-      switch (role) {
-        case 'admin':
-          return state.adminUser = true
-          break;
-        case 'hudson':
-          return state.adminUser = true
-          break;
-        case 'blogger':
-          return state.adminUser = false
-          break;
-        default: // i.e. user === ''
-          return state.adminUser = false
-          break;
-      }
-    }
-  },
+
 
   actions: {
     handleErr(err) {
@@ -82,48 +62,48 @@ export const useAuth = defineStore('auth', {
       })
     },
 
-  bloggerSignup(targetEmail, blogKey) {
-    const actionCodeSettings = {
-      url: `${import.meta.env.FB_BASE_URL}/blogNew/${blogKey}`,
-      handleCodeInApp: true
-    }
-    sendSignInLinkToEmail(auth, targetEmail, actionCodeSettings)
-      .then(() => {
-        window.alert('A link has been sent to the email adress you provided! Check your inbox and follow the instructions to continue')
-        window.localStorage.setItem('bloggerEmail', targetEmail)
-      }).catch((err) => {
-        this.handleErr(err)
-      })
-  },
-
-  bloggerLogin(){
-    if (isSignInWithEmailLink(auth, window.location.href)){
-      this.writeBloggerRole(result.user)
-      let email = window.localStorage.getItem('bloggerEmail')
-      if (!email) {
-        email = window.prompt('Please provide your email for confirmation')
+    bloggerSignup(targetEmail, blogKey) {
+      const actionCodeSettings = {
+        url: `${import.meta.env.FB_BASE_URL}/blogNew/${blogKey}`,
+        handleCodeInApp: true
       }
-      signInWithEmailLink(auth, email, window.location.href)
-        .then((result) => {
-          window.alert(`Success! ${result.user.email} may now author a new blog entry`)
-          window.localStorage.removeItem('bloggerEmail')
+      sendSignInLinkToEmail(auth, targetEmail, actionCodeSettings)
+        .then(() => {
+          window.alert('A link has been sent to the email adress you provided! Check your inbox and follow the instructions to continue')
+          window.localStorage.setItem('bloggerEmail', targetEmail)
         }).catch((err) => {
           this.handleErr(err)
         })
-    }
-  },
+    },
 
-  login() {
-    signInWithEmailAndPassword(auth, this.credentials.email, this.credentials.password)
-      .then((userCredential) => {
-        const user = userCredential.user
-        this.currentUser = user
-        this.fetchUserRole(this.currentUser)
-        window.alert('Success!')
-      })
-      .catch((error) => {
-        this.handleErr(error)
-      })
+    bloggerLogin(){
+      if (isSignInWithEmailLink(auth, window.location.href)){
+        this.writeBloggerRole(result.user)
+        let email = window.localStorage.getItem('bloggerEmail')
+        if (!email) {
+          email = window.prompt('Please provide your email for confirmation')
+        }
+        signInWithEmailLink(auth, email, window.location.href)
+          .then((result) => {
+            window.alert(`Success! ${result.user.email} may now author a new blog entry`)
+            window.localStorage.removeItem('bloggerEmail')
+          }).catch((err) => {
+            this.handleErr(err)
+          })
+      }
+    },
+
+    adminLogin() {
+      signInWithEmailAndPassword(auth, this.credentials.email, this.credentials.password)
+        .then((userCredential) => {
+          const user = userCredential.user
+          this.currentUser = user
+          this.fetchUserRole(this.currentUser)
+          window.alert('Success!')
+        })
+        .catch((error) => {
+          this.handleErr(error)
+        })
     },
 
     logout() {

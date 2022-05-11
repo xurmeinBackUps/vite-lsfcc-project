@@ -42,7 +42,7 @@ export default defineConfig(({ command, mode }) => {
     }
   } else {
     return {
-      mode: 'development' || 'production',
+      mode: 'production' || 'development',
       plugins: [
         vue(),
         nodeResolve(),

@@ -6,7 +6,7 @@
       <p>{{ store.trans.text }}</p>
       <hr />
       <IndexItemAdminControls
-        v-if="auth.adminUser"
+        v-if="ui.roleIsAdmin"
         @show="showItem(props.transKey)"
         @hide="hideItem(props.transKey)"
         @destroy="deleteRecord(props.transKey)"
@@ -31,19 +31,19 @@ import { useTranscripts } from "@/stores/transcripts.js";
 import { onMounted, onUnmounted, computed } from "vue";
 import { RouterLink } from "vue-router";
 import IndexItemAdminControls from "../layout/IndexItemAdminControls.vue";
-import { useAuth } from "../stores/userAuth.js";
+import { useUiState } from "../stores/uiState.js";
 import MdiArrowLeftBold from "./icons/MdiArrowLeftBold.vue";
 
 const store = useTranscripts();
-const auth = useAuth();
+const ui = useUiState();
 
 const props = defineProps({
   transKey: String,
 });
 
 const privateStyles = computed(() => ({
-  "d-none": store.trans.private && !auth.adminUser,
-  "font-italic text-grey": store.trans.private && auth.adminUser,
+  "d-none": store.trans.private && !ui.adminUser,
+  "font-italic text-grey": store.trans.private && ui.adminUser,
 }));
 
 function deleteRecord(key) {
