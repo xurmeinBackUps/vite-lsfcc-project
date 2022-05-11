@@ -1,22 +1,22 @@
 <template>
-  <v-form>
-    <v-text-field v-model="auth.credentials.email" variant="outlined" label="Email"></v-text-field>
+  <v-form class="modal-form">
+    <v-text-field v-model="auth.email" variant="outlined" label="Email" class="width"></v-text-field>
     <v-btn @click="submitBloggerRequest()">Submit</v-btn>
   </v-form>
 </template>
 
 <script setup>
-import { useAuth } from '../stores/passwordAuth.js';
+import { useBloggerAuth } from '../stores/emailAuth.js';
 import {useAnonBlog } from '@/stores/blog.js'
 
-const auth = useAuth()
+const emailAuth = useBloggerAuth()
 const store = useAnonBlog()
 
 
 function submitBloggerRequest() {
   store.createNewKey()
-  auth.bloggerSignup(auth.credentials.email, store.newBlogKey)
+  emailAuth.bloggerSignup(auth.email, store.newBlogKey)
 }
 </script>
 
-<style lang="sccs" scoped></style>
+

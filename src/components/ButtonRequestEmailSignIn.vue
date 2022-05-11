@@ -1,12 +1,14 @@
 <template>
   <div v-if="!auth.userRole">
+        <v-divider class="my-9"></v-divider>
+
     <v-dialog v-model="ui.newBlogForm">
       <template v-slot:activator="{ props }">
       <v-btn v-bind="props" color="amber">
         Begin
       </v-btn>
       </template>
-      <v-card class="pa-9 ma-3" color="lime">
+      <v-card class="pa-9 width justify-center" color="lime">
         <FormRequestEmailAuth />
       </v-card>
     </v-dialog>
@@ -22,4 +24,11 @@ const auth = useAuth()
 const ui = useUiState()
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+@import "@/assets/scss/variables_and_overrides.scss";
+
+.width {
+  width: 90vw;
+}
+
+</style>

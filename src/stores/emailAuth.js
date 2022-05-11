@@ -9,7 +9,7 @@ import {
   onAuthStateChanged,
 } from 'firebase/auth'
 
-export const useAuth = defineStore('auth', {
+export const useBloggerAuth = defineStore('bloggerAuth', {
     state: () => ({
       email: '',
       currentUser: {},

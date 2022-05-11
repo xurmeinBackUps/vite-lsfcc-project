@@ -8,7 +8,7 @@ import {
 } from 'firebase/auth'
 
 
-export const useAuth = defineStore('auth', {
+export const useAuth = defineStore('passwordAuth', {
   state: () => ({
     credentials: {
       email: '',

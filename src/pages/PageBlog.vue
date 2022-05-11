@@ -3,7 +3,6 @@
     <template #base-component>
       Anonymous Blog
       <ListAllBlogs />
-      <v-divider class="my-9"></v-divider>
       <ButtonRequestEmailSignIn />
     </template>
   </content-wrapper>
