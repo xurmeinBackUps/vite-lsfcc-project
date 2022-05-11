@@ -7,8 +7,6 @@
 <script setup>
 import { RouterLink } from 'vue-router'
 
-// const
-
 defineProps({
   trans: Object,
   objKey: String

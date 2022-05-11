@@ -9,12 +9,14 @@
 
 <script setup>
 import { useBuildingOne } from "@/stores/buildingOne.js";
+import { onMounted } from "vue";
 import IndexBuildingHistory from "./IndexBuildingHistory.vue";
 
 const store = useBuildingOne();
 
-store.fetchName();
-store.fetchEntries();
-</script>
+onMounted(() => {
+  store.fetchName();
+  store.fetchEntries();
+})</script>
 
 <style lang="scss" scoped></style>

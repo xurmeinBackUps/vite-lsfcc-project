@@ -10,7 +10,7 @@ export const crudRoutes = [
     component: () => import('@/pages/PageBlog.vue'),
   },
   {
-    path: '/blog/new/:blogKey',
+    path: '/blog/new/:blogKey*',
     name: 'new-blog',
     component: PageBlogNew,
     props: true

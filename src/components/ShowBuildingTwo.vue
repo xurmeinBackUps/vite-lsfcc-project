@@ -9,12 +9,15 @@
 
 <script setup>
 import { useBuildingTwo } from "@/stores/buildingTwo.js";
+import { onMounted } from "vue";
 import IndexBuildingHistory from "./IndexBuildingHistory.vue";
 
 const store = useBuildingTwo();
 
-store.fetchName();
-store.fetchEntries();
+onMounted(() => {
+  store.fetchName();
+  store.fetchEntries();
+})
 </script>
 
 <style lang="scss" scoped></style>

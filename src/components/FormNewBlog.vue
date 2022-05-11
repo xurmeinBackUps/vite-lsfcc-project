@@ -1,5 +1,5 @@
 <template>
-  <v-form v-if="emailAuth.email">
+  <v-form v-if="auths.email">
     <v-text-field v-model="title" label="Title" required></v-text-field>
     <v-textarea
       variant="outlined"
@@ -13,14 +13,14 @@
 
 <script setup>
 import { useAnonBlog } from "../stores/blog.js";
-import { useBloggerAuth } from '@/stores/emailAuth.js'
+import { useAuth } from '@/stores/userAuth.js'
 import { ref, computed, onMounted } from "vue";
 
 const props = defineProps({
   blogKey: String
 })
 
-const emailAuth = useBloggerAuth()
+const auth = useAuth()
 const store = useAnonBlog();
 
 const title = ref("");
