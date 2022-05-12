@@ -5,8 +5,16 @@ import { ref, child, update, push, onValue, set, remove } from 'firebase/databas
 export const useAnonBlog = defineStore('blog', {
   state: () => ({
     blogs: [],
-    newBlogKey: ''
+    newBlogKey: '',
   }),
+
+  getters: {
+    date(){
+      let now = Date.now();
+      let readable = new Date(now);
+      return readable.toDateString();
+    }
+  },
 
   actions: {
     fetchBlogs() {
@@ -18,13 +26,14 @@ export const useAnonBlog = defineStore('blog', {
 
     createNewKey(){
       this.newBlogKey = push(child(ref(rtdb), 'blogPosts')).key
+      set(ref(rtdb, 'blogPosts/' + this.newBlogKey))
     },
 
-    addBlog(blogKey, content = '', title = '') {
+    addBlog(blogKey, content = '', publishDate, title = '') {
       const dbRef = ref(rtdb, `blogPosts/${blogKey}`)
-      set(dbRef, {
+      update(dbRef, {
         content: content,
-        date: date,
+        date: publishDate,
         private: true,
         title: title
       })

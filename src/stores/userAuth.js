@@ -84,22 +84,28 @@ export const useAuth = defineStore('auth', {
         })
     },
 
+    bloggerEmailLinkLogin() {
+      console.log("AT LINE 88 IN bloggerEmailLinkLogin() OF @/stores/userAuth.js")
+      signInWithEmailLink(auth, email, window.location.href)
+        .then((result) => {
+          this.writeBloggerRole(result.user)
+          window.alert(`Success! ${result.user.email} may now author a new blog entry`)
+          ls.removeItem('bloggerEmail')
+        }).catch((err) => {
+          this.handleErr(err)
+        })
+    },
+
     bloggerLogin(){
       const ls = window.localStorage
       if (isSignInWithEmailLink(auth, window.location.href)){
-        console.log("AT LINE 90 IN @/stores/userAuth.js")
+        console.log("AT LINE 94 IN bloggerLogin() OF @/stores/userAuth.js")
+        this.bloggerEmailLinkLogin()
+      } else {
         this.bloggerEmail = ls.getItem('bloggerEmail')
-        if (!email) {
-          email = window.prompt('Please provide your email for confirmation')
+        if (!this.bloggerEmail) {
+          this.bloggerEmail = window.prompt('Please provide your email for confirmation')
         }
-        signInWithEmailLink(auth, email, window.location.href)
-          .then((result) => {
-            this.writeBloggerRole(result.user)
-            window.alert(`Success! ${result.user.email} may now author a new blog entry`)
-            ls.removeItem('bloggerEmail')
-          }).catch((err) => {
-            this.handleErr(err)
-          })
       }
     },
 
