@@ -77,7 +77,7 @@ export const useAuth = defineStore('auth', {
       }
       sendSignInLinkToEmail(auth, targetEmail, actionCodeSettings)
         .then(() => {
-          window.alert('A link has been sent to the email adress you provided! Check your inbox and follow the instructions to continue')
+          window.alert('A link has been sent to the email adress you provided, but you may provide your post now.')
           window.localStorage.setItem('bloggerEmail', targetEmail)
         }).catch((err) => {
           this.handleErr(err)
