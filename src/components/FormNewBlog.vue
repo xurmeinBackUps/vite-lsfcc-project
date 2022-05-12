@@ -1,5 +1,5 @@
 <template>
-  <v-form v-if="auths.email">
+  <v-form v-if="auth.bloggerEmail">
     <v-text-field v-model="title" label="Title" required></v-text-field>
     <v-textarea
       variant="outlined"

@@ -23,10 +23,6 @@ export const useAuth = defineStore('auth', {
     bloggerEmail: ''
   }),
 
-  getters: {
-
-  },
-
   actions: {
     handleErr(err) {
       window.alert(`this thing went wrong: ${err}`)
@@ -74,8 +70,7 @@ export const useAuth = defineStore('auth', {
     },
 
 
-    bloggerSignup(targetEmail) {
-      const blogKey = this.newKey
+    bloggerSignup(targetEmail, blogKey) {
       const actionCodeSettings = {
         url: `${import.meta.env.FB_BASE_URL}/blog/new/${blogKey}`,
         handleCodeInApp: true,
