@@ -1,5 +1,5 @@
 const PageTranscriptsShow = () => import('@/pages/PageTranscriptShow.vue')
-const PageBlogNewVerifaction = () => import('@/pages/PageBlogNewVerification.vue')
+const PageBlogVerifaction = () => import('@/pages/PageBlogVerification.vue')
 const PageBlogNew = () => import('@/pages/PageBlogNew.vue')
 
 export const crudRoutes = [
@@ -9,18 +9,10 @@ export const crudRoutes = [
     component: () => import('@/pages/PageBlog.vue'),
   },
   {
-    path: '/verify/blog*',
+    path: '/blog/verify',
     name: 'verify-blogger',
-    component: PageBlogNewVerifaction,
-    props: route => ({ query:
-      {
-        apiKey: route.query.apiKey,
-        continueUrl: route.query.continueUrl,
-        lang: route.query.lang,
-        mode: route.query.mode,
-        oobCode: route.query.oobCode
-      }
-    })
+    component: PageBlogVerifaction,
+    props: true
   },
   {
     path: '/blog/new/:blogKey',
