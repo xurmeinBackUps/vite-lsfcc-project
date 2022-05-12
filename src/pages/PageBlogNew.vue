@@ -2,7 +2,7 @@
   <content-wrapper>
     <template #base-component>
       Page Blog New
-      <FormNewBlog :blog-key="blog.newBlogKey" :date="blog.date" />
+      <FormNewBlog :blog-key="blog.newBlogKey" />
     </template>
   </content-wrapper>
 </template>

@@ -9,8 +9,8 @@
       <v-text-field v-model="pro" variant="outlined" label="Professional Title"></v-text-field>
 
       <v-textarea v-model="personalHistory" variant="outlined" label="Profile Bio"></v-textarea>
-        <v-btn @click="submitProfileForm(fullname, employmentDates, lifetime, personalHistory, pro)">Submit</v-btn>
-        <v-btn @click="ui.newProfileForm = false">Cancel</v-btn>
+      <v-btn @click="submitProfileForm(fullname, employmentDates, lifetime, personalHistory, pro)">Submit</v-btn>
+      <v-btn @click="ui.newProfileForm = false">Cancel</v-btn>
     </v-form>
   </v-card>
 </template>

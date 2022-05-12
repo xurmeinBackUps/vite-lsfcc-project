@@ -22,7 +22,7 @@
 
     "blogPosts": {
       ".read": true,
-      ".write": "auth.uid != null"
+      ".write": true
     },
 
     "transcripts": {

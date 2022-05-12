@@ -19,7 +19,7 @@
       </v-row>
       <v-row>
         <v-col>
-          <v-col v-if="auth.currentUser">
+          <v-col v-if="ui.roleIsAdmin">
             <v-btn
               color="red"
               @click.prevent="clickSignOut"
