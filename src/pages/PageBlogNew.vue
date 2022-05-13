@@ -1,16 +1,18 @@
 <template>
   <content-wrapper>
     <template #base-component>
-      Page Blog New
+      <v-card-title>
+        New Blog Post Form
+      </v-card-title>
       <FormNewBlog :blog-key="blog.newBlogKey" />
     </template>
   </content-wrapper>
 </template>
 
 <script setup>
-import { useAnonBlog } from "../stores/blog.js";
+import { useAnonBlog } from "@/stores/blog.js";
 import ContentWrapper from "@/layout/ContentWrapper.vue";
-import FormNewBlog from "../components/FormNewBlog.vue";
+import FormNewBlog from "@/components/FormNewBlog.vue";
 
 const blog = useAnonBlog()
 </script>

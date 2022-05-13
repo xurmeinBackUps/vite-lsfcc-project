@@ -1,7 +1,9 @@
 <template>
   <content-wrapper>
     <template #base-component>
-      Page Transcipts Index
+      <v-card-title>
+        The Transciptions Index
+      </v-card-title>
       <ListAllTranscripts />
 
       <create-new-item v-if="ui.roleIsAdmin" item-type="transcript" >
@@ -14,11 +16,11 @@
 </template>
 
 <script setup>
-import ContentWrapper from "@/layout/ContentWrapper.vue";
-import ListAllTranscripts from "@/components/ListAllTranscripts.vue";
-import CreateNewItem from "@/layout/CreateNewItem.vue";
-import FormNewTranscript from "../components/FormNewTranscript.vue";
 import { useUiState } from "@/stores/uiState.js";
+import ContentWrapper from "@/layout/ContentWrapper.vue";
+import CreateNewItem from "@/layout/CreateNewItem.vue";
+import ListAllTranscripts from "@/components/ListAllTranscripts.vue";
+import FormNewTranscript from "@/components/FormNewTranscript.vue";
 
 const ui = useUiState()
 </script>

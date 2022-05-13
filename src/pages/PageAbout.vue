@@ -5,7 +5,7 @@
 </template>
 
 <script setup>
-import ListEntriesArticles from '../components/ListEntriesArticles.vue';
+import ListEntriesArticles from '@/components/ListEntriesArticles.vue';
 
 </script>
 

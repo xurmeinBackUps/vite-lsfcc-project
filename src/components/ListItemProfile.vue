@@ -29,10 +29,10 @@
 </template>
 
 <script setup>
-import IndexItemAdminControls from "@/layout/IndexItemAdminControls.vue";
-import { useProfiles } from "@/stores/profiles.js";
-import { useUiState } from "../stores/uiState.js";
 import { computed } from "vue";
+import { useProfiles } from "@/stores/profiles.js";
+import { useUiState } from "@/stores/uiState.js";
+import IndexItemAdminControls from "@/layout/IndexItemAdminControls.vue";
 
 const ui = useUiState()
 const store = useProfiles();

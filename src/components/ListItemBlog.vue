@@ -21,10 +21,10 @@
 </template>
 
 <script setup>
-import IndexItemAdminControls from "@/layout/IndexItemAdminControls.vue";
-import { useUiState } from "../stores/uiState.js";
-import { useAnonBlog } from "../stores/blog.js";
 import { computed } from "vue";
+import { useUiState } from "@/stores/uiState.js";
+import { useAnonBlog } from "@/stores/blog.js";
+import IndexItemAdminControls from "@/layout/IndexItemAdminControls.vue";
 
 const store = useAnonBlog();
 const ui = useUiState();

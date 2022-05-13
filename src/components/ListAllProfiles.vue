@@ -9,9 +9,9 @@
 </template>
 
 <script setup>
+import { onMounted } from "vue";
 import { useProfiles } from "@/stores/profiles.js";
 import ListItemProfile from "./ListItemProfile.vue";
-import { onMounted } from "vue";
 
 const store = useProfiles();
 

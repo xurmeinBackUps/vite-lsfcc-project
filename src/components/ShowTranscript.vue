@@ -27,11 +27,11 @@
 </template>
 
 <script setup>
-import { useTranscripts } from "@/stores/transcripts.js";
 import { onMounted, onUnmounted, computed } from "vue";
 import { RouterLink } from "vue-router";
-import IndexItemAdminControls from "../layout/IndexItemAdminControls.vue";
-import { useUiState } from "../stores/uiState.js";
+import { useTranscripts } from "@/stores/transcripts.js";
+import { useUiState } from "@/stores/uiState.js";
+import IndexItemAdminControls from "@/layout/IndexItemAdminControls.vue";
 import MdiArrowLeftBold from "./icons/MdiArrowLeftBold.vue";
 
 const store = useTranscripts();

@@ -1,22 +1,25 @@
 <template>
   <div>
     <v-card-title>{{ store.name }}</v-card-title>
-    <br />
     <IndexBuildingHistory :entries="store.entries" />
-
   </div>
 </template>
 
 <script setup>
-import { useBuildingOne } from "@/stores/buildingOne.js";
 import { onMounted } from "vue";
+import { useBuildingHistory } from "@/stores/buildings.js";
 import IndexBuildingHistory from "./IndexBuildingHistory.vue";
 
-const store = useBuildingOne();
+const store = useBuildingHistory();
+
+const props = defineProps({
+  bId: String
+})
 
 onMounted(() => {
-  store.fetchName();
-  store.fetchEntries();
-})</script>
+  store.fetchName(props.bId);
+  store.fetchEntries(props.bId);
+})
+</script>
 
 <style lang="scss" scoped></style>

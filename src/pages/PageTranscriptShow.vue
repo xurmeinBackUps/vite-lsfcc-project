@@ -1,7 +1,9 @@
 <template>
   <content-wrapper>
     <template #base-component>
-      Page Transcipts Show
+      <v-card-title>
+        Transcipt Reader
+      </v-card-title>
       <ShowTranscript :trans-key="route.params.objKey" />
     </template>
   </content-wrapper>
@@ -10,7 +12,7 @@
 <script setup>
 import { useRoute } from "vue-router";
 import ContentWrapper from "@/layout/ContentWrapper.vue";
-import ShowTranscript from "../components/ShowTranscript.vue";
+import ShowTranscript from "@/components/ShowTranscript.vue";
 
 const route = useRoute();
 </script>
