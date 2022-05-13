@@ -10,9 +10,9 @@
 </template>
 
 <script setup>
-import { useUiState } from '../stores/uiState.js';
 import { ref } from 'vue'
-import { useTranscripts } from '../stores/transcripts.js';
+import { useUiState } from '@/stores/uiState.js';
+import { useTranscripts } from '@/stores/transcripts.js';
 
 const speaker = ref('')
 const text = ref('')

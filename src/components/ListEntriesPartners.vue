@@ -14,9 +14,9 @@
 </template>
 
 <script setup>
-import EntryPartner from "@/layout/EntryPartner.vue";
 import { onMounted } from "vue";
 import { usePartners } from "@/stores/partners.js";
+import EntryPartner from "@/layout/EntryPartner.vue";
 
 const store = usePartners();
 

@@ -16,9 +16,9 @@
 </template>
 
 <script setup>
-import { useUiState } from '../stores/uiState.js';
 import { ref } from 'vue'
-import { useProfiles } from '../stores/profiles.js';
+import { useUiState } from '@/stores/uiState.js';
+import { useProfiles } from '@/stores/profiles.js';
 
 const fullname = ref('')
 const employmentDates = ref('')

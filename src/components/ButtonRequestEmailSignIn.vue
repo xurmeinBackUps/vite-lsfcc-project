@@ -17,7 +17,7 @@
 
 <script setup>
 import { useAuth } from '@/stores/userAuth.js'
-import { useUiState } from '../stores/uiState.js';
+import { useUiState } from '@/stores/uiState.js';
 import FormRequestEmailAuth from './FormRequestEmailAuth.vue';
 
 const auth = useAuth()

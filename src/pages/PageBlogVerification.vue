@@ -6,7 +6,7 @@
 </template>
 
 <script setup>
-import VerifyNewBlogger from "../components/VerifyNewBlogger.vue";
+import VerifyNewBlogger from "@/components/VerifyNewBlogger.vue";
 
 defineProps({
   query: Object

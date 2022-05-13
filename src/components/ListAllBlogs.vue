@@ -7,8 +7,8 @@
 </template>
 
 <script setup>
-import { useAnonBlog } from "@/stores/blog.js";
 import { onMounted } from "vue";
+import { useAnonBlog } from "@/stores/blog.js";
 import ListItemBlog from "./ListItemBlog.vue"
 
 const store = useAnonBlog();

@@ -14,9 +14,9 @@
 </template>
 
 <script setup>
-import EntryAbout from "@/layout/EntryAbout.vue";
 import { onMounted } from "vue";
 import { useAbout } from "@/stores/about.js";
+import EntryAbout from "@/layout/EntryAbout.vue";
 
 const store = useAbout();
 

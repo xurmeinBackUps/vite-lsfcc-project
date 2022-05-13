@@ -7,9 +7,9 @@
 </template>
 
 <script setup>
+import { onMounted } from "vue";
 import { useTranscripts } from "@/stores/transcripts.js";
 import ListItemTranscript from "./ListItemTranscript.vue";
-import { onMounted } from "vue";
 
 const store = useTranscripts();
 

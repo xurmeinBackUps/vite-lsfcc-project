@@ -14,7 +14,7 @@
 </template>
 
 <script setup>
-import { useUiState } from '../stores/uiState';
+import { useUiState } from '@/stores/uiState.js';
 import FormContact from './FormContact.vue';
 
 const ui = useUiState()

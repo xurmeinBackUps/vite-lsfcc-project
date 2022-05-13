@@ -12,9 +12,9 @@
 </template>
 
 <script setup>
-import { useAnonBlog } from "../stores/blog.js";
-import { useRouter } from "vue-router";
 import { ref } from "vue";
+import { useRouter } from "vue-router";
+import { useAnonBlog } from "@/stores/blog.js";
 
 const props = defineProps({
   blogKey: String,
