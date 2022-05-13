@@ -3,14 +3,16 @@
     <ListEntriesPartners class="top"/>
       <!-- add MY INFO here. -->
     <section class="text-center dev-info">
-      <ul class="w-100">
-        <li>
-          <a target="_blank" href="https://xurmeinbackups.github.io/Portfolio2/" class="float-left">Portfolio (Pretty old)</a>
-        </li>
-        <li>
-          <a target="_blank" href="https://github.com/xurmeinBackUps" class="float-right">Github</a>
-        </li>
-      </ul>
+      Web Development & Design by Jake Peacock.
+      <v-list class="w-100">
+        <v-list-item>
+          <a target="_blank" href="https://xurmeinbackups.github.io/Portfolio2/">Portfolio (Pretty old)</a>
+        </v-list-item>
+        <v-list-item>
+          <a target="_blank" href="https://github.com/xurmeinBackUps">Github</a>
+        </v-list-item>
+      </v-list>
+      <span class="float-left">^ links. ^</span>
     </section>
   </div>
 </template>
@@ -26,11 +28,12 @@ import ListEntriesPartners from "@/components/ListEntriesPartners.vue"
 }
 
 .top {
-  margin-top: -25em;
+  margin-top: -15em;
 }
 
 .dev-info {
   position: absolute;
-  bottom: 15em;
+  bottom: 10em;
+  left: 50%;
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <v-card class="elevation-1">
+  <v-card class="elevation-0">
     <div class="text-center">
       <h4>
         <slot name="heading"></slot>
