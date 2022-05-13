@@ -1,15 +1,27 @@
 <template>
-  <v-footer v-model="ui.drawerState" app class="d-flex footer">
-    <div class="justify-space-around">
-      <v-btn
-        v-if="!ui.drawerState"
-        variant="outlined"
-        icon
-        @click="ui.openDrawer"
-        color="blue-grey"
-        size="x-small"
-      ><MdiLogin /></v-btn>
-    </div>
+  <v-footer v-model="ui.drawerState" app class="w-100 footer">
+    <v-container fluid>
+      <v-row>
+        <v-col class="float-start">
+          <v-btn
+            v-if="!ui.drawerState"
+            variant="outlined"
+            icon
+            @click="ui.openDrawer"
+            color="blue-grey"
+            size="x-small"
+          >
+            <MdiLogin />
+          </v-btn>
+        </v-col>
+        <v-spacer></v-spacer>
+        <v-col>
+          <span class="float-right">
+          Website by Jake Peacock
+          </span>
+        </v-col>
+      </v-row>
+    </v-container>
   </v-footer>
 </template>
 
@@ -25,10 +37,5 @@ const ui = useUiState();
   height: fit-content;
   position: absolute;
   bottom: 0;
-}
-
-.margin {
-  position: absolute;
-  top: 0px;
 }
 </style>
