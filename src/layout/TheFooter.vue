@@ -1,7 +1,7 @@
 <template>
   <v-footer v-model="ui.drawerState" app class="w-100 footer">
     <v-container fluid>
-      <v-row>
+      <v-row dense>
         <v-col class="float-start">
           <v-btn
             v-if="!ui.drawerState"
@@ -37,5 +37,6 @@ const ui = useUiState();
   height: fit-content;
   position: absolute;
   bottom: 0;
+  padding-bottom: 8px;
 }
 </style>
