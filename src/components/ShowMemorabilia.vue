@@ -1,28 +1,26 @@
 <template>
-  <v-carousel hide-delimiters :height="750">
-    <template v-slot:prev="{ props }">
+  <v-carousel hide-delimiters class="h-100">
+  <template v-slot:prev="{ props }">
       <v-btn
+        variant="contained"
         rounded="pill"
-        color="blue"
+        color="light-blue"
         @click="props.onClick"
       > {{ back }} </v-btn>
     </template>
     <template v-slot:next="{ props }">
       <v-btn
+        variant="contained"
         rounded="pill"
         color="blue"
         @click="props.onClick"
       > {{ next }} </v-btn>
       </template>
-
     <v-carousel-item v-for="(img, i) in state.images" :key="i">
-
-          <v-img :src="img.file" ></v-img>
-
-
-
-          <h3>{{ img.subtitle }}</h3>
-
+    <v-card class="w-50 elevation-0 memcard">
+      <v-img  :src="img.file" contain></v-img>
+      <v-card-title>{{ img.subtitle }}</v-card-title>
+    </v-card>
     </v-carousel-item>
   </v-carousel>
 </template>
@@ -48,9 +46,8 @@ const next = ref('>>')
 </script>
 
 <style lang="scss" scoped>
-.mems {
-  height: 100%;
+.memcard {
+  margin-right: 25%;
+  margin-left: 25%;
 }
-
-
 </style>
