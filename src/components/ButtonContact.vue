@@ -7,9 +7,11 @@
             <v-btn
               class="contact-btn mb-5"
               color="indigo-lighten-1"
+              size="large"
               v-bind="props"
             > contact </v-btn>
           </v-col>
+
         </v-row>
       </template>
       <v-card color="white">

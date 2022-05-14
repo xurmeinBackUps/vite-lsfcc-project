@@ -1,21 +1,28 @@
 <template>
-  <v-carousel hide-delimiters>
-  <template v-slot:prev="{ props }">
+  <v-carousel hide-delimiters :height="750">
+    <template v-slot:prev="{ props }">
       <v-btn
-        variant="contained"
-        color="light-blue"
+        rounded="pill"
+        color="blue"
         @click="props.onClick"
       > {{ back }} </v-btn>
     </template>
     <template v-slot:next="{ props }">
       <v-btn
-        variant="contained"
-        color="light-blue"
+        rounded="pill"
+        color="blue"
         @click="props.onClick"
       > {{ next }} </v-btn>
       </template>
+
     <v-carousel-item v-for="(img, i) in state.images" :key="i">
-      <v-img :src="img" contain></v-img>
+
+          <v-img :src="img.file" ></v-img>
+
+
+
+          <h3>{{ img.subtitle }}</h3>
+
     </v-carousel-item>
   </v-carousel>
 </template>
@@ -29,10 +36,10 @@ import imgB2 from '@/assets/images/lincoln-building-2.jpg'
 
 const state = reactive({
   images: [
-    imgB1A,
-    imgB1B,
-    imgB1C,
-    imgB2
+    { file: imgB1A, subtitle: 'Lincoln School Building 1' },
+    { file: imgB1B, subtitle: 'Lincoln School Building 1' },
+    { file: imgB1C, subtitle: 'Lincoln School Building 1' },
+    { file: imgB2, subtitle: 'Lincoln School Building 2' }
   ]
 })
 
@@ -44,4 +51,6 @@ const next = ref('>>')
 .mems {
   height: 100%;
 }
+
+
 </style>

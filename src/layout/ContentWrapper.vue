@@ -10,7 +10,7 @@
 
 <style lang="scss" scoped>
 .main-card {
-  min-height: 80vh;
+  // min-height: 80vh;
   position: relative;
 }
 </style>

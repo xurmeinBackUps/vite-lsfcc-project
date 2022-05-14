@@ -34,4 +34,3 @@ function submitBlogPost(newBlogTitle, newBlogContent) {
 
 </script>
 
-<style scoped lang="scss"></style>

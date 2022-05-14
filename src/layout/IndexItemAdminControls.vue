@@ -43,4 +43,3 @@ const emit = defineEmits([
 ])
 </script>
 
-<style scoped lang="scss"></style>
