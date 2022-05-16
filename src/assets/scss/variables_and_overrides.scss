@@ -2,14 +2,6 @@ $splash-grid-breakpoint: 1450px;
 
 $small-display-breakpoint: 825px;
 
-body {
-	background-image: url('../images/backgrounds/bricks.jpg') cover;
-
-	// background: rgba(204, 206, 168, 0.448);
-	margin: 0;
-	font-family: 'Roboto', sans-serif;
-}
-
 .v-card-title, .v-toolbar-title {
 	font-family: 'Forum', serif;
 }

@@ -34,9 +34,8 @@ const ui = useUiState();
 
 <style lang="scss" scoped>
 .footer {
-  height: fit-content;
+  height:2.5em;
   position: absolute;
   bottom: 0;
-  padding-bottom: 8px;
 }
 </style>

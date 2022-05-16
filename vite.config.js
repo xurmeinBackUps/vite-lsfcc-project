@@ -78,7 +78,6 @@ export default defineConfig(({ command, mode }) => {
                 'vuetify/components',
                 'vuetify/directives'
               ],
-
             }
           }
         },

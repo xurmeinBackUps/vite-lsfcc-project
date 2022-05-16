@@ -1,7 +1,7 @@
 <template>
   <v-row class="mb-10">
     <v-col class="mb-10">
-      <v-card class="main-card pa-5 bg-white">
+      <v-card class="main-card pa-7 bg-white rounded-shaped">
         <slot name="base-component"></slot>
       </v-card>
     </v-col>
@@ -10,7 +10,6 @@
 
 <style lang="scss" scoped>
 .main-card {
-  min-height: 80vh;
-  position: relative;
+  height: fit-content;
 }
 </style>
