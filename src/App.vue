@@ -21,8 +21,12 @@ import TheFooter from "./layout/TheFooter.vue";
 </script>
 
 <style lang="scss">
-@import "@/assets/scss/variables_and_overrides.scss";
+@use "@/assets/scss";
 
+.lsfcc-app {
+  	background-image: url('../images/backgrounds/bricks.jpg') cover;
+
+}
 .lsfcc-main {
   width: 90%;
   margin: auto;

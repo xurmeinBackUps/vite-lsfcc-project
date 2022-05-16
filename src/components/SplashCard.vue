@@ -1,5 +1,5 @@
 <template>
-  <v-card height="300" class="rounded-xl">
+  <v-card height="375" class="rounded-xl">
     <v-card-title class="link text-yellow rounded-b-xl">{{ cardTitle }}</v-card-title>
   </v-card>
 </template>
@@ -17,7 +17,7 @@ defineProps({
   font-family: "Forum";
   justify-content: center;
   width: 100%;
-  background: #00011148;
+  background: #0001117e;
   position: absolute;
   bottom: 0;
 }
