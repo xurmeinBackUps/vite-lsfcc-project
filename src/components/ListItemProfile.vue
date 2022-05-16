@@ -16,7 +16,7 @@
       <p v-if="props.profile.personalHistory" class="text-body-2">
         {{ props.profile.personalHistory }}
       </p>
-      <IndexItemAdminControls
+      <ListItemCrudButtons
         v-if="ui.roleIsAdmin"
         @show="showItem(props.pKey)"
         @hide="hideItem(props.pKey)"
@@ -32,7 +32,7 @@
 import { computed } from "vue";
 import { useProfiles } from "@/stores/profiles.js";
 import { useUiState } from "@/stores/uiState.js";
-import IndexItemAdminControls from "@/layout/IndexItemAdminControls.vue";
+import ListItemCrudButtons from "@/layout/admin/ListItemCrudButtons.vue";
 
 const ui = useUiState()
 const store = useProfiles();

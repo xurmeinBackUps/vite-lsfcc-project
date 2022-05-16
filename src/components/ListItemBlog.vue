@@ -8,7 +8,7 @@
     </p>
     <br />
     <p class="blog-content">{{ props.blog.content }}</p>
-    <IndexItemAdminControls
+    <ListItemCrudButtons
       v-if="ui.roleIsAdmin"
       @hide="hideItem(bKey)"
       @show="showItem(bKey)"
@@ -24,7 +24,7 @@
 import { computed } from "vue";
 import { useUiState } from "@/stores/uiState.js";
 import { useAnonBlog } from "@/stores/blog.js";
-import IndexItemAdminControls from "@/layout/IndexItemAdminControls.vue";
+import ListItemCrudButtons from "@/layout/admin/ListItemCrudButtons.vue";
 
 const store = useAnonBlog();
 const ui = useUiState();

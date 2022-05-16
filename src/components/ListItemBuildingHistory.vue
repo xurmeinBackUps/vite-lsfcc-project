@@ -18,7 +18,7 @@
 <script setup>
 import { computed } from "vue";
 import { useUiState } from "@/stores/uiState.js";
-import IndexItemAdminControls from "@/layout/IndexItemAdminControls.vue";
+import IndexItemAdminControls from "@/layout/admin/IndexItemAdminControls.vue";
 
 const ui = useUiState();
 

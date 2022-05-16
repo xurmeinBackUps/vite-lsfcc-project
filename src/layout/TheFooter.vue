@@ -34,7 +34,7 @@ const ui = useUiState();
 
 <style lang="scss" scoped>
 .footer {
-  height:2.5em;
+  height: 2.5em;
   position: absolute;
   bottom: 0;
 }

@@ -1,14 +1,14 @@
 <template>
   <div>
     <v-card-title>{{ store.name }}</v-card-title>
-    <IndexBuildingHistory :entries="store.entries" />
+    <ListBuildingHistory :entries="store.entries" />
   </div>
 </template>
 
 <script setup>
 import { onMounted } from "vue";
 import { useBuildingHistory } from "@/stores/buildings.js";
-import IndexBuildingHistory from "./IndexBuildingHistory.vue";
+import ListBuildingHistory from "./ListBuildingHistory.vue";
 
 const store = useBuildingHistory();
 
