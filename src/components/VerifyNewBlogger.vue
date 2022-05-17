@@ -57,10 +57,6 @@ const query = reactive({
 
 const email = ref('')
 
-function submitVerify() {
-  if (email === auth.currentUser.email) return router.push({path: query.continueUrl})
-}
-
 onBeforeMount(() => {
   query.apiKey = route.query.apiKey
   query.continueUrl = route.query.continueUrl
@@ -72,11 +68,10 @@ onMounted(() => {
   auth.bloggerVerifyLoginLink(window.location.href)
 
   if (auth.currentUser.email) {
-    email = auth.currentUser.email
-    submitVerify()
+    auth.currentUser.email = email
+    router.push({path: query.continueUrl})
   } else {
-    window.prompt('uh-oh!')
-    router.push({path: '/'})
+    router.push({name: 'verify-blogger'})
   }
 })
 </script>
