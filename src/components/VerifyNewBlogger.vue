@@ -39,7 +39,7 @@
 </template>
 
 <script setup>
-import { onMounted, reactive, ref } from 'vue';
+import { onMounted, onBeforeMount, reactive, ref } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import { useAuth } from '@/stores/userAuth.js';
 
@@ -57,18 +57,29 @@ const query = reactive({
 
 const email = ref('')
 
+function submitVerify() {
+  if (email !== auth.currentUser.email) return router.push({path: '/'})
+
+  return router.push(query.continueUrl)
+}
+
+onBeforeMount(() => {
+  query.apiKey = route.query.apiKey
+  query.continueUrl = route.query.continueUrl
+  query.mode = route.query.mode
+  query.oobCode = route.query.oobCode
+})
+
 onMounted(() => {
   auth.bloggerVerifyLoginLink(window.location.href)
 
-
-
-      query.apiKey = route.query.apiKey
-      query.continueUrl = route.query.continueUrl
-      query.mode = route.query.mode
-      query.oobCode = route.query.oobCode
-
-
-
+  if (auth.currentUser.email) {
+    email = auth.currentUser.email
+    submitVerify()
+  } else {
+    window.prompt('uh-oh!')
+    router.push({path: '/'})
+  }
 })
 </script>
 
