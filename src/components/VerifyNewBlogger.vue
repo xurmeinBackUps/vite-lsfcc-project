@@ -39,11 +39,12 @@
 </template>
 
 <script setup>
-import { onBeforeMount, reactive, ref } from 'vue';
-import { useRoute } from 'vue-router';
+import { onMounted, reactive, ref } from 'vue';
+import { useRoute, useRouter } from 'vue-router';
 import { useAuth } from '@/stores/userAuth.js';
 
 const route = useRoute()
+const router = useRouter()
 
 const auth = useAuth()
 
@@ -56,14 +57,17 @@ const query = reactive({
 
 const email = ref('')
 
-onBeforeMount(() => {
+onMounted(() => {
   auth.bloggerVerifyLoginLink(window.location.href)
 
 
-  query.apiKey = route.query.apiKey
-  query.continueUrl = route.query.continueUrl
-  query.mode = route.query.mode
-  query.oobCode = route.query.oobCode
+
+      query.apiKey = route.query.apiKey
+      query.continueUrl = route.query.continueUrl
+      query.mode = route.query.mode
+      query.oobCode = route.query.oobCode
+
+
 
 })
 </script>

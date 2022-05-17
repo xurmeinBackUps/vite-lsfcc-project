@@ -1,5 +1,6 @@
 import { defineStore } from 'pinia'
 import { auth, rtdb } from '../firebaseApp.config.js'
+import { useRouter } from 'vue-router'
 import { ref, onValue, update, set, push, remove  } from 'firebase/database'
 import {
   signInWithEmailAndPassword,
@@ -57,15 +58,7 @@ export const useAuth = defineStore('auth', {
         })
     },
 
-    writeBloggerRole(newUser) {
-      const newRef = set(ref(rtdb, 'users/' + newUser.uid))
-      update(newRef, {
-        email: newUser.email,
-        role: 'blogger'
-      })
-    },
-
-    bloggerSignup(targetEmail, blogKey) {
+    bloggerSignup(targetEmail) {
       const actionCodeSettings = {
         url: `${import.meta.env.FB_BASE_URL}/blog/new/${blogKey}`,
         handleCodeInApp: true,
@@ -79,23 +72,23 @@ export const useAuth = defineStore('auth', {
         })
     },
 
-
     emailLinkLogin(targetEmail) {
-      console.log("AT LINE 98 IN bloggerEmailLinkLogin() OF @/stores/userAuth.js")
+      console.log("AT LINE 76 IN bloggerEmailLinkLogin() OF @/stores/userAuth.js")
       signInWithEmailLink(auth, targetEmail, window.location.href)
-        .then((result) => {
-          window.alert(`Success! ${result.user.email} may now author a new blog entry`)
-        }).catch((err) => {
-          this.handleErr(err)
-        })
-      },
+      .then((result) => {
+        this.currentUser = result.user
+        window.alert(`Success! ${result.user.email} may now author a new blog entry`)
+      }).catch((err) => {
+        this.handleErr(err)
+      })
+    },
 
-      bloggerVerifyLoginLink(url) {
-        console.log("AT LINE 86 IN bloggerVerifyLoginLink() OF @/stores/userAuth.js")
-        if (isSignInWithEmailLink(auth, url)) {
-          let email = localStorage.getItem('bloggerEmail')
+    bloggerVerifyLoginLink(url) {
+      console.log("AT LINE 86 IN bloggerVerifyLoginLink() OF @/stores/userAuth.js")
+      if (isSignInWithEmailLink(auth, url)) {
+        let email = localStorage.getItem('bloggerEmail')
 
-          this.emailLinkLogin(email)
+        this.emailLinkLogin(email)
         }
       },
 
