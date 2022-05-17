@@ -1,11 +1,11 @@
 <template>
   <ul v-for="(e, key) in entries" :key="key">
-    <IndexItemBuildingHistory :entry="e" :e-key="key" />
+    <ListItemBuildingHistory :entry="e" :e-key="key" />
   </ul>
 </template>
 
 <script setup>
-import IndexItemBuildingHistory from "./IndexItemBuildingHistory.vue";
+import ListItemBuildingHistory from "./ListItemBuildingHistory.vue";
 
 defineProps({
   entries: Object,

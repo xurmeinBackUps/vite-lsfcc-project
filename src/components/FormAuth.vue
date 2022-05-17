@@ -20,16 +20,10 @@
       <v-row>
         <v-col>
           <v-col v-if="ui.roleIsAdmin">
-            <v-btn
-              color="red"
-              @click.prevent="clickSignOut"
-            > Sign Out </v-btn>
+            <v-btn color="red" @click.prevent="clickSignOut"> Sign Out </v-btn>
           </v-col>
           <v-col v-else>
-            <v-btn
-              color="blue"
-              @click.prevent="clickSignIn"
-            > Sign In </v-btn>
+            <v-btn color="blue" @click.prevent="clickSignIn"> Sign In </v-btn>
           </v-col>
         </v-col>
       </v-row>
@@ -48,10 +42,10 @@ function clickSignIn() {
   auth.adminLogin();
   auth.$patch({
     credentials: {
-      email: '',
-      password: ''
-    }
-  })
+      email: "",
+      password: "",
+    },
+  });
   ui.drawerState = false;
 }
 

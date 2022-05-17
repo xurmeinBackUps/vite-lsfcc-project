@@ -1,6 +1,7 @@
 import { defineStore } from 'pinia'
 import { auth, rtdb } from '../firebaseApp.config.js'
 import { useAnonBlog } from './blog.js'
+import { useRouter } from 'vue-router'
 import { ref, onValue, update, set, push, remove  } from 'firebase/database'
 import {
   signInWithEmailAndPassword,
@@ -34,17 +35,16 @@ export const useAuth = defineStore('auth', {
         u => this.currentUser = u,
         err => this.handleErr(err)
       )
-      this.userRole = localStorage.getItem('lsfcc')
       this.bloggerEmail = localStorage.getItem('bloggerEmail')
+      this.userRole = localStorage.getItem('lsfcc')
     },
 
     fetchUserRole(activeUser) {
-      const ls = window.localStorage
-      ls.setItem('lsfcc', '')
+      localStorage.setItem('lsfcc', '')
       const dbRef = ref(rtdb, `users/${activeUser.uid}/role`)
       onValue(dbRef, (snapshot) => {
         this.userRole = snapshot.val()
-        ls.setItem('lsfcc', this.userRole)
+        localStorage.setItem('lsfcc', this.userRole)
       })
     },
 
@@ -61,51 +61,42 @@ export const useAuth = defineStore('auth', {
         })
     },
 
-    writeBloggerRole(newUser) {
-      const newRef = set(ref(rtdb, 'users/' + newUser.uid))
-      update(newRef, {
-        email: newUser.email,
-        role: 'blogger'
-      })
-    },
-
-
     bloggerSignup(targetEmail, blogKey) {
+      if (blogKey === 'undefined') return;
+
       const actionCodeSettings = {
-        url: `${import.meta.env.FB_BASE_URL}/blog/new/${blogKey}`,
+        url: `${location.origin}/blog/new/${blogKey}`,
         handleCodeInApp: true,
       }
+
       sendSignInLinkToEmail(auth, targetEmail, actionCodeSettings)
         .then(() => {
-          window.alert('A link has been sent to the email adress you provided, but you may provide your post now.')
-          window.localStorage.setItem('bloggerEmail', targetEmail)
+          window.alert('A link has been sent to the email adress you provided! Check your inbox and follow the instructions to continue')
+          localStorage.setItem('bloggerEmail', targetEmail)
         }).catch((err) => {
           this.handleErr(err)
         })
     },
 
-    bloggerEmailLinkLogin() {
-      console.log("AT LINE 88 IN bloggerEmailLinkLogin() OF @/stores/userAuth.js")
-      signInWithEmailLink(auth, email, window.location.href)
+    emailLinkLogin(targetEmail, url) {
+      const router = useRouter()
+      const blog = useAnonBlog()
+      signInWithEmailLink(auth, targetEmail, window.location.href)
         .then((result) => {
-          this.writeBloggerRole(result.user)
+          this.currentUser = result.user
+          this.bloggerEmail = result.user.email
           window.alert(`Success! ${result.user.email} may now author a new blog entry`)
-          ls.removeItem('bloggerEmail')
+          router.push({ path: url })
         }).catch((err) => {
           this.handleErr(err)
+          router.push({ path: '/' })
         })
     },
 
-    bloggerLogin(){
-      const ls = window.localStorage
-      if (isSignInWithEmailLink(auth, window.location.href)){
-        console.log("AT LINE 94 IN bloggerLogin() OF @/stores/userAuth.js")
-        this.bloggerEmailLinkLogin()
-      } else {
-        this.bloggerEmail = ls.getItem('bloggerEmail')
-        if (!this.bloggerEmail) {
-          this.bloggerEmail = window.prompt('Please provide your email for confirmation')
-        }
+    bloggerVerifyLoginLink(extUrl, intUrl, key) {
+      if (isSignInWithEmailLink(auth, extUrl)) {
+        let email = localStorage.getItem('bloggerEmail')
+        this.emailLinkLogin(email, intUrl)
       }
     },
 

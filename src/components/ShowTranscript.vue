@@ -5,7 +5,7 @@
       <br />
       <p>{{ store.trans.text }}</p>
       <hr />
-      <IndexItemAdminControls
+      <ListItemCrudButtons
         v-if="ui.roleIsAdmin"
         @show="showItem(props.transKey)"
         @hide="hideItem(props.transKey)"
@@ -31,7 +31,7 @@ import { onMounted, onUnmounted, computed } from "vue";
 import { RouterLink } from "vue-router";
 import { useTranscripts } from "@/stores/transcripts.js";
 import { useUiState } from "@/stores/uiState.js";
-import IndexItemAdminControls from "@/layout/IndexItemAdminControls.vue";
+import ListItemCrudButtons from "@/layout/admin/ListItemCrudButtons.vue";
 import MdiArrowLeftBold from "./icons/MdiArrowLeftBold.vue";
 
 const store = useTranscripts();
@@ -67,4 +67,3 @@ onUnmounted(() => {
 });
 </script>
 
-<style scoped lang="scss"></style>

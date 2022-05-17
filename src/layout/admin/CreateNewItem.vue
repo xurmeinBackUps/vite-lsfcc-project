@@ -12,7 +12,7 @@
 </template>
 
 <script setup>
-import { useUiState } from "../stores/uiState.js";
+import { useUiState } from "@/stores/uiState.js";
 
 const ui = useUiState()
 

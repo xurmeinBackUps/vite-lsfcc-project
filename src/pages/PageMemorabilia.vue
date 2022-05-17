@@ -1,14 +1,26 @@
 <template>
-  <content-wrapper>
+  <content-wrapper  >
     <template #base-component>
-    <v-card-title>
-      Memorabilia & Images
-    </v-card-title>
-    <ShowMemorabilia />
-    <ButtonContact
-      @click="ui.contactForm = true"
-      class="contact-btn"
-    />
+      <v-row>
+        <v-col>
+          <v-card-title>
+            Memorabilia & Images
+          </v-card-title>
+        </v-col>
+      </v-row>
+      <v-row>
+        <v-col>
+          <ShowMemorabilia />
+        </v-col>
+      </v-row>
+      <v-row>
+        <v-col>
+          <ButtonContact
+            @click="ui.contactForm = true"
+            class="contact-btn"
+          />
+        </v-col>
+      </v-row>
     </template>
   </content-wrapper>
 </template>
@@ -19,6 +31,3 @@ import ButtonContact from "@/components/ButtonContact.vue";
 import ShowMemorabilia from "@/components/ShowMemorabilia.vue";
 </script>
 
-<style lang="scss" scoped>
-
-</style>

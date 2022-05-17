@@ -1,9 +1,13 @@
 <template>
-  <div>verify email</div>
+  <FormBloggerVerification />
 </template>
 
-<script setup>
+<script>
+import FormBloggerVerification from "./FormBloggerVerification.vue"
 
+export default {
+  components: { FormBloggerVerification }
+}
 </script>
 
 <style lang="scss" scoped></style>

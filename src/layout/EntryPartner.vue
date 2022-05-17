@@ -1,10 +1,10 @@
 <template>
-  <div class="item">
-    <div class="details">
-      <h3>
+  <v-card class="elevation-0">
+    <div class="text-center">
+      <h4>
         <slot name="heading"></slot>
-      </h3>
+      </h4>
       <slot name="partner-logo"></slot>
     </div>
-  </div>
+  </v-card>
 </template>

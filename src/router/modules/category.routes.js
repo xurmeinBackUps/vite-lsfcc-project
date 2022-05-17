@@ -1,6 +1,6 @@
 const PageBuildingShow = () => import('@/pages/PageBuildingShow.vue')
 
-export const indexOnlyRoutes = [
+export const categoryRoutes = [
   {
     path: '/profiles',
     name: 'profile',

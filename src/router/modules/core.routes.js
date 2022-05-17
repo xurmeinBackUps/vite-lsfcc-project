@@ -5,6 +5,7 @@ export const coreRoutes = [
     default: true,
     component: () => import('@/pages/PageSplash.vue'),
   },
+  { path: '/home', redirect: '/'},
   {
     path: '/about',
     name: 'about',
@@ -15,5 +16,6 @@ export const coreRoutes = [
     name: 'partners',
     component: () => import('@/pages/PagePartners.vue'),
   },
+
    // TODO: add 404 wildcard route
 ]

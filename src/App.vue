@@ -21,7 +21,7 @@ import TheFooter from "./layout/TheFooter.vue";
 </script>
 
 <style lang="scss">
-@import "@/assets/scss/variables_and_overrides.scss";
+@use "@/assets/scss" as *;
 
 .lsfcc-main {
   width: 90%;

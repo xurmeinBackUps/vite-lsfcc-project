@@ -1,0 +1,11 @@
+$splash-grid-breakpoint: 1450px;
+
+$small-display-breakpoint: 825px;
+
+$bg: rgba(204, 206, 168, 0.448);
+
+body {
+	background-color: $bg;
+	margin: 0;
+	font-family: 'Roboto', sans-serif;
+}

@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import { routes } from './routes.js'
+import { routes } from './modules/routes.js'
 import { useAuth } from '@/stores/userAuth.js'
 
 const router = createRouter({
@@ -7,10 +7,8 @@ const router = createRouter({
   routes: routes
 })
 
-
 router.beforeEach((to, from) => {
   if(to !== '/') return;
-
   const auth = useAuth()
 
   auth.checkStorage()

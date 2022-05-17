@@ -4,15 +4,12 @@
       <v-card-title>
         New Blog Post Form
       </v-card-title>
-      <FormNewBlog :blog-key="blog.newBlogKey" />
+      <FormNewBlog :blog-key="$route.params.blogKey"/>
     </template>
   </content-wrapper>
 </template>
 
 <script setup>
-import { useAnonBlog } from "@/stores/blog.js";
 import ContentWrapper from "@/layout/ContentWrapper.vue";
 import FormNewBlog from "@/components/FormNewBlog.vue";
-
-const blog = useAnonBlog()
 </script>

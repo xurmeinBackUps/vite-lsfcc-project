@@ -17,7 +17,7 @@
 <script setup>
 import { useUiState } from "@/stores/uiState.js";
 import ContentWrapper from "@/layout/ContentWrapper.vue";
-import CreateNewItem from "@/layout/CreateNewItem.vue";
+import CreateNewItem from "@/layout/admin/CreateNewItem.vue";
 import ListAllProfiles from "@/components/ListAllProfiles.vue";
 import FormNewProfile from "@/components/FormNewProfile.vue";
 
