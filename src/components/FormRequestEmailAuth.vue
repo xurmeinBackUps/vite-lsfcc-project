@@ -21,7 +21,7 @@ function submitBloggerRequest() {
   store.createNewKey()
   auth.bloggerSignup(auth.bloggerEmail, store.newBlogKey)
   // TODO: use redirect method from vue-router for proper timing, runs too late(???) currently
-  this.setTimeout(router.push({
+  setTimeout(router.push({
     name: 'blog'
   }), 5000)
 }

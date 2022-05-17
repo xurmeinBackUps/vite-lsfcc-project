@@ -84,9 +84,7 @@ export const useAuth = defineStore('auth', {
       console.log("AT LINE 98 IN bloggerEmailLinkLogin() OF @/stores/userAuth.js")
       signInWithEmailLink(auth, targetEmail, window.location.href)
         .then((result) => {
-          this.writeBloggerRole(result.user)
           window.alert(`Success! ${result.user.email} may now author a new blog entry`)
-          ls.removeItem('bloggerEmail')
         }).catch((err) => {
           this.handleErr(err)
         })
