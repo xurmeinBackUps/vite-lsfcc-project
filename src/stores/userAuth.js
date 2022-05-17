@@ -21,6 +21,7 @@ export const useAuth = defineStore('auth', {
     },
     currentUser: {},
     userRole: '',
+    bloggerEmail: ''
   }),
 
   actions: {
@@ -35,6 +36,7 @@ export const useAuth = defineStore('auth', {
         err => this.handleErr(err)
       )
       this.userRole = localStorage.getItem('lsfcc')
+      this.bloggerEmail = localStorage.getItem('bloggerEmail')
     },
 
     fetchUserRole(activeUser) {

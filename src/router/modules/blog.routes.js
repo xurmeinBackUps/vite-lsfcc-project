@@ -1,8 +1,7 @@
-const PageTranscriptsShow = () => import('@/pages/PageTranscriptShow.vue')
 const PageBlogVerifaction = () => import('@/pages/PageBlogVerification.vue')
 const PageBlogNew = () => import('@/pages/PageBlogNew.vue')
 
-export const crudRoutes = [
+export const blogRoutes = [
   {
     path: '/blog',
     name: 'blog',
@@ -11,7 +10,7 @@ export const crudRoutes = [
   {
     path: '/blog/verify',
     name: 'verify-blogger',
-    component: PageBlogVerifaction
+    component: PageBlogVerifaction,
   },
   {
     path: '/blog/new/:blogKey',
@@ -19,15 +18,5 @@ export const crudRoutes = [
     component: PageBlogNew,
     props: true
   },
-  {
-    path: '/transcripts',
-    name: 'transcripts',
-    component: () => import('@/pages/PageTranscriptsIndex.vue'),
-  },
-  {
-    path: '/transcripts/:objKey',
-    name: 'transcripts-show',
-    component: PageTranscriptsShow,
-    props: true
-  },
+
 ]

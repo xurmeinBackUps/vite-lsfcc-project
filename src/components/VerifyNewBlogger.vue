@@ -28,11 +28,19 @@
       ></v-text-field>
 
       <v-text-field
-        v-if="!auth.verifiedEmail"
-        v-model="email"
-        id="verification-email"
+        v-if="auth.currentUser.email"
+        v-model="auth.currentUser.email"
         variant="outlined"
-        label="Verify email address"
+        label="Verified email address"
+        disabled
+      ></v-text-field>
+
+      <v-text-field
+        v-else
+        id="verification-email"
+        v-model="email"
+        variant="filled"
+        label="Verify your email"
       ></v-text-field>
       <v-btn color="green">Submit</v-btn>
     </v-form>
@@ -67,12 +75,6 @@ onBeforeMount(() => {
 onMounted(() => {
   auth.bloggerVerifyLoginLink(window.location.href)
 
-  if (auth.currentUser.email) {
-    auth.currentUser.email = email
-    router.push({path: query.continueUrl})
-  } else {
-    router.push({name: 'verify-blogger'})
-  }
 })
 </script>
 

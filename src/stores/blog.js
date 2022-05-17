@@ -39,8 +39,10 @@ export const useAnonBlog = defineStore('blog', {
       set(ref(rtdb, 'blogPosts/' + newKey), initialPostData)
     },
 
-    addBlog(blogKey, content = '', title = '') {
-      const dbRef = ref(rtdb, `blogPosts/${blogKey}`)
+    addBlog(key, content = '', title = '') {
+      if (content.length == 0 || title.length == 0) return;
+
+      const dbRef = ref(rtdb, `blogPosts/${key}`)
       update(dbRef, {
         content: content,
         private: true,
