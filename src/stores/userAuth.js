@@ -21,7 +21,6 @@ export const useAuth = defineStore('auth', {
     },
     currentUser: {},
     userRole: '',
-    bloggerEmail: ''
   }),
 
   actions: {
@@ -36,7 +35,6 @@ export const useAuth = defineStore('auth', {
         err => this.handleErr(err)
       )
       this.userRole = localStorage.getItem('lsfcc')
-      this.bloggerEmail = localStorage.getItem('bloggerEmail')
     },
 
     fetchUserRole(activeUser) {
@@ -78,7 +76,6 @@ export const useAuth = defineStore('auth', {
     },
 
     emailLinkLogin(targetEmail) {
-      console.log("AT LINE 76 IN bloggerEmailLinkLogin() OF @/stores/userAuth.js")
       signInWithEmailLink(auth, targetEmail, window.location.href)
       .then((result) => {
         this.currentUser = result.user
@@ -89,14 +86,11 @@ export const useAuth = defineStore('auth', {
     },
 
     bloggerVerifyLoginLink(url) {
-      console.log("AT LINE 86 IN bloggerVerifyLoginLink() OF @/stores/userAuth.js")
       if (isSignInWithEmailLink(auth, url)) {
         let email = localStorage.getItem('bloggerEmail')
-
         this.emailLinkLogin(email)
-        }
-      },
-
+      }
+    },
 
     logout() {
       const ls = window.localStorage
