@@ -60,6 +60,8 @@ export const useAuth = defineStore('auth', {
     },
 
     bloggerSignup(targetEmail, blogKey) {
+      if (blogKey === 'undefined') return;
+
       const actionCodeSettings = {
         url: `${location.origin}/blog/new/${blogKey}`,
         handleCodeInApp: true,
