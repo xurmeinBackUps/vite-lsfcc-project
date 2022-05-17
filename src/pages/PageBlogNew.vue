@@ -4,7 +4,7 @@
       <v-card-title>
         New Blog Post Form
       </v-card-title>
-      <FormNewBlog :blog-key="this.$route.params.blogKey"/>
+      <FormNewBlog :blog-key="$router.params.blogKey"/>
     </template>
   </content-wrapper>
 </template>
