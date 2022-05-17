@@ -80,19 +80,20 @@ export const useAuth = defineStore('auth', {
 
     emailLinkLogin(targetEmail, url) {
       const router = useRouter()
+      const blog = useAnonBlog()
       signInWithEmailLink(auth, targetEmail, window.location.href)
         .then((result) => {
           this.currentUser = result.user
           this.bloggerEmail = result.user.email
           window.alert(`Success! ${result.user.email} may now author a new blog entry`)
-          router.replace({ path: url })
+          router.push({ path: url })
         }).catch((err) => {
           this.handleErr(err)
-          router.replace({ path: '/' })
+          router.push({ path: '/' })
         })
     },
 
-    bloggerVerifyLoginLink(extUrl, intUrl) {
+    bloggerVerifyLoginLink(extUrl, intUrl, key) {
       if (isSignInWithEmailLink(auth, extUrl)) {
         let email = localStorage.getItem('bloggerEmail')
         this.emailLinkLogin(email, intUrl)
