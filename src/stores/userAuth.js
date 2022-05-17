@@ -1,5 +1,6 @@
 import { defineStore } from 'pinia'
 import { auth, rtdb } from '../firebaseApp.config.js'
+import { useAnonBlog } from './blog.js'
 import { useRouter } from 'vue-router'
 import { ref, onValue, update, set, push, remove  } from 'firebase/database'
 import {
@@ -59,8 +60,9 @@ export const useAuth = defineStore('auth', {
     },
 
     bloggerSignup(targetEmail) {
+      const blog = useAnonBlog()
       const actionCodeSettings = {
-        url: `${import.meta.env.FB_BASE_URL}/blog/new/${blogKey}`,
+        url: `${import.meta.env.FB_BASE_URL}/blog/new/${blog.blogKey}`,
         handleCodeInApp: true,
       }
       sendSignInLinkToEmail(auth, targetEmail, actionCodeSettings)

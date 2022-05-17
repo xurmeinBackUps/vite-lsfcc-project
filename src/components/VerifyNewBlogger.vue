@@ -58,9 +58,7 @@ const query = reactive({
 const email = ref('')
 
 function submitVerify() {
-  if (email !== auth.currentUser.email) return router.push({path: '/'})
-
-  return router.push(query.continueUrl)
+  if (email === auth.currentUser.email) return router.push({path: query.continueUrl})
 }
 
 onBeforeMount(() => {
