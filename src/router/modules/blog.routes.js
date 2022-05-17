@@ -16,7 +16,7 @@ export const blogRoutes = [
     path: '/blog/new/:blogKey',
     name: 'new-blog',
     component: PageBlogNew,
-    props: true
+    props: true,
   },
 
 ]

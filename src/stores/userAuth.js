@@ -21,6 +21,7 @@ export const useAuth = defineStore('auth', {
     },
     currentUser: {},
     userRole: '',
+    bloggerEmail: ''
   }),
 
   actions: {
@@ -34,6 +35,7 @@ export const useAuth = defineStore('auth', {
         u => this.currentUser = u,
         err => this.handleErr(err)
       )
+      this.bloggerEmail = localStorage.getItem('bloggerEmail')
       this.userRole = localStorage.getItem('lsfcc')
     },
 
@@ -66,29 +68,34 @@ export const useAuth = defineStore('auth', {
         url: `${location.origin}/blog/new/${blogKey}`,
         handleCodeInApp: true,
       }
+
       sendSignInLinkToEmail(auth, targetEmail, actionCodeSettings)
         .then(() => {
           window.alert('A link has been sent to the email adress you provided! Check your inbox and follow the instructions to continue')
-          window.localStorage.setItem('bloggerEmail', targetEmail)
+          localStorage.setItem('bloggerEmail', targetEmail)
         }).catch((err) => {
           this.handleErr(err)
         })
     },
 
-    emailLinkLogin(targetEmail) {
+    emailLinkLogin(targetEmail, url) {
+      const router = useRouter()
       signInWithEmailLink(auth, targetEmail, window.location.href)
-      .then((result) => {
-        this.currentUser = result.user
-        window.alert(`Success! ${result.user.email} may now author a new blog entry`)
-      }).catch((err) => {
-        this.handleErr(err)
-      })
+        .then((result) => {
+          this.currentUser = result.user
+          this.bloggerEmail = result.user.email
+          window.alert(`Success! ${result.user.email} may now author a new blog entry`)
+          router.replace({ path: url })
+        }).catch((err) => {
+          this.handleErr(err)
+          router.replace({ path: '/' })
+        })
     },
 
-    bloggerVerifyLoginLink(url) {
-      if (isSignInWithEmailLink(auth, url)) {
+    bloggerVerifyLoginLink(extUrl, intUrl) {
+      if (isSignInWithEmailLink(auth, extUrl)) {
         let email = localStorage.getItem('bloggerEmail')
-        this.emailLinkLogin(email)
+        this.emailLinkLogin(email, intUrl)
       }
     },
 
