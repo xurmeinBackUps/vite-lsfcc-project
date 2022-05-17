@@ -57,10 +57,10 @@ const router = useRouter()
 const auth = useAuth()
 
 const query = reactive({
-    apiKey: '',
-    continueUrl: '',
-    mode: '',
-    oobCode: ''
+  apiKey: '',
+  continueUrl: '',
+  mode: '',
+  oobCode: ''
 })
 
 const email = ref('')
