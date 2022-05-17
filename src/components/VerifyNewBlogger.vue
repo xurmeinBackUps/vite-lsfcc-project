@@ -1,35 +1,70 @@
 <template>
     <v-form>
-      <v-text-field v-model="state.query.apiKey" variant="outlined" label="API Key"></v-text-field>
+      <v-text-field
+        v-model="query.apiKey"
+        variant="outlined"
+        label="API Key"
+        disabled
+      ></v-text-field>
 
-      <v-text-field v-model="state.query.mode" variant="outlined" label="Mode"></v-text-field>
+      <v-text-field
+        v-model="query.mode"
+        variant="outlined"
+        label="Mode"
+        disabled
+      ></v-text-field>
 
-      <v-text-field v-model="state.query.continueUrl" variant="outlined" label="Continue URL"></v-text-field>
-      <v-text-field v-model="state.query.oobCode" variant="outlined" label="Ont-time Code"></v-text-field>
+      <v-text-field
+        v-model="query.continueUrl"
+        variant="outlined"
+        label="Continue URL"
+        disabled
+      ></v-text-field>
+      <v-text-field
+        v-model="query.oobCode"
+        variant="outlined"
+        label="One-time Code"
+        disabled
+      ></v-text-field>
 
+      <v-text-field
+        v-if="!auth.verifiedEmail"
+        v-model="email"
+        id="verification-email"
+        variant="outlined"
+        label="Verify email address"
+      ></v-text-field>
+      <v-btn color="green">Submit</v-btn>
     </v-form>
 </template>
 
-
 <script setup>
-import { onMounted, reactive } from 'vue';
+import { onBeforeMount, reactive, ref } from 'vue';
 import { useRoute } from 'vue-router';
+import { useAuth } from '@/stores/userAuth.js';
 
 const route = useRoute()
-const state = reactive({
-  query: {
+
+const auth = useAuth()
+
+const query = reactive({
     apiKey: '',
     continueUrl: '',
     mode: '',
     oobCode: ''
-  }
 })
 
-onMounted(() => {
-  state.query.apiKey = route.query.apiKey
-  state.query.continueUrl = route.query.continueUrl
-  state.query.mode = route.query.mode
-  state.query.oobCode = route.query.oobCode
+const email = ref('')
+
+onBeforeMount(() => {
+  auth.bloggerVerifyLoginLink(window.location.href)
+
+
+  query.apiKey = route.query.apiKey
+  query.continueUrl = route.query.continueUrl
+  query.mode = route.query.mode
+  query.oobCode = route.query.oobCode
+
 })
 </script>
 

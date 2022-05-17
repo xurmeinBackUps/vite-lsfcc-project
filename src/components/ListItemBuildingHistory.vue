@@ -2,7 +2,7 @@
   <v-card class="pa-5 ma-3" :class="privateStyles">
     <p class="text-subtitle-1">{{ entry.dates }}</p>
     <p class="text-body-2" v-html="entry.text"></p>
-    <IndexItemAdminControls
+    <ListItemCrudButtons
       v-if="ui.roleIsAdmin"
       item-type="history"
       :index-item="entry"
@@ -18,7 +18,7 @@
 <script setup>
 import { computed } from "vue";
 import { useUiState } from "@/stores/uiState.js";
-import IndexItemAdminControls from "@/layout/admin/IndexItemAdminControls.vue";
+import ListItemCrudButtons from "@/layout/admin/ListItemCrudButtons.vue";
 
 const ui = useUiState();
 

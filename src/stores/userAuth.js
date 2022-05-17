@@ -1,6 +1,5 @@
 import { defineStore } from 'pinia'
 import { auth, rtdb } from '../firebaseApp.config.js'
-import { useAnonBlog } from './blog.js'
 import { ref, onValue, update, set, push, remove  } from 'firebase/database'
 import {
   signInWithEmailAndPassword,
@@ -20,7 +19,6 @@ export const useAuth = defineStore('auth', {
     },
     currentUser: {},
     userRole: '',
-    bloggerEmail: ''
   }),
 
   actions: {
@@ -35,16 +33,14 @@ export const useAuth = defineStore('auth', {
         err => this.handleErr(err)
       )
       this.userRole = localStorage.getItem('lsfcc')
-      this.bloggerEmail = localStorage.getItem('bloggerEmail')
     },
 
     fetchUserRole(activeUser) {
-      const ls = window.localStorage
-      ls.setItem('lsfcc', '')
+      localStorage.setItem('lsfcc', '')
       const dbRef = ref(rtdb, `users/${activeUser.uid}/role`)
       onValue(dbRef, (snapshot) => {
         this.userRole = snapshot.val()
-        ls.setItem('lsfcc', this.userRole)
+        localStorage.setItem('lsfcc', this.userRole)
       })
     },
 
@@ -69,7 +65,6 @@ export const useAuth = defineStore('auth', {
       })
     },
 
-
     bloggerSignup(targetEmail, blogKey) {
       const actionCodeSettings = {
         url: `${import.meta.env.FB_BASE_URL}/blog/new/${blogKey}`,
@@ -84,9 +79,10 @@ export const useAuth = defineStore('auth', {
         })
     },
 
-    bloggerEmailLinkLogin() {
-      console.log("AT LINE 88 IN bloggerEmailLinkLogin() OF @/stores/userAuth.js")
-      signInWithEmailLink(auth, email, window.location.href)
+
+    emailLinkLogin(targetEmail) {
+      console.log("AT LINE 98 IN bloggerEmailLinkLogin() OF @/stores/userAuth.js")
+      signInWithEmailLink(auth, targetEmail, window.location.href)
         .then((result) => {
           this.writeBloggerRole(result.user)
           window.alert(`Success! ${result.user.email} may now author a new blog entry`)
@@ -94,20 +90,17 @@ export const useAuth = defineStore('auth', {
         }).catch((err) => {
           this.handleErr(err)
         })
-    },
+      },
 
-    bloggerLogin(){
-      const ls = window.localStorage
-      if (isSignInWithEmailLink(auth, window.location.href)){
-        console.log("AT LINE 94 IN bloggerLogin() OF @/stores/userAuth.js")
-        this.bloggerEmailLinkLogin()
-      } else {
-        this.bloggerEmail = ls.getItem('bloggerEmail')
-        if (!this.bloggerEmail) {
-          this.bloggerEmail = window.prompt('Please provide your email for confirmation')
+      bloggerVerifyLoginLink(url) {
+        console.log("AT LINE 86 IN bloggerVerifyLoginLink() OF @/stores/userAuth.js")
+        if (isSignInWithEmailLink(auth, url)) {
+          let email = localStorage.getItem('bloggerEmail')
+
+          this.emailLinkLogin(email)
         }
-      }
-    },
+      },
+
 
     logout() {
       const ls = window.localStorage

@@ -10,9 +10,11 @@ const router = createRouter({
 
 router.beforeEach((to, from) => {
   if(to !== '/') return;
+  let email = localStorage.getItem('bloggerEmail')
 
   const auth = useAuth()
 
+  auth.state.bloggerEmail = email
   auth.checkStorage()
 
   return to

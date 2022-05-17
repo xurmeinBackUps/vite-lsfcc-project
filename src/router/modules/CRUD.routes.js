@@ -11,12 +11,7 @@ export const crudRoutes = [
   {
     path: '/blog/verify',
     name: 'verify-blogger',
-    component: PageBlogVerifaction,
-    props: route => ({ query: route.query.q }),
-    // beforeEnter: (to, from) => {
-      // if (Object.keys(to.query).length)
-      //   return { path: to.path, query: {} }
-    // }
+    component: PageBlogVerifaction
   },
   {
     path: '/blog/new/:blogKey',
