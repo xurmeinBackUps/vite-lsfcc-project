@@ -28,6 +28,11 @@ export const useProfiles = defineStore('profiles', {
       })
     },
 
+    deleteProfile(key) {
+      const dbRef = ref(rtdb, `profiles/${key}`)
+      remove(dbRef)
+    },
+
     setPrivateFalse(key) {
       const settingRef = ref(rtdb, `profiles/${key}`)
       update(settingRef, { private: false })

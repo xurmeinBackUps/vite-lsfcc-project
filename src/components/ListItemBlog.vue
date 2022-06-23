@@ -1,9 +1,9 @@
 <template>
   <div class="w-100" :class="privateStyles">
     <p>
-      <span class="float-left"
-        ><strong>{{ props.blog.title }}</strong></span
-      >
+      <span class="float-left">
+        <strong>{{ props.blog.title }}</strong>
+      </span>
       <span class="float-right">{{ props.blog.date }}</span>
     </p>
     <br />

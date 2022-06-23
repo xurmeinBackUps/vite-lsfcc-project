@@ -20,6 +20,7 @@
         v-if="ui.roleIsAdmin"
         @show="showItem(props.pKey)"
         @hide="hideItem(props.pKey)"
+        @destroy="destroyRecord(props.pKey)"
         :index-item="props.profile"
         :item-key="props.pKey"
         item-type="profile"
@@ -34,7 +35,7 @@ import { useProfiles } from "@/stores/profiles.js";
 import { useUiState } from "@/stores/uiState.js";
 import ListItemCrudButtons from "@/layout/admin/ListItemCrudButtons.vue";
 
-const ui = useUiState()
+const ui = useUiState();
 const store = useProfiles();
 
 const props = defineProps({
@@ -53,6 +54,10 @@ function showItem(key) {
 
 function hideItem(key) {
   store.setPrivateTrue(key);
+}
+
+function destroyRecord(key) {
+  store.deleteProfile(key);
 }
 </script>
 
