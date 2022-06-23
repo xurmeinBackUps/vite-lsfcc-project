@@ -28,7 +28,7 @@
               rows="5"
               name="message"
               id="message"
-              placeholder="Aenean lacinia bibendum nulla sed consectetur. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec ullamcorper nulla non metus auctor fringilla nullam quis risus."
+              placeholder="Your message here!"
               required
             ></textarea>
           </v-col>
