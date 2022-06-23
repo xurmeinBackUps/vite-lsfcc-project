@@ -1,12 +1,10 @@
 <template>
   <content-wrapper>
     <template #base-component>
-      <v-card-title>
-        Faculty & Staff Profiles
-      </v-card-title>
+      <v-card-title> Faculty & Staff Profiles </v-card-title>
       <ListAllProfiles />
-       <create-new-item v-if="ui.roleIsAdmin" item-type="profile" >
-        <template #transcript-form>
+      <create-new-item v-if="ui.roleIsAdmin" item-type="profile">
+        <template #profile-form>
           <FormNewProfile />
         </template>
       </create-new-item>

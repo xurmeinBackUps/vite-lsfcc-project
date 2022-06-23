@@ -1,11 +1,9 @@
 <template>
-  <content-wrapper  >
+  <content-wrapper>
     <template #base-component>
       <v-row>
         <v-col>
-          <v-card-title>
-            Memorabilia & Images
-          </v-card-title>
+          <v-card-title> Memorabilia & Images </v-card-title>
         </v-col>
       </v-row>
       <v-row>
@@ -13,12 +11,10 @@
           <ShowMemorabilia />
         </v-col>
       </v-row>
+      <v-spacer></v-spacer>
       <v-row>
         <v-col>
-          <ButtonContact
-            @click="ui.contactForm = true"
-            class="contact-btn"
-          />
+          <ButtonContact @click="ui.contactForm = true" />
         </v-col>
       </v-row>
     </template>
@@ -30,4 +26,3 @@ import ContentWrapper from "@/layout/ContentWrapper.vue";
 import ButtonContact from "@/components/ButtonContact.vue";
 import ShowMemorabilia from "@/components/ShowMemorabilia.vue";
 </script>
-

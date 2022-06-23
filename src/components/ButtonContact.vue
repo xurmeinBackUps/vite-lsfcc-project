@@ -1,24 +1,14 @@
 <template>
-
-    <v-dialog v-model="ui.contactForm">
-      <template v-slot:activator="{ props }">
-        <v-row>
-          <v-col>
-            <v-btn
-              class="contact-btn mb-5"
-              color="indigo-lighten-1"
-              size="large"
-              v-bind="props"
-            > contact </v-btn>
-          </v-col>
-
-        </v-row>
-      </template>
-      <v-card color="white">
-        <FormContact />
-      </v-card>
-    </v-dialog>
-
+  <v-dialog v-model="ui.contactForm">
+    <template v-slot:activator="{ props }">
+      <v-btn class="contact-btn mb-5 mr-9" color="indigo-lighten-1" v-bind="props">
+        contact shannon
+      </v-btn>
+    </template>
+    <v-card color="white">
+      <FormContact />
+    </v-card>
+  </v-dialog>
 </template>
 
 <script setup>
@@ -32,6 +22,7 @@ const ui = useUiState();
 .contact-btn {
   position: absolute;
   bottom: 0;
-  width: 100px;
+  right: 0;
+  width: fit-content;
 }
 </style>

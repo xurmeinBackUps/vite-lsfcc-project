@@ -1,0 +1,21 @@
+{
+  "forms": {
+    "name": "Contact Shannon",
+    "fields": {
+      "email": {
+        "type": "email",
+        "required": true
+      },
+      "message": {
+        "type": "text",
+        "required": true
+      }
+    },
+    "actions": [
+      {
+        "type": "email",
+        "to": "$FB_HUDSON_EMAIL"
+      }
+    ]
+  }
+}
