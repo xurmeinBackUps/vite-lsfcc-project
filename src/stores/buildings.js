@@ -1,6 +1,7 @@
 import { defineStore } from 'pinia'
 import { rtdb } from '../firebaseApp.config.js'
-import { ref, onValue, update } from 'firebase/database'
+import { ref, onValue, update, remove } from 'firebase/database'
+import { set } from 'vue-demi'
 
 
 export const useBuildingHistory = defineStore('buildingHistory', {
@@ -22,6 +23,21 @@ export const useBuildingHistory = defineStore('buildingHistory', {
       onValue(dbRef, (snapshot) => {
         this.entries = snapshot.val()
       })
+    },
+
+    addBuildingEntry(bId, dates = '', text = '') {
+      const dbRef = ref(rtdb, `schools/${bId}/entries`)
+      const newEntryRef = push(dbRef)
+      set(newEntryRef, {
+        dates: dates,
+        private: false,
+        text: text
+      })
+    },
+
+    deleteEntry(bId, key) {
+      const dbRef = ref(rtdb, `schools/${bId}/entries/${key}`)
+      remove(dbRef)
     },
 
     setPrivateFalse(bId, key) {

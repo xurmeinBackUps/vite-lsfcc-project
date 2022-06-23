@@ -1,5 +1,5 @@
 <template>
-  <v-card color="orange">
+  <v-card color="orange" class="form">
     <v-form>
       <v-text-field
         v-model="fullname"
@@ -31,33 +31,35 @@
         label="Profile Bio"
       ></v-textarea>
 
-      <v-btn @click="submitProfileForm(fullname, employmentDates, lifetime, personalHistory, pro)">
+      <v-btn
+        @click="
+          submitProfileForm(fullname, employmentDates, lifetime, personalHistory, pro)
+        "
+      >
         Submit
       </v-btn>
-      <v-btn @click="ui.newProfileForm = false">
-        Cancel
-      </v-btn>
+      <v-btn @click="ui.closeProfileDiag()"> Cancel </v-btn>
     </v-form>
   </v-card>
 </template>
 
 <script setup>
-import { ref } from 'vue'
-import { useUiState } from '@/stores/uiState.js';
-import { useProfiles } from '@/stores/profiles.js';
+import { ref } from "vue";
+import { useUiState } from "@/stores/uiState.js";
+import { useProfiles } from "@/stores/profiles.js";
 
-const fullname = ref('')
-const employmentDates = ref('')
-const lifetime = ref('')
-const personalHistory = ref('')
-const pro = ref('')
+const fullname = ref("");
+const employmentDates = ref("");
+const lifetime = ref("");
+const personalHistory = ref("");
+const pro = ref("");
 
-const ui = useUiState()
-const store = useProfiles()
+const ui = useUiState();
+const store = useProfiles();
 
 function submitProfileForm(newName, newEDates, newLDates, newBio, newPro) {
-  store.addProfile(newName, newEDates, newLDates, newBio, newPro)
-
+  store.addProfile(newName, newEDates, newLDates, newBio, newPro);
+  ui.closeProfileDiag();
 }
 </script>
 

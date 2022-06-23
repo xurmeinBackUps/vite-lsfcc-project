@@ -1,6 +1,6 @@
 <template>
-  <div >
-    <v-dialog v-model="ui.newTransForm">
+  <div>
+    <v-dialog v-model="ui.newForm">
       <template v-slot:activator="{ props }">
         <v-btn v-bind="props" color="green"> Add New {{ itemType }} to Database </v-btn>
       </template>
@@ -14,7 +14,7 @@
 <script setup>
 import { useUiState } from "@/stores/uiState.js";
 
-const ui = useUiState()
+const ui = useUiState();
 
 defineProps({
   itemType: String,
