@@ -1,12 +1,10 @@
 <template>
   <content-wrapper>
     <template #base-component>
-      <v-card-title>
-        The Transciptions Index
-      </v-card-title>
+      <v-card-title> The Transciptions Index </v-card-title>
       <ListAllTranscripts />
 
-      <create-new-item v-if="ui.roleIsAdmin" item-type="transcript" >
+      <create-new-item v-if="ui.roleIsAdmin" item-type="transcript" class="form">
         <template #transcript-form>
           <FormNewTranscript />
         </template>
@@ -22,5 +20,11 @@ import CreateNewItem from "@/layout/admin/CreateNewItem.vue";
 import ListAllTranscripts from "@/components/ListAllTranscripts.vue";
 import FormNewTranscript from "@/components/FormNewTranscript.vue";
 
-const ui = useUiState()
+const ui = useUiState();
 </script>
+
+<style lang="scss" scoped>
+.form {
+  width: 67vw;
+}
+</style>

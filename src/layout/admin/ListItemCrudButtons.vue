@@ -1,13 +1,12 @@
 <template>
   <v-row>
     <v-col>
-      <v-btn @click="emit('edit', itemKey)" color="yellow" disabled>
-        <!-- Need to change above line to emit and event that changes ref in parent -->
+      <v-btn @click="emit('edit', itemKey)" color="yellow">
         Edit
       </v-btn>
     </v-col>
     <v-col>
-      <v-btn @click="emit('save', itemKey)" color="green" disabled> Save </v-btn>
+      <v-btn @click="emit('save', itemKey)" color="green"> Save </v-btn>
     </v-col>
     <v-col>
       <v-btn v-if="!indexItem.private" color="blue" @click="emit('hide', itemKey)">

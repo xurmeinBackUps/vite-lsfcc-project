@@ -53,6 +53,8 @@ export const useTranscripts = defineStore('transcripts', {
     setPrivateTrue(key) {
       const settingRef = ref(rtdb, `transcripts/${key}`)
       update(settingRef, { private: true })
-    }
-  },
+    },
+
+
+  }
 })

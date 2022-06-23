@@ -16,7 +16,7 @@
         </v-col>
         <v-spacer></v-spacer>
         <v-col>
-          <span class="float-right"> Website by Jake Peacock </span>
+          <span class="float-right text-caption"> Website by Jake Peacock </span>
         </v-col>
       </v-row>
     </v-container>

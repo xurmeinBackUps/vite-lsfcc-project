@@ -1,6 +1,6 @@
 <template>
   <ul v-for="(e, key) in entries" :key="key">
-    <ListItemBuildingHistory :entry="e" :e-key="key" />
+    <ListItemBuildingHistory :entry="e" :e-key="key"/>
   </ul>
 </template>
 
@@ -9,6 +9,7 @@ import ListItemBuildingHistory from "./ListItemBuildingHistory.vue";
 
 defineProps({
   entries: Object,
+  bId: String
 });
 </script>
 
