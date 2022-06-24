@@ -1,12 +1,12 @@
 <template>
   <v-carousel hide-delimiters class="h-100 mb-2">
     <template v-slot:prev="{ props }">
-      <v-btn variant="contained" rounded="pill" color="light-blue" @click="props.onClick">
+      <v-btn  rounded="pill" color="light-blue" @click="props.onClick">
         {{ back }}
       </v-btn>
     </template>
     <template v-slot:next="{ props }">
-      <v-btn variant="contained" rounded="pill" color="blue" @click="props.onClick">
+      <v-btn  rounded="pill" color="blue" @click="props.onClick">
         {{ next }}
       </v-btn>
     </template>

@@ -52,7 +52,6 @@ import { useRoute, useRouter } from 'vue-router';
 import { useAuth } from '@/stores/userAuth.js';
 
 const route = useRoute()
-const router = useRouter()
 
 const auth = useAuth()
 

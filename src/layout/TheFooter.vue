@@ -16,7 +16,7 @@
         </v-col>
         <v-spacer></v-spacer>
         <v-col>
-          <span class="float-right text-caption"> Website by Jake Peacock </span>
+          <span class="float-right text-caption copy"> &copy; 2022, J.Peacock </span>
         </v-col>
       </v-row>
     </v-container>
@@ -35,5 +35,10 @@ const ui = useUiState();
   height: 2.5em;
   position: absolute;
   bottom: 0;
+  z-index: 1;
+}
+
+.copy {
+  margin-right: -25px;
 }
 </style>

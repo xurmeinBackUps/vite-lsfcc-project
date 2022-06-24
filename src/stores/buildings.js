@@ -47,6 +47,14 @@ export const useBuildingHistory = defineStore('buildingHistory', {
     setPrivateTrue(bId, key) {
       const settingRef = ref(rtdb, `schools/${bId}/entries/${key}`)
       update(settingRef, { private: true })
+    },
+
+    submitEdit(bId, key, newDates, newText) {
+      const dbRef = ref(rtdb, `schools/${bId}/entries/${key}`)
+      update(dbRef, {
+        dates: newDates,
+        text: newText
+      })
     }
   }
 })

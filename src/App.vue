@@ -21,10 +21,10 @@ import TheFooter from "./layout/TheFooter.vue";
 </script>
 
 <style lang="scss">
-@use "@/assets/scss" as *;
+@use "@/assets/scss/_index.scss" as *;
 
 .lsfcc-main {
-  width: 90%;
+  width: 75%;
   margin: auto;
   margin-top: 1.5em;
   margin-bottom: 5em;

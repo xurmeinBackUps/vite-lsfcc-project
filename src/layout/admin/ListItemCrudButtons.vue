@@ -5,9 +5,9 @@
         Edit
       </v-btn>
     </v-col>
-    <v-col>
+    <!-- <v-col>
       <v-btn @click="emit('save', itemKey)" color="green"> Save </v-btn>
-    </v-col>
+    </v-col> -->
     <v-col>
       <v-btn v-if="!indexItem.private" color="blue" @click="emit('hide', itemKey)">
         Hide

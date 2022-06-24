@@ -9,8 +9,7 @@
       :index-key="eKey"
       @show="showItem(props.eKey)"
       @hide="hideItem(props.eKey)"
-      @edit=""
-      @save=""
+      @edit="editItem(props.eKey)"
       @destroy="destroyRecord(props.eKey)"
     />
   </v-card>
@@ -51,6 +50,10 @@ function hideItem(key) {
 function destroyRecord(key) {
   store.deleteEntry(route.params.bId, key);
 }
+
+// function editItem(key) {
+//   store.submitEdit(route.params.bId, key)
+// }
 </script>
 
 <style></style>
