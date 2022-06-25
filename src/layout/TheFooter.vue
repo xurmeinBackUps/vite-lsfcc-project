@@ -10,8 +10,9 @@
             @click="ui.openDrawer"
             color="blue-grey"
             size="x-small"
+
           >
-            <MdiLogin />
+            <MdiLogin class="d-flex"/>
           </v-btn>
         </v-col>
         <v-spacer></v-spacer>
