@@ -23,6 +23,10 @@ import TheFooter from "./layout/TheFooter.vue";
 <style lang="scss">
 @use "@/assets/scss/_index.scss" as *;
 
+.lsfcc-app {
+  height: 100%;
+}
+
 .lsfcc-main {
   width: 75%;
   margin: auto;

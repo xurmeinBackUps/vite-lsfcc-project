@@ -4,10 +4,22 @@
     name="simple-contact-form"
     accept-charset="utf-8"
     method="POST"
-    class="modal-form"
   >
     <v-container>
       <fieldset id="fs-frm-inputs">
+              <v-row>
+          <v-col>
+            <label for="email">Email</label>
+            <textarea
+              rows="5"
+              name="email"
+              id="email"
+              placeholder="Your email here!"
+              v-model="email"
+              required
+            ></textarea>
+          </v-col>
+        </v-row>
         <v-row>
           <v-col>
             <label for="message">Message</label>
@@ -38,10 +50,13 @@ import $axios from 'axios';
 import { ref } from 'vue'
 
 const message = ref('')
+const email = ref('')
+
 
 async function sendForm(e) {
   const data = {
-    message: message
+    message: message,
+    email: email
   }
 
   const respsonse = await $axios.post('https://formspree.io/f/mpzbbega', data)

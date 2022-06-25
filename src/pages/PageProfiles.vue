@@ -3,7 +3,7 @@
     <template #base-component>
       <v-card-title> Faculty & Staff Profiles </v-card-title>
       <ListAllProfiles />
-      <create-new-item v-if="ui.roleIsAdmin" item-type="profile" class="form">
+      <create-new-item v-if="ui.roleIsAdmin" item-type="profile">
         <template #profile-form>
           <FormNewProfile />
         </template>
@@ -17,13 +17,7 @@ import { useUiState } from "@/stores/uiState.js";
 import ContentWrapper from "@/layout/ContentWrapper.vue";
 import CreateNewItem from "@/components/admin/CreateNewItem.vue";
 import ListAllProfiles from "@/components/lists/ListAllProfiles.vue";
-import FormNewProfile from "@/components/forms/FormNewProfile.vue";
+import FormNewProfile from "@/components/forms/new/FormNewProfile.vue";
 
 const ui = useUiState();
 </script>
-
-<style lang="scss" scoped>
-.form {
-  width: 67vw;
-}
-</style>

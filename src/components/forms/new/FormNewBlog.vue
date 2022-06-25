@@ -29,7 +29,7 @@ const content = ref("");
 function submitBlogPost(newBlogTitle, newBlogContent) {
   store.addBlog(props.blogKey, newBlogTitle, newBlogContent);
   window.alert(`Thank you for sharing your story! Your blog won't be visibile to the public until it has been reviewed. Please contact ${import.meta.env.FB_HUDSON_EMAIL} for further details.`)
-  setTimeout(router.push({ path: '/blog' }), 3000)
+  setTimeout(router.push({ path: '/blog' }), 10000)
 }
 
 </script>

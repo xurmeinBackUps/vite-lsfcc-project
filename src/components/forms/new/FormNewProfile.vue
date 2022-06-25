@@ -38,7 +38,7 @@
       >
         Submit
       </v-btn>
-      <v-btn @click="ui.closeProfileDiag()"> Cancel </v-btn>
+      <v-btn @click="ui.newForm = false"> Cancel </v-btn>
     </v-form>
   </v-card>
 </template>
@@ -59,7 +59,7 @@ const store = useProfiles();
 
 function submitProfileForm(newName, newEDates, newLDates, newBio, newPro) {
   store.addProfile(newName, newEDates, newLDates, newBio, newPro);
-  ui.closeProfileDiag();
+  ui.newForm = false
 }
 </script>
 
