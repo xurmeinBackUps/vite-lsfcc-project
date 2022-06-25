@@ -3,9 +3,9 @@
     id="fs-frm"
     name="simple-contact-form"
     accept-charset="utf-8"
+
     method="POST"
     class="form"
-
   >
     <v-container>
       <fieldset id="fs-frm-inputs">
@@ -13,7 +13,6 @@
               <v-row>
           <v-col>
             <v-text-field
-
               placeholder="Your email here!"
               v-model="email"
               required
@@ -40,8 +39,8 @@
           value="LSFCC Contact Form Submission"
         />
       </fieldset>
-      <v-btn @click.native="sendForm(e)" v-bind="{ props }">Submit</v-btn>
-      <v-btn @click.once.prevent="ui.contactForm = false">Cancel</v-btn>
+      <v-btn @click="sendForm">Submit</v-btn>
+      <v-btn @click="ui.closeContact()">Cancel</v-btn>
     </v-container>
   </v-form>
 </template>
@@ -57,6 +56,7 @@ const email = ref('')
 
 
 async function sendForm(e) {
+  console.log("sendForm!!!!")
   const data = {
     message: message,
     email: email

@@ -14,7 +14,7 @@
       <v-spacer></v-spacer>
       <v-row>
         <v-col>
-          <ButtonContact @click.prevent="ui.openContact()" />
+          <ButtonContact @click="ui.contact = true" />
         </v-col>
       </v-row>
     </template>

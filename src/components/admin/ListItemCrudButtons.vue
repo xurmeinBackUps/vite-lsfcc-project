@@ -27,5 +27,5 @@ defineProps({
   itemKey: [String, Number],
 });
 
-const emit = defineEmits(["edit", "save", "hide", "show", "destroy"]);
+const emit = defineEmits(["edit", "hide", "show", "destroy"]);
 </script>
