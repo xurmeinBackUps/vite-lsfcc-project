@@ -14,7 +14,7 @@
       <v-spacer></v-spacer>
       <v-row>
         <v-col>
-          <ButtonContact @click="ui.contactForm = true" />
+          <ButtonContact @click.prevent="ui.openContact()" />
         </v-col>
       </v-row>
     </template>
@@ -25,4 +25,7 @@
 import ContentWrapper from "@/layout/ContentWrapper.vue";
 import ButtonContact from "@/components/ButtonContact.vue";
 import ShowMemorabilia from "@/components/ShowMemorabilia.vue";
+import { useUiState } from '@/stores/uiState.js'
+
+const ui = useUiState()
 </script>

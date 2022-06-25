@@ -48,7 +48,7 @@
 
 <script setup>
 import { onMounted, onBeforeMount, reactive, ref, onUpdated } from 'vue';
-import { useRoute, useRouter } from 'vue-router';
+import { useRoute } from 'vue-router';
 import { useAuth } from '@/stores/userAuth.js';
 
 const route = useRoute()

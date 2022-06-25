@@ -4,33 +4,33 @@
     name="simple-contact-form"
     accept-charset="utf-8"
     method="POST"
+    class="form"
+
   >
     <v-container>
       <fieldset id="fs-frm-inputs">
+            <label for="email">Email</label>
               <v-row>
           <v-col>
-            <label for="email">Email</label>
-            <textarea
-              rows="5"
-              name="email"
-              id="email"
+            <v-text-field
+
               placeholder="Your email here!"
               v-model="email"
               required
-            ></textarea>
+            ></v-text-field>
           </v-col>
         </v-row>
+            <label for="message">Message</label>
         <v-row>
           <v-col>
-            <label for="message">Message</label>
-            <textarea
+            <v-textarea
               rows="5"
               name="message"
               id="message"
               placeholder="Your message here!"
               v-model="message"
               required
-            ></textarea>
+            ></v-textarea>
           </v-col>
         </v-row>
         <input
@@ -40,7 +40,8 @@
           value="LSFCC Contact Form Submission"
         />
       </fieldset>
-      <v-btn @click="sendForm(e)">Submit</v-btn>
+      <v-btn @click.native="sendForm(e)" v-bind="{ props }">Submit</v-btn>
+      <v-btn @click.once.prevent="ui.contactForm = false">Cancel</v-btn>
     </v-container>
   </v-form>
 </template>
@@ -48,7 +49,9 @@
 <script setup>
 import $axios from 'axios';
 import { ref } from 'vue'
+import { useUiState } from '@/stores/uiState.js'
 
+const ui = useUiState()
 const message = ref('')
 const email = ref('')
 
@@ -64,4 +67,8 @@ async function sendForm(e) {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.form {
+  width: 67vw;
+}
+</style>

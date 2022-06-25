@@ -4,8 +4,9 @@ import { useAuth } from './userAuth.js'
 export const useUiState = defineStore('uiState', {
   state: () => ({
     drawerState: false,
-
-    newForm: false
+    contactForm: false,
+    newForm: false,
+    editForm: false
   }),
 
   getters: {
@@ -38,6 +39,12 @@ export const useUiState = defineStore('uiState', {
       this.drawerState = false
     },
 
+    openContact() {
+      this.contactForm = true
+    },
 
+    closeContact() {
+      this.contactForm = false
+    }
   }
 })
