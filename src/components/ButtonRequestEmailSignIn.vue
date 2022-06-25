@@ -18,14 +18,14 @@
 <script setup>
 import { useAuth } from '@/stores/userAuth.js'
 import { useUiState } from '@/stores/uiState.js';
-import FormRequestEmailAuth from './FormRequestEmailAuth.vue';
+import FormRequestEmailAuth from './forms/FormRequestEmailAuth.vue';
 
 const auth = useAuth()
 const ui = useUiState()
 </script>
 
 <style lang="scss" scoped>
-@import "@/assets/scss/variables_and_overrides.scss";
+@use "@/assets/scss/variables_and_overrides.scss";
 
 .width {
   width: 90vw;

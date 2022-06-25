@@ -21,7 +21,7 @@ import { useRoute } from "vue-router";
 import { computed } from "vue";
 import { useUiState } from "@/stores/uiState.js";
 import { useBuildingHistory } from '@/stores/buildings.js';
-import ListItemCrudButtons from "@/layout/admin/ListItemCrudButtons.vue";
+import ListItemCrudButtons from "@/components/admin/ListItemCrudButtons.vue";
 
 const ui = useUiState();
 const store = useBuildingHistory()

@@ -27,9 +27,9 @@
 <script setup>
 import { onMounted } from "vue";
 import { useAbout } from "@/stores/about.js";
-import { useUiState } from '../stores/uiState.js';
+import { useUiState } from '@/stores/uiState.js';
 import EntryAbout from "@/layout/EntryAbout.vue";
-import ListItemCrudButtons from "@/layout/admin/ListItemCrudButtons.vue";
+import ListItemCrudButtons from "@/components/admin/ListItemCrudButtons.vue";
 
 const ui = useUiState()
 const store = useAbout();

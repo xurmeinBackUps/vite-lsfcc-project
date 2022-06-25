@@ -24,7 +24,7 @@
 import { computed } from "vue";
 import { useUiState } from "@/stores/uiState.js";
 import { useAnonBlog } from "@/stores/blog.js";
-import ListItemCrudButtons from "@/layout/admin/ListItemCrudButtons.vue";
+import ListItemCrudButtons from "@/components/admin/ListItemCrudButtons.vue";
 
 const store = useAnonBlog();
 const ui = useUiState();

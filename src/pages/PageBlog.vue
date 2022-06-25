@@ -12,6 +12,6 @@
 
 <script setup>
 import ContentWrapper from "@/layout/ContentWrapper.vue";
-import ListAllBlogs from "@/components/ListAllBlogs.vue";
+import ListAllBlogs from "@/components/lists/ListAllBlogs.vue";
 import ButtonRequestEmailSignIn from "@/components/ButtonRequestEmailSignIn.vue";
 </script>

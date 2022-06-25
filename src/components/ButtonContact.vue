@@ -13,7 +13,7 @@
 
 <script setup>
 import { useUiState } from "@/stores/uiState.js";
-import FormContact from "./FormContact.vue";
+import FormContact from "./forms/FormContact.vue";
 
 const ui = useUiState();
 </script>

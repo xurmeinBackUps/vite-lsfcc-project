@@ -8,7 +8,7 @@
 <script setup>
 import { onMounted } from "vue";
 import { useBuildingHistory } from "@/stores/buildings.js";
-import ListBuildingHistory from "./ListBuildingHistory.vue";
+import ListBuildingHistory from "./lists/ListBuildingHistory.vue";
 
 const store = useBuildingHistory();
 

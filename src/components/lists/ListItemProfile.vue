@@ -33,7 +33,7 @@
 import { computed } from "vue";
 import { useProfiles } from "@/stores/profiles.js";
 import { useUiState } from "@/stores/uiState.js";
-import ListItemCrudButtons from "@/layout/admin/ListItemCrudButtons.vue";
+import ListItemCrudButtons from "@/components/admin/ListItemCrudButtons.vue";
 
 const ui = useUiState();
 const store = useProfiles();

@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import FormBloggerVerification from "./FormBloggerVerification.vue"
+import FormBloggerVerification from "./forms/FormBloggerVerification.vue"
 
 export default {
   components: { FormBloggerVerification }

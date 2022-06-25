@@ -11,5 +11,5 @@
 
 <script setup>
 import ContentWrapper from "@/layout/ContentWrapper.vue";
-import FormNewBlog from "@/components/FormNewBlog.vue";
+import FormNewBlog from "@/components/forms/FormNewBlog.vue";
 </script>

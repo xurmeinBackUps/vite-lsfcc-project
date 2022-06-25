@@ -18,7 +18,7 @@
 </template>
 
 <script setup>
-import ListEntriesPartners from "@/components/ListEntriesPartners.vue"
+import ListEntriesPartners from "@/components/lists/ListEntriesPartners.vue"
 </script>
 
 <style lang="scss" scoped>

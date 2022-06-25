@@ -13,7 +13,7 @@
 
 <script setup>
 import { useUiState } from "@/stores/uiState.js";
-import FormAuth from '@/components/FormAuth.vue'
+import FormAuth from '@/components/forms/FormAuth.vue'
 
 const ui = useUiState();
 </script>

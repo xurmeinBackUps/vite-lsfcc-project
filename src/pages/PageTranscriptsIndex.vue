@@ -16,9 +16,9 @@
 <script setup>
 import { useUiState } from "@/stores/uiState.js";
 import ContentWrapper from "@/layout/ContentWrapper.vue";
-import CreateNewItem from "@/layout/admin/CreateNewItem.vue";
-import ListAllTranscripts from "@/components/ListAllTranscripts.vue";
-import FormNewTranscript from "@/components/FormNewTranscript.vue";
+import CreateNewItem from "@/components/admin/CreateNewItem.vue";
+import ListAllTranscripts from "@/components/lists/ListAllTranscripts.vue";
+import FormNewTranscript from "@/components/forms/FormNewTranscript.vue";
 
 const ui = useUiState();
 </script>
