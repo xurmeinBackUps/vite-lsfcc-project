@@ -51,9 +51,10 @@ function destroyRecord(key) {
   store.deleteEntry(route.params.bId, key);
 }
 
-// function editItem(key) {
-//   store.submitEdit(route.params.bId, key)
-// }
+function editItem(key) {
+  ui.editForm = true
+  store.submitEdit(route.params.bId, key)
+}
 </script>
 
 <style></style>

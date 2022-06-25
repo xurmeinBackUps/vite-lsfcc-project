@@ -4,7 +4,7 @@
       <v-text-field v-model="speaker" variant="outlined" label="Transcript Speaker"></v-text-field>
       <v-textarea v-model="text" variant="outlined" label="Transcript Text"></v-textarea>
         <v-btn @click="submitTransForm(speaker, text)">Submit</v-btn>
-        <v-btn @click="ui.newForm = false">Cancel</v-btn>
+        <v-btn @click="ui.editForm = false">Cancel</v-btn>
     </v-form>
   </v-card>
 </template>
@@ -22,7 +22,7 @@ const store = useTranscripts()
 
 function submitTransForm(transSpeaker, transText) {
   store.addTranscript(transSpeaker, transText)
-  ui.newForm = false
+  ui.editForm = false
 }
 </script>
 
