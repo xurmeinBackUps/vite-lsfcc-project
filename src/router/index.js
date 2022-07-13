@@ -8,12 +8,9 @@ const router = createRouter({
 })
 
 router.beforeEach((to, from) => {
-  if(to !== '/') return;
   const auth = useAuth()
 
   auth.checkStorage()
-
-  return to
 })
 
 export { router }
