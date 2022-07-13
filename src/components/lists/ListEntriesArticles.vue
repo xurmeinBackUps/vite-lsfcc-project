@@ -11,8 +11,7 @@
       </template>
     </entry-about>
     <ListItemCrudButtons
-
-    v-if="ui.roleIsAdmin"
+      v-if="ui.roleIsAdmin"
       item-type="about"
       :index-item="props.about"
       :index-key="props.key"
@@ -20,18 +19,19 @@
       @hide="hideItem(props.key)"
       @edit=""
       @save=""
-      @destroy="destroyRecord(props.key)"/>
+      @destroy="destroyRecord(props.key)"
+    />
   </div>
 </template>
 
 <script setup>
 import { onMounted } from "vue";
 import { useAbout } from "@/stores/about.js";
-import { useUiState } from '@/stores/uiState.js';
+import { useUiState } from "@/stores/uiState.js";
 import EntryAbout from "@/layout/EntryAbout.vue";
 import ListItemCrudButtons from "@/components/admin/ListItemCrudButtons.vue";
 
-const ui = useUiState()
+const ui = useUiState();
 const store = useAbout();
 
 const props = defineProps({
@@ -41,7 +41,7 @@ const props = defineProps({
 
 onMounted(() => {
   store.fetchArticles();
-})
+});
 </script>
 
 <style lang="scss" scoped></style>

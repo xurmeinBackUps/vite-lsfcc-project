@@ -59,7 +59,7 @@ const store = useProfiles();
 
 function submitProfileForm(newName, newEDates, newLDates, newBio, newPro) {
   store.addProfile(newName, newEDates, newLDates, newBio, newPro);
-  ui.newForm = false
+  ui.newForm = false;
 }
 </script>
 
