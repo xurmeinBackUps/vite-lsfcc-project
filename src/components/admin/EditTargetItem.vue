@@ -4,7 +4,7 @@
         <v-btn v-bind="props" color="amber"> EDIT </v-btn>
       </template>
       <v-card color="white">
-        <slot :name="itemType + '-form-edit'"></slot>
+        <slot></slot>
       </v-card>
     </v-dialog>
 </template>
@@ -16,6 +16,8 @@ const ui = useUiState();
 
 defineProps({
   itemType: String,
+  itemKey: String,
+  indexItem: Object
 });
 </script>
 

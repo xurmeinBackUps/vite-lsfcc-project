@@ -16,7 +16,7 @@
       <p v-if="props.profile.personalHistory" class="text-body-2">
         {{ props.profile.personalHistory }}
       </p>
-      <ListItemCrudButtons
+      <list-item-crud-buttons
         v-if="ui.roleIsAdmin"
         @show="showItem(props.pKey)"
         @hide="hideItem(props.pKey)"
@@ -24,7 +24,11 @@
         :index-item="props.profile"
         :item-key="props.pKey"
         item-type="profile"
-      />
+      >
+        <template #profile-form-edit>
+          <FormEditProfile />
+        </template>
+      </list-item-crud-buttons>
     </v-expansion-panel-text>
   </div>
 </template>
@@ -34,6 +38,7 @@ import { computed } from "vue";
 import { useProfiles } from "@/stores/profiles.js";
 import { useUiState } from "@/stores/uiState.js";
 import ListItemCrudButtons from "@/components/admin/ListItemCrudButtons.vue";
+import FormEditProfile from '@/components/forms/edit/FormEditProfile.vue';
 
 const ui = useUiState();
 const store = useProfiles();

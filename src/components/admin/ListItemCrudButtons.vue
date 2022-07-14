@@ -5,7 +5,10 @@
     <br />
     <v-row>
       <v-col>
-        <EditTargetItem @click="emit('edit', itemKey)" color="amber" :item-type="itemType"/>
+        <edit-target-item @click="emit('edit', itemKey)" color="amber" :item-type="itemType" :item-key="itemKey" :index-item="indexItem">
+                  <slot :name="itemType + '-form-edit'"></slot>
+
+        </edit-target-item>
       </v-col>
       <v-col>
         <v-btn v-if="!indexItem.private" @click="emit('hide', itemKey)" color="blue">

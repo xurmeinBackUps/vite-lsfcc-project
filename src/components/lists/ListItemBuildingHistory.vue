@@ -2,7 +2,7 @@
   <v-card class="pa-5 ma-3" :class="privateStyles">
     <p id="entry-dates" class="text-subtitle-1">{{ entry.dates }}</p>
     <p id="entry-text" class="text-body-2" v-html="entry.text"></p>
-    <ListItemCrudButtons
+    <list-item-crud-buttons
       v-if="ui.roleIsAdmin"
       item-type="history"
       :index-item="entry"
@@ -11,7 +11,11 @@
       @hide="hideItem(props.eKey)"
       @edit="editItem(props.eKey)"
       @destroy="destroyRecord(props.eKey)"
-    />
+    >
+      <template #history-form-edit>
+        <FormEditHistoryEntry />
+      </template>
+    </list-item-crud-buttons>
   </v-card>
 </template>
 
@@ -22,6 +26,7 @@ import { computed } from "vue";
 import { useUiState } from "@/stores/uiState.js";
 import { useBuildingHistory } from '@/stores/buildings.js';
 import ListItemCrudButtons from "@/components/admin/ListItemCrudButtons.vue";
+import FormEditHistoryEntry from '@/components/forms/edit/FormEditHistoryEntry.vue';
 
 const ui = useUiState();
 const store = useBuildingHistory()

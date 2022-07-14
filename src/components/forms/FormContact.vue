@@ -13,9 +13,8 @@
               <v-row>
           <v-col>
             <v-text-field
-              placeholder="Your email here!"
+              placeholder="Your email (optional)"
               v-model="email"
-              required
             ></v-text-field>
           </v-col>
         </v-row>
