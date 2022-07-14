@@ -33,7 +33,7 @@ import EditTargetItem from '@/components/admin/EditTargetItem.vue'
 defineProps({
   indexItem: Object,
   itemType: String,
-  itemKey: [String, Number],
+  itemKey: String,
 });
 
 const emit = defineEmits(["edit", "hide", "show", "destroy"]);

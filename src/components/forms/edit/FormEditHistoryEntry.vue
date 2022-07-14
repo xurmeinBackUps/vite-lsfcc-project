@@ -15,8 +15,8 @@
 import { useUiState } from "@/stores/uiState.js";
 
 defineProps({
-  eKey: [String, Number],
-  entry: Object
+  entry: Object,
+  eKey: String,
 })
 const ui = useUiState();
 </script>

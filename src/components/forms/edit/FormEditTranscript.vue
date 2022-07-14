@@ -19,11 +19,6 @@ import { useTranscripts } from "@/stores/transcripts.js";
 
 const ui = useUiState();
 const store = useTranscripts();
-
-// function submitTransForm(transSpeaker, transText) {
-//   store.addTranscript(transSpeaker, transText);
-//   ui.editForm = false;
-// }
 </script>
 
 <style lang="scss" scoped></style>

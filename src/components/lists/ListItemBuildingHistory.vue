@@ -4,13 +4,12 @@
     <p id="entry-text" class="text-body-2" v-html="entry.text"></p>
     <list-item-crud-buttons
       v-if="ui.roleIsAdmin"
-      item-type="history"
-      :index-item="entry"
-      :index-key="eKey"
       @show="showItem(props.eKey)"
       @hide="hideItem(props.eKey)"
-      @edit="editItem(props.eKey)"
       @destroy="destroyRecord(props.eKey)"
+      :index-item="props.entry"
+      :item-key="props.eKey"
+      item-type="history"
     >
       <template #history-form-edit>
         <FormEditHistoryEntry :entry="props.entry" :e-key="props.eKey"  />
@@ -34,7 +33,7 @@ const route = useRoute();
 
 const props = defineProps({
   entry: Object,
-  eKey: [String, Number],
+  eKey: String,
   // bId: String
 });
 
@@ -56,10 +55,7 @@ function destroyRecord(key) {
   store.deleteEntry(route.params.bId, key);
 }
 
-function editItem(key) {
-  ui.editForm = true
-  store.submitEdit(route.params.bId, key)
-}
+
 </script>
 
 <style></style>

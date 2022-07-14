@@ -38,29 +38,14 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
 import { useUiState } from "@/stores/uiState.js";
-import { useProfiles } from "@/stores/profiles.js";
 
 defineProps({
   pKey: String,
   profile: Object
 })
 
-const fullname = ref("");
-const employmentDates = ref("");
-const lifetime = ref("");
-const personalHistory = ref("");
-const pro = ref("");
-
 const ui = useUiState();
-const store = useProfiles();
-
-
-// function submitTransForm(transSpeaker, transText) {
-//   store.addTranscript(transSpeaker, transText);
-//   ui.editForm = false;
-// }
 </script>
 
 <style lang="scss" scoped></style>
