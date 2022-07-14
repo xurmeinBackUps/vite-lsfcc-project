@@ -6,7 +6,6 @@
       <p>{{ store.trans.text }}</p>
       <list-item-crud-buttons
         v-if="ui.roleIsAdmin"
-        @edit="changeRecord(props.transKey)"
         @show="showItem(props.transKey)"
         @hide="hideItem(props.transKey)"
         @destroy="deleteRecord(props.transKey)"

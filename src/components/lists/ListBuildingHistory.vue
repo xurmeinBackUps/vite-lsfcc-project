@@ -9,7 +9,7 @@ import { useBuildingHistory } from '@/stores/buildings.js';
 import ListItemBuildingHistory from "./ListItemBuildingHistory.vue";
 
 defineProps({
-  bId: String
+  bId: String,
 });
 
 const store = useBuildingHistory()
