@@ -26,7 +26,7 @@
         item-type="profile"
       >
         <template #profile-form-edit>
-          <FormEditProfile />
+          <FormEditProfile :profile="props.profile" :pKey="props.pKey" />
         </template>
       </list-item-crud-buttons>
     </v-expansion-panel-text>

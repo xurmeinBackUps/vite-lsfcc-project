@@ -13,7 +13,7 @@
       @destroy="destroyRecord(props.eKey)"
     >
       <template #history-form-edit>
-        <FormEditHistoryEntry />
+        <FormEditHistoryEntry :entry="props.entry" :e-key="props.eKey"  />
       </template>
     </list-item-crud-buttons>
   </v-card>

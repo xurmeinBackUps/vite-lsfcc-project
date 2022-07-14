@@ -63,10 +63,6 @@ function hideItem(key) {
   store.setPrivateTrue(key);
 }
 
-function changeRecord(key) {
-  ui.editForm = true;
-}
-
 onMounted(() => {
   store.fetchTranscriptByKey(props.transKey);
 });

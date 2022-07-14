@@ -1,38 +1,38 @@
 <template>
-  <v-card color="orange" class="form">
+  <v-card class="ma-3 pa-2 form" color="amber">
     <v-form>
       <v-text-field
-        v-model="fullname"
+        v-model="profile.fullname"
         variant="outlined"
         label="Full Name"
       ></v-text-field>
 
       <v-text-field
-        v-model="employmentDates"
+        v-model="profile.employmentDates"
         variant="outlined"
         label="Employment Dates"
       ></v-text-field>
 
       <v-text-field
-        v-model="lifetime"
+        v-model="profile.lifetime"
         variant="outlined"
         label="Birth Year -- Death Year"
       ></v-text-field>
 
       <v-text-field
-        v-model="pro"
+        v-model="profile.pro"
         variant="outlined"
         label="Professional Title"
       ></v-text-field>
 
       <v-textarea
-        v-model="personalHistory"
+        v-model="profile.personalHistory"
         variant="outlined"
         label="Profile Bio"
       ></v-textarea>
 
 
-      <v-btn @click="ui.editForm = false" color="blue"> Cancel </v-btn>
+      <v-btn @click="ui.editForm = false" color="green"> SAVE </v-btn>
     </v-form>
   </v-card>
 </template>
@@ -41,6 +41,11 @@
 import { ref } from "vue";
 import { useUiState } from "@/stores/uiState.js";
 import { useProfiles } from "@/stores/profiles.js";
+
+defineProps({
+  pKey: String,
+  profile: Object
+})
 
 const fullname = ref("");
 const employmentDates = ref("");

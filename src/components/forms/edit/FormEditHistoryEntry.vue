@@ -1,29 +1,24 @@
 <template>
-  <v-card color="amber">
+  <v-card class="ma-3 pa-2" color="amber">
     <v-form>
-          <v-text-field v-model="dates" variant="outlined" label="Historical Dates"></v-text-field>
-      <v-textarea v-model="text" variant="outlined" label="Entry Text"></v-textarea>
+          <v-text-field v-model="entry.dates" variant="outlined" label="Historical Dates"></v-text-field>
+      <v-textarea v-model="entry.text" variant="outlined" label="Entry Text"></v-textarea>
     </v-form>
       <!-- <v-btn @click="submitTransForm(speaker, text)" color="green">SAVE</v-btn> -->
-         <v-btn color="blue" @click.stop="ui.editForm = false">
-          CANCEL
+         <v-btn color="green" @click.stop="ui.editForm = false">
+          SAVE
         </v-btn>
   </v-card>
 </template>
 
 <script setup>
-import { ref } from "vue";
 import { useUiState } from "@/stores/uiState.js";
-import { useBuildingHistory } from "@/stores/buildings.js";
 
-const dates = ref("");
-const text = ref("");
-
+defineProps({
+  eKey: [String, Number],
+  entry: Object
+})
 const ui = useUiState();
-const store = useBuildingHistory();
-
-
-
 </script>
 
 <style lang="scss" scoped></style>
