@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-card-title>{{ store.name }}</v-card-title>
-    <ListBuildingHistory :entries="store.entries" :bId="props.bId" />
+    <ListBuildingHistory :bId="props.bId" />
   </div>
 </template>
 

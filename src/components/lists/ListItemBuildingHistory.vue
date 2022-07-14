@@ -4,6 +4,7 @@
     <p id="entry-text" class="text-body-2">{{ entry.text }}</p>
     <list-item-crud-buttons
       v-if="ui.roleIsAdmin"
+      @edit="editEntry(props.eKey)"
       @show="showItem(props.eKey)"
       @hide="hideItem(props.eKey)"
       @destroy="destroyRecord(props.eKey)"
@@ -12,7 +13,7 @@
       item-type="history"
     >
       <template #history-form-edit>
-        <FormEditHistoryEntry :entry.prevent="props.entry" :e-key="props.eKey"  />
+        <FormEditHistoryEntry :entry="props.entry" :e-key="props.eKey"  />
       </template>
     </list-item-crud-buttons>
   </v-card>
@@ -55,7 +56,9 @@ function destroyRecord(key) {
   store.deleteEntry(route.params.bId, key);
 }
 
-
+function editEntry(key) {
+  store.fetchEntryByKey(route.params.bId, key)
+}
 </script>
 
 <style></style>
