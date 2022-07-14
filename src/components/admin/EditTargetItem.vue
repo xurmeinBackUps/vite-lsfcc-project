@@ -1,9 +1,9 @@
 <template>
-    <v-dialog v-model="ui.editForm" fullscreen>
+    <v-dialog v-model="ui.editForm" fullscreen :scrim="false">
       <template v-slot:activator="{ props }">
-        <v-btn v-bind="props" color="yellow"> EDIT </v-btn>
+        <v-btn v-bind="props" color="amber"> EDIT </v-btn>
       </template>
-      <v-card color="white" >
+      <v-card color="white">
         <slot :name="itemType + '-form-edit'"></slot>
       </v-card>
     </v-dialog>

@@ -1,23 +1,26 @@
 <template>
-  <v-dialog v-model="ui.editForm" fullscreen>
-    <v-card class="pa-9 ma-3 form" color="white">
-      <slot :name="itemType + '-form'"></slot>
-    </v-card>
-  </v-dialog>
+  <v-card color="blue">
+    <v-form>
+
+    </v-form>
+  </v-card>
 </template>
 
 <script setup>
+import { ref } from "vue";
 import { useUiState } from "@/stores/uiState.js";
+import { useTranscripts } from "@/stores/profiles.js";
+
+const speaker = ref("");
+const text = ref("");
 
 const ui = useUiState();
+const store = useTranscripts();
 
-defineProps({
-  itemType: String,
-});
+function submitTransForm(transSpeaker, transText) {
+  store.addTranscript(transSpeaker, transText);
+  ui.editForm = false;
+}
 </script>
 
-<style lang="scss" scoped>
-.form {
-  width: 67vw;
-}
-</style>
+<style lang="scss" scoped></style>

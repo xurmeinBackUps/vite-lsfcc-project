@@ -24,15 +24,15 @@ export const useBuildingHistory = defineStore('buildingHistory', {
       })
     },
 
-    addBuildingEntry(bId, dates = '', text = '') {
-      const dbRef = ref(rtdb, `schools/${bId}/entries`)
-      const newEntryRef = push(dbRef)
-      set(newEntryRef, {
-        dates: dates,
-        private: false,
-        text: text
-      })
-    },
+    // addBuildingEntry(bId, dates = '', text = '') {
+    //   const dbRef = ref(rtdb, `schools/${bId}/entries`)
+    //   const newEntryRef = push(dbRef)
+    //   set(newEntryRef, {
+    //     dates: dates,
+    //     private: false,
+    //     text: text
+    //   })
+    // },
 
     deleteEntry(bId, key) {
       const dbRef = ref(rtdb, `schools/${bId}/entries/${key}`)

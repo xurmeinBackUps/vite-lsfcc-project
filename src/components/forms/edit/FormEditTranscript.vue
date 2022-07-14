@@ -1,28 +1,30 @@
 <template>
-  <v-dialog v-model="ui.editForm" fullscreen>
+  <v-card color="amber">
     <v-form>
-      <v-text-field v-model="speaker" variant="outlined" label="Transcript Speaker"></v-text-field>
+          <v-text-field v-model="speaker" variant="outlined" label="Transcript Speaker"></v-text-field>
       <v-textarea v-model="text" variant="outlined" label="Transcript Text"></v-textarea>
-        <v-btn @click="submitTransEdit(speaker, text)">Submit</v-btn>
-        <v-btn @click="ui.editForm = false">Cancel</v-btn>
     </v-form>
-  </v-dialog>
+      <v-btn @click="submitTransForm(speaker, text)" color="green">SAVE</v-btn>
+         <v-btn color="blue" @click.stop="ui.editForm = false">
+          CANCEL
+        </v-btn>
+  </v-card>
 </template>
 
 <script setup>
-import { ref } from 'vue'
-import { useUiState } from '@/stores/uiState.js';
-import { useTranscripts } from '@/stores/transcripts.js';
+import { ref } from "vue";
+import { useUiState } from "@/stores/uiState.js";
+import { useTranscripts } from "@/stores/transcripts.js";
 
-const speaker = ref('')
-const text = ref('')
+const speaker = ref("");
+const text = ref("");
 
-const ui = useUiState()
-const store = useTranscripts()
+const ui = useUiState();
+const store = useTranscripts();
 
-function submitTransEdit(transSpeaker, transText) {
-  store.editTranscript(transSpeaker, transText)
-  ui.editForm = false
+function submitTransForm(transSpeaker, transText) {
+  store.addTranscript(transSpeaker, transText);
+  ui.editForm = false;
 }
 </script>
 

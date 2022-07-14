@@ -1,13 +1,10 @@
 <template>
-  <v-card>
+  <v-card class="pa-3">
     <div v-if="store.trans" :class="privateStyles">
       <p>{{ store.trans.speaker }}</p>
       <br />
       <p>{{ store.trans.text }}</p>
-      <br />
-      <v-divider />
-      <br />
-      <ListItemCrudButtons
+      <list-item-crud-buttons
         v-if="ui.roleIsAdmin"
         @edit="changeRecord(props.transKey)"
         @show="showItem(props.transKey)"
@@ -16,7 +13,11 @@
         :index-item="store.trans"
         :item-key="props.transKey"
         item-type="transcript"
-      />
+      >
+        <template #transcript-form-edit>
+          <FormEditTranscript />
+        </template>
+      </list-item-crud-buttons>
     </div>
     <div v-else>
       <router-link :to="{ name: 'transcripts' }">
@@ -36,6 +37,7 @@ import { useTranscripts } from "@/stores/transcripts.js";
 import { useUiState } from "@/stores/uiState.js";
 import ListItemCrudButtons from "@/components/admin/ListItemCrudButtons.vue";
 import MdiArrowLeftBold from "./icons/MdiArrowLeftBold.vue";
+import FormEditTranscript from './forms/edit/FormEditTranscript.vue';
 
 const store = useTranscripts();
 const ui = useUiState();

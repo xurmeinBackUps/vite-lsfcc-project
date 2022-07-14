@@ -12,5 +12,3 @@ defineProps({
   objKey: String
 });
 </script>
-
-<style lang="scss" scoped></style>
