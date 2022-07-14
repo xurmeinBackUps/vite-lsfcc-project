@@ -4,7 +4,7 @@
       <v-card-title> Faculty & Staff Profiles </v-card-title>
       <ListAllProfiles />
       <create-new-item v-if="ui.roleIsAdmin" item-type="profile">
-        <template #profile-form>
+        <template #profile-form-new>
           <FormNewProfile />
         </template>
       </create-new-item>

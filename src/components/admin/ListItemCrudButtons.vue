@@ -1,26 +1,27 @@
 <template>
   <v-row>
     <v-col>
-      <v-btn @click="emit('edit', itemKey)" color="yellow">
-        Edit
-      </v-btn>
-    </v-col>
-    <!-- <v-col>
-      <v-btn @click="emit('save', itemKey)" color="green"> Save </v-btn>
-    </v-col> -->
-    <v-col>
-      <v-btn v-if="!indexItem.private" color="blue" @click="emit('hide', itemKey)">
-        Hide
-      </v-btn>
-      <v-btn v-else color="indigo" @click="emit('show', itemKey)"> show </v-btn>
+      <EditTargetItem @click="emit('edit', itemKey)" color="yellow" />
     </v-col>
     <v-col>
-      <v-btn color="red" @click="emit('destroy', itemKey)"> REMOVE FROM SITE </v-btn>
+      <v-btn v-if="!indexItem.private" @click="emit('hide', itemKey)" color="blue">
+        HIDE
+      </v-btn>
+      <v-btn v-else @click="emit('show', itemKey)" color="indigo">
+        SHOW
+      </v-btn>
+    </v-col>
+    <v-col>
+      <v-btn @click="emit('destroy', itemKey)" color="red">
+        DELETE
+      </v-btn>
     </v-col>
   </v-row>
 </template>
 
 <script setup>
+import EditTargetItem from '@/components/admin/EditTargetItem.vue'
+
 defineProps({
   indexItem: Object,
   itemType: String,

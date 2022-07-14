@@ -45,6 +45,14 @@ export const useUiState = defineStore('uiState', {
 
     closeContact() {
       this.contactForm = false
+    },
+
+    openEditor() {
+      this.editForm = true
+    },
+
+    closeEditor() {
+      this.editForm = true
     }
   }
 })

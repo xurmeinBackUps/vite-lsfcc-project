@@ -4,9 +4,12 @@
       <p>{{ store.trans.speaker }}</p>
       <br />
       <p>{{ store.trans.text }}</p>
-      <hr />
+      <br />
+      <v-divider />
+      <br />
       <ListItemCrudButtons
         v-if="ui.roleIsAdmin"
+        @edit="changeRecord(props.transKey)"
         @show="showItem(props.transKey)"
         @hide="hideItem(props.transKey)"
         @destroy="deleteRecord(props.transKey)"
@@ -58,6 +61,10 @@ function hideItem(key) {
   store.setPrivateTrue(key);
 }
 
+function changeRecord(key) {
+  ui.editForm = true;
+}
+
 onMounted(() => {
   store.fetchTranscriptByKey(props.transKey);
 });
@@ -66,4 +73,3 @@ onUnmounted(() => {
   store.trans = {};
 });
 </script>
-

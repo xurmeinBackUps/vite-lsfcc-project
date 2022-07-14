@@ -5,7 +5,7 @@
       <ListAllTranscripts />
 
       <create-new-item v-if="ui.roleIsAdmin" item-type="transcript">
-        <template #transcript-form>
+        <template #transcript-form-new>
           <FormNewTranscript />
         </template>
       </create-new-item>

@@ -9,9 +9,9 @@
     <v-expansion-panel-text>
       <p v-if="props.profile.pro" class="text-subtitle-1 font-italic">
         {{ props.profile.pro }}
-        <span v-if="props.profile.employmentDates"
-          >from {{ props.profile.employmentDates }}</span
-        >
+        <span v-if="props.profile.employmentDates">
+          from {{ props.profile.employmentDates }}
+        </span>
       </p>
       <p v-if="props.profile.personalHistory" class="text-body-2">
         {{ props.profile.personalHistory }}

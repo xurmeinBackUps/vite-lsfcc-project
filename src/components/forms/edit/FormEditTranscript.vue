@@ -1,12 +1,12 @@
 <template>
-  <v-card color="blue">
+  <v-dialog v-model="ui.editForm" fullscreen>
     <v-form>
       <v-text-field v-model="speaker" variant="outlined" label="Transcript Speaker"></v-text-field>
       <v-textarea v-model="text" variant="outlined" label="Transcript Text"></v-textarea>
         <v-btn @click="submitTransEdit(speaker, text)">Submit</v-btn>
         <v-btn @click="ui.editForm = false">Cancel</v-btn>
     </v-form>
-  </v-card>
+  </v-dialog>
 </template>
 
 <script setup>
