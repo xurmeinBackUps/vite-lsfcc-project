@@ -17,8 +17,6 @@
       :index-key="props.key"
       @show="showItem(props.key)"
       @hide="hideItem(props.key)"
-      @edit=""
-      @save=""
       @destroy="destroyRecord(props.key)"
     />
   </div>

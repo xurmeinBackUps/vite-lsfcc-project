@@ -1,9 +1,10 @@
 <template>
   <v-card class="pa-5 ma-3" :class="privateStyles">
     <p id="entry-dates" class="text-subtitle-1">{{ entry.dates }}</p>
-    <p id="entry-text" class="text-body-2" v-html="entry.text"></p>
+    <p id="entry-text" class="text-body-2">{{ entry.text }}</p>
     <list-item-crud-buttons
       v-if="ui.roleIsAdmin"
+      @edit="editEntry(props.eKey)"
       @show="showItem(props.eKey)"
       @hide="hideItem(props.eKey)"
       @destroy="destroyRecord(props.eKey)"
@@ -34,7 +35,7 @@ const route = useRoute();
 const props = defineProps({
   entry: Object,
   eKey: String,
-  // bId: String
+  bId: String
 });
 
 const privateStyles = computed(() => ({
@@ -55,7 +56,9 @@ function destroyRecord(key) {
   store.deleteEntry(route.params.bId, key);
 }
 
-
+function editEntry(key) {
+  store.fetchEntryByKey(route.params.bId, key)
+}
 </script>
 
 <style></style>

@@ -1,4 +1,3 @@
-const PageBuildingShow = () => import('@/pages/PageBuildingShow.vue')
 
 export const categoryRoutes = [
   {
@@ -12,9 +11,9 @@ export const categoryRoutes = [
     component: () => import('@/pages/PageMemorabilia.vue'),
   },
   {
-    path: '/schools/:bId',
+    path: '/schools/:bId/entries',
     name: 'building-show',
-    component: PageBuildingShow,
+    component: () => import('@/pages/PageBuildingShow.vue'),
     props: true,
   },
 ]

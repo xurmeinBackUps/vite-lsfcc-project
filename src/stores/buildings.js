@@ -6,7 +6,8 @@ import { ref, onValue, update, remove, set } from 'firebase/database'
 export const useBuildingHistory = defineStore('buildingHistory', {
   state: () => ({
     name: '',
-    entries: []
+    entries: [],
+    entry: {}
   }),
 
   actions: {
@@ -24,15 +25,12 @@ export const useBuildingHistory = defineStore('buildingHistory', {
       })
     },
 
-    // addBuildingEntry(bId, dates = '', text = '') {
-    //   const dbRef = ref(rtdb, `schools/${bId}/entries`)
-    //   const newEntryRef = push(dbRef)
-    //   set(newEntryRef, {
-    //     dates: dates,
-    //     private: false,
-    //     text: text
-    //   })
-    // },
+    fetchEntryByKey(bId, key) {
+      const dbRef = ref(rtdb, `schools/${bId}/entries/${key}`)
+      onValue(dbRef, (snapshot) => {
+        this.entry = snapshot.val()
+      })
+    },
 
     deleteEntry(bId, key) {
       const dbRef = ref(rtdb, `schools/${bId}/entries/${key}`)
