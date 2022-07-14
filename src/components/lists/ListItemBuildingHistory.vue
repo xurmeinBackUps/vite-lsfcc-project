@@ -1,7 +1,7 @@
 <template>
   <v-card class="pa-5 ma-3" :class="privateStyles">
     <p id="entry-dates" class="text-subtitle-1">{{ entry.dates }}</p>
-    <p id="entry-text" class="text-body-2" v-html="entry.text"></p>
+    <p id="entry-text" class="text-body-2">{{ entry.text }}</p>
     <list-item-crud-buttons
       v-if="ui.roleIsAdmin"
       @show="showItem(props.eKey)"
@@ -12,7 +12,7 @@
       item-type="history"
     >
       <template #history-form-edit>
-        <FormEditHistoryEntry :entry="props.entry" :e-key="props.eKey"  />
+        <FormEditHistoryEntry :entry.prevent="props.entry" :e-key="props.eKey"  />
       </template>
     </list-item-crud-buttons>
   </v-card>
@@ -34,7 +34,7 @@ const route = useRoute();
 const props = defineProps({
   entry: Object,
   eKey: String,
-  // bId: String
+  bId: String
 });
 
 const privateStyles = computed(() => ({
