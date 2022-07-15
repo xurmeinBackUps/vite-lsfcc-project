@@ -1,7 +1,7 @@
 <template>
   <v-card class="pa-5 ma-3 w-100" :class="privateStyles">
-    <p class="text-subtitle-1">{{ entry.dates }}</p>
-    <p class="text-body-2">{{ entry.text }}</p>
+    <p class="text-subtitle-1">{{ props.entry.dates }}</p>
+    <p class="text-body-2" v-html="props.entry.text"></p>
     <list-item-crud-buttons
       v-if="ui.roleIsAdmin"
       @edit="ui.editForm = true"
