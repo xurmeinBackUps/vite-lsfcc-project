@@ -1,6 +1,12 @@
 import { defineStore } from 'pinia'
 import { rtdb } from '../firebaseApp.config.js'
-import { ref, onValue, update, remove, set } from 'firebase/database'
+import {
+  ref,
+  onValue,
+  update,
+  remove,
+  set
+} from 'firebase/database'
 
 
 export const useBuildingHistory = defineStore('buildingHistory', {

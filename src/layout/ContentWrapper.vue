@@ -1,9 +1,9 @@
 <template>
   <v-row class="mb-10">
     <v-col class="mb-10">
-      <v-card class="main-card pa-7 bg-white rounded-shaped">
+      <v-sheet class="main-sheet pa-7 bg-white  rounded-shaped" elevation="2">
         <slot name="base-component"></slot>
-      </v-card>
+      </v-sheet>
     </v-col>
   </v-row>
 </template>

@@ -1,7 +1,7 @@
 <template>
   <content-wrapper>
     <template #base-component>
-        <ShowBuildingHistory :bId="route.params.bId"/>
+      <ShowBuildingHistory :bId="route.params.bId"/>
     </template>
   </content-wrapper>
 </template>
