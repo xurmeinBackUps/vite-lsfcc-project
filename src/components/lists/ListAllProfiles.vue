@@ -17,5 +17,4 @@ const store = useProfiles();
 onMounted(() => {
   store.fetchProfiles();
 })
-
 </script>

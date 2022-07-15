@@ -4,10 +4,9 @@
       <v-text-field v-model="store.trans.speaker" variant="outlined" label="Transcript Speaker"></v-text-field>
       <v-textarea v-model="store.trans.text" variant="outlined" label="Transcript Text"></v-textarea>
     </v-form>
-      <!-- <v-btn @click="submitTransForm(speaker, text)" color="green">SAVE</v-btn> -->
-         <v-btn color="green" @click.stop="ui.editForm = false">
-          SAVE
-        </v-btn>
+    <v-btn color="green" @click.stop="ui.editForm = false">
+      SAVE
+    </v-btn>
   </v-card>
 </template>
 

@@ -1,12 +1,12 @@
 <template>
-  <div>
+  <div :target-item-key="itemKey">
     <br />
       <v-divider />
     <br />
     <v-row>
       <v-col>
-        <edit-target-item @click="emit('edit', itemKey)" color="amber" :item-type="itemType" :item-key="itemKey" :index-item="indexItem">
-          <slot :name="itemType + '-form-edit'"></slot>
+        <edit-target-item @click.prevent="emit('edit', itemKey)" color="amber" :item-type="itemType" :item-key="itemKey" :index-item="indexItem">
+          <slot  :name="itemType + '-form-edit'"></slot>
         </edit-target-item>
       </v-col>
       <v-col>

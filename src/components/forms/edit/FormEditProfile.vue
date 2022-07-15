@@ -31,7 +31,6 @@
         label="Profile Bio"
       ></v-textarea>
 
-
       <v-btn @click="ui.editForm = false" color="green"> SAVE </v-btn>
     </v-form>
   </v-card>
@@ -47,5 +46,3 @@ defineProps({
 
 const ui = useUiState();
 </script>
-
-<style lang="scss" scoped></style>

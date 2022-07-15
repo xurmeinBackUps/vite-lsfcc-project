@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-card-title>{{ store.name }}</v-card-title>
-    <ListBuildingHistory :bId="props.bId" />
+    <ListBuildingHistory :b-id="props.bId" />
   </div>
 </template>
 
@@ -18,8 +18,5 @@ const props = defineProps({
 
 onMounted(() => {
   store.fetchName(props.bId);
-  store.fetchEntries(props.bId);
 })
 </script>
-
-<style lang="scss" scoped></style>

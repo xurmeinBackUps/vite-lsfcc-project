@@ -4,15 +4,15 @@
     <p id="entry-text" class="text-body-2">{{ entry.text }}</p>
     <list-item-crud-buttons
       v-if="ui.roleIsAdmin"
-      @edit="editEntry(props.eKey)"
+      :target-item-key="props.eKey"
       @show="showItem(props.eKey)"
       @hide="hideItem(props.eKey)"
       @destroy="destroyRecord(props.eKey)"
       :index-item="props.entry"
       :item-key="props.eKey"
-      item-type="history"
+      item-type="entry"
     >
-      <template #history-form-edit>
+      <template #entry-form-edit>
         <FormEditHistoryEntry :entry="props.entry" :e-key="props.eKey"  />
       </template>
     </list-item-crud-buttons>
@@ -35,7 +35,7 @@ const route = useRoute();
 const props = defineProps({
   entry: Object,
   eKey: String,
-  bId: String
+  targetItemKey: String
 });
 
 const privateStyles = computed(() => ({
@@ -43,22 +43,18 @@ const privateStyles = computed(() => ({
   "font-italic text-grey": props.entry.private && ui.roleIsAdmin,
 }));
 
-
 function showItem(key) {
-  store.setPrivateFalse(route.params.bId, key);
+  const bId = route.params.bId
+  store.setPrivateFalse(bId, key);
 }
 
 function hideItem(key) {
-  store.setPrivateTrue(route.params.bId, key);
+  const bId = route.params.bId
+  store.setPrivateTrue(bId, key);
 }
 
 function destroyRecord(key) {
-  store.deleteEntry(route.params.bId, key);
-}
-
-function editEntry(key) {
-  store.fetchEntryByKey(route.params.bId, key)
+  const bId = route.params.bId
+  store.deleteEntry(bId, key);
 }
 </script>
-
-<style></style>
