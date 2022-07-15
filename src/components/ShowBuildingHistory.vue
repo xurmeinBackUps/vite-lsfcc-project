@@ -49,6 +49,6 @@ onMounted(() => {
 <style lang="scss" scoped>
 .tabs {
   min-width: 0;
-  color: skyblue;
+  color: black;
 }
 </style>
