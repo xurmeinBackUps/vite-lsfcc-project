@@ -1,5 +1,5 @@
 <template>
-  <div class="pa-5 ma-3 bg" :class="privateStyles">
+  <v-card class="ma-3 bg-amber-lighten-5" :class="privateStyles">
     <p class="text-body-2" v-html="props.entry.text"></p>
     <list-item-crud-buttons
       v-if="ui.roleIsAdmin"
@@ -15,7 +15,7 @@
         <FormEditHistoryEntry :entry="props.entry" :e-key="props.eKey"  />
       </template>
     </list-item-crud-buttons>
-  </div>
+  </v-card>
 </template>
 
 <script setup>
@@ -56,9 +56,3 @@ function destroyRecord(key) {
   store.deleteEntry(bId, key);
 }
 </script>
-
-<style lang="scss" scoped>
-.bg {
-  background-color: #FFECB3;
-}
-</style>
