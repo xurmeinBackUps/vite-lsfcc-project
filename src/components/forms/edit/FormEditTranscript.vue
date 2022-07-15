@@ -19,9 +19,7 @@
     <v-btn
       color="red"
       @click.stop="ui.editForm = false"
-    >
-      cancel
-    </v-btn>
+    > cancel </v-btn>
   </v-card>
 </template>
 
