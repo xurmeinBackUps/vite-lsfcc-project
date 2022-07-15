@@ -1,7 +1,7 @@
 <template>
   <v-list>
     <v-list-item v-for="(trans, key) in store.transcripts" :key="key">
-      <ListItemTranscript :trans="trans" :obj-key="key" />
+      <ListItemTranscript :trans="trans" :trans-key="key" />
     </v-list-item>
   </v-list>
 </template>

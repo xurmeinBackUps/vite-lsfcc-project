@@ -1,5 +1,5 @@
 <template>
-  <router-link :to="{ name: 'transcripts-show', params: { objKey: objKey } }">
+  <router-link :to="{ name: 'transcripts-show', params: { transKey: transKey } }">
     <p>{{ trans.speaker }}</p>
   </router-link>
 </template>
@@ -9,6 +9,6 @@ import { RouterLink } from 'vue-router'
 
 defineProps({
   trans: Object,
-  objKey: String
+  transKey: String
 });
 </script>

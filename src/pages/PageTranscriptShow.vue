@@ -4,7 +4,7 @@
       <v-card-title>
         Transcipt Reader
       </v-card-title>
-      <ShowTranscript :trans-key="route.params.objKey" />
+      <ShowTranscript :trans-key="route.params.transKey" />
     </template>
   </content-wrapper>
 </template>

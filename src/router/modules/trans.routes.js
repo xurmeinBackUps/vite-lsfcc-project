@@ -7,7 +7,7 @@ export const transRoutes = [
     component: () => import('@/pages/PageTranscriptsIndex.vue'),
   },
   {
-    path: '/transcripts/:objKey',
+    path: '/transcripts/:transKey',
     name: 'transcripts-show',
     component: PageTranscriptsShow,
     props: true

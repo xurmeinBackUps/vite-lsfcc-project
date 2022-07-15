@@ -12,10 +12,7 @@ import {
 export const useTranscripts = defineStore('transcripts', {
   state: () => ({
     transcripts: [],
-    trans: {
-      speaker: '',
-      text: ''
-    }
+    trans: {},
   }),
 
   actions: {
@@ -59,11 +56,12 @@ export const useTranscripts = defineStore('transcripts', {
     },
 
     editTranscript(key) {
+      console.log("editTranscript(); ln 59")
+
       const dbRef = ref(rtdb, `transcripts/${key}`)
-      update(dbRef, {
-        speaker: this.trans.speaker,
-        text: this.trans.text
-      })
+
+        update(dbRef, { speaker: this.trans.speaker, text: this.trans.text })
+
     }
   }
 })
