@@ -4,7 +4,7 @@
         <v-btn v-bind="props" color="amber"> EDIT </v-btn>
       </template>
       <v-card color="white">
-        <slot :props="$props"></slot>
+        <slot></slot>
       </v-card>
     </v-dialog>
 </template>

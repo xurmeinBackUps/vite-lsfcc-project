@@ -6,6 +6,7 @@
       <p>{{ store.trans.text }}</p>
       <list-item-crud-buttons
         v-if="ui.roleIsAdmin"
+        @edit="updateItem(props.transKey)"
         @show="showItem(props.transKey)"
         @hide="hideItem(props.transKey)"
         @destroy="deleteRecord(props.transKey)"
@@ -60,6 +61,10 @@ function showItem(key) {
 
 function hideItem(key) {
   store.setPrivateTrue(key);
+}
+
+function updateItem(key) {
+  store.editTranscript(key)
 }
 
 onMounted(() => {

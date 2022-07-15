@@ -1,10 +1,17 @@
 import { defineStore } from 'pinia'
 import { rtdb } from '../firebaseApp.config.js'
-import { ref, onValue, push, set, update, remove } from 'firebase/database'
+import {
+  ref,
+  onValue,
+  push,
+  set,
+  update,
+  remove
+} from 'firebase/database'
 
 export const useProfiles = defineStore('profiles', {
   state: () => ({
-      profiles: [],
+    profiles: [],
   }),
 
   actions: {
@@ -41,6 +48,10 @@ export const useProfiles = defineStore('profiles', {
     setPrivateTrue(key) {
       const settingRef = ref(rtdb, `profiles/${key}`)
       update(settingRef, { private: true })
+    },
+
+    editProfile(key) {
+
     }
   },
 })
