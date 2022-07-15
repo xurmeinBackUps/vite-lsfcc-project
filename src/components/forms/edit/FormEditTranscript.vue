@@ -14,7 +14,7 @@
     </v-form>
     <v-btn
       color="green"
-      @click="editTrans()"
+      @click="updateTrans()"
     > save </v-btn>
     <v-btn
       color="red"
@@ -33,7 +33,7 @@ const store = useTranscripts();
 
 const route = useRoute()
 
-function editTrans() {
+function updateTrans() {
   store.editTranscript(route.params.transKey)
   ui.editForm = false
 }

@@ -50,8 +50,16 @@ export const useProfiles = defineStore('profiles', {
       update(settingRef, { private: true })
     },
 
-    editProfile(key) {
-
+    editProfile(key, fullname, employmentDates = '', lifetime = '', personalHistory = '', pro = '') {
+      const dbRef = ref(rtdb, `profiles/${key}`)
+      update(dbRef, {
+        fullname: fullname,
+        employmentDates: employmentDates,
+        lifetime: lifetime,
+        private: false,
+        personalHistory: personalHistory,
+        pro: pro
+      })
     }
   },
 })

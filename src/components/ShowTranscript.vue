@@ -66,10 +66,6 @@ function hideItem(key) {
   store.setPrivateTrue(key);
 }
 
-function updateItem(key) {
-  store.editTranscript(key)
-}
-
 onMounted(() => {
   store.fetchTranscriptByKey(props.transKey);
 });
