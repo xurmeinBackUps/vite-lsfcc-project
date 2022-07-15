@@ -56,7 +56,6 @@ export const useProfiles = defineStore('profiles', {
         fullname: fullname,
         employmentDates: employmentDates,
         lifetime: lifetime,
-        private: false,
         personalHistory: personalHistory,
         pro: pro
       })

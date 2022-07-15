@@ -18,7 +18,7 @@
       </p>
       <list-item-crud-buttons
         v-if="ui.roleIsAdmin"
-        @edit="updateItem(props.pKey)"
+        @edit="ui.editForm = true"
         @show="showItem(props.pKey)"
         @hide="hideItem(props.pKey)"
         @destroy="destroyRecord(props.pKey)"
@@ -64,10 +64,6 @@ function hideItem(key) {
 
 function destroyRecord(key) {
   store.deleteProfile(key);
-}
-
-function updateItem(key) {
-  store.editProfile(key)
 }
 </script>
 

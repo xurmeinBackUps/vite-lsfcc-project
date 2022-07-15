@@ -31,18 +31,39 @@
         label="Profile Bio"
       ></v-textarea>
 
-      <v-btn @click="ui.editForm = false" color="green"> SAVE </v-btn>
+      <v-btn
+        @click="updateProfile()"
+        color="green"
+      > SAVE </v-btn>
+      <v-btn
+        color="red"
+        @click.stop="ui.editForm = false"
+      > cancel </v-btn>
     </v-form>
   </v-card>
 </template>
 
 <script setup>
 import { useUiState } from "@/stores/uiState.js";
+import { useProfiles } from "@/stores/profiles.js"
 
-defineProps({
+const props = defineProps({
   pKey: String,
   profile: Object
 })
 
 const ui = useUiState();
+const store = useProfiles()
+
+function updateProfile() {
+  store.editProfile(
+    props.pKey,
+    props.profile.fullname,
+    props.profile.employmentDates,
+    props.profile.lifetime,
+    props.profile.personalHistory,
+    props.profile.pro
+  )
+  ui.editForm = false
+}
 </script>
