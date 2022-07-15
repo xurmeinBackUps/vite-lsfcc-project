@@ -1,5 +1,8 @@
 <template>
   <v-card class="pa-3">
+    <router-link to="/transcripts">
+      <MdiArrowLeftBold class="float-right" />
+    </router-link>
     <div v-if="store.trans" :class="privateStyles">
       <p>{{ store.trans.speaker }}</p>
       <br />
