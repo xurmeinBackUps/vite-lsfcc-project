@@ -1,10 +1,10 @@
 <template>
-  <v-card class="pa-5 ma-3" :class="privateStyles">
-    <p id="entry-dates" class="text-subtitle-1">{{ entry.dates }}</p>
-    <p id="entry-text" class="text-body-2">{{ entry.text }}</p>
+  <v-card class="pa-5 ma-3 w-100" :class="privateStyles">
+    <p class="text-subtitle-1">{{ entry.dates }}</p>
+    <p class="text-body-2">{{ entry.text }}</p>
     <list-item-crud-buttons
       v-if="ui.roleIsAdmin"
-      :target-item-key="props.eKey"
+      @edit="ui.editForm = true"
       @show="showItem(props.eKey)"
       @hide="hideItem(props.eKey)"
       @destroy="destroyRecord(props.eKey)"
@@ -35,7 +35,6 @@ const route = useRoute();
 const props = defineProps({
   entry: Object,
   eKey: String,
-  targetItemKey: String
 });
 
 const privateStyles = computed(() => ({

@@ -34,7 +34,7 @@
       <v-btn
         @click="updateProfile()"
         color="green"
-      > SAVE </v-btn>
+      > save </v-btn>
       <v-btn
         color="red"
         @click.stop="ui.editForm = false"

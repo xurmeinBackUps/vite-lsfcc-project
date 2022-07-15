@@ -7,7 +7,6 @@ export const useBuildingHistory = defineStore('buildingHistory', {
   state: () => ({
     name: '',
     entries: [],
-    entry: {}
   }),
 
   actions: {
@@ -45,6 +44,14 @@ export const useBuildingHistory = defineStore('buildingHistory', {
     setPrivateTrue(bId, key) {
       const settingRef = ref(rtdb, `schools/${bId}/entries/${key}`)
       update(settingRef, { private: true })
+    },
+
+    editEntry(bId, key, dates = '', text = '') {
+      const dbRef = ref(rtdb, `schools/${bId}/entries/${key}`)
+      update(dbRef, {
+        dates: dates,
+        text: text
+      })
     }
   }
 })
